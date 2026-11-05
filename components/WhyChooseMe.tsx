@@ -38,10 +38,8 @@ export default function WhyChooseMe() {
             WHY CHOOSE ME
           </p>
 
-          <h2 className="max-w-[540px] font-sans text-[42px] font-semibold leading-[1.12] tracking-[-1.7px] text-[#292929] lg:text-[46px]">
-            MORE THAN JUST GOOD
-            <br />
-            DESIGN.
+          <h2 className="refuseniks max-w-[540px] font-sans text-[42px] font-semibold leading-[1.12] tracking-[-1.7px] text-[#292929] lg:text-[46px]">
+            MORE THAN JUST GOOD DESIGN.
           </h2>
         </div>
 
