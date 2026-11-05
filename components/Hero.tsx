@@ -17,6 +17,8 @@ const script = Gochi_Hand({
   variable: "--font-script",
 });
 
+
+
 /* ------------------------------------------------------------------ */
 /*  Images – put these in /public/images/hero/                         */
 /* ------------------------------------------------------------------ */
@@ -25,7 +27,7 @@ const IMG = {
   girl: "/hero.webp", // transparent, cropped at the waist
   bookLeft: "/Stephen 2.webp", // flat cover, rotation is done in CSS
   bookRight: "/Stephen 1.webp", // flat cover, rotation is done in CSS
-  avatar: "/avatar.webp", // small round face (badge + the "O")
+  avatar: "/face.webp", // small round face (badge + the "O")
 };
 
 const SERVICES = [
@@ -80,7 +82,7 @@ function Name({
 function Role({ className = "" }: { className?: string }) {
   return (
     <p
-      className={`-rotate-2 font-[family-name:var(--font-script)] leading-none text-[#ff4a00] [-webkit-text-stroke:0.6px_#ff4a00] ${className}`}
+      className={` font-[family-name:var(--font-script)] leading-none text-[#FF5C05] [-webkit-text-stroke:0.1px_#ff4a00] ${className}`}
     >
       Marketing Specialist
     </p>
@@ -92,7 +94,7 @@ function Spark({ className = "" }: { className?: string }) {
     <svg
       viewBox="0 0 84 84"
       aria-hidden
-      className={`fill-[#fce3d8] ${className}`}
+      className={`fill-[#fdede7] ${className}`}
     >
       <polygon points="0,0 72,52 4,48" />
       <polygon points="34,60 84,70 36,80" />
@@ -104,7 +106,7 @@ function Cta({ className = "" }: { className?: string }) {
   return (
     <a
       href="#about"
-      className={`inline-flex items-center gap-[1em] rounded-full bg-[#ff4a00] px-[1.2em] py-[0.62em] font-medium leading-none text-white transition-colors hover:bg-[#e04200] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff4a00] ${className}`}
+      className={`inline-flex items-center gap-[1em] rounded-full bg-[#FF5C05] px-[1.2em] py-[0.62em] font-medium leading-none text-white transition-colors hover:bg-[#e04200] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff4a00] ${className}`}
     >
       Learn More About Me
       <svg
@@ -138,7 +140,7 @@ function Pill({ children, className = "" }: { children: string; className?: stri
 export default function Hero() {
   return (
     <section
-      className={`${outfit.variable} ${script.variable} relative isolate overflow-hidden bg-[#fdfdec] font-[family-name:var(--font-outfit)]`}
+      className={`${outfit.variable} ${script.variable} relative isolate overflow-hidden bg-[#FFFFF3] font-[family-name:var(--font-outfit)]`}
     >
       {/* Zigzag / squiggle background pattern */}
       {/* Size = w-[...], how much sits below the fold = translate-y-[...] */}
@@ -163,7 +165,7 @@ export default function Hero() {
           <Spark className="absolute left-[82.8%] top-[10.5%] w-[8.7%] -scale-x-100" />
 
           {/* badge */}
-          <div className="absolute left-1/2 top-[7.2%] flex -translate-x-1/2 items-center gap-[0.55cqw] whitespace-nowrap rounded-full bg-[#ececdc] p-[0.5cqw] pr-[1.1cqw] text-[1.15cqw] font-normal leading-none text-[#444]">
+          <div className="absolute left-1/2 top-[7.2%] flex -translate-x-1/2 items-center gap-[0.55cqw] whitespace-nowrap rounded-full bg-[#EFEFE3] p-[0.5cqw] pr-[1.1cqw] text-[1.15cqw] font-normal leading-none text-[#444]">
             <Avatar className="h-[2.1cqw] w-[2.1cqw]" />
             Hy There,
           </div>
@@ -195,14 +197,14 @@ export default function Hero() {
             alt="Book cover: Growing"
             width={400}
             height={580}
-            className="absolute -bottom-[13%] left-[25.5%] z-10 h-auto w-[20%] -rotate-[14deg]"
+            className="absolute -bottom-[21%] left-[25.5%] z-10 h-auto w-[23%] -rotate-[9deg]"
           />
           <Image
             src={IMG.bookRight}
             alt="Book cover: Don't Cut the Grass on Sunday"
             width={400}
             height={580}
-            className="absolute -bottom-[12%] left-[54.9%] z-10 h-auto w-[19.5%] rotate-[9deg]"
+            className="absolute -bottom-[20%] left-[51.9%] z-10 h-auto w-[22.5%] rotate-[6deg]"
           />
 
           {/* Megan (front) */}
@@ -229,7 +231,7 @@ export default function Hero() {
           Hy There,
         </div>
 
-        <Name stacked className="mt-5 text-[clamp(2.75rem,15vw,4.5rem)]" />
+        <Name stacked className="mt-0 text-[clamp(2.75rem,15vw,4.5rem)]" />
         <Role className="mt-3 text-[clamp(1.75rem,9.5vw,2.75rem)]" />
 
         <p className="mx-auto mt-6 max-w-[34ch] text-[0.9rem] leading-[1.5] text-[#2f2f2f]">
@@ -253,14 +255,14 @@ export default function Hero() {
             alt="Book cover: Growing"
             width={400}
             height={580}
-            className="absolute -bottom-[10%] left-[7%] z-10 h-auto w-[38%] -rotate-[14deg]"
+            className="absolute -bottom-[15%] left-[8%] z-10 h-auto w-[42%] -rotate-[9deg]"
           />
           <Image
             src={IMG.bookRight}
             alt="Book cover: Don't Cut the Grass on Sunday"
             width={400}
             height={580}
-            className="absolute -bottom-[9%] right-[7%] z-10 h-auto w-[38%] rotate-[9deg]"
+            className="absolute -bottom-[14%] right-[8%] z-10 h-auto w-[42%] rotate-[6deg]"
           />
           <Image
             src={IMG.girl}
