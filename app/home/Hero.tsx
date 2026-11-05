@@ -195,14 +195,14 @@ export default function Hero() {
             alt="Book cover: Growing"
             width={400}
             height={580}
-            className="absolute -bottom-[13%] left-[25.5%] z-10 h-auto w-[20%] -rotate-[14deg]"
+            className="absolute -bottom-[15%] left-[25.5%] z-10 h-auto w-[23%] -rotate-[9deg]"
           />
           <Image
             src={IMG.bookRight}
             alt="Book cover: Don't Cut the Grass on Sunday"
             width={400}
             height={580}
-            className="absolute -bottom-[12%] left-[54.9%] z-10 h-auto w-[19.5%] rotate-[9deg]"
+            className="absolute -bottom-[14%] left-[51.9%] z-10 h-auto w-[22.5%] rotate-[6deg]"
           />
 
           {/* Megan (front) */}
@@ -253,14 +253,14 @@ export default function Hero() {
             alt="Book cover: Growing"
             width={400}
             height={580}
-            className="absolute -bottom-[10%] left-[7%] z-10 h-auto w-[38%] -rotate-[14deg]"
+            className="absolute -bottom-[11%] left-[8%] z-10 h-auto w-[42%] -rotate-[9deg]"
           />
           <Image
             src={IMG.bookRight}
             alt="Book cover: Don't Cut the Grass on Sunday"
             width={400}
             height={580}
-            className="absolute -bottom-[9%] right-[7%] z-10 h-auto w-[38%] rotate-[9deg]"
+            className="absolute -bottom-[10%] right-[8%] z-10 h-auto w-[42%] rotate-[6deg]"
           />
           <Image
             src={IMG.girl}
