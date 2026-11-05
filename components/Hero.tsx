@@ -1,15 +1,9 @@
 import Image from "next/image";
-import { Outfit, Gochi_Hand } from "next/font/google";
+import { Gochi_Hand } from "next/font/google";
 
 /* ------------------------------------------------------------------ */
 /*  Fonts                                                              */
 /* ------------------------------------------------------------------ */
-const outfit = Outfit({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-outfit",
-});
-
 // Handwritten "Marketing Specialist" – swap for any marker/script font you prefer
 const script = Gochi_Hand({
   subsets: ["latin"],
@@ -140,7 +134,7 @@ function Pill({ children, className = "" }: { children: string; className?: stri
 export default function Hero() {
   return (
     <section
-      className={`${outfit.variable} ${script.variable} relative isolate overflow-hidden bg-[#FFFFF3] font-[family-name:var(--font-outfit)]`}
+      className={`${script.variable} relative isolate overflow-hidden bg-[#fdfdec]`}
     >
       {/* Zigzag / squiggle background pattern */}
       {/* Size = w-[...], how much sits below the fold = translate-y-[...] */}
