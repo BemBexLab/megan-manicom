@@ -17,7 +17,7 @@ export default function Header() {
   const [active, setActive] = useState("Home");
 
   return (
-    <header className="w-full bg-[#fdfbf7] border-b border-gray-200/60">
+    <header className="w-full bg-[#FFFFF3] border-b border-gray-200/60">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
         {/* ── Logo ── */}
 <Link href="/" className="shrink-0">
