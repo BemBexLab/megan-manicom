@@ -21,11 +21,11 @@ const script = Gochi_Hand({
 /*  Images – put these in /public/images/hero/                         */
 /* ------------------------------------------------------------------ */
 const IMG = {
-  zigzag: "/Vector 2.webp", // full-section background pattern
-  girl: "/hero.webp", // transparent PNG, cropped at the waist
+  zigzag: "/Vector 2.webp", // background squiggle pattern
+  girl: "/hero.webp", // transparent, cropped at the waist
   bookLeft: "/Stephen 2.webp", // flat cover, rotation is done in CSS
   bookRight: "/Stephen 1.webp", // flat cover, rotation is done in CSS
-  avatar: "/Vector 2.webp", // small round face (badge + the "O")
+  avatar: "/avatar.webp", // small round face (badge + the "O")
 };
 
 const SERVICES = [
@@ -141,13 +141,14 @@ export default function Hero() {
       className={`${outfit.variable} ${script.variable} relative isolate overflow-hidden bg-[#fdfdec] font-[family-name:var(--font-outfit)]`}
     >
       {/* Zigzag / squiggle background pattern */}
+      {/* Size = w-[...], how much sits below the fold = translate-y-[...] */}
       <Image
         src={IMG.zigzag}
         alt=""
-        fill
+        width={1600}
+        height={1000}
         priority
-        sizes="100vw"
-        className="-z-10 select-none object-cover object-bottom"
+        className="pointer-events-none absolute bottom-0 left-1/2 -z-10 h-auto w-[140%] max-w-none -translate-x-1/2 translate-y-[45%] select-none md:w-[72%] md:max-w-[1100px]"
       />
 
       {/* ============================================================ */}
@@ -194,14 +195,14 @@ export default function Hero() {
             alt="Book cover: Growing"
             width={400}
             height={580}
-            className="absolute left-[22.8%] top-[63.5%] z-10 h-auto w-[19%] -rotate-[14deg]"
+            className="absolute -bottom-[13%] left-[25.5%] z-10 h-auto w-[20%] -rotate-[14deg]"
           />
           <Image
             src={IMG.bookRight}
             alt="Book cover: Don't Cut the Grass on Sunday"
             width={400}
             height={580}
-            className="absolute left-[57.6%] top-[65%] z-10 h-auto w-[18.8%] rotate-[9deg]"
+            className="absolute -bottom-[12%] left-[54.9%] z-10 h-auto w-[19.5%] rotate-[9deg]"
           />
 
           {/* Megan (front) */}
@@ -211,7 +212,7 @@ export default function Hero() {
             width={560}
             height={660}
             priority
-            className="absolute bottom-0 left-[36.2%] z-20 h-auto w-[30.8%]"
+            className="absolute bottom-0 left-[34.4%] z-20 h-auto w-[34.4%]"
           />
         </div>
       </div>
@@ -252,14 +253,14 @@ export default function Hero() {
             alt="Book cover: Growing"
             width={400}
             height={580}
-            className="absolute left-[2%] top-[34%] z-10 h-auto w-[36%] -rotate-[14deg]"
+            className="absolute -bottom-[10%] left-[7%] z-10 h-auto w-[38%] -rotate-[14deg]"
           />
           <Image
             src={IMG.bookRight}
             alt="Book cover: Don't Cut the Grass on Sunday"
             width={400}
             height={580}
-            className="absolute right-[2%] top-[36%] z-10 h-auto w-[36%] rotate-[9deg]"
+            className="absolute -bottom-[9%] right-[7%] z-10 h-auto w-[38%] rotate-[9deg]"
           />
           <Image
             src={IMG.girl}
@@ -267,7 +268,7 @@ export default function Hero() {
             width={560}
             height={660}
             priority
-            className="absolute bottom-0 left-1/2 z-20 h-auto w-[62%] -translate-x-1/2"
+            className="absolute bottom-0 left-1/2 z-20 h-auto w-[68%] -translate-x-1/2"
           />
         </div>
       </div>
