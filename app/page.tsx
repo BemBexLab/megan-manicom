@@ -1,13 +1,13 @@
-import Hero from "@/components/Hero";
-import WhyChooseMe from "@/components/WhyChooseMe";
-import WhatIDo from "@/components/WhatIDo";
+import AboutSection from "./components/AboutMe";
+import HeroSection from "./components/Hero";
+import ServicesSection from "./components/MyServices";
 
 export default function Home() {
   return (
     <section className="bg-[#FFFFF3]">
-      <Hero />
-      <WhatIDo />
-      <WhyChooseMe />
+      <HeroSection />
+      <AboutSection />
+      <ServicesSection />
     </section>
   );
 }
