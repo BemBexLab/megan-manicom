@@ -73,9 +73,9 @@ function ProjectCard({
 
 export default function OurPortfolio() {
   return (
-    <section className="w-full bg-[#F5F5F5] px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-[60px]">
-      <div className="mx-auto w-full max-w-7xl">
-        <header className="mx-auto mb-7 max-w-6xl text-center sm:mb-8">
+    <section className="w-full bg-[#F5F5F5] px-4 py-14 sm:px-6 sm:py-16 lg:px-4 lg:py-[60px]">
+      <div className="mx-auto w-full max-w-[1440px]">
+        <header className="mx-auto mb-7 max-w-7xl text-center sm:mb-8">
           <div className="flex items-center justify-center gap-2">
             <span className="h-4 w-4 rounded-full border-3 border-[#D4A373]" />
             <span className="urbanist text-[16px] font-light text-[#777777]">
@@ -113,3 +113,4 @@ export default function OurPortfolio() {
     </section>
   );
 }
+

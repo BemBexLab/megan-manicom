@@ -20,7 +20,7 @@ const clientAvatars = [
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-white pt-40 lg:pt-60 pb-20 lg:pb-32">
+    <section className="relative overflow-hidden bg-white pt-40 lg:pt-60">
       {/* Subtle curved background arc at bottom */}
       <div className="absolute bottom-0 left-0 right-0 h-[300px] pointer-events-none">
         <svg
