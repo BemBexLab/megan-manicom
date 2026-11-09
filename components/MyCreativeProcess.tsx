@@ -77,7 +77,7 @@ export default function MyCreativeProcess() {
         </p>
       </header>
 
-      <div className="relative mx-auto mt-6 grid w-full min-w-0 max-w-md grid-cols-1 gap-5 sm:max-w-[960px] sm:grid-cols-2 sm:gap-6 xl:max-w-[1200px] xl:mt-0 xl:block xl:h-[443px]">
+      <div className="relative mx-auto mt-6 grid w-full min-w-0 max-w-md grid-cols-1 gap-5 sm:max-w-[960px] sm:grid-cols-2 sm:gap-6 xl:max-w-7xl xl:mt-0 xl:block xl:h-[443px]">
         {connectors.map((connector) => (
           <Image
             key={connector.src}
@@ -113,3 +113,4 @@ export default function MyCreativeProcess() {
     </section>
   );
 }
+

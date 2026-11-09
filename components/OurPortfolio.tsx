@@ -62,7 +62,7 @@ function ProjectCard({
       </p>
       <a
         href="/contact"
-        className="urbanist mt-3 inline-flex items-center gap-3 text-[14px] text-[#D4A373] transition-colors hover:text-[#bd8957]"
+        className="urbanist mt-3 inline-flex items-center gap-3 text-[14px] text-[#D4A373] transition-colors hover:text-[#bd8957] pb-1"
       >
         Explore My Work
         <FiArrowRight aria-hidden="true" className="text-[19px]" />
@@ -74,7 +74,7 @@ function ProjectCard({
 export default function OurPortfolio() {
   return (
     <section className="w-full bg-[#F5F5F5] px-4 py-14 sm:px-6 sm:py-16 lg:px-4 lg:py-[60px]">
-      <div className="mx-auto w-full max-w-[1440px]">
+      <div className="mx-auto w-full max-w-[1420px]">
         <header className="mx-auto mb-7 max-w-7xl text-center sm:mb-8">
           <div className="flex items-center justify-center gap-2">
             <span className="h-4 w-4 rounded-full border-3 border-[#D4A373]" />
