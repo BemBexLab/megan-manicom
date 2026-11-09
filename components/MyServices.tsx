@@ -5,6 +5,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { GoArrowUpRight } from "react-icons/go";
+import { FiArrowUpRight } from "react-icons/fi";
 
 const services = [
   {
@@ -46,7 +47,7 @@ export default function ServicesSection() {
             </h2>
 
             {/* Paragraph */}
-            <p className="mt-6 max-w-[500px] text-sm leading-relaxed text-gray-500">
+            <p className="mt-6 max-w-[500px] text-sm leading-relaxed text-[#777777]">
               From social media strategy to engaging content creation, I offer
               creative services that help brands connect with their audience
               and grow their online presence.
@@ -60,7 +61,7 @@ export default function ServicesSection() {
               >
                 Let&apos;s Talk
                 <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#C9A47A]">
-                  <GoArrowUpRight size={20} />
+                  <FiArrowUpRight size={20} />
                 </span>
               </Link>
             </div>

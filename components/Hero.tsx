@@ -1,6 +1,7 @@
 // components/HeroSection.tsx
 import Image from "next/image";
 import Link from "next/link";
+import { FiArrowUpRight } from "react-icons/fi";
 import { GoArrowUpRight } from "react-icons/go";
 
 const partnerLogos = [
@@ -114,7 +115,7 @@ export default function HeroSection() {
               >
                 Work With Me
                 <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#C9A47A] shadow-sm">
-                  <GoArrowUpRight size={18} />
+                  <FiArrowUpRight size={18} />
                 </span>
               </Link>
             </div>

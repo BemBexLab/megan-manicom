@@ -101,7 +101,7 @@ export default function AboutSection() {
             </h2>
 
             {/* Paragraph */}
-            <p className="mt-6 max-w-[520px] text-sm leading-relaxed text-gray-500">
+            <p className="mt-6 max-w-[520px] text-sm leading-relaxed text-[#777777]">
               I&apos;m a passionate social media marketer who loves turning
               ideas into content that connects. My focus is helping brands tell
               their stories and build a memorable online presence.
