@@ -1,7 +1,6 @@
-// components/ServicesSection.tsx
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
@@ -23,105 +22,96 @@ const services = [
     title: "Ebook Design & Formatting",
     text: "Clean, professional ebook layouts and formatting that are ready to publish and easy to read.",
   },
-  {
-    title: "Gost Writing & Copywriting",
-    text: "Engaging, well-researched content that speaks to your audience and drives action.",
-  },
 ];
 
 export default function ServicesSection() {
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState<number | null>(0);
+  const accordionId = useId();
 
   return (
-    <section className="bg-[#F5F5F5] py-7 lg:py-14">
-      <div className="mx-auto max-w-[1500px] px-6 lg:px-10">
-        <div className="grid grid-cols-1 gap-14 lg:grid-cols-2 lg:gap-24">
-          {/* LEFT — Intro + CTA + Image */}
-          <div className="flex flex-col">
-            {/* Label */}
+    <section aria-labelledby="services-title" className="bg-[#F5F5F5] px-4 py-12 sm:px-6 sm:py-14 lg:px-[5%] lg:pt-14 lg:pb-16">
+      <div className="mx-auto w-full max-w-[1420px] lg:[container-type:inline-size]">
+        <div className="grid grid-cols-1 items-start gap-10 sm:gap-12 lg:grid-cols-[minmax(0,1.21fr)_minmax(0,1fr)] lg:gap-x-[9.6%] lg:gap-y-0">
+          <div className="flex min-w-0 flex-col">
             <div className="flex items-center gap-2.5">
-              <span className="h-4 w-4 rounded-full border-3 border-[#D9A066]" />
-              <span className="text-[16px] text-[#777777] urbanist">My Services</span>
+              <span aria-hidden="true" className="h-2.5 w-2.5 shrink-0 rounded-full border-2 border-[#D4A373] lg:h-[0.94cqw] lg:w-[0.94cqw]" />
+              <span className="urbanist text-sm leading-[1.5] text-[#777777] lg:text-[clamp(12px,1.13cqw,16px)]">My Services</span>
             </div>
 
-            {/* Heading */}
-            <h2 className="mt-4 max-w-[580px] text-[clamp(2.25rem,4.2vw,3.5rem)] font-medium leading-[1.15] tracking-tight text-[#2b2b2b] clash-display font-clash">
-              Creative Solutions For Your Brand
+            <h2 id="services-title" className="clash-display mt-3.5 text-[2rem] font-medium leading-[1.2] text-[#282828] sm:text-[2.5rem] lg:mt-[0.94cqw] lg:text-[clamp(32px,3.76cqw,54px)]">
+              Creative Solutions For
+              <span className="block">Your Brand</span>
             </h2>
 
-            {/* Paragraph */}
-            <p className="urbanist mt-6 max-w-[550px] text-[16px] leading-relaxed text-[#777777]">
+            <p className="urbanist mt-4 text-[15px] leading-[1.7] text-[#777777] lg:mt-[1.32cqw] lg:max-w-[95%] lg:text-[clamp(12px,1.17cqw,17px)]">
               From social media strategy to engaging content creation, I offer
               creative services that help brands connect with their audience
               and grow their online presence.
             </p>
 
-            {/* CTA */}
-            <div className="mt-8">
+            <div className="mt-5 lg:mt-[1.79cqw]">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-3 rounded-full bg-gradient-to-b from-[#D9AE86] to-[#C9A47A] py-1.5 pl-6 pr-1.5 text-sm font-medium text-white shadow-[0_8px_20px_rgba(201,164,122,0.45)] transition-all duration-300 hover:shadow-[0_10px_26px_rgba(201,164,122,0.6)]"
+                className="urbanist inline-flex items-center gap-2 rounded-full bg-[#D4A373] py-1.5 pl-3 pr-1.5 text-sm text-white shadow-[0_8px_14px_rgba(0,0,0,0.18)] transition-colors hover:bg-[#c69260] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a36e3d] lg:gap-[0.66cqw] lg:py-[0.566cqw] lg:pl-[1.13cqw] lg:pr-[0.566cqw] lg:text-[clamp(12px,1.13cqw,16px)]"
               >
                 Let&apos;s Talk
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#C9A47A]">
-                  <FiArrowUpRight size={20} />
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-[#D4A373] lg:h-[2.64cqw] lg:w-[2.64cqw]">
+                  <FiArrowUpRight aria-hidden="true" size={18} className="lg:h-[1.7cqw] lg:w-[1.7cqw]" />
                 </span>
               </Link>
             </div>
 
-            {/* Image */}
-            <div className="relative mt-10 aspect-[414/195] w-full max-w-[520px] overflow-hidden rounded-3xl lg:max-w-none">
+            <div className="relative mt-6 aspect-[414/195] w-full overflow-hidden rounded-[20px] lg:mt-[2.26cqw] lg:rounded-[1.89cqw]">
               <Image
                 src="/home/Rectangle 4.webp"
                 alt="Social media post mockups"
                 fill
                 className="object-cover"
-                sizes="(min-width: 1024px) 560px, 100vw"
+                sizes="(min-width: 1578px) 703px, (min-width: 1024px) 45vw, (min-width: 640px) calc(100vw - 48px), calc(100vw - 32px)"
               />
             </div>
           </div>
 
-          {/* RIGHT — Accordion list */}
-          <div className="flex flex-col lg:pt-0 md:mt-10">
+          <div className="min-w-0">
             {services.map((service, i) => {
               const isActive = active === i;
-              const isLast = i === services.length - 1;
+              const triggerId = `${accordionId}-trigger-${i}`;
+              const panelId = `${accordionId}-panel-${i}`;
 
               return (
-                <div
-                  key={service.title}
-                  className={isLast ? "" : "border-b border-gray-300"}
-                >
-                  <button
-                    type="button"
-                    onClick={() => setActive(i)}
-                    aria-expanded={isActive}
-                    className={`flex w-full items-center gap-5 text-left transition-colors duration-300 ${
-                      isLast ? "pt-5" : "py-5"
-                    } ${i === 0 ? "pt-0" : ""} ${
-                      isActive
-                        ? "text-[#E0A163]"
-                        : "text-[#2b2b2b] hover:text-[#E0A163]"
-                    }`}
-                  >
-                    <span className="w-6 text-base font-normal">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <span className="text-lg clash-display font-medium sm:text-[19px]">
-                      {service.title}
-                    </span>
-                  </button>
+                <div key={service.title} className="border-b border-[#D2D2D2] last:border-b-0">
+                  <h3>
+                    <button
+                      id={triggerId}
+                      type="button"
+                      onClick={() => setActive(isActive ? null : i)}
+                      aria-expanded={isActive}
+                      aria-controls={panelId}
+                      className={`clash-display grid w-full grid-cols-[24px_minmax(0,1fr)] items-start gap-x-3 text-left text-[17px] font-medium leading-[1.4] transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a36e3d] lg:grid-cols-[1.89cqw_minmax(0,1fr)] lg:text-[clamp(16px,1.51cqw,22px)] ${
+                        i === 0 ? "pt-0" : "pt-5 lg:pt-[2.16cqw]"
+                      } ${isActive ? "pb-0 lg:gap-x-[1.42cqw]" : "pb-5 lg:pb-[2.16cqw] lg:gap-x-[1.89cqw]"} ${
+                        isActive ? "text-[#D99A5E]" : "text-[#282828] hover:text-[#D99A5E]"
+                      }`}
+                    >
+                      <span>{String(i + 1).padStart(2, "0")}</span>
+                      <span className="min-w-0">{service.title}</span>
+                    </button>
+                  </h3>
 
-                  {/* Description (animated) */}
                   <div
-                    className={`grid transition-all duration-300 ease-in-out ${
+                    id={panelId}
+                    role="region"
+                    aria-labelledby={triggerId}
+                    aria-hidden={!isActive}
+                    inert={!isActive}
+                    className={`grid transition-[grid-template-rows,opacity] duration-300 ease-in-out motion-reduce:transition-none ${
                       isActive
                         ? "grid-rows-[1fr] opacity-100"
                         : "grid-rows-[0fr] opacity-0"
                     }`}
                   >
-                    <div className="overflow-hidden">
-                      <p className="urbanist max-w-[650px] pb-6 pl-11 text-[16px] leading-relaxed text-[#777777]">
+                    <div className="min-h-0 overflow-hidden">
+                      <p className="urbanist mt-1.5 pb-6 pl-9 text-[14px] leading-[1.7] text-[#777777] lg:mt-[0.47cqw] lg:pb-[2.26cqw] lg:pl-[3.31cqw] lg:text-[clamp(12px,1.17cqw,17px)]">
                         {service.text}
                       </p>
                     </div>
