@@ -37,14 +37,14 @@ export default function Header() {
 
         {/* Center Navigation — Pill Shape */}
         <nav className="hidden md:block">
-          <div className="relative flex items-center rounded-full bg-[#C9A47A] px-2 py-1.5 shadow-[0_4px_14px_rgba(0,0,0,0.15)]">
+          <div className="relative flex items-center rounded-full bg-[#D4A373] px-2 py-1.5 shadow-[0_4px_14px_rgba(0,0,0,0.15)]">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
                 className={`relative z-10 rounded-full px-5 py-2 text-sm font-medium transition-all duration-300 ${
                   link.name === "Home"
-                    ? "bg-white text-gray-800 shadow-sm"
+                    ? "bg-white text-[#D4A373] shadow-sm"
                     : "text-white hover:text-white/90"
                 }`}
               >
@@ -55,26 +55,29 @@ export default function Header() {
         </nav>
 
         {/* CTA Button */}
-        <Link
-          href="/work-with-me"
-          className="hidden md:flex items-center gap-2 rounded-full bg-[#C9A47A] px-6 py-3 text-sm font-medium text-white shadow-[0_4px_14px_rgba(0,0,0,0.15)] transition-all duration-300 hover:bg-[#b8936a] hover:shadow-[0_6px_20px_rgba(0,0,0,0.2)]"
-        >
-          Work With Me
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-4 w-4"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2.5}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M7 17L17 7M17 7H7M17 7V17"
-            />
-          </svg>
-        </Link>
+        {/* CTA Button */}
+<Link
+  href="/work-with-me"
+  className="hidden md:inline-flex items-center gap-2 rounded-full bg-[#D4A373] pr-2 py-1.5 text-sm font-medium text-white shadow-[0_4px_14px_rgba(0,0,0,0.12)] transition-all duration-300 hover:bg-[#b8936a] hover:shadow-[0_6px_20px_rgba(0,0,0,0.18)]"
+>
+  <span className="pl-5">Work With Me</span>
+  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#D4A373] shadow-sm">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-4 w-4"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth={2.5}
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M7 17L17 7M17 7H7M17 7V17"
+      />
+    </svg>
+  </span>
+</Link>
 
         {/* Mobile Hamburger Button */}
         <button
@@ -126,7 +129,7 @@ function MobileMenu() {
         ))}
         <Link
           href="/work-with-me"
-          className="mt-3 flex items-center justify-center gap-2 rounded-full bg-[#C9A47A] px-6 py-3 text-sm font-medium text-white shadow-md transition-all hover:bg-[#b8936a]"
+          className="mt-3 flex items-center justify-center gap-2 rounded-full bg-[#D4A373] px-6 py-3 text-sm font-medium text-white shadow-md transition-all hover:bg-[#b8936a]"
         >
           Work With Me
           <svg
