@@ -4,7 +4,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { GoArrowUpRight } from "react-icons/go";
 import { FiArrowUpRight } from "react-icons/fi";
 
 const services = [
@@ -24,25 +23,29 @@ const services = [
     title: "Ebook Design & Formatting",
     text: "Clean, professional ebook layouts and formatting that are ready to publish and easy to read.",
   },
+  {
+    title: "Gost Writing & Copywriting",
+    text: "Engaging, well-researched content that speaks to your audience and drives action.",
+  },
 ];
 
 export default function ServicesSection() {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="bg-[#F5F5F5] py-16 lg:py-24">
-      <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
+    <section className="bg-[#F5F5F5] py-7 lg:py-14">
+      <div className="mx-auto max-w-[1500px] px-6 lg:px-10">
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-2 lg:gap-24">
           {/* LEFT — Intro + CTA + Image */}
           <div className="flex flex-col">
             {/* Label */}
             <div className="flex items-center gap-2.5">
-              <span className="h-2.5 w-2.5 rounded-full border-2 border-[#D9A066]" />
+              <span className="h-3 w-3 rounded-full border-2 border-[#D9A066] clash-display font-clash" />
               <span className="text-sm text-gray-500">My Services</span>
             </div>
 
             {/* Heading */}
-            <h2 className="mt-4 max-w-[480px] text-[clamp(2.25rem,4.2vw,3.5rem)] font-medium leading-[1.15] tracking-tight text-[#2b2b2b]">
+            <h2 className="mt-4 max-w-[580px] text-[clamp(2.25rem,4.2vw,3.5rem)] font-medium leading-[1.15] tracking-tight text-[#2b2b2b] clash-display font-clash">
               Creative Solutions For Your Brand
             </h2>
 
@@ -79,7 +82,7 @@ export default function ServicesSection() {
           </div>
 
           {/* RIGHT — Accordion list */}
-          <div className="flex flex-col lg:pt-0">
+          <div className="flex flex-col lg:pt-0 md:mt-10">
             {services.map((service, i) => {
               const isActive = active === i;
               const isLast = i === services.length - 1;

@@ -20,7 +20,7 @@ const clientAvatars = [
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-white pt-40 lg:pt-60">
+    <section className="relative overflow-hidden bg-white pt-20 lg:pt-60">
       {/* Subtle curved background arc at bottom */}
       <div className="absolute bottom-0 left-0 right-0 h-[300px] pointer-events-none">
         <svg
@@ -38,8 +38,8 @@ export default function HeroSection() {
       </div>
 
       <div className="relative mx-auto max-w-[1500px] px-6 lg:px-10">
-        {/* Grid with balanced vertical spacing */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center py-8 lg:py-12">
+        {/* Changed py-8 to pt-0 pb-8 to remove top padding on mobile grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-0 pb-8 lg:py-12">
           {/* LEFT COLUMN — Name + Rating */}
           <div className="lg:col-span-4 flex flex-col justify-center z-10">
             <h1 className={`${clashDisplay.className} clash-display font-clash whitespace-nowrap text-[clamp(3rem,8vw,6.5rem)] font-medium leading-[0.95] tracking-tight text-gray-900`}>
@@ -84,15 +84,17 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* CENTER COLUMN — Hero Image (Pushed further down) */}
-          <div className="relative lg:col-span-4 flex justify-center items-end lg:self-stretch z-20 order-first lg:order-none">
+          {/* CENTER COLUMN — Hero Image */}
+          {/* Added justify-start for mobile, lg:justify-center for desktop */}
+          <div className="relative lg:col-span-4 flex justify-start lg:justify-center items-center lg:items-end lg:self-stretch z-20 order-first lg:order-none mb-6 lg:mb-0">
             <div className="relative w-full max-w-[620px] lg:max-w-none lg:absolute lg:-bottom-12 xl:-bottom-30 lg:left-1/2 lg:w-[125%] lg:-translate-x-[58%] xl:-translate-x-[62%]">
               <Image
                 src="/home/hero.webp"
                 alt="Megan Manicom"
                 width={700}
                 height={850}
-                className="block w-full h-auto object-contain drop-shadow-2xl"
+                // Added -ml-8 to pull image left on mobile, lg:mx-auto keeps it centered on desktop
+                className="block w-full h-auto -ml-8 lg:mx-auto object-contain drop-shadow-2xl"
                 priority
               />
             </div>
