@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { clashDisplay } from "./fonts";
 import "./globals.css";
 import Header from "./components/Header";
 
@@ -22,7 +23,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} urbanist h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${clashDisplay.variable} urbanist h-full antialiased`}
     >
       <Header />
       <body className="min-h-full flex flex-col">{children}</body>

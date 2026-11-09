@@ -1,6 +1,7 @@
 // components/HeroSection.tsx
 import Image from "next/image";
 import Link from "next/link";
+import { clashDisplay } from "../fonts";
 
 const partnerLogos = [
   { name: "LOCO", src: "/home/Logo (1).png" },
@@ -40,7 +41,7 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center py-8 lg:py-12">
           {/* LEFT COLUMN — Name + Rating */}
           <div className="lg:col-span-4 flex flex-col justify-center z-10">
-            <h1 className="whitespace-nowrap text-[clamp(3rem,8vw,6.5rem)] font-bold leading-[0.95] tracking-tight text-gray-900">
+            <h1 className={`${clashDisplay.className} clash-display font-clash whitespace-nowrap text-[clamp(3rem,8vw,6.5rem)] font-medium leading-[0.95] tracking-tight text-gray-900`}>
               MEGAN
               <br />
               <span className="inline-block pl-8 lg:pl-16 xl:pl-20">
@@ -110,7 +111,7 @@ export default function HeroSection() {
             <div className="mt-8">
               <Link
                 href="/work-with-me"
-                className="inline-flex items-center gap-2 rounded-full bg-[#FFFFFF] pl-5 pr-2 py-1.5 text-sm font-medium text-[#D4A373] shadow-[0_4px_14px_rgba(0,0,0,0.12)] transition-all duration-300 hover:bg-[#b8936a] hover:shadow-[0_6px_20px_rgba(0,0,0,0.18)]"
+                className="inline-flex items-center gap-2 rounded-full bg-[#FFFFFF] pl-5 pr-2 py-1.5 text-sm font-medium text-[#D4A373] hover:text-[#FFFFFF] shadow-[0_4px_14px_rgba(0,0,0,0.12)] transition-all duration-300 hover:bg-[#D4A373] hover:shadow-[0_6px_20px_rgba(0,0,0,0.18)]"
               >
                 Work With Me
                 <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#D4A373] text-[#FFFFFF] shadow-lg">
