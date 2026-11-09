@@ -3,10 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 const partnerLogos = [
-  { name: "LOCO", src: "/home/Logo (1).webp" },
-  { name: "Infinity", src: "/home/Logo (2).webp" },
-  { name: "N", src: "/home/Logo (3).webp" },
-  { name: "IPSUM", src: "/home/Logo (4).webp" },
+  { name: "LOCO", src: "/home/Logo (1).png" },
+  { name: "Infinity", src: "/home/Logo (2).png" },
+  { name: "N", src: "/home/Logo (3).png" },
+  { name: "IPSUM", src: "/home/Logo (4).png" },
 ];
 
 const clientAvatars = [
@@ -18,7 +18,7 @@ const clientAvatars = [
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-white pt-24 pb-0">
+    <section className="relative overflow-hidden bg-white pt-40 lg:pt-60 pb-20 lg:pb-32">
       {/* Subtle curved background arc at bottom */}
       <div className="absolute bottom-0 left-0 right-0 h-[300px] pointer-events-none">
         <svg
@@ -35,11 +35,12 @@ export default function HeroSection() {
         </svg>
       </div>
 
-      <div className="relative mx-auto max-w-[1400px] px-6 lg:px-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center min-h-[calc(100vh-96px)]">
-          {/* LEFT COLUMN — Name + Rating (sits BEHIND the image) */}
+      <div className="relative mx-auto max-w-[1500px] px-6 lg:px-10">
+        {/* Grid with balanced vertical spacing */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center py-8 lg:py-12">
+          {/* LEFT COLUMN — Name + Rating */}
           <div className="lg:col-span-4 flex flex-col justify-center z-10">
-            <h1 className="whitespace-nowrap text-[clamp(3rem,8vw,6.5rem)] font-normal leading-[0.95] tracking-tight text-gray-900">
+            <h1 className="whitespace-nowrap text-[clamp(3rem,8vw,6.5rem)] font-bold leading-[0.95] tracking-tight text-gray-900">
               MEGAN
               <br />
               <span className="inline-block pl-8 lg:pl-16 xl:pl-20">
@@ -48,52 +49,52 @@ export default function HeroSection() {
             </h1>
 
             {/* Rating Block */}
-<div className="mt-10 flex flex-col items-start gap-3">
-  {/* Overlapping Avatars (on top) */}
-  <div className="flex -space-x-1.5">
-    {clientAvatars.map((avatar, i) => (
-      <div
-        key={i}
-        className="relative h-10 w-10 rounded-full border-2 border-white overflow-hidden"
-      >
-        <Image
-          src={avatar}
-          alt={`Client ${i + 1}`}
-          fill
-          className="object-cover"
-          sizes="40px"
-        />
-      </div>
-    ))}
-  </div>
+            <div className="mt-10 flex flex-col items-start gap-3">
+              {/* Overlapping Avatars */}
+              <div className="flex -space-x-3.5">
+                {clientAvatars.map((avatar, i) => (
+                  <div
+                    key={i}
+                    className="relative h-10 w-10 rounded-full border-2 border-white overflow-hidden"
+                  >
+                    <Image
+                      src={avatar}
+                      alt={`Client ${i + 1}`}
+                      fill
+                      className="object-cover"
+                      sizes="40px"
+                    />
+                  </div>
+                ))}
+              </div>
 
-  {/* Rating number + text (below) */}
-  <div className="flex items-center gap-4">
-    <span className="text-[72px] font-medium leading-none tracking-tight text-[#2b2b2b]">
-      4.8/5
-    </span>
-    <span className="text-xl font-normal leading-snug text-[#3a3a3a]">
-      500+ Happy
-      <br />
-      Client Worldwide
-    </span>
-  </div>
-</div>
+              {/* Rating number + text */}
+              <div className="flex items-center gap-4">
+                <span className="text-[72px] font-bold leading-none tracking-tight text-[#2b2b2b]">
+                  4.8/5
+                </span>
+                <span className="text-xl font-normal leading-snug text-[#3a3a3a]">
+                  500+ Happy
+                  <br />
+                  Client Worldwide
+                </span>
+              </div>
+            </div>
           </div>
 
-          {/* CENTER COLUMN — Hero Image (bigger, shifted left, lifted slightly) */}
-<div className="relative lg:col-span-4 flex justify-center items-end lg:self-stretch z-20 order-first lg:order-none">
-  <div className="relative w-full max-w-[620px] lg:max-w-none lg:absolute lg:bottom-6 xl:bottom-10 lg:left-1/2 lg:w-[125%] lg:-translate-x-[58%] xl:-translate-x-[62%]">
-    <Image
-      src="/home/hero.webp"
-      alt="Megan Manicom"
-      width={700}
-      height={850}
-      className="block w-full h-auto object-contain drop-shadow-2xl"
-      priority
-    />
-  </div>
-</div>
+          {/* CENTER COLUMN — Hero Image (Pushed further down) */}
+          <div className="relative lg:col-span-4 flex justify-center items-end lg:self-stretch z-20 order-first lg:order-none">
+            <div className="relative w-full max-w-[620px] lg:max-w-none lg:absolute lg:-bottom-12 xl:-bottom-30 lg:left-1/2 lg:w-[125%] lg:-translate-x-[58%] xl:-translate-x-[62%]">
+              <Image
+                src="/home/hero.webp"
+                alt="Megan Manicom"
+                width={700}
+                height={850}
+                className="block w-full h-auto object-contain drop-shadow-2xl"
+                priority
+              />
+            </div>
+          </div>
 
           {/* RIGHT COLUMN — Bio + CTA + Partners */}
           <div className="lg:col-span-4 flex flex-col justify-center z-20">
@@ -109,10 +110,10 @@ export default function HeroSection() {
             <div className="mt-8">
               <Link
                 href="/work-with-me"
-                className="inline-flex items-center gap-2 rounded-full bg-[#C9A47A] pl-5 pr-2 py-1.5 text-sm font-medium text-white shadow-[0_4px_14px_rgba(0,0,0,0.12)] transition-all duration-300 hover:bg-[#b8936a] hover:shadow-[0_6px_20px_rgba(0,0,0,0.18)]"
+                className="inline-flex items-center gap-2 rounded-full bg-[#FFFFFF] pl-5 pr-2 py-1.5 text-sm font-medium text-[#D4A373] shadow-[0_4px_14px_rgba(0,0,0,0.12)] transition-all duration-300 hover:bg-[#b8936a] hover:shadow-[0_6px_20px_rgba(0,0,0,0.18)]"
               >
                 Work With Me
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#C9A47A] shadow-sm">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#D4A373] text-[#FFFFFF] shadow-lg">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-4 w-4"
@@ -142,7 +143,7 @@ export default function HeroSection() {
               </div>
 
               {/* Partner Logos */}
-              <div className="flex items-center justify-center gap-8 opacity-60">
+              <div className="flex items-center justify-center gap-5">
                 {partnerLogos.map((logo) => (
                   <div
                     key={logo.name}
