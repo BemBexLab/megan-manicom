@@ -1,14 +1,13 @@
-// components/HeroSection.tsx
-import Image from "next/image";
+﻿import Image from "next/image";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
-import { clashDisplay } from "../app/fonts";
+import "./Hero.css";
 
 const partnerLogos = [
-  { name: "LOCO", src: "/home/Logo (1).png" },
-  { name: "Infinity", src: "/home/Logo (2).png" },
-  { name: "N", src: "/home/Logo (3).png" },
-  { name: "IPSUM", src: "/home/Logo (4).png" },
+  { name: "LOCO", src: "/home/Logo (4).png", width: 112, height: 26 },
+  { name: "Infinity", src: "/home/Logo (1).png", width: 50, height: 20 },
+  { name: "N", src: "/home/Logo (2).png", width: 33, height: 28 },
+  { name: "IPSUM", src: "/home/Logo (3).png", width: 108, height: 26 },
 ];
 
 const clientAvatars = [
@@ -20,137 +19,75 @@ const clientAvatars = [
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-white pt-20 lg:pt-60">
-      {/* Subtle curved background arc at bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-[300px] pointer-events-none">
-        <svg
-          viewBox="0 0 1440 300"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-full"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0 300 C360 100, 720 0, 1080 50 C1260 75, 1380 150, 1440 200 L1440 300 L0 300 Z"
-            fill="#F5F5F5"
+    <section className="hero-section" aria-labelledby="hero-title">
+      <div className="hero-frame">
+        <div className="hero-arc" aria-hidden="true" />
+        <h1 id="hero-title" className="hero-title clash-display">
+          <span>MEGAN</span>
+          <span>MANICOM</span>
+        </h1>
+
+        <div className="hero-portrait">
+          <Image
+            src="/home/hero.webp"
+            alt="Megan Manicom"
+            width={739}
+            height={852}
+            sizes="(min-width: 1500px) 570px, (min-width: 1024px) 38vw, (min-width: 640px) 420px, 380px"
+            className="hero-portrait-image"
+            preload
           />
-        </svg>
-      </div>
+        </div>
 
-      <div className="relative mx-auto max-w-[1500px] px-6 lg:px-10">
-        {/* Changed py-8 to pt-0 pb-8 to remove top padding on mobile grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-0 pb-8 lg:py-12">
-          {/* LEFT COLUMN — Name + Rating */}
-          <div className="lg:col-span-4 flex flex-col justify-center z-10">
-            <h1 className={`${clashDisplay.className} clash-display font-clash whitespace-nowrap text-[clamp(3rem,8vw,6.5rem)] font-medium leading-[0.95] tracking-tight text-gray-900`}>
-              MEGAN
-              <br />
-              <span className="inline-block pl-8 lg:pl-16 xl:pl-20">
-                MANICOM
-              </span>
-            </h1>
+        <div className="hero-intro urbanist">
+          <p>
+            I&apos;m Megan Manicom, a social media marketing specialist helping
+            authors, coaches, creators, and growing brands build visibility
+            through clear content, launch planning, and audience-focused strategy.
+          </p>
+          <Link href="/work-with-me" className="hero-cta">
+            Work With Me
+            <span className="hero-cta-icon">
+              <FiArrowUpRight aria-hidden="true" size={18} />
+            </span>
+          </Link>
+        </div>
 
-            {/* Rating Block */}
-            <div className="mt-10 flex flex-col items-start gap-3">
-              {/* Overlapping Avatars */}
-              <div className="flex -space-x-3.5">
-                {clientAvatars.map((avatar, i) => (
-                  <div
-                    key={i}
-                    className="relative h-10 w-10 rounded-full border-2 border-white overflow-hidden"
-                  >
-                    <Image
-                      src={avatar}
-                      alt={`Client ${i + 1}`}
-                      fill
-                      className="object-cover"
-                      sizes="40px"
-                    />
-                  </div>
-                ))}
-              </div>
-
-              {/* Rating number + text */}
-              <div className="flex items-center gap-4">
-                <span className="text-[72px] font-bold leading-none tracking-tight text-[#2b2b2b]">
-                  4.8/5
-                </span>
-                <span className="text-xl font-normal leading-snug text-[#3a3a3a]">
-                  500+ Happy
-                  <br />
-                  Client Worldwide
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* CENTER COLUMN — Hero Image */}
-          {/* Added justify-start for mobile, lg:justify-center for desktop */}
-          <div className="relative lg:col-span-4 flex justify-start lg:justify-center items-center lg:items-end lg:self-stretch z-20 order-first lg:order-none mb-6 lg:mb-0">
-            <div className="relative w-full max-w-[620px] lg:max-w-none lg:absolute lg:-bottom-12 xl:-bottom-30 lg:left-1/2 lg:w-[125%] lg:-translate-x-[58%] xl:-translate-x-[62%]">
+        <div className="hero-rating urbanist">
+          <div className="hero-avatars" aria-hidden="true">
+            {clientAvatars.map((avatar) => (
               <Image
-                src="/home/hero.webp"
-                alt="Megan Manicom"
-                width={700}
-                height={850}
-                // Added -ml-8 to pull image left on mobile, lg:mx-auto keeps it centered on desktop
-                className="block w-full h-auto -ml-8 lg:mx-auto object-contain drop-shadow-2xl"
-                priority
+                key={avatar}
+                src={avatar}
+                alt=""
+                width={40}
+                height={40}
+                sizes="40px"
+                className="hero-avatar"
               />
-            </div>
+            ))}
           </div>
-
-          {/* RIGHT COLUMN — Bio + CTA + Partners */}
-          <div className="lg:col-span-4 flex flex-col justify-center z-20">
-            {/* Bio Text */}
-            <p className="text-base leading-relaxed text-gray-600 max-w-md">
-              I&apos;m Megan Manicom, a social media marketing specialist
-              helping authors, coaches, creators, and growing brands build
-              visibility through clear content, launch planning, and
-              audience-focused strategy.
+          <div className="hero-rating-details">
+            <span className="hero-score">4.8/5</span>
+            <p className="hero-rating-caption">
+              500+ Happy<br />Client Worldwide
             </p>
+          </div>
+        </div>
 
-            {/* CTA Button */}
-            <div className="mt-8">
-              <Link
-                href="/work-with-me"
-                className="inline-flex items-center gap-2 rounded-full bg-[#FFFFFF] pl-5 pr-2 py-1.5 text-sm font-medium text-[#D4A373] hover:text-[#FFFFFF] shadow-[0_4px_14px_rgba(0,0,0,0.12)] transition-all duration-300 hover:bg-[#D4A373] hover:shadow-[0_6px_20px_rgba(0,0,0,0.18)]"
-              >
-                Work With Me
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#C9A47A] shadow-sm">
-                  <FiArrowUpRight size={18} />
-                </span>
-              </Link>
-            </div>
-
-            {/* Trusted Partners */}
-            <div className="mt-16 lg:mt-24">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="h-px flex-1 bg-gray-300" />
-                <span className="text-sm font-medium text-gray-500 whitespace-nowrap">
-                  Our Trusted Partners
-                </span>
-                <div className="h-px flex-1 bg-gray-300" />
-              </div>
-
-              {/* Partner Logos */}
-              <div className="flex items-center justify-center gap-5">
-                {partnerLogos.map((logo) => (
-                  <div
-                    key={logo.name}
-                    className="flex items-center justify-center h-8"
-                  >
-                    <Image
-                      src={logo.src}
-                      alt={logo.name}
-                      width={60}
-                      height={32}
-                      className="h-8 w-auto object-contain"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
+        <div className="hero-partners urbanist">
+          <p className="hero-partners-heading">Our Trusted Partners</p>
+          <div className="hero-partner-logos">
+            {partnerLogos.map((logo) => (
+              <Image
+                key={logo.name}
+                src={logo.src}
+                alt={logo.name}
+                width={logo.width}
+                height={logo.height}
+                className="hero-partner-logo"
+              />
+            ))}
           </div>
         </div>
       </div>

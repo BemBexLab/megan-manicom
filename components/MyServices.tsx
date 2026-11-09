@@ -40,8 +40,8 @@ export default function ServicesSection() {
           <div className="flex flex-col">
             {/* Label */}
             <div className="flex items-center gap-2.5">
-              <span className="h-3 w-3 rounded-full border-2 border-[#D9A066] clash-display font-clash" />
-              <span className="text-sm text-gray-500">My Services</span>
+              <span className="h-4 w-4 rounded-full border-3 border-[#D9A066]" />
+              <span className="text-[16px] text-[#777777] urbanist">My Services</span>
             </div>
 
             {/* Heading */}
@@ -50,7 +50,7 @@ export default function ServicesSection() {
             </h2>
 
             {/* Paragraph */}
-            <p className="mt-6 max-w-[500px] text-sm leading-relaxed text-[#777777]">
+            <p className="urbanist mt-6 max-w-[550px] text-[16px] leading-relaxed text-[#777777]">
               From social media strategy to engaging content creation, I offer
               creative services that help brands connect with their audience
               and grow their online presence.
@@ -107,7 +107,7 @@ export default function ServicesSection() {
                     <span className="w-6 text-base font-normal">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <span className="text-lg font-medium sm:text-[19px]">
+                    <span className="text-lg clash-display font-medium sm:text-[19px]">
                       {service.title}
                     </span>
                   </button>
@@ -121,7 +121,7 @@ export default function ServicesSection() {
                     }`}
                   >
                     <div className="overflow-hidden">
-                      <p className="max-w-[500px] pb-6 pl-11 text-sm leading-relaxed text-gray-500">
+                      <p className="urbanist max-w-[650px] pb-6 pl-11 text-[16px] leading-relaxed text-[#777777]">
                         {service.text}
                       </p>
                     </div>

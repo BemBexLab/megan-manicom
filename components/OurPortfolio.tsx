@@ -82,10 +82,10 @@ export default function OurPortfolio() {
               Portfolio
             </span>
           </div>
-          <h2 className="clash-display mt-3 text-balance text-[clamp(2rem,4.2vw,2.75rem)] font-medium leading-[1.12] text-[#282828]">
+          <h2 className="clash-display my-2 max-w-full break-words text-balance text-[2rem] sm:text-[clamp(2.25rem,4.2vw,3.5rem)] font-medium leading-tight text-[#282828]">
             Creative Work That Speaks Volumes
           </h2>
-          <p className="urbanist mx-auto mt-3 max-w-5xl text-[16px] leading-[1.6] text-[#777777]">
+          <p className="urbanist mx-auto mt-3 max-w-7xl text-[16px] leading-[1.6] text-[#777777]">
             A collection of social media campaigns, creative visuals, and content
             designed to make brands stand out. Explore how I turn fresh ideas
             into engaging digital experiences.
