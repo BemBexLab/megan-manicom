@@ -1,6 +1,7 @@
 // components/HeroSection.tsx
 import Image from "next/image";
 import Link from "next/link";
+import { GoArrowUpRight } from "react-icons/go";
 
 const partnerLogos = [
   { name: "LOCO", src: "/home/Logo (1).webp" },
@@ -113,20 +114,7 @@ export default function HeroSection() {
               >
                 Work With Me
                 <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#C9A47A] shadow-sm">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-4 w-4"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2.5}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M7 17L17 7M17 7H7M17 7V17"
-                    />
-                  </svg>
+                  <GoArrowUpRight size={18} />
                 </span>
               </Link>
             </div>

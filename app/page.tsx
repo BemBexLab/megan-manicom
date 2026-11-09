@@ -1,6 +1,7 @@
-import AboutSection from "./components/AboutMe";
-import HeroSection from "./components/Hero";
-import ServicesSection from "./components/MyServices";
+import AboutSection from "@/components/AboutMe";
+import HeroSection from "@/components/Hero";
+import MyCreativeProcess from "@/components/MyCreativeProcess";
+import ServicesSection from "@/components/MyServices";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <ServicesSection />
+      <MyCreativeProcess />
     </section>
   );
 }
