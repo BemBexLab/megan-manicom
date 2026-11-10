@@ -29,7 +29,33 @@ export default function Home() {
       />
       <OurPortfolio />
       <CustomerTestimonials />
-      <FAQs />
+      <FAQs
+        eyebrowText="FAQs"
+        heading="Got Questions? I've Got Answers!"
+        description="Everything you need to know about my creative services, working process, and how I can help bring your brand's vision to life."
+        questions={[
+          {
+            question: "What social media services do you offer?",
+            answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966.",
+          },
+          {
+            question: "How do you approach a new project?",
+            answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966.",
+          },
+          {
+            question: "Can you create content for different social media platforms?",
+            answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966.",
+          },
+          {
+            question: "Do you offer custom social media packages?",
+            answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966.",
+          },
+          {
+            question: "How long does it take to complete a project?",
+            answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966.",
+          },
+        ]}
+      />
       <ContactUs />
     </section>
   );

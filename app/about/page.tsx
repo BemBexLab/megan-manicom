@@ -41,7 +41,38 @@ const page = () => {
           ]}
         />
         <MyCreativeValues />
-        <FAQs />
+        <FAQs
+          eyebrowText="FAQs"
+          heading="Got Questions? I've Got Answers!"
+          description="Everything you need to know about my creative services, working process, and how I can help bring your brand's vision to life."
+          questions={[
+            {
+              question: "What types of projects do you work on?",
+              answer:
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966.",
+            },
+            {
+              question: "Do you work with first-time authors?",
+              answer:
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966.",
+            },
+            {
+              question: "Can I request a custom project?",
+              answer:
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966.",
+            },
+            {
+              question: "What should I include in my project inquiry?",
+              answer:
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966.",
+            },
+            {
+              question: "How do I get started?",
+              answer:
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966.",
+            },
+          ]}
+        />
         <ContactUs />
     </section>
   )

@@ -60,7 +60,38 @@ const page = () => {
           },
         ]}
       />
-      <FAQs />
+      <FAQs
+        eyebrowText="FAQs"
+        heading="Got Questions? I've Got Answers!"
+        description="Everything you need to know about my creative services, working process, and how I can help bring your brand's vision to life."
+        questions={[
+          {
+            question: "Can I see examples of your previous work?",
+            answer:
+              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966.",
+          },
+          {
+            question: "Do you offer customized solutions for each project?",
+            answer:
+              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966.",
+          },
+          {
+            question: "What is your creative process like?",
+            answer:
+              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966.",
+          },
+          {
+            question: "Can you handle both social media strategy and content creation?",
+            answer:
+              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966.",
+          },
+          {
+            question: "How can I start a project with you?",
+            answer:
+              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966.",
+          },
+        ]}
+      />
       <ContactUs />
     </section>
   );

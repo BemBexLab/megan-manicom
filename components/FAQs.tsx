@@ -3,51 +3,39 @@
 import { useState } from "react";
 import { FiPlus } from "react-icons/fi";
 
-const questions = [
-  {
-    question: "What social media services do you offer?",
-    answer:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry?s standard dummy text ever since 1966.",
-  },
-  {
-    question: "How do you approach a new project?",
-    answer:
-      "We begin by learning about your goals, audience, and brand. From there, I create a clear plan and work with you through each step of the project.",
-  },
-  {
-    question: "Can you create content for different social media platforms?",
-    answer:
-      "Yes. I tailor the content and creative direction to fit each platform while keeping your brand voice and message consistent.",
-  },
-  {
-    question: "Do you offer custom social media packages?",
-    answer:
-      "Every brand has different needs, so services can be combined into a package that fits your goals, schedule, and budget.",
-  },
-  {
-    question: "How long does it take to complete a project?",
-    answer:
-      "Timelines depend on the project scope. After our initial conversation, I?ll share a schedule with clear milestones and delivery dates.",
-  },
-];
+type FAQItem = {
+  question: string;
+  answer: string;
+};
 
-export default function FAQs() {
+type FAQsProps = {
+  eyebrowText: string;
+  heading: string;
+  description: string;
+  questions: FAQItem[];
+};
+
+export default function FAQs({
+  eyebrowText,
+  heading,
+  description,
+  questions,
+}: FAQsProps) {
   const [activeQuestion, setActiveQuestion] = useState(0);
 
   return (
-    <section className="w-full bg-[#FAFAFA] px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-[60px] 2xl:px-6">
+    <section aria-labelledby="faq-heading" className="w-full bg-[#FAFAFA] px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-[60px] 2xl:px-6">
       <div className="mx-auto grid w-full max-w-[1420px] grid-cols-1 gap-9 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16">
         <header className="lg:pt-1">
           <div className="flex items-center gap-2">
             <span className="h-4 w-4 rounded-full border-3 border-[#D4A373]" />
-            <span className="urbanist text-[16px] text-[#777777]">FAQs</span>
+            <span className="urbanist text-[16px] text-[#777777]">{eyebrowText}</span>
           </div>
-          <h2 className="clash-display my-2 max-w-full break-words text-balance text-[2rem] sm:text-[clamp(2.25rem,4.2vw,3.5rem)] font-medium leading-[1.05] text-[#282828]">
-            Got Questions? I&apos;ve Got Answers!
+          <h2 id="faq-heading" className="clash-display my-2 max-w-full break-words text-balance text-[2rem] sm:text-[clamp(2.25rem,4.2vw,3.5rem)] font-medium leading-[1.05] text-[#282828]">
+            {heading}
           </h2>
           <p className="urbanist mt-3 max-w-[470px] text-[16px] leading-[1.7] text-[#777777]">
-            Everything you need to know about my creative services, working
-            process, and how I can help bring your brand&apos;s vision to life.
+            {description}
           </p>
         </header>
 
