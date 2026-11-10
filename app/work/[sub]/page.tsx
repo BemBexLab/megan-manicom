@@ -37,7 +37,7 @@ const page = () => {
       <AboutTheProject
         eyebrowText="About The Project"
         heading="Building a Stronger Digital Presence."
-        imageSrc="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1800&q=90"
+        imageSrc="/5f3cfe8a922f3706cc0bf386d1fc679aed5030d9.webp"
         imageAlt="Laptop displaying a creative brand website on a workspace desk"
         description={[
           "Bloom & Co. is a lifestyle and wellness brand focused on promoting mindful living, self-care, and everyday well-being through thoughtfully curated products and experiences. The goal of this project was to establish a consistent and engaging social media presence that reflected the brand’s calming, nature-inspired identity while building meaningful connections with its wellness-conscious audience.",

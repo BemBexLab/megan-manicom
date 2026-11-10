@@ -7,42 +7,42 @@ const projects = [
     category: "Social Media Marketing",
     title: "Creating Content That Connects",
     image:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=85",
+      "/5f3cfe8a922f3706cc0bf386d1fc679aed5030d9.webp",
     imageAlt: "Laptop and phone on a creative workspace desk",
   },
   {
     category: "Ebook Design & Formatting",
     title: "Bringing Every Page to Life",
     image:
-      "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=1000&q=85",
+      "/547ad26614441f4e48ee3ef03e7b75e0bf59a408.webp",
     imageAlt: "Carefully designed book cover and pages",
   },
   {
     category: "Social Media Strategy",
     title: "Turning Ideas Into Impactful Strategies",
     image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=85",
+      "/3c9f5242ffe941cc07c5c01c35ea3ca9ce43ee6f.webp",
     imageAlt: "Digital marketing analytics on a computer screen",
   },
   {
     category: "Book Cover Design",
     title: "Making Every Story Stand Out",
     image:
-      "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1000&q=85",
+      "/2be2c57951af1f027336a8025ad175bf08161f4d.webp",
     imageAlt: "An open book among other books",
   },
   {
     category: "Author Branding",
     title: "Building a Memorable Identity",
     image:
-      "https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=1000&q=85",
+      "/f370d0a9467acf876add9030e5189e7664816bfe.webp",
     imageAlt: "A book cover held in front of a light background",
   },
   {
     category: "Illustration & Creative Design",
     title: "Turning Imagination Into Art",
     image:
-      "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=1000&q=85",
+      "/95aea43fab41f2258ac127c3a3f97d11dc60b2aa.webp",
     imageAlt: "Colorful artwork in a gallery",
   },
 ];
@@ -76,7 +76,7 @@ export default function ExploreMyWork() {
           </h2>
 
           <p className="urbanist mx-auto mt-0 max-w-[700px] text-[16px] leading-[1.6] text-[#777777] min-[850px]:text-[clamp(12px,1.17cqw,16px)]">
-            Every project tells a different story. From memorable book covers to engaging digital campaigns, here's a selection of work that brings creativity, purpose, and attention to detail together.
+            Every project tells a different story. From memorable book covers to engaging digital campaigns, here&apos;s a selection of work that brings creativity, purpose, and attention to detail together.
           </p>
         </header>
 
@@ -107,7 +107,7 @@ export default function ExploreMyWork() {
                 {projectDescription}
               </p>
               <Link
-                href="/work"
+                href="/work/sub-work"
                 className="urbanist mt-3 inline-flex w-fit items-center gap-3 text-[14px] leading-[1.4] text-[#D9B061] transition-colors hover:text-[#bd8957] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a36e3d] min-[850px]:mt-[0.82cqw] min-[850px]:gap-[0.62cqw] min-[850px]:text-[clamp(11px,1.17cqw,16px)]"
               >
                 Explore My Work

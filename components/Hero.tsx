@@ -29,7 +29,7 @@ export default function HeroSection() {
 
         <div className="hero-portrait">
           <Image
-            src="/home/hero.webp"
+            src="/9415e7633ca7fb19f274a37c18a548db84e9b88d.webp"
             alt="Megan Manicom"
             width={739}
             height={852}

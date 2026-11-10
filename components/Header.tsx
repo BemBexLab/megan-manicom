@@ -22,7 +22,7 @@ export default function Header() {
         <Link href="/" className="flex shrink-0 items-center gap-2">
           <span className="relative h-[60px] w-[60px] overflow-hidden rounded-full border border-[#282828]">
             <Image
-              src="/home/Face.webp"
+              src="/3d10acc26a868a5485f246941722d40e2d5993dc.webp"
               alt="Megan"
               fill
               className="object-cover"

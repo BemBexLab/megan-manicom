@@ -17,7 +17,7 @@ export default function Footer() {
           <Link href="/" className="flex items-center gap-3" aria-label="Megan Manicom home">
             <span className="relative h-[68px] w-[68px] shrink-0 overflow-hidden rounded-full border border-[#282828] sm:h-[84px] sm:w-[84px]">
               <Image
-                src="/home/Rectangle 3.webp"
+                src="/3d10acc26a868a5485f246941722d40e2d5993dc.webp"
                 alt="Megan Manicom"
                 fill
                 quality={100}

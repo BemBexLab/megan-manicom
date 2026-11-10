@@ -17,7 +17,7 @@ export default function AboutMe2() {
       <div className="mx-auto grid w-full max-w-[1420px] grid-cols-1 items-start gap-9 [container-type:inline-size] lg:grid-cols-[0.83fr_1fr] lg:gap-[9.5%]">
         <div className="relative mx-auto aspect-[442/496] w-full max-w-[520px] overflow-hidden rounded-[20px] bg-white lg:mx-0 lg:max-w-none">
           <Image
-            src="/home/Rectangle 3.webp"
+            src="/3d10acc26a868a5485f246941722d40e2d5993dc.webp"
             alt="Megan Manicom"
             fill
             quality={100}

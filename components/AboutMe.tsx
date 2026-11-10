@@ -63,7 +63,7 @@ export default function AboutSection() {
           <div className="relative mx-auto w-full max-w-[650px] lg:mx-0">
             <div className="relative aspect-[370/318] w-full overflow-hidden rounded-3xl bg-gradient-to-b from-white to-[#E9E9E9]">
               <Image
-                src="/home/Rectangle 3.webp"
+                src="/3d10acc26a868a5485f246941722d40e2d5993dc.webp"
                 alt="Megan Manicom"
                 fill
                 quality={100}
