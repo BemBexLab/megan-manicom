@@ -73,7 +73,7 @@ export default function MyCreativeProcess() {
       <div className="mx-auto w-full max-w-[1420px] lg:[container-type:inline-size]">
         <header className="mx-auto mb-0 w-full min-w-0 max-w-5xl text-center lg:max-w-none">
           <div className="flex items-center justify-center gap-2">
-            <span className="h-4 w-4 rounded-full border-3 border-[#D4A373] lg:h-[1.15cqw] lg:w-[1.15cqw] lg:border-2" />
+            <span className="h-4 w-4 rounded-full border-3 border-[#D4A373] lg:h-[1.15cqw] lg:w-[1.15cqw]" />
             <span className="urbanist text-sm font-light tracking-wide text-[#777777] sm:text-base lg:text-[clamp(14px,1.16cqw,17px)] lg:font-normal lg:tracking-normal">
               My Creative Process
             </span>

@@ -16,7 +16,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-white">
+    <header className="fixed rounded-b-4xl inset-x-0 top-0 z-50 bg-white">
       <div className="relative mx-auto flex h-[72px] w-full max-w-[1500px] items-center justify-between px-5 md:h-[90px] md:px-[5%]">
         <Link href="/" className="flex shrink-0 items-center gap-2">
           <span className="relative h-[60px] w-[60px] overflow-hidden rounded-full border border-[#282828]">
