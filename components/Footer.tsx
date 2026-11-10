@@ -17,9 +17,10 @@ export default function Footer() {
           <Link href="/" className="flex items-center gap-3" aria-label="Megan Manicom home">
             <span className="relative h-[68px] w-[68px] shrink-0 overflow-hidden rounded-full border border-[#282828] sm:h-[84px] sm:w-[84px]">
               <Image
-                src="/Face.png"
+                src="/home/Rectangle 3.webp"
                 alt="Megan Manicom"
                 fill
+                quality={100}
                 sizes="(max-width: 639px) 68px, 84px"
                 className="object-cover"
               />

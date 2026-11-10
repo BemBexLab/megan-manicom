@@ -1,6 +1,5 @@
 // components/AboutSection.tsx
 import Image from "next/image";
-import { clashDisplay } from "../app/fonts";
 
 const stats = [
   { value: "100+", label: "Projects Completed" },
@@ -67,8 +66,9 @@ export default function AboutSection() {
                 src="/home/Rectangle 3.webp"
                 alt="Megan Manicom"
                 fill
+                quality={100}
                 className="object-cover object-top"
-                sizes="(min-width: 1024px) 560px, 100vw"
+                sizes="(min-width: 1415px) 650px, (min-width: 1024px) 46vw, calc(100vw - 48px)"
               />
 
               {/* Stats overlay */}

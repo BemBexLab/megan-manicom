@@ -6,28 +6,28 @@ const projects = [
     category: "Social Media Design",
     title: "Social Media Campaigns",
     image:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=85",
+      "/f0c1a7f23b5187dbe6344c6429eadc4002ba0640.webp",
     alt: "Portrait for a social media campaign",
   },
   {
     category: "Brand Identity",
     title: "Building Brand Identities",
     image:
-      "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=900&q=85",
+      "/197b5ddca3219911529632c3c6086ed6bb832514.webp",
     alt: "Minimal branded product packaging",
   },
   {
     category: "Content Strategy",
     title: "Strategic Content",
     image:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=85",
+      "/0c2c7797fabb6552fe2de813d20747ddd623d7db.webp",
     alt: "Laptop displaying a digital workspace",
   },
   {
     category: "Ebook Design",
     title: "Stories Brought To Life",
     image:
-      "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=900&q=85",
+      "/af27d33222924e864c4b2a41a607007e90735646.webp",
     alt: "Books arranged as an editorial design collection",
   },
 ];

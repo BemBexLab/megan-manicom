@@ -5,13 +5,13 @@ import { useEffect, useRef, useState } from "react";
 import { FiArrowLeft, FiArrowRight, FiStar } from "react-icons/fi";
 
 const testimonials = [
-  { name: "John Doe", detail: "Lorem Ipsum", avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=96&q=80" },
-  { name: "Sarah Miller", detail: "Brand Founder", avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=96&q=80" },
-  { name: "Marcus Lee", detail: "Author", avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=96&q=80" },
-  { name: "Ava Johnson", detail: "Content Creator", avatar: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=96&q=80" },
-  { name: "Daniel Kim", detail: "Creative Director", avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=96&q=80" },
-  { name: "Olivia Brown", detail: "Small Business Owner", avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=96&q=80" },
-  { name: "Noah Williams", detail: "Coach", avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=96&q=80" },
+  { name: "John Doe", detail: "Lorem Ipsum", avatar: "/844706ea98766b3dcadd59521af580fdf5b9cfb7.webp" },
+  { name: "John Doe", detail: "Brand Founder", avatar: "/09ff1cf10a7376f0a3fad37aafdcf8255a4665ed.webp" },
+  { name: "John Doe", detail: "Author", avatar: "/54845759cbe20ac97afca20129b70d5fb0e351b6.webp" },
+  { name: "John Doe", detail: "Content Creator", avatar: "/38f76d47ebd8842273bdfbb591ae8d51d0b6f9d7.webp" },
+  { name: "John Doe", detail: "Creative Director", avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=96&q=80" },
+  { name: "John Doe", detail: "Small Business Owner", avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=96&q=80" },
+  { name: "John Doe", detail: "Coach", avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=96&q=80" },
   { name: "Mia Davis", detail: "Entrepreneur", avatar: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=96&q=80" },
 ];
 

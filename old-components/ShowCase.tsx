@@ -6,31 +6,31 @@ import { useState } from "react";
 const BOOKS = [
   {
     id: 1,
-    cover: "/books/man-of-light.jpg",
+    cover: "/books/man-of-light.webp",
     rotation: "-rotate-6",
     translate: "-translate-y-2",
   },
   {
     id: 2,
-    cover: "/books/dont-cut-grass.jpg",
+    cover: "/books/dont-cut-grass.webp",
     rotation: "rotate-0",
     translate: "translate-y-0",
   },
   {
     id: 3,
-    cover: "/books/growing-together.jpg",
+    cover: "/books/growing-together.webp",
     rotation: "rotate-6",
     translate: "-translate-y-3",
   },
   {
     id: 4,
-    cover: "/books/fresh-paths.jpg",
+    cover: "/books/fresh-paths.webp",
     rotation: "rotate-0",
     translate: "translate-y-0",
   },
   {
     id: 5,
-    cover: "/books/growing-together.jpg",
+    cover: "/books/growing-together.webp",
     rotation: "rotate-6",
     translate: "-translate-y-2",
   },

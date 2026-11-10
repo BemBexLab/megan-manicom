@@ -75,7 +75,7 @@ export default function MyExpertise() {
                 key={item.number}
                 className="relative min-h-[210px] bg-[length:100%_100%] bg-no-repeat px-5 pb-12 pt-4 [&:not(:first-child)]:-mt-6 sm:min-h-[220px] sm:px-7 lg:min-h-[15.96cqw] lg:px-[2.04cqw] lg:pb-[3.75cqw] lg:pt-[1.16cqw] lg:[&:not(:first-child)]:-mt-[3cqw]"
                 style={{
-                  backgroundImage: `url("${index % 2 === 0 ? "/Union.svg" : "/Union%20(1).svg"}")`,
+                  backgroundImage: `url("${index % 2 === 0 ? "/Union.webp" : "/Union%20(1).webp"}")`,
                 }}
               >
                 <span

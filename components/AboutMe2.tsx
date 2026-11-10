@@ -20,7 +20,7 @@ export default function AboutMe2() {
             src="/home/Rectangle 3.webp"
             alt="Megan Manicom"
             fill
-            unoptimized
+            quality={100}
             sizes="(min-width: 1578px) 583px, (min-width: 1024px) 37vw, (min-width: 568px) 520px, calc(100vw - 32px)"
             className="object-cover object-center"
           />

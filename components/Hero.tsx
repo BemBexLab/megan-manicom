@@ -1,13 +1,13 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 import "./Hero.css";
 
 const partnerLogos = [
-  { name: "LOCO", src: "/home/Logo (4).png", width: 112, height: 26 },
-  { name: "Infinity", src: "/home/Logo (1).png", width: 50, height: 20 },
-  { name: "N", src: "/home/Logo (2).png", width: 33, height: 28 },
-  { name: "IPSUM", src: "/home/Logo (3).png", width: 108, height: 26 },
+  { name: "LOCO", src: "/home/Logo (4).webp", width: 112, height: 26 },
+  { name: "Infinity", src: "/home/Logo (1).webp", width: 50, height: 20 },
+  { name: "N", src: "/home/Logo (2).webp", width: 33, height: 28 },
+  { name: "IPSUM", src: "/home/Logo (3).webp", width: 108, height: 26 },
 ];
 
 const clientAvatars = [

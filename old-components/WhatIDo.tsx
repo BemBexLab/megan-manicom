@@ -55,7 +55,7 @@ const WhatIDo = () => {
                 }`}
               >
                 <Image
-                  src="/Vector 1.svg"
+                  src="/Vector 1.webp"
                   alt=""
                   width={184}
                   height={186}
@@ -64,7 +64,7 @@ const WhatIDo = () => {
                 />
 
                 <Image
-                  src="/advertising-ad-browser--Streamline-Freehand.svg"
+                  src="/advertising-ad-browser--Streamline-Freehand.webp"
                   alt=""
                   width={73}
                   height={73}
@@ -90,7 +90,7 @@ const WhatIDo = () => {
                     className="relative inline-block h-3 w-5 shrink-0 sm:h-3.5 sm:w-6"
                   >
                     <Image
-                      src="/Mask group.svg"
+                      src="/Mask group.webp"
                       alt=""
                       fill
                       sizes="1.5rem"

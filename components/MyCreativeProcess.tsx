@@ -10,25 +10,25 @@ const stepPositions = [
 
 const connectors = [
   {
-    src: "/top-left.svg",
+    src: "/top-left.webp",
     width: 491,
     height: 261,
     className: "lg:left-[18.593%] lg:top-[14.865%] lg:w-[29.287%]",
   },
   {
-    src: "/top-right.svg",
+    src: "/top-right.webp",
     width: 491,
     height: 261,
     className: "lg:right-[18.593%] lg:top-[14.865%] lg:w-[29.287%]",
   },
   {
-    src: "/bottom-left.svg",
+    src: "/bottom-left.webp",
     width: 411,
     height: 180,
     className: "lg:left-[21.098%] lg:top-[48.649%] lg:w-[24.470%] lg:drop-shadow-[0_8px_10px_rgba(212,163,115,0.20)]",
   },
   {
-    src: "/bottom-right.svg",
+    src: "/bottom-right.webp",
     width: 491,
     height: 260,
     className: "lg:right-[18.593%] lg:top-[41.892%] lg:w-[29.287%]",
