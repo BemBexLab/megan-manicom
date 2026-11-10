@@ -12,9 +12,9 @@ const partnerLogos = [
 
 const clientAvatars = [
   "/home/Ellipse 5.webp",
-  "/home/Ellipse 6.webp",
   "/home/Ellipse 7.webp",
   "/home/Ellipse 8.webp",
+  "/home/Ellipse 6.webp",
 ];
 
 export default function HeroSection() {
@@ -29,11 +29,11 @@ export default function HeroSection() {
 
         <div className="hero-portrait">
           <Image
-            src="/9415e7633ca7fb19f274a37c18a548db84e9b88d.webp"
+            src="/image 1.png"
             alt="Megan Manicom"
-            width={739}
-            height={852}
-            sizes="(min-width: 1500px) 570px, (min-width: 1024px) 38vw, (min-width: 640px) 420px, 380px"
+            width={882}
+            height={857}
+            sizes="(min-width: 1500px) 690px, (min-width: 1024px) 46vw, (min-width: 640px) 443px, 453px"
             className="hero-portrait-image"
             preload
           />
@@ -62,7 +62,7 @@ export default function HeroSection() {
                 alt=""
                 width={40}
                 height={40}
-                sizes="40px"
+                sizes="(min-width: 1500px) 42px, (min-width: 1024px) 2.8vw, 36px"
                 className="hero-avatar"
               />
             ))}

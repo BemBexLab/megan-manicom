@@ -128,18 +128,18 @@ export default function ContactUs() {
           <div className="mt-10 flex flex-col gap-3">
             <a
               href="tel:+01234567890"
-              className="flex w-fit items-center gap-4 rounded-full text-[#777777] transition-colors hover:text-[#D9B061]"
+              className="group flex w-fit items-center gap-4 rounded-full text-[#777777] transition-colors hover:text-[#D9B061] focus-visible:rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a36e3d]"
             >
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#D9B061] text-[#282828]">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#D9B061] text-[#282828] transition-transform duration-200 group-hover:scale-105">
                 <FaPhoneAlt aria-hidden="true" size={14} />
               </span>
               <span className="urbanist text-[16px]">(0) 123 456 789 0</span>
             </a>
             <a
               href="mailto:info@meganmanicom.com"
-              className="flex w-fit items-center gap-4 rounded-full text-[#777777] transition-colors hover:text-[#D9B061]"
+              className="group flex w-fit items-center gap-4 rounded-full text-[#777777] transition-colors hover:text-[#D9B061] focus-visible:rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a36e3d]"
             >
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#D9B061] text-[#282828]">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#D9B061] text-[#282828] transition-transform duration-200 group-hover:scale-105">
                 <FaEnvelope aria-hidden="true" size={14} />
               </span>
               <span className="urbanist text-[16px]">info@meganmanicom.com</span>
@@ -220,7 +220,7 @@ export default function ContactUs() {
                 }}
                 onKeyDown={handleServiceKeyDown}
                 style={{ color: selectedService ? "#333333" : "#C6C6C6" }}
-                className={`flex ${fieldClassName} items-center justify-between text-left transition-colors ${
+                className={`flex ${fieldClassName} items-center justify-between text-left transition-colors hover:border-[#D9B061] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a36e3d] ${
                   isServiceOpen || serviceError
                     ? "border-[#D9B061] ring-1 ring-[#D9B061]/30"
                     : ""
@@ -294,13 +294,13 @@ export default function ContactUs() {
                 className="h-4 w-4 shrink-0 rounded-[3px] accent-[#D9B061]"
               />
               <span className="urbanist">
-                Submitting You Agree With <a href="/privacy-policy" className="hover:text-[#D9B061]">Privacy Policy</a> And <a href="/terms-of-service" className="hover:text-[#D9B061]">Terms Of Service.</a>
+                Submitting You Agree With <a href="/privacy-policy" className="transition-colors hover:text-[#A87932] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[#a36e3d]">Privacy Policy</a> And <a href="/terms-of-service" className="transition-colors hover:text-[#A87932] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[#a36e3d]">Terms Of Service.</a>
               </span>
             </label>
 
             <button
               type="submit"
-              className="urbanist mt-3 inline-flex w-fit items-center gap-2 rounded-full bg-[#D9B061] py-1.5 pl-4 pr-1.5 text-[16px] font-medium text-[#282828] shadow-[0_8px_18px_rgba(0,0,0,0.18)] transition-colors hover:bg-[#c69260]"
+              className="urbanist mt-3 inline-flex w-fit items-center gap-2 rounded-full bg-[#D9B061] py-1.5 pl-4 pr-1.5 text-[16px] font-medium text-[#282828] shadow-[0_8px_18px_rgba(0,0,0,0.18)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#c69260] hover:shadow-[0_11px_20px_rgba(0,0,0,0.2)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] active:translate-y-0"
             >
               Let&apos;s Get Connected
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#282828] text-lg leading-none text-[#D9B061]">

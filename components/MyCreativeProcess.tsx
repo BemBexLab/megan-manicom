@@ -119,7 +119,7 @@ export default function MyCreativeProcess({
           <div className="relative z-20 order-last flex justify-center py-3 sm:col-span-2 lg:absolute lg:left-1/2 lg:top-[50.811%] lg:order-none lg:-translate-x-1/2 lg:-translate-y-1/2 lg:py-0">
             <a
               href={buttonHref}
-              className="urbanist flex w-fit items-center justify-center gap-2 whitespace-nowrap rounded-full bg-[#D9B061] py-1.5 pl-3 pr-1.5 text-base font-medium text-[#282828] shadow-[0_8px_18px_rgba(0,0,0,0.18)] transition-colors hover:bg-[#c69260] lg:gap-[0.55cqw] lg:py-[0.58cqw] lg:pl-[1.16cqw] lg:pr-[0.58cqw] lg:text-[clamp(12px,1.16cqw,17px)] lg:font-normal"
+              className="urbanist flex w-fit items-center justify-center gap-2 whitespace-nowrap rounded-full bg-[#D9B061] py-1.5 pl-3 pr-1.5 text-base font-medium text-[#282828] shadow-[0_8px_18px_rgba(0,0,0,0.18)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#c69260] hover:shadow-[0_11px_20px_rgba(0,0,0,0.2)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] active:translate-y-0 lg:gap-[0.55cqw] lg:py-[0.58cqw] lg:pl-[1.16cqw] lg:pr-[0.58cqw] lg:text-[clamp(12px,1.16cqw,17px)] lg:font-normal"
             >
               {buttonLabel}
               <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#282828] text-lg leading-none text-[#D9B061] lg:h-[2.7cqw] lg:w-[2.7cqw]">

@@ -59,15 +59,15 @@ export default function FAQs({
                   aria-expanded={isOpen}
                   aria-controls={answerId}
                   onClick={() => setActiveQuestion(isOpen ? -1 : index)}
-                  className="flex w-full min-w-0 items-center gap-4 text-left"
+                  className="group flex w-full min-w-0 items-center gap-4 text-left focus-visible:rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a36e3d]"
                 >
                   <span className="clash-display w-5 shrink-0 text-[16px] font-medium leading-none text-[#282828]">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <span className="clash-display min-w-0 flex-1 text-[18px] font-medium leading-[1.35] text-[#282828] 2xl:text-[20px]">
+                  <span className="clash-display min-w-0 flex-1 text-[18px] font-medium leading-[1.35] text-[#282828] transition-colors duration-200 group-hover:text-[#A87932] 2xl:text-[20px]">
                     {item.question}
                   </span>
-                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#D9B061] text-white">
+                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#D9B061] text-white transition-transform duration-200 group-hover:scale-110">
                     <FiPlus
                       aria-hidden="true"
                       size={14}

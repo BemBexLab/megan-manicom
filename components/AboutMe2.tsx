@@ -85,7 +85,7 @@ export default function AboutMe2() {
 
           <Link
             href="/work"
-            className="urbanist mt-6 inline-flex items-center gap-2 rounded-full bg-[#D9B061] py-1.5 pl-3 pr-1.5 text-[13px] font-normal text-[#282828] shadow-[0_7px_14px_rgba(0,0,0,0.18)] transition-colors hover:bg-[#cba151] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] lg:text-[clamp(12px,1.17cqw,16px)]"
+            className="urbanist mt-6 inline-flex items-center gap-2 rounded-full bg-[#D9B061] py-1.5 pl-3 pr-1.5 text-[13px] font-normal text-[#282828] shadow-[0_7px_14px_rgba(0,0,0,0.18)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#cba151] hover:shadow-[0_10px_18px_rgba(0,0,0,0.2)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] active:translate-y-0 lg:text-[clamp(12px,1.17cqw,16px)]"
           >
             Explore My Work
             <span className="flex h-[26px] w-[26px] shrink-0 items-center justify-center rounded-full bg-[#282828] text-[#D9B061]">

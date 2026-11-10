@@ -137,7 +137,7 @@ export default function CustomerTestimonials() {
                 aria-label="Previous testimonials"
                 onClick={() => slide(-1)}
                 disabled={!canScrollPrevious}
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#D9B061] transition-opacity hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] disabled:cursor-not-allowed disabled:opacity-60"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#D9B061] transition-all duration-200 hover:scale-105 hover:bg-[#FCF7EE] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] disabled:cursor-not-allowed disabled:hover:scale-100 disabled:opacity-60"
               >
                 <FiArrowLeft aria-hidden="true" size={24} strokeWidth={1} />
               </button>
@@ -146,7 +146,7 @@ export default function CustomerTestimonials() {
                 aria-label="Next testimonials"
                 onClick={() => slide(1)}
                 disabled={!canScrollNext}
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#D9B061] transition-opacity hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] disabled:cursor-not-allowed disabled:opacity-60"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#D9B061] transition-all duration-200 hover:scale-105 hover:bg-[#FCF7EE] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] disabled:cursor-not-allowed disabled:hover:scale-100 disabled:opacity-60"
               >
                 <FiArrowRight aria-hidden="true" size={24} strokeWidth={1} />
               </button>

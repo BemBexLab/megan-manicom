@@ -108,10 +108,10 @@ export default function ExploreMyWork() {
               </p>
               <Link
                 href="/work/sub-work"
-                className="urbanist mt-3 inline-flex w-fit items-center gap-3 text-[14px] leading-[1.4] text-[#D9B061] transition-colors hover:text-[#bd8957] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a36e3d] min-[850px]:mt-[0.82cqw] min-[850px]:gap-[0.62cqw] min-[850px]:text-[clamp(11px,1.17cqw,16px)]"
+                className="urbanist group mt-3 inline-flex w-fit items-center gap-3 text-[14px] leading-[1.4] text-[#D9B061] transition-colors hover:text-[#bd8957] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a36e3d] min-[850px]:mt-[0.82cqw] min-[850px]:gap-[0.62cqw] min-[850px]:text-[clamp(11px,1.17cqw,16px)]"
               >
                 Explore My Work
-                <FiArrowRight aria-hidden="true" className="text-[19px] min-[850px]:text-[1.45cqw]" />
+                <FiArrowRight aria-hidden="true" className="text-[19px] transition-transform duration-200 group-hover:translate-x-1 min-[850px]:text-[1.45cqw]" />
               </Link>
             </article>
           ))}

@@ -62,10 +62,10 @@ function ProjectCard({
       </p>
       <a
         href="/contact"
-        className="urbanist mt-3 inline-flex items-center gap-3 text-[14px] text-[#D9B061] transition-colors hover:text-[#bd8957] pb-1"
+        className="urbanist group mt-3 inline-flex items-center gap-3 pb-1 text-[14px] text-[#D9B061] transition-colors hover:text-[#bd8957] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a36e3d]"
       >
         Explore My Work
-        <FiArrowRight aria-hidden="true" className="text-[19px]" />
+        <FiArrowRight aria-hidden="true" className="text-[19px] transition-transform duration-200 group-hover:translate-x-1" />
       </a>
     </article>
   );
@@ -104,7 +104,7 @@ export default function OurPortfolio() {
         <div className="mt-6 flex justify-center">
           <a
             href="/portfolio"
-            className="urbanist inline-flex items-center gap-2 rounded-full bg-[#D9B061] py-1.5 pl-4 pr-1.5 text-[16px] font-medium text-[#282828] shadow-[0_8px_16px_rgba(0,0,0,0.2)] transition-colors hover:bg-[#c69260]"
+            className="urbanist inline-flex items-center gap-2 rounded-full bg-[#D9B061] py-1.5 pl-4 pr-1.5 text-[16px] font-medium text-[#282828] shadow-[0_8px_16px_rgba(0,0,0,0.2)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#c69260] hover:shadow-[0_11px_20px_rgba(0,0,0,0.22)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] active:translate-y-0"
           >
             View All Projects
             <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#282828] text-lg leading-none text-[#D9B061]">

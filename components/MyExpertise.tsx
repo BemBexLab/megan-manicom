@@ -56,7 +56,7 @@ export default function MyExpertise() {
 
             <Link
               href="/work"
-              className="urbanist mt-7 inline-flex w-fit items-center gap-2 rounded-full bg-[#D9B061] py-1.5 pl-3 pr-1.5 text-sm text-[#282828] shadow-[0_8px_12px_rgba(0,0,0,0.18)] transition-colors hover:bg-[#cba151] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] lg:mt-[2.35cqw] lg:gap-[0.66cqw] lg:py-[0.56cqw] lg:pl-[1.13cqw] lg:pr-[0.56cqw] lg:text-[clamp(12px,1.13cqw,16px)]"
+              className="urbanist mt-7 inline-flex w-fit items-center gap-2 rounded-full bg-[#D9B061] py-1.5 pl-3 pr-1.5 text-sm text-[#282828] shadow-[0_8px_12px_rgba(0,0,0,0.18)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#cba151] hover:shadow-[0_11px_17px_rgba(0,0,0,0.2)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] active:translate-y-0 lg:mt-[2.35cqw] lg:gap-[0.66cqw] lg:py-[0.56cqw] lg:pl-[1.13cqw] lg:pr-[0.56cqw] lg:text-[clamp(12px,1.13cqw,16px)]"
             >
               Discover My Services
               <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#282828] text-[#D9B061] lg:h-[2.63cqw] lg:w-[2.63cqw]">

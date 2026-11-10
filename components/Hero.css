@@ -2,7 +2,7 @@
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding-top: 80px;
+  padding-top: 72px;
   background: #fff;
   color: #282828;
 }
@@ -63,7 +63,7 @@
   width: auto;
   max-width: none;
   height: 100%;
-  transform: translateX(-64%);
+  transform: translateX(-59%);
 }
 
 .hero-intro {
@@ -81,26 +81,27 @@
 .hero-cta {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  min-height: 44px;
+  gap: 6px;
   margin-top: 20px;
   padding: 6px 6px 6px 14px;
   border-radius: 999px;
   background: #282828;
   color: #D9B061;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1;
   box-shadow: 0 6px 10px rgb(0 0 0 / 16%);
   transition: background-color 180ms, color 180ms;
 }
 
-.hero-cta:hover { background: #f8f2ec; color: #D9B061; }
+.hero-cta:hover { background: #404040; color: #e6c27b; }
 .hero-cta:focus-visible { outline: 2px solid #D9B061; outline-offset: 4px; }
 
 .hero-cta-icon {
   display: grid;
   place-items: center;
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   flex-shrink: 0;
   border-radius: 50%;
   background: #D9B061;
@@ -117,8 +118,8 @@
 
 .hero-avatars { display: flex; margin-bottom: 8px; }
 .hero-avatar {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   border: 1px solid #fff;
   border-radius: 50%;
   object-fit: cover;
@@ -126,13 +127,13 @@
 .hero-avatar + .hero-avatar { margin-left: -10px; }
 .hero-rating-details { display: flex; align-items: center; gap: 16px; }
 .hero-score {
-  font-size: 52px;
+  font-size: 58px;
   font-weight: 600;
   line-height: 1;
   letter-spacing: 0;
   white-space: nowrap;
 }
-.hero-rating-caption { font-size: 14px; line-height: 1.4; }
+.hero-rating-caption { font-size: 16px; line-height: 1.4; }
 
 .hero-partners {
   grid-area: partners;
@@ -147,7 +148,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.4;
   white-space: nowrap;
 }
@@ -166,7 +167,13 @@
   gap: clamp(12px, 2vw, 22px);
   margin-top: 20px;
 }
-.hero-partner-logo { width: auto; height: 16px; object-fit: contain; }
+.hero-partner-logo { width: auto; height: 18px; object-fit: contain; }
+.hero-partner-logo:nth-child(2) { height: 14px; }
+.hero-partner-logo:nth-child(3) { height: 20px; }
+
+@media (min-width: 768px) {
+  .hero-section { padding-top: 90px; }
+}
 
 @media (min-width: 640px) and (max-width: 1023px) {
   .hero-frame {
@@ -180,30 +187,30 @@
     font-size: clamp(40px, 6.3vw, 64px);
     text-align: left;
   }
-  .hero-portrait { height: 100%; min-height: 430px; overflow: visible; }
+  .hero-portrait { height: 100%; min-height: 430px; }
   .hero-intro { align-self: start; text-align: left; }
   .hero-rating { justify-self: start; }
 }
 
 /* Scale the desktop composition as one canvas, keeping its overlaps aligned. */
 @media (min-width: 1024px) {
-  .hero-frame { display: block; aspect-ratio: 1192 / 552; padding: 0; }
-  .hero-arc { top: 58%; width: 150vw; height: 200%; border-radius: 50%; }
+  .hero-frame { display: block; aspect-ratio: 1298 / 605; padding: 0; }
+  .hero-arc { top: 58%; width: 150%; height: 200%; border-radius: 50%; }
   .hero-title {
     position: absolute;
-    top: 24.5%;
-    left: 5%;
-    font-size: 7.35cqw;
-    line-height: 1.1;
+    top: 25.8%;
+    left: 5.15%;
+    font-size: 7.4cqw;
+    line-height: 1.08;
     letter-spacing: 0;
     text-align: left;
   }
-  .hero-title span + span { padding-left: 0.3em; }
+  .hero-title span + span { padding-left: 0.27em; }
   .hero-portrait {
     position: absolute;
     bottom: 0;
-    left: 26.5%;
-    width: 38.6%;
+    left: 22.85%;
+    width: 46%;
     height: auto;
     overflow: visible;
   }
@@ -216,18 +223,29 @@
   }
   .hero-intro {
     position: absolute;
-    top: 28%;
+    top: 28.5%;
     right: 5%;
-    left: 62.7%;
+    left: 62.65%;
     max-width: none;
-    font-size: clamp(14px, 1.25cqw, 18px);
+    font-size: clamp(14px, 1.25cqw, 18.75px);
+    line-height: 1.72;
     text-align: left;
   }
   .hero-rating { position: absolute; bottom: 6%; left: 5%; margin: 0; }
-  .hero-avatar { width: clamp(28px, 2.7cqw, 40px); height: clamp(28px, 2.7cqw, 40px); }
-  .hero-score { font-size: 4.7cqw; }
-  .hero-rating-caption { font-size: clamp(13px, 1.2cqw, 17px); }
-  .hero-partners { position: absolute; right: 5%; bottom: 8%; width: 29%; max-width: none; }
-  .hero-partners-heading { font-size: clamp(13px, 1.2cqw, 17px); }
-  .hero-partner-logo { height: clamp(14px, 1.35cqw, 22px); }
+  .hero-avatar { width: 2.8cqw; height: 2.8cqw; }
+  .hero-avatar + .hero-avatar { margin-left: -1.05cqw; }
+  .hero-avatars { margin-bottom: 0.9cqw; }
+  .hero-rating-details { gap: 1.3cqw; }
+  .hero-score { font-size: 4.62cqw; }
+  .hero-rating-caption { font-size: 1.25cqw; }
+  .hero-partners { position: absolute; right: 5%; bottom: 7.3%; width: 29%; max-width: none; }
+  .hero-partners-heading { font-size: 1.25cqw; }
+  .hero-partner-logos { gap: 1.8cqw; margin-top: 1.8cqw; }
+  .hero-partner-logo { height: 1.35cqw; }
+  .hero-partner-logo:nth-child(2) { height: 1.08cqw; }
+  .hero-partner-logo:nth-child(3) { height: 1.54cqw; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-cta { transition: none; }
 }
