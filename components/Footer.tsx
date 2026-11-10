@@ -67,13 +67,13 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col items-center justify-between gap-3 border-t border-[#DADADA] py-5 text-center sm:flex-row sm:text-left">
-          <p className="urbanist text-[16px] text-[#777777]">
+          <p className="archivo text-[16px] text-[#777777]">
             © 2026 · Megan Manicom · All Rights Reserved
           </p>
           <nav aria-label="Legal links" className="flex items-center gap-3">
             <Link
               href="/privacy-policy"
-              className="urbanist text-[16px] text-[#777777] transition-colors hover:text-[#D4A373]"
+              className="archivo text-[16px] text-[#777777] transition-colors hover:text-[#D4A373]"
             >
               Privacy Policy
             </Link>
@@ -82,7 +82,7 @@ export default function Footer() {
             </span>
             <Link
               href="/terms-of-service"
-              className="urbanist text-[16px] text-[#777777] transition-colors hover:text-[#D4A373]"
+              className="archivo text-[16px] text-[#777777] transition-colors hover:text-[#D4A373]"
             >
               Terms &amp; Conditions
             </Link>

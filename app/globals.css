@@ -193,3 +193,7 @@ body {
 .font-clash {
   font-family: var(--font-clash-display), "Clash Display", sans-serif !important;
 }
+
+.archivo {
+  font-family: var(--font-archivo), sans-serif;
+}

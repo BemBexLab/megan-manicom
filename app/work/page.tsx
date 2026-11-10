@@ -1,4 +1,5 @@
 import ContactUs from "@/components/ContactUs";
+import ExploreMyWork from "@/components/ExploreMyWork";
 import FAQs from "@/components/FAQs";
 import MyCreativeProcess from "@/components/MyCreativeProcess";
 import PageHero from "@/components/PageHero";
@@ -33,6 +34,7 @@ const page = () => {
           { name: "IPSUM", src: "/home/Logo (3).png", width: 108, height: 26 },
         ]}
       />
+      <ExploreMyWork />
       <MyCreativeProcess
         eyebrowText="My Creative Process"
         heading="From Ideas To Real Impact"
