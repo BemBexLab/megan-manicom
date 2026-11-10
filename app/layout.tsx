@@ -34,6 +34,8 @@ export const metadata: Metadata = {
     "Megan Manicom helps authors, coaches, creators, and growing brands build visibility through social media marketing, content, and thoughtful strategy.",
 };
 
+export const ensureStatic = "navigation";
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
