@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 
@@ -35,7 +35,7 @@ export default function Footer() {
                 <li key={item.label}>
                   <Link
                     href={item.href}
-                    className="urbanist text-[16px] text-[#777777] transition-colors hover:text-[#D4A373]"
+                    className="urbanist text-[16px] text-[#777777] transition-colors hover:text-[#D9B061]"
                   >
                     {item.label}
                   </Link>
@@ -50,7 +50,7 @@ export default function Footer() {
               target="_blank"
               rel="noreferrer"
               aria-label="Facebook"
-              className="flex h-8 w-8 items-center justify-center rounded-full bg-[#D4A373] text-white transition-colors hover:bg-[#c69260]"
+              className="flex h-8 w-8 items-center justify-center rounded-full bg-[#D9B061] text-[#282828] transition-colors hover:bg-[#c69260]"
             >
               <FaFacebookF aria-hidden="true" size={15} />
             </a>
@@ -59,7 +59,7 @@ export default function Footer() {
               target="_blank"
               rel="noreferrer"
               aria-label="Instagram"
-              className="flex h-8 w-8 items-center justify-center rounded-full bg-[#D4A373] text-white transition-colors hover:bg-[#c69260]"
+              className="flex h-8 w-8 items-center justify-center rounded-full bg-[#D9B061] text-[#282828] transition-colors hover:bg-[#c69260]"
             >
               <FaInstagram aria-hidden="true" size={15} />
             </a>
@@ -73,7 +73,7 @@ export default function Footer() {
           <nav aria-label="Legal links" className="flex items-center gap-3">
             <Link
               href="/privacy-policy"
-              className="archivo text-[16px] text-[#777777] transition-colors hover:text-[#D4A373]"
+              className="archivo text-[16px] text-[#777777] transition-colors hover:text-[#D9B061]"
             >
               Privacy Policy
             </Link>
@@ -82,7 +82,7 @@ export default function Footer() {
             </span>
             <Link
               href="/terms-of-service"
-              className="archivo text-[16px] text-[#777777] transition-colors hover:text-[#D4A373]"
+              className="archivo text-[16px] text-[#777777] transition-colors hover:text-[#D9B061]"
             >
               Terms &amp; Conditions
             </Link>

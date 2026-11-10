@@ -81,9 +81,12 @@ export default function MyCreativeProcess({
   return (
     <section className="w-full min-w-0 overflow-hidden bg-[#FBFBFB] px-4 py-12 sm:px-6 sm:py-14 lg:px-4 lg:py-14">
       <div className="mx-auto w-full max-w-[1420px] lg:[container-type:inline-size]">
-        <header className="mx-auto mb-0 w-full min-w-0 max-w-5xl text-center lg:max-w-none">
+        <header className="mx-auto mb-9 w-full min-w-0 max-w-5xl text-center lg:max-w-none">
           <div className="flex items-center justify-center gap-2">
-            <span className="h-4 w-4 rounded-full border-3 border-[#D4A373] lg:h-[1.15cqw] lg:w-[1.15cqw]" />
+            <span
+              aria-hidden="true"
+              className="h-[9px] w-[9px] rounded-full border-3 border-[#282828] bg-[#D9B061] min-[850px]:h-[0.95cqw] min-[850px]:w-[0.95cqw]"
+            />
             <span className="urbanist text-sm font-light tracking-wide text-[#777777] sm:text-base lg:text-[clamp(14px,1.16cqw,17px)] lg:font-normal lg:tracking-normal">
               {eyebrowText}
             </span>
@@ -91,7 +94,7 @@ export default function MyCreativeProcess({
           <h2 className="clash-display my-2 max-w-full break-words text-balance text-[2rem] font-medium leading-tight text-[#282828] sm:text-[clamp(2.25rem,4.2vw,3.5rem)] lg:mt-[1.25cqw] lg:mb-[1.06cqw] lg:text-[clamp(2.25rem,3.82cqw,3.5rem)]">
             {heading}
           </h2>
-          <p className="urbanist mx-auto mb-10 w-full max-w-5xl px-2 text-[16px] leading-[1.6] text-[#777777] lg:mb-0 lg:max-w-[46.25cqw] lg:text-[clamp(12px,1.16cqw,17px)] lg:leading-[1.7]">
+          <p className="urbanist mx-auto mb-10 w-full max-w-5xl px-2 text-[16px] leading-[1.6] text-[#777777] lg:mb-0 lg:max-w-[54.25cqw] lg:text-[clamp(12px,1.16cqw,17px)] lg:leading-[1.7]">
             {text}
           </p>
         </header>
@@ -116,10 +119,10 @@ export default function MyCreativeProcess({
           <div className="relative z-20 order-last flex justify-center py-3 sm:col-span-2 lg:absolute lg:left-1/2 lg:top-[50.811%] lg:order-none lg:-translate-x-1/2 lg:-translate-y-1/2 lg:py-0">
             <a
               href={buttonHref}
-              className="urbanist flex w-fit items-center justify-center gap-2 whitespace-nowrap rounded-full bg-[#D4A373] py-1.5 pl-3 pr-1.5 text-base font-medium text-white shadow-[0_8px_18px_rgba(0,0,0,0.18)] transition-colors hover:bg-[#c69260] lg:gap-[0.55cqw] lg:py-[0.58cqw] lg:pl-[1.16cqw] lg:pr-[0.58cqw] lg:text-[clamp(12px,1.16cqw,17px)] lg:font-normal"
+              className="urbanist flex w-fit items-center justify-center gap-2 whitespace-nowrap rounded-full bg-[#D9B061] py-1.5 pl-3 pr-1.5 text-base font-medium text-[#282828] shadow-[0_8px_18px_rgba(0,0,0,0.18)] transition-colors hover:bg-[#c69260] lg:gap-[0.55cqw] lg:py-[0.58cqw] lg:pl-[1.16cqw] lg:pr-[0.58cqw] lg:text-[clamp(12px,1.16cqw,17px)] lg:font-normal"
             >
               {buttonLabel}
-              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white text-lg leading-none text-[#D4A373] lg:h-[2.7cqw] lg:w-[2.7cqw]">
+              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#282828] text-lg leading-none text-[#D9B061] lg:h-[2.7cqw] lg:w-[2.7cqw]">
                 <FiArrowUpRight aria-hidden="true" size={18} className="lg:h-[1.74cqw] lg:w-[1.74cqw]" />
               </span>
             </a>

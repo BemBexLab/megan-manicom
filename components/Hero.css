@@ -85,16 +85,16 @@
   margin-top: 20px;
   padding: 6px 6px 6px 14px;
   border-radius: 999px;
-  background: #fff;
-  color: #d4a373;
+  background: #282828;
+  color: #D9B061;
   font-size: 16px;
   line-height: 1;
   box-shadow: 0 6px 10px rgb(0 0 0 / 16%);
   transition: background-color 180ms, color 180ms;
 }
 
-.hero-cta:hover { background: #f8f2ec; color: #a36e3d; }
-.hero-cta:focus-visible { outline: 2px solid #a36e3d; outline-offset: 4px; }
+.hero-cta:hover { background: #f8f2ec; color: #D9B061; }
+.hero-cta:focus-visible { outline: 2px solid #D9B061; outline-offset: 4px; }
 
 .hero-cta-icon {
   display: grid;
@@ -103,8 +103,8 @@
   height: 28px;
   flex-shrink: 0;
   border-radius: 50%;
-  background: #d4a373;
-  color: #fff;
+  background: #D9B061;
+  color: #282828;
 }
 
 .hero-rating {

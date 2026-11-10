@@ -22,7 +22,7 @@ export default function HeroSection() {
     <section className="hero-section" aria-labelledby="hero-title">
       <div className="hero-frame">
         <div className="hero-arc" aria-hidden="true" />
-        <h1 id="hero-title" className="hero-title clash-display">
+        <h1 id="hero-title" className="hero-title text-[#282828] clash-display">
           <span>MEGAN</span>
           <span>MANICOM</span>
         </h1>
@@ -68,15 +68,15 @@ export default function HeroSection() {
             ))}
           </div>
           <div className="hero-rating-details">
-            <span className="hero-score">4.8/5</span>
-            <p className="hero-rating-caption">
+            <span className="hero-score text-[#282828]">4.8/5</span>
+            <p className="hero-rating-caption text-[#282828]">
               500+ Happy<br />Client Worldwide
             </p>
           </div>
         </div>
 
         <div className="hero-partners urbanist">
-          <p className="hero-partners-heading">Our Trusted Partners</p>
+          <p className="hero-partners-heading text-[#282828]">Our Trusted Partners</p>
           <div className="hero-partner-logos">
             {partnerLogos.map((logo) => (
               <Image

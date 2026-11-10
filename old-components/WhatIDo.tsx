@@ -41,7 +41,7 @@ const WhatIDo = () => {
           <p className="urbanist px-4 text-center text-[clamp(0.6875rem,1.6vw,0.875rem)] uppercase leading-none tracking-[0.08em] text-[#FF5C05]">
             What I Do
           </p>
-          <h2 className="refuseniks text-balance px-4 pt-2 text-center text-[clamp(1.375rem,4.5vw,2.25rem)] font-semibold uppercase leading-[1.1] text-white">
+          <h2 className="refuseniks text-balance px-4 pt-2 text-center text-[clamp(1.375rem,4.5vw,2.25rem)] font-semibold uppercase leading-[1.1] text-[#282828]">
             What I Can Do for You.
           </h2>
 
@@ -50,7 +50,7 @@ const WhatIDo = () => {
             {SERVICES.map((service, index) => (
               <article
                 key={service.title}
-                className={`relative isolate flex h-full min-h-[10.5rem] flex-col overflow-hidden rounded-[10px] bg-[#5A1F1F] p-4 text-white sm:min-h-[11.5rem] sm:p-5 lg:min-h-[14rem] lg:p-6 ${
+                className={`relative isolate flex h-full min-h-[10.5rem] flex-col overflow-hidden rounded-[10px] bg-[#5A1F1F] p-4 text-[#282828] sm:min-h-[11.5rem] sm:p-5 lg:min-h-[14rem] lg:p-6 ${
                   index % 3 === 1 ? "lg:translate-y-6" : ""
                 }`}
               >
@@ -76,13 +76,13 @@ const WhatIDo = () => {
                   {service.title}
                 </h3>
 
-                <p className="urbanist mt-1.5 max-w-full text-[0.8125rem] leading-[1.45] text-white/75 sm:max-w-[92%] sm:text-sm lg:mt-2 lg:max-w-[88%] lg:text-[0.9375rem]">
+                <p className="urbanist mt-1.5 max-w-full text-[0.8125rem] leading-[1.45] text-[#282828]/75 sm:max-w-[92%] sm:text-sm lg:mt-2 lg:max-w-[88%] lg:text-[0.9375rem]">
                   {service.description}
                 </p>
 
                 <a
                   href="#contact"
-                  className="urbanist mt-auto inline-flex items-center gap-1.5 self-start border-b border-white/40 pt-4 pb-1.5 text-[0.8125rem] font-medium leading-none text-white/90 underline-offset-[3px] transition-colors hover:border-[#FF5C05] hover:text-[#FF5C05] sm:text-sm"
+                  className="urbanist mt-auto inline-flex items-center gap-1.5 self-start border-b border-white/40 pt-4 pb-1.5 text-[0.8125rem] font-medium leading-none text-[#282828]/90 underline-offset-[3px] transition-colors hover:border-[#FF5C05] hover:text-[#FF5C05] sm:text-sm"
                 >
                   Learn More
                   <span

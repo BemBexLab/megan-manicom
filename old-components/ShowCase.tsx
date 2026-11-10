@@ -58,7 +58,7 @@ const Showcase = () => {
             ← Selected Work →
           </p>
 
-          <h2 className="refuseniks mt-4 text-3xl font-bold uppercase leading-[1.1] text-white sm:mt-6 sm:text-4xl md:text-5xl lg:text-6xl">
+          <h2 className="refuseniks mt-4 text-3xl font-bold uppercase leading-[1.1] text-[#282828] sm:mt-6 sm:text-4xl md:text-5xl lg:text-6xl">
             A Showcase of
             <br />
             Creativity & Passion.
@@ -118,7 +118,7 @@ const Showcase = () => {
             <button
               onClick={handlePrev}
               aria-label="Previous book"
-              className="flex h-9 w-9 items-center justify-center rounded-full bg-[#FF5C05] text-white shadow-lg transition-all hover:scale-110 hover:bg-[#FF7A33] active:scale-95 sm:h-10 sm:w-10"
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-[#FF5C05] text-[#282828] shadow-lg transition-all hover:scale-110 hover:bg-[#FF7A33] active:scale-95 sm:h-10 sm:w-10"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -137,7 +137,7 @@ const Showcase = () => {
             <button
               onClick={handleNext}
               aria-label="Next book"
-              className="flex h-9 w-9 items-center justify-center rounded-full bg-[#FF5C05] text-white shadow-lg transition-all hover:scale-110 hover:bg-[#FF7A33] active:scale-95 sm:h-10 sm:w-10"
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-[#FF5C05] text-[#282828] shadow-lg transition-all hover:scale-110 hover:bg-[#FF7A33] active:scale-95 sm:h-10 sm:w-10"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

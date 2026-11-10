@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { FiArrowUpRight } from "react-icons/fi";
 
 const navLinks = [
@@ -34,31 +35,16 @@ export default function Header() {
           </span>
         </Link>
 
-        <nav
-          aria-label="Main navigation"
-          className="urbanist absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center rounded-full bg-[#D4A373] p-[2px] shadow-[0_5px_12px_rgba(0,0,0,0.16)] md:flex"
-        >
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className={`flex h-9 items-center justify-center rounded-full text-[14px] font-normal transition-colors ${
-                link.name === "Home"
-                  ? "bg-white px-3 text-[#D4A373] shadow-sm"
-                  : "px-[22px] text-white hover:bg-white/10"
-              }`}
-            >
-              {link.name}
-            </Link>
-          ))}
-        </nav>
+        <Suspense fallback={<DesktopNavigationFallback />}>
+          <DesktopNavigation />
+        </Suspense>
 
         <Link
-          href="/work-with-me"
-          className="urbanist hidden h-12 shrink-0 items-center gap-2 rounded-full bg-[#D4A373] py-1 pl-4 pr-1.5 text-[14px] font-normal text-white shadow-[0_5px_12px_rgba(0,0,0,0.16)] transition-colors hover:bg-[#c69260] md:inline-flex"
+          href="/contact"
+          className="urbanist hidden h-12 shrink-0 items-center gap-2 rounded-full bg-[#D9B061] py-1 pl-4 pr-1.5 text-[14px] font-normal text-[#282828] shadow-[0_5px_12px_rgba(0,0,0,0.16)] transition-colors hover:bg-[#c69260] md:inline-flex"
         >
           Work With Me
-          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#D4A373]">
+          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#282828] text-[#D9B061]">
             <FiArrowUpRight aria-hidden="true" size={22} />
           </span>
         </Link>
@@ -89,12 +75,67 @@ export default function Header() {
         </button>
       </div>
 
-      {isMenuOpen && <MobileMenu />}
+      {isMenuOpen && (
+        <Suspense fallback={<MobileMenuFallback />}>
+          <MobileMenu />
+        </Suspense>
+      )}
     </header>
   );
 }
 
-function MobileMenu() {
+function DesktopNavigationFallback() {
+  return (
+    <nav
+      aria-label="Main navigation"
+      className="urbanist absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center rounded-full bg-[#D9B061] p-[2px] shadow-[0_5px_12px_rgba(0,0,0,0.16)] md:flex"
+    >
+      {navLinks.map((link) => (
+        <Link
+          key={link.name}
+          href={link.href}
+          className="flex h-9 items-center justify-center rounded-full px-[22px] text-[14px] font-medium text-[#282828]"
+        >
+          {link.name}
+        </Link>
+      ))}
+    </nav>
+  );
+}
+
+function DesktopNavigation() {
+  const pathname = usePathname();
+
+  return (
+    <nav
+      aria-label="Main navigation"
+      className="urbanist absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center rounded-full bg-[#D9B061] p-[2px] shadow-[0_5px_12px_rgba(0,0,0,0.16)] md:flex"
+    >
+      {navLinks.map((link) => {
+        const isActive =
+          pathname === link.href ||
+          (link.href !== "/" && pathname.startsWith(`${link.href}/`));
+
+        return (
+          <Link
+            key={link.name}
+            href={link.href}
+            aria-current={isActive ? "page" : undefined}
+            className={`flex h-9 items-center justify-center rounded-full text-[14px] font-normal transition-colors ${
+              isActive
+                ? "bg-[#282828] font-medium px-3 text-[#D9B061] shadow-sm"
+                : "px-[22px] font-medium text-[#282828] hover:bg-white/10"
+            }`}
+          >
+            {link.name}
+          </Link>
+        );
+      })}
+    </nav>
+  );
+}
+
+function MobileMenuFallback() {
   return (
     <div
       id="mobile-navigation"
@@ -105,21 +146,55 @@ function MobileMenu() {
           <Link
             key={link.name}
             href={link.href}
-            className={`rounded-lg px-4 py-3 text-sm font-medium transition-colors ${
-              link.name === "Home"
-                ? "bg-[#D4A373]/10 text-[#D4A373]"
-                : "text-gray-700 hover:bg-gray-50"
-            }`}
+            className="rounded-lg px-4 py-3 text-sm font-medium text-[#282828]"
           >
             {link.name}
           </Link>
         ))}
+      </nav>
+    </div>
+  );
+}
+
+function MobileMenu() {
+  const pathname = usePathname();
+
+  return (
+    <div
+      id="mobile-navigation"
+      className="border-t border-gray-100 bg-white px-5 py-4 md:hidden"
+    >
+      <nav aria-label="Mobile navigation" className="flex flex-col gap-1">
+        {navLinks.map((link) => (
+          (() => {
+            const isActive =
+              pathname === link.href ||
+              (link.href !== "/" && pathname.startsWith(`${link.href}/`));
+
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                aria-current={isActive ? "page" : undefined}
+                className={`rounded-lg px-4 py-3 text-sm font-medium transition-colors ${
+                  isActive
+                  ? "bg-[#282828] text-[#D9B061] shadow-sm"
+                    : "text-[#282828] hover:bg-[#D9B061]/20"
+                }`}
+              >
+                {link.name}
+              </Link>
+            );
+          })()
+        ))}
         <Link
           href="/work-with-me"
-          className="urbanist mt-3 flex items-center justify-center gap-2 rounded-full bg-[#D4A373] px-6 py-3 text-sm font-medium text-white shadow-md transition-colors hover:bg-[#c69260]"
+          className="urbanist mt-3 flex items-center justify-center gap-2 rounded-full bg-[#D9B061] px-6 py-3 text-sm font-medium text-[#282828] shadow-md transition-colors hover:bg-[#c9a04e]"
         >
           Work With Me
-          <FiArrowUpRight aria-hidden="true" size={18} />
+          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#282828] text-[#D9B061]">
+            <FiArrowUpRight aria-hidden="true" size={18} />
+          </span>
         </Link>
       </nav>
     </div>

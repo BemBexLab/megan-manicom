@@ -54,7 +54,7 @@ export default function Header() {
         {/* ── Desktop CTA Button ── */}
 <Link
   href="/contact"
-  className="hidden rounded-full bg-[#FF5C05] px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all hover:bg-[#d4521f] hover:shadow-md md:inline-flex md:items-center md:gap-2"
+  className="hidden rounded-full bg-[#FF5C05] px-6 py-3 text-sm font-semibold text-[#282828] shadow-sm transition-all hover:bg-[#d4521f] hover:shadow-md md:inline-flex md:items-center md:gap-2"
 >
   Work With Me
   <Image
@@ -113,7 +113,7 @@ export default function Header() {
             <Link
               href="/contact"
               onClick={() => setMobileOpen(false)}
-              className="flex w-full items-center justify-center gap-1.5 rounded-full bg-[#FF5C05] px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all hover:bg-[#d4521f]"
+              className="flex w-full items-center justify-center gap-1.5 rounded-full bg-[#FF5C05] px-6 py-3 text-sm font-semibold text-[#282828] shadow-sm transition-all hover:bg-[#d4521f]"
             >
               Work With Me <Image
     src="/cta-element.webp" // ← replace with your icon image path

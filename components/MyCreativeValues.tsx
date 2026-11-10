@@ -46,7 +46,7 @@ export default function MyCreativeValues() {
           <div className="flex items-center gap-2">
             <span
               aria-hidden="true"
-              className="h-4 w-4 rounded-full border-3 border-[#D4A373]"
+              className="h-[9px] w-[9px] rounded-full border-3 border-[#282828] bg-[#D9B061] min-[850px]:h-[0.95cqw] min-[850px]:w-[0.95cqw]"
             />
             <span className="urbanist text-[16px] text-[#777777]">
               My Creative Values
@@ -66,10 +66,10 @@ export default function MyCreativeValues() {
 
           <Link
             href="/contact"
-            className="urbanist mt-8 inline-flex items-center gap-2 rounded-full bg-[#D4A373] py-1.5 pl-4 pr-1.5 text-[16px] font-medium text-white shadow-[0_7px_14px_rgba(0,0,0,0.18)] transition-colors hover:bg-[#c69260] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a36e3d] lg:mt-[36px]"
+            className="urbanist mt-8 inline-flex items-center gap-2 rounded-full bg-[#D9B061] py-1.5 pl-4 pr-1.5 text-[16px] font-medium text-[#282828] shadow-[0_7px_14px_rgba(0,0,0,0.18)] transition-colors hover:bg-[#cba151] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] lg:mt-[36px]"
           >
             Let&apos;s Create Together
-            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white text-[#D4A373]">
+            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#282828] text-[#D9B061]">
               <FiArrowUpRight aria-hidden="true" size={16} />
             </span>
           </Link>
@@ -96,7 +96,7 @@ export default function MyCreativeValues() {
                   <span
                     className={`flex h-10 w-10 items-center justify-center rounded-full border text-[15px] transition-colors ${
                       isActive
-                        ? "border-[#D4A373] bg-[#D4A373] text-white shadow-[0_4px_8px_rgba(0,0,0,0.12)]"
+                        ? "border-[#D9B061] bg-[#D9B061] text-[#FFFFFF] shadow-[0_4px_8px_rgba(0,0,0,0.12)]"
                         : "border-[#E7E7E7] bg-[#FCFCFC] text-[#282828]"
                     }`}
                   >
@@ -132,7 +132,7 @@ export default function MyCreativeValues() {
               onClick={() => setActiveIndex((current) => Math.max(0, current - 1))}
               disabled={activeIndex === 0}
               aria-label="Previous value"
-              className="flex h-[34px] w-[34px] items-center justify-center rounded-full bg-[#D4A373] text-white transition-colors hover:bg-[#c69260] disabled:cursor-not-allowed disabled:bg-[#E6C5A2]"
+              className="flex h-[34px] w-[34px] items-center justify-center rounded-full bg-[#D9B061] text-[#FFFFFF] transition-colors hover:bg-[#cba151] disabled:cursor-not-allowed disabled:bg-[#E6C5A2]"
             >
               <FiArrowLeft aria-hidden="true" size={18} />
             </button>
@@ -143,7 +143,7 @@ export default function MyCreativeValues() {
               }
               disabled={activeIndex === values.length - 1}
               aria-label="Next value"
-              className="flex h-[34px] w-[34px] items-center justify-center rounded-full bg-[#D4A373] text-white transition-colors hover:bg-[#c69260] disabled:cursor-not-allowed disabled:bg-[#E6C5A2]"
+              className="flex h-[34px] w-[34px] items-center justify-center rounded-full bg-[#D9B061] text-[#FFFFFF] transition-colors hover:bg-[#cba151] disabled:cursor-not-allowed disabled:bg-[#E6C5A2]"
             >
               <FiArrowRight aria-hidden="true" size={18} />
             </button>

@@ -5,7 +5,7 @@ import { FiArrowUpRight, FiChevronDown } from "react-icons/fi";
 import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 
 const fieldClassName =
-  "h-[42px] w-full rounded-[13px] border border-[#C8C8C8] bg-transparent px-3 text-[13px] text-[#333333] outline-none placeholder:text-[#C6C6C6] focus:border-[#D4A373] focus:ring-1 focus:ring-[#D4A373]/30";
+  "h-[42px] w-full rounded-[13px] border border-[#C8C8C8] bg-transparent px-3 text-[13px] text-[#333333] outline-none placeholder:text-[#C6C6C6] focus:border-[#D9B061] focus:ring-1 focus:ring-[#D9B061]/30";
 
 const services = [
   { value: "social-media", label: "Social Media Management" },
@@ -108,7 +108,10 @@ export default function ContactUs() {
       <div className="mx-auto grid w-full max-w-[1420px] grid-cols-1 gap-10 sm:gap-12 lg:grid-cols-2 lg:gap-16">
         <div className="flex min-w-0 flex-col">
           <div className="flex items-center gap-2">
-            <span className="h-4 w-4 rounded-full border-3 border-[#D4A373]" />
+            <span
+              aria-hidden="true"
+              className="h-[9px] w-[9px] rounded-full border-3 border-[#282828] bg-[#D9B061] min-[850px]:h-[0.95cqw] min-[850px]:w-[0.95cqw]"
+            />
             <span className="urbanist text-[16px] text-[#777777]">Contact Us</span>
           </div>
 
@@ -125,18 +128,18 @@ export default function ContactUs() {
           <div className="mt-10 flex flex-col gap-3">
             <a
               href="tel:+01234567890"
-              className="flex w-fit items-center gap-4 rounded-full text-[#777777] transition-colors hover:text-[#D4A373]"
+              className="flex w-fit items-center gap-4 rounded-full text-[#777777] transition-colors hover:text-[#D9B061]"
             >
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#D4A373] text-white">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#D9B061] text-[#282828]">
                 <FaPhoneAlt aria-hidden="true" size={14} />
               </span>
               <span className="urbanist text-[16px]">(0) 123 456 789 0</span>
             </a>
             <a
               href="mailto:info@meganmanicom.com"
-              className="flex w-fit items-center gap-4 rounded-full text-[#777777] transition-colors hover:text-[#D4A373]"
+              className="flex w-fit items-center gap-4 rounded-full text-[#777777] transition-colors hover:text-[#D9B061]"
             >
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#D4A373] text-white">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#D9B061] text-[#282828]">
                 <FaEnvelope aria-hidden="true" size={14} />
               </span>
               <span className="urbanist text-[16px]">info@meganmanicom.com</span>
@@ -219,7 +222,7 @@ export default function ContactUs() {
                 style={{ color: selectedService ? "#333333" : "#C6C6C6" }}
                 className={`flex ${fieldClassName} items-center justify-between text-left transition-colors ${
                   isServiceOpen || serviceError
-                    ? "border-[#D4A373] ring-1 ring-[#D4A373]/30"
+                    ? "border-[#D9B061] ring-1 ring-[#D9B061]/30"
                     : ""
                 }`}
               >
@@ -276,7 +279,7 @@ export default function ContactUs() {
             </div>
 
             <textarea
-              className="h-[97px] w-full resize-none rounded-[13px] border border-[#C8C8C8] bg-transparent px-3 py-3 text-[13px] text-[#333333] outline-none placeholder:text-[#C6C6C6] focus:border-[#D4A373] focus:ring-1 focus:ring-[#D4A373]/30"
+              className="h-[97px] w-full resize-none rounded-[13px] border border-[#C8C8C8] bg-transparent px-3 py-3 text-[13px] text-[#333333] outline-none placeholder:text-[#C6C6C6] focus:border-[#D9B061] focus:ring-1 focus:ring-[#D9B061]/30"
               name="message"
               placeholder="Message"
               aria-label="Message"
@@ -288,19 +291,19 @@ export default function ContactUs() {
                 type="checkbox"
                 name="agreeToTerms"
                 required
-                className="h-4 w-4 shrink-0 rounded-[3px] accent-[#D4A373]"
+                className="h-4 w-4 shrink-0 rounded-[3px] accent-[#D9B061]"
               />
               <span className="urbanist">
-                Submitting You Agree With <a href="/privacy-policy" className="hover:text-[#D4A373]">Privacy Policy</a> And <a href="/terms-of-service" className="hover:text-[#D4A373]">Terms Of Service.</a>
+                Submitting You Agree With <a href="/privacy-policy" className="hover:text-[#D9B061]">Privacy Policy</a> And <a href="/terms-of-service" className="hover:text-[#D9B061]">Terms Of Service.</a>
               </span>
             </label>
 
             <button
               type="submit"
-              className="urbanist mt-3 inline-flex w-fit items-center gap-2 rounded-full bg-[#D4A373] py-1.5 pl-4 pr-1.5 text-[16px] font-medium text-white shadow-[0_8px_18px_rgba(0,0,0,0.18)] transition-colors hover:bg-[#c69260]"
+              className="urbanist mt-3 inline-flex w-fit items-center gap-2 rounded-full bg-[#D9B061] py-1.5 pl-4 pr-1.5 text-[16px] font-medium text-[#282828] shadow-[0_8px_18px_rgba(0,0,0,0.18)] transition-colors hover:bg-[#c69260]"
             >
               Let&apos;s Get Connected
-              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white text-lg leading-none text-[#D4A373]">
+              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#282828] text-lg leading-none text-[#D9B061]">
                 <FiArrowUpRight aria-hidden="true" />
               </span>
             </button>

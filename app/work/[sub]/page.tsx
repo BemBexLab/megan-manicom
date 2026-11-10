@@ -11,7 +11,7 @@ const page = () => {
       <PageHero
         heading="Creativity That Builds Stronger Connections."
         text={`Explore how I bring creative ideas, thoughtful strategies, and engaging content together to help brands strengthen their digital presence and connect with their audience.`}
-        buttonLabel="Discuss a Project"
+        buttonLabel="Work With Me"
         buttonHref="/contact"
         rating="4.8/5"
         clientLabel={"500+ Happy\nClient Worldwide"}

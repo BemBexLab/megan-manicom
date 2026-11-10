@@ -29,34 +29,49 @@ export default function ServicesSection() {
   const accordionId = useId();
 
   return (
-    <section aria-labelledby="services-title" className="bg-[#F5F5F5] px-4 py-12 sm:px-6 sm:py-14 lg:px-[5%] lg:pt-14 lg:pb-16">
+    <section
+      aria-labelledby="services-title"
+      className="bg-[#F5F5F5] px-4 py-12 sm:px-6 sm:py-14 lg:px-[5%] lg:pt-14 lg:pb-16"
+    >
       <div className="mx-auto w-full max-w-[1420px] lg:[container-type:inline-size]">
         <div className="grid grid-cols-1 items-start gap-10 sm:gap-12 lg:grid-cols-[minmax(0,1.21fr)_minmax(0,1fr)] lg:gap-x-[9.6%] lg:gap-y-0">
           <div className="flex min-w-0 flex-col">
             <div className="flex items-center gap-2.5">
-              <span aria-hidden="true" className="h-4 w-4 shrink-0 rounded-full border-3 border-[#D4A373]" />
-              <span className="urbanist text-sm leading-[1.5] text-[#777777] lg:text-[clamp(12px,1.13cqw,16px)]">My Services</span>
+              <span
+                aria-hidden="true"
+                className="h-[9px] w-[9px] rounded-full border-3 border-[#282828] bg-[#D9B061] min-[850px]:h-[0.95cqw] min-[850px]:w-[0.95cqw]"
+              />
+              <span className="urbanist text-sm leading-[1.5] text-[#777777] lg:text-[clamp(12px,1.13cqw,16px)]">
+                My Services
+              </span>
             </div>
 
-            <h2 id="services-title" className="clash-display mt-3.5 text-[2rem] font-medium leading-[1.2] text-[#282828] sm:text-[2.5rem] lg:mt-[0.94cqw] lg:text-[clamp(32px,3.76cqw,54px)]">
+            <h2
+              id="services-title"
+              className="clash-display mt-3.5 text-[2rem] font-medium leading-[1.2] text-[#282828] sm:text-[2.5rem] lg:mt-[0.94cqw] lg:text-[clamp(32px,3.76cqw,54px)]"
+            >
               Creative Solutions For
               <span className="block">Your Brand</span>
             </h2>
 
             <p className="urbanist mt-4 text-[15px] leading-[1.7] text-[#777777] lg:mt-[1.32cqw] lg:max-w-[95%] lg:text-[clamp(12px,1.17cqw,17px)]">
               From social media strategy to engaging content creation, I offer
-              creative services that help brands connect with their audience
-              and grow their online presence.
+              creative services that help brands connect with their audience and
+              grow their online presence.
             </p>
 
             <div className="mt-5 lg:mt-[1.79cqw]">
               <Link
                 href="/contact"
-                className="urbanist inline-flex items-center gap-2 rounded-full bg-[#D4A373] py-1.5 pl-3 pr-1.5 text-sm text-white shadow-[0_8px_14px_rgba(0,0,0,0.18)] transition-colors hover:bg-[#c69260] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a36e3d] lg:gap-[0.66cqw] lg:py-[0.566cqw] lg:pl-[1.13cqw] lg:pr-[0.566cqw] lg:text-[clamp(12px,1.13cqw,16px)]"
+                className="urbanist inline-flex items-center gap-2 rounded-full bg-[#D9B061] py-1.5 pl-3 pr-1.5 text-sm text-[#282828] shadow-[0_8px_14px_rgba(0,0,0,0.18)] transition-colors hover:bg-[#c69260] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a36e3d] lg:gap-[0.66cqw] lg:py-[0.566cqw] lg:pl-[1.13cqw] lg:pr-[0.566cqw] lg:text-[clamp(12px,1.13cqw,16px)]"
               >
                 Let&apos;s Talk
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white text-[#D4A373] lg:h-[2.25cqw] lg:w-[2.25cqw]">
-                  <FiArrowUpRight aria-hidden="true" size={16} className="lg:h-[1.45cqw] lg:w-[1.45cqw]" />
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#282828] text-[#D9B061] lg:h-[2.25cqw] lg:w-[2.25cqw]">
+                  <FiArrowUpRight
+                    aria-hidden="true"
+                    size={16}
+                    className="lg:h-[1.45cqw] lg:w-[1.45cqw]"
+                  />
                 </span>
               </Link>
             </div>
@@ -79,7 +94,10 @@ export default function ServicesSection() {
               const panelId = `${accordionId}-panel-${i}`;
 
               return (
-                <div key={service.title} className="border-b border-[#D2D2D2] last:border-b-0">
+                <div
+                  key={service.title}
+                  className="border-b border-[#D2D2D2] last:border-b-0"
+                >
                   <h3>
                     <button
                       id={triggerId}
@@ -90,7 +108,9 @@ export default function ServicesSection() {
                       className={`clash-display grid w-full grid-cols-[24px_minmax(0,1fr)] items-start gap-x-3 text-left text-[17px] font-medium leading-[1.4] transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a36e3d] lg:grid-cols-[1.89cqw_minmax(0,1fr)] lg:text-[clamp(16px,1.51cqw,22px)] ${
                         i === 0 ? "pt-0" : "pt-5 lg:pt-[2.16cqw]"
                       } ${isActive ? "pb-0 lg:gap-x-[1.42cqw]" : "pb-5 lg:pb-[2.16cqw] lg:gap-x-[1.89cqw]"} ${
-                        isActive ? "text-[#D99A5E]" : "text-[#282828] hover:text-[#D99A5E]"
+                        isActive
+                          ? "text-[#D9B061]"
+                          : "text-[#282828] hover:text-[#D9B061]"
                       }`}
                     >
                       <span>{String(i + 1).padStart(2, "0")}</span>

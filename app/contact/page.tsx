@@ -8,8 +8,8 @@ const page = () => {
         <PageHero
           heading="Let's Create Something Amazing Together."
           text="Have a creative idea, an upcoming book launch, or a brand that needs a fresh perspective? I'd love to hear about it. Let's connect and bring your vision to life."
-          buttonLabel="Contact Me"
-          buttonHref="mailto:hello@meganmanicom.com"
+          buttonLabel="Work With Me"
+          buttonHref="mailto:info@meganmanicom.com"
           rating="4.8/5"
           clientLabel={"500+ Happy\nClient Worldwide"}
           clientAvatars={["/home/Ellipse 5.webp", "/home/Ellipse 6.webp", "/home/Ellipse 7.webp", "/home/Ellipse 8.webp"]}

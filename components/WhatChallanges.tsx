@@ -46,7 +46,7 @@ export default function WhatChallanges({
               key={challenge.number}
               className="grid grid-cols-[24px_minmax(0,1fr)] gap-3 sm:grid-cols-[26px_minmax(0,1fr)] sm:gap-3.5"
             >
-              <span className="urbanist pt-0.5 text-[12px] leading-[1.5] text-[#D9A441] lg:text-[clamp(11px,0.98vw,14px)]">
+              <span className="clash-display font-medium pt-0.5 text-[12px] leading-[1.5] text-[#D9A441] lg:text-[clamp(11px,0.98vw,14px)]">
                 {challenge.number}
               </span>
               <div>

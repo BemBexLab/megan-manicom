@@ -28,7 +28,10 @@ export default function FAQs({
       <div className="mx-auto grid w-full max-w-[1420px] grid-cols-1 gap-9 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16">
         <header className="lg:pt-1">
           <div className="flex items-center gap-2">
-            <span className="h-4 w-4 rounded-full border-3 border-[#D4A373]" />
+            <span
+              aria-hidden="true"
+              className="h-[9px] w-[9px] rounded-full border-3 border-[#282828] bg-[#D9B061] min-[850px]:h-[0.95cqw] min-[850px]:w-[0.95cqw]"
+            />
             <span className="urbanist text-[16px] text-[#777777]">{eyebrowText}</span>
           </div>
           <h2 id="faq-heading" className="clash-display my-2 max-w-full break-words text-balance text-[2rem] sm:text-[clamp(2.25rem,4.2vw,3.5rem)] font-medium leading-[1.05] text-[#282828]">
@@ -58,13 +61,13 @@ export default function FAQs({
                   onClick={() => setActiveQuestion(isOpen ? -1 : index)}
                   className="flex w-full min-w-0 items-center gap-4 text-left"
                 >
-                  <span className="urbanist w-5 shrink-0 text-[15px] font-medium leading-none text-[#282828]">
+                  <span className="clash-display w-5 shrink-0 text-[16px] font-medium leading-none text-[#282828]">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <span className="clash-display min-w-0 flex-1 text-[18px] font-medium leading-[1.35] text-[#282828] 2xl:text-[20px]">
                     {item.question}
                   </span>
-                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#D4A373] text-white">
+                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#D9B061] text-white">
                     <FiPlus
                       aria-hidden="true"
                       size={14}

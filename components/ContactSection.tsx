@@ -63,7 +63,7 @@ export default function ContactSection() {
             <div className="mt-10 flex flex-col gap-5">
               {/* Phone */}
               <div className="flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#D4A373] text-[#ffffff]">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#D9B061] text-[#ffffff]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-5 w-5"
@@ -88,7 +88,7 @@ export default function ContactSection() {
 
               {/* Email */}
               <div className="flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#D4A373] text-[#ffffff]">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#D9B061] text-[#ffffff]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-5 w-5"
@@ -238,10 +238,10 @@ export default function ContactSection() {
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-3 rounded-full bg-[#D4A373] py-1.5 pl-6 pr-1.5 text-sm font-medium text-white shadow-[0_8px_20px_rgba(201,164,122,0.45)] transition-all duration-300 hover:shadow-[0_10px_26px_rgba(201,164,122,0.6)] clash-display font-clash"
+                  className="inline-flex items-center gap-3 rounded-full bg-[#D9B061] py-1.5 pl-6 pr-1.5 text-sm font-medium text-[#282828] shadow-[0_8px_20px_rgba(201,164,122,0.45)] transition-all duration-300 hover:shadow-[0_10px_26px_rgba(201,164,122,0.6)] clash-display font-clash"
                 >
                   Let&apos;s Get Connected
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#D4A373]">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#D9B061]">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-4 w-4"

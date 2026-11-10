@@ -100,7 +100,7 @@ function Cta({ className = "" }: { className?: string }) {
   return (
     <a
       href="#about"
-      className={`inline-flex items-center gap-[1em] rounded-full bg-[#FF5C05] px-[1.2em] py-[0.62em] font-medium leading-none text-white transition-colors hover:bg-[#e04200] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff4a00] ${className}`}
+      className={`inline-flex items-center gap-[1em] rounded-full bg-[#FF5C05] px-[1.2em] py-[0.62em] font-medium leading-none text-[#282828] transition-colors hover:bg-[#e04200] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff4a00] ${className}`}
     >
       Learn More About Me
       <svg
