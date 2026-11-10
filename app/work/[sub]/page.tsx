@@ -3,13 +3,7 @@ import CustomerTestimonials from '@/components/CustomerTestimonials'
 import PageHero from '@/components/PageHero'
 import React from 'react'
 
-const page = async ({ params }: { params: Promise<{ sub: string }> }) => {
-  const { sub } = await params
-  const heading = sub
-    .split('-')
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ')
-
+const page = () => {
   return (
     <section className='bg-white'>
         <PageHero

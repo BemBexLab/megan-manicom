@@ -36,6 +36,7 @@ const connectors = [
 ];
 
 type ProcessStep = {
+  number?: string | number;
   title: string;
   text: string;
 };
@@ -54,6 +55,11 @@ function StepCard({ step, index }: { step: ProcessStep; index: number }) {
     <article
       className={`relative z-10 flex min-h-[140px] w-full min-w-0 flex-col justify-center rounded-[24px] border border-[#E5E5E5] bg-[#FBFBFB] px-4 py-5 shadow-[0_2px_3px_rgba(0,0,0,0.10)] lg:absolute lg:h-[27.027%] lg:min-h-0 lg:w-[24.663%] lg:rounded-[1.93cqw] lg:p-[1.16cqw] ${stepPositions[index] ?? ""}`}
     >
+      {step.number !== undefined && (
+        <span className="clash-display mb-3 text-sm font-semibold leading-none text-[#282828] lg:mb-[0.9cqw] lg:text-[clamp(12px,1.05cqw,15px)]">
+          {step.number}
+        </span>
+      )}
       <h3 className="clash-display text-lg font-medium leading-tight text-[#282828] lg:text-[clamp(15px,1.45cqw,21px)]">
         {step.title}
       </h3>

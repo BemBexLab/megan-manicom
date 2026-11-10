@@ -32,10 +32,10 @@ const page = () => {
           buttonLabel="Let's Work Together"
           buttonHref="/contact"
           steps={[
-            { title: "Listen First", text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry." },
-            { title: "Focus on the Details", text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry." },
-            { title: "Create With Intention", text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry." },
-            { title: "Bring It All Together", text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry." },
+            { number: "01", title: "Listen First", text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry." },
+            { number: "02", title: "Focus on the Details", text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry." },
+            { number: "03", title: "Create With Intention", text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry." },
+            { number: "04", title: "Bring It All Together", text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry." },
           ]}
         />
         <MyCreativeValues />
