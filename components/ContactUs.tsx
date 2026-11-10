@@ -5,7 +5,7 @@ import { FiArrowUpRight, FiChevronDown } from "react-icons/fi";
 import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 
 const fieldClassName =
-  "h-[42px] w-full rounded-[13px] border border-[#C8C8C8] bg-transparent px-3 text-[12px] text-[#333333] outline-none placeholder:text-[#C6C6C6] sm:text-[11px] focus:border-[#D4A373] focus:ring-1 focus:ring-[#D4A373]/30";
+  "h-[42px] w-full rounded-[13px] border border-[#C8C8C8] bg-transparent px-3 text-[13px] text-[#333333] outline-none placeholder:text-[#C6C6C6] focus:border-[#D4A373] focus:ring-1 focus:ring-[#D4A373]/30";
 
 const services = [
   { value: "social-media", label: "Social Media Management" },
@@ -276,21 +276,21 @@ export default function ContactUs() {
             </div>
 
             <textarea
-              className="h-[97px] w-full resize-none rounded-[13px] border border-[#C8C8C8] bg-transparent px-3 py-3 text-[12px] text-[#333333] outline-none placeholder:text-[#C6C6C6] focus:border-[#D4A373] focus:ring-1 focus:ring-[#D4A373]/30"
+              className="h-[97px] w-full resize-none rounded-[13px] border border-[#C8C8C8] bg-transparent px-3 py-3 text-[13px] text-[#333333] outline-none placeholder:text-[#C6C6C6] focus:border-[#D4A373] focus:ring-1 focus:ring-[#D4A373]/30"
               name="message"
               placeholder="Message"
               aria-label="Message"
               required
             />
 
-            <label className="mt-1 flex items-start gap-2 text-[11px] leading-[1.5] text-[#444444]">
+            <label className="mt-1 flex items-center gap-2 text-[13px] leading-[1.5] text-[#444444]">
               <input
                 type="checkbox"
                 name="agreeToTerms"
                 required
-                className="mt-[1px] h-4 w-4 shrink-0 accent-[#D4A373]"
+                className="h-4 w-4 shrink-0 rounded-[3px] accent-[#D4A373]"
               />
-              <span>
+              <span className="urbanist">
                 Submitting You Agree With <a href="/privacy-policy" className="hover:text-[#D4A373]">Privacy Policy</a> And <a href="/terms-of-service" className="hover:text-[#D4A373]">Terms Of Service.</a>
               </span>
             </label>
