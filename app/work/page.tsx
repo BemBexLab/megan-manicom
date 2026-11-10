@@ -7,7 +7,22 @@ import React from 'react'
 const page = () => {
   return (
     <section className='bg-white'>
-        <PageHero />
+        <PageHero
+          heading="Creative Work, Meaningful Impact."
+          text="Explore a collection of creative projects where thoughtful design, storytelling, and strategy come together. Each piece reflects my passion for transforming ideas into engaging experiences that connect, inspire, and leave a lasting impression."
+          buttonLabel="Start a Project"
+          buttonHref="/contact"
+          rating="4.8/5"
+          clientLabel="500+ Happy Clients Worldwide"
+          clientAvatars={["/home/Ellipse 5.webp", "/home/Ellipse 6.webp", "/home/Ellipse 7.webp", "/home/Ellipse 8.webp"]}
+          partnersHeading="Our Trusted Partners"
+          partnerLogos={[
+            { name: "LOCO", src: "/home/Logo (4).png", width: 112, height: 26 },
+            { name: "Infinity", src: "/home/Logo (1).png", width: 50, height: 20 },
+            { name: "N", src: "/home/Logo (2).png", width: 33, height: 28 },
+            { name: "IPSUM", src: "/home/Logo (3).png", width: 108, height: 26 },
+          ]}
+        />
         <MyCreativeProcess />
         <FAQs />
         <ContactUs />

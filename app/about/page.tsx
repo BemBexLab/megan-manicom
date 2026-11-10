@@ -8,7 +8,22 @@ import PageHero from '@/components/PageHero'
 const page = () => {
   return (
     <section className='bg-white'>
-        <PageHero />
+        <PageHero
+          heading="A Creative Mind Behind Meaningful Ideas."
+          text="I'm Megan Manicom, a creative marketing specialist passionate about bringing stories, brands, and ideas to life through thoughtful design and purposeful marketing."
+          buttonLabel="Work With Me"
+          buttonHref="/contact"
+          rating="4.8/5"
+          clientLabel="500+ Happy Clients Worldwide"
+          clientAvatars={["/home/Ellipse 5.webp", "/home/Ellipse 6.webp", "/home/Ellipse 7.webp", "/home/Ellipse 8.webp"]}
+          partnersHeading="Our Trusted Partners"
+          partnerLogos={[
+            { name: "LOCO", src: "/home/Logo (4).png", width: 112, height: 26 },
+            { name: "Infinity", src: "/home/Logo (1).png", width: 50, height: 20 },
+            { name: "N", src: "/home/Logo (2).png", width: 33, height: 28 },
+            { name: "IPSUM", src: "/home/Logo (3).png", width: 108, height: 26 },
+          ]}
+        />
         <AboutMe2 />
         <MyCreativeProcess />
         <MyCreativeValues />
