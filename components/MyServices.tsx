@@ -55,8 +55,8 @@ export default function ServicesSection() {
                 className="urbanist inline-flex items-center gap-2 rounded-full bg-[#D4A373] py-1.5 pl-3 pr-1.5 text-sm text-white shadow-[0_8px_14px_rgba(0,0,0,0.18)] transition-colors hover:bg-[#c69260] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a36e3d] lg:gap-[0.66cqw] lg:py-[0.566cqw] lg:pl-[1.13cqw] lg:pr-[0.566cqw] lg:text-[clamp(12px,1.13cqw,16px)]"
               >
                 Let&apos;s Talk
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-[#D4A373] lg:h-[2.64cqw] lg:w-[2.64cqw]">
-                  <FiArrowUpRight aria-hidden="true" size={18} className="lg:h-[1.7cqw] lg:w-[1.7cqw]" />
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white text-[#D4A373] lg:h-[2.25cqw] lg:w-[2.25cqw]">
+                  <FiArrowUpRight aria-hidden="true" size={16} className="lg:h-[1.45cqw] lg:w-[1.45cqw]" />
                 </span>
               </Link>
             </div>

@@ -101,7 +101,7 @@ export default function OurPortfolio() {
         <div className="mt-6 flex justify-center">
           <a
             href="/portfolio"
-            className="urbanist inline-flex items-center gap-2 rounded-full bg-[#D4A373] py-1.5 pl-4 pr-1.5 text-[14px] font-medium text-white shadow-[0_8px_16px_rgba(0,0,0,0.2)] transition-colors hover:bg-[#c69260]"
+            className="urbanist inline-flex items-center gap-2 rounded-full bg-[#D4A373] py-1.5 pl-4 pr-1.5 text-[16px] font-medium text-white shadow-[0_8px_16px_rgba(0,0,0,0.2)] transition-colors hover:bg-[#c69260]"
           >
             View All Projects
             <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white text-lg leading-none text-[#D4A373]">

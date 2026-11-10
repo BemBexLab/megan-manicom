@@ -297,7 +297,7 @@ export default function ContactUs() {
 
             <button
               type="submit"
-              className="urbanist mt-3 inline-flex w-fit items-center gap-2 rounded-full bg-[#D4A373] py-1.5 pl-4 pr-1.5 text-[13px] font-medium text-white shadow-[0_8px_18px_rgba(0,0,0,0.18)] transition-colors hover:bg-[#c69260]"
+              className="urbanist mt-3 inline-flex w-fit items-center gap-2 rounded-full bg-[#D4A373] py-1.5 pl-4 pr-1.5 text-[16px] font-medium text-white shadow-[0_8px_18px_rgba(0,0,0,0.18)] transition-colors hover:bg-[#c69260]"
             >
               Let&apos;s Get Connected
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white text-lg leading-none text-[#D4A373]">

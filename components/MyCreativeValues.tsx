@@ -66,7 +66,7 @@ export default function MyCreativeValues() {
 
           <Link
             href="/contact"
-            className="urbanist mt-8 inline-flex items-center gap-2 rounded-full bg-[#D4A373] py-1.5 pl-4 pr-1.5 text-[12px] font-medium text-white shadow-[0_7px_14px_rgba(0,0,0,0.18)] transition-colors hover:bg-[#c69260] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a36e3d] lg:mt-[36px]"
+            className="urbanist mt-8 inline-flex items-center gap-2 rounded-full bg-[#D4A373] py-1.5 pl-4 pr-1.5 text-[16px] font-medium text-white shadow-[0_7px_14px_rgba(0,0,0,0.18)] transition-colors hover:bg-[#c69260] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a36e3d] lg:mt-[36px]"
           >
             Let&apos;s Create Together
             <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white text-[#D4A373]">
