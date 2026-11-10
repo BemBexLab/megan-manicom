@@ -1,23 +1,11 @@
 import Image from "next/image";
 import { FiArrowUpRight } from "react-icons/fi";
 
-const steps = [
-  {
-    title: "Brand Discovery",
-    position: "lg:left-0 lg:top-0",
-  },
-  {
-    title: "Content Creation",
-    position: "lg:right-0 lg:top-0",
-  },
-  {
-    title: "Strategy & Planning",
-    position: "lg:bottom-0 lg:left-0",
-  },
-  {
-    title: "Launch & Growth",
-    position: "lg:bottom-0 lg:right-0",
-  },
+const stepPositions = [
+  "lg:left-0 lg:top-0",
+  "lg:right-0 lg:top-0",
+  "lg:bottom-0 lg:left-0",
+  "lg:bottom-0 lg:right-0",
 ];
 
 const connectors = [
@@ -47,27 +35,43 @@ const connectors = [
   },
 ];
 
-const paragraphTypography = "text-[16px] leading-[1.6]";
+type ProcessStep = {
+  title: string;
+  text: string;
+};
 
-type Step = (typeof steps)[number];
+type MyCreativeProcessProps = {
+  eyebrowText: string;
+  heading: string;
+  text: string;
+  buttonLabel: string;
+  buttonHref: string;
+  steps: ProcessStep[];
+};
 
-function StepCard({ step }: { step: Step }) {
+function StepCard({ step, index }: { step: ProcessStep; index: number }) {
   return (
     <article
-      className={`relative z-10 flex min-h-[140px] w-full min-w-0 flex-col justify-center rounded-[24px] border border-[#E5E5E5] bg-[#FBFBFB] px-4 py-5 shadow-[0_2px_3px_rgba(0,0,0,0.10)] lg:absolute lg:h-[27.027%] lg:min-h-0 lg:w-[24.663%] lg:rounded-[1.93cqw] lg:p-[1.16cqw] ${step.position}`}
+      className={`relative z-10 flex min-h-[140px] w-full min-w-0 flex-col justify-center rounded-[24px] border border-[#E5E5E5] bg-[#FBFBFB] px-4 py-5 shadow-[0_2px_3px_rgba(0,0,0,0.10)] lg:absolute lg:h-[27.027%] lg:min-h-0 lg:w-[24.663%] lg:rounded-[1.93cqw] lg:p-[1.16cqw] ${stepPositions[index] ?? ""}`}
     >
       <h3 className="clash-display text-lg font-medium leading-tight text-[#282828] lg:text-[clamp(15px,1.45cqw,21px)]">
         {step.title}
       </h3>
       <p className="urbanist mt-2 text-[15px] leading-[1.6] text-[#777777] lg:mt-[0.39cqw] lg:text-[clamp(12px,1.16cqw,17px)] lg:leading-[1.5]">
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry.
+        {step.text}
       </p>
     </article>
   );
 }
 
-export default function MyCreativeProcess() {
+export default function MyCreativeProcess({
+  eyebrowText,
+  heading,
+  text,
+  buttonLabel,
+  buttonHref,
+  steps,
+}: MyCreativeProcessProps) {
   return (
     <section className="w-full min-w-0 overflow-hidden bg-[#FBFBFB] px-4 py-12 sm:px-6 sm:py-14 lg:px-4 lg:py-14">
       <div className="mx-auto w-full max-w-[1420px] lg:[container-type:inline-size]">
@@ -75,14 +79,14 @@ export default function MyCreativeProcess() {
           <div className="flex items-center justify-center gap-2">
             <span className="h-4 w-4 rounded-full border-3 border-[#D4A373] lg:h-[1.15cqw] lg:w-[1.15cqw]" />
             <span className="urbanist text-sm font-light tracking-wide text-[#777777] sm:text-base lg:text-[clamp(14px,1.16cqw,17px)] lg:font-normal lg:tracking-normal">
-              My Creative Process
+              {eyebrowText}
             </span>
           </div>
           <h2 className="clash-display my-2 max-w-full break-words text-balance text-[2rem] font-medium leading-tight text-[#282828] sm:text-[clamp(2.25rem,4.2vw,3.5rem)] lg:mt-[1.25cqw] lg:mb-[1.06cqw] lg:text-[clamp(2.25rem,3.82cqw,3.5rem)]">
-            From Ideas To Real Impact
+            {heading}
           </h2>
-          <p className={`urbanist mx-auto mb-10 w-full max-w-5xl px-2 text-[#777777] lg:mb-0 lg:max-w-[46.25cqw] lg:text-[clamp(12px,1.16cqw,17px)] lg:leading-[1.7] ${paragraphTypography}`}>
-            A simple, creative, and strategic approach to building engaging content, strengthening brand identity, and growing your social media presence.
+          <p className="urbanist mx-auto mb-10 w-full max-w-5xl px-2 text-[16px] leading-[1.6] text-[#777777] lg:mb-0 lg:max-w-[46.25cqw] lg:text-[clamp(12px,1.16cqw,17px)] lg:leading-[1.7]">
+            {text}
           </p>
         </header>
 
@@ -99,24 +103,24 @@ export default function MyCreativeProcess() {
             />
           ))}
 
-          {steps.slice(0, 2).map((step) => (
-            <StepCard key={step.title} step={step} />
+          {steps.slice(0, 2).map((step, index) => (
+            <StepCard key={step.title} step={step} index={index} />
           ))}
 
           <div className="relative z-20 order-last flex justify-center py-3 sm:col-span-2 lg:absolute lg:left-1/2 lg:top-[50.811%] lg:order-none lg:-translate-x-1/2 lg:-translate-y-1/2 lg:py-0">
             <a
-              href="/contact"
+              href={buttonHref}
               className="urbanist flex items-center justify-between gap-2 rounded-full bg-[#D4A373] py-1.5 pl-3 pr-1.5 text-base font-medium text-white shadow-[0_8px_18px_rgba(0,0,0,0.18)] transition-colors hover:bg-[#c69260] lg:w-[clamp(169px,16.28cqw,232px)] lg:gap-[0.77cqw] lg:py-[0.58cqw] lg:pl-[1.16cqw] lg:pr-[0.58cqw] lg:text-[clamp(12px,1.16cqw,17px)] lg:font-normal"
             >
-              Let&apos;s Create Together
+              {buttonLabel}
               <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white text-lg leading-none text-[#D4A373] lg:h-[2.7cqw] lg:w-[2.7cqw]">
                 <FiArrowUpRight aria-hidden="true" size={18} className="lg:h-[1.74cqw] lg:w-[1.74cqw]" />
               </span>
             </a>
           </div>
 
-          {steps.slice(2).map((step) => (
-            <StepCard key={step.title} step={step} />
+          {steps.slice(2).map((step, index) => (
+            <StepCard key={step.title} step={step} index={index + 2} />
           ))}
         </div>
       </div>

@@ -25,7 +25,19 @@ const page = () => {
           ]}
         />
         <AboutMe2 />
-        <MyCreativeProcess />
+        <MyCreativeProcess
+          eyebrowText="My Approach"
+          heading="Every Detail Has a Purpose."
+          text="I believe meaningful creative work begins with understanding the people and ideas behind each project."
+          buttonLabel="Let's Work Together"
+          buttonHref="/contact"
+          steps={[
+            { title: "Listen First", text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry." },
+            { title: "Focus on the Details", text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry." },
+            { title: "Create With Intention", text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry." },
+            { title: "Bring It All Together", text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry." },
+          ]}
+        />
         <MyCreativeValues />
         <FAQs />
         <ContactUs />

@@ -14,7 +14,19 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <ServicesSection />
-      <MyCreativeProcess />
+      <MyCreativeProcess
+        eyebrowText="My Creative Process"
+        heading="From Ideas To Real Impact"
+        text="A simple, creative, and strategic approach to building engaging content, strengthening brand identity, and growing your social media presence."
+        buttonLabel="Let's Create Together"
+        buttonHref="/contact"
+        steps={[
+          { title: "Brand Discovery", text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry." },
+          { title: "Content Creation", text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry." },
+          { title: "Strategy & Planning", text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry." },
+          { title: "Launch & Growth", text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry." },
+        ]}
+      />
       <OurPortfolio />
       <CustomerTestimonials />
       <FAQs />
