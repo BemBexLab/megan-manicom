@@ -3,6 +3,7 @@ import ContactUs from '@/components/ContactUs'
 import FAQs from '@/components/FAQs'
 import MyCreativeProcess from '@/components/MyCreativeProcess'
 import MyCreativeValues from '@/components/MyCreativeValues'
+import MyExpertise from '@/components/MyExpertise'
 import PageHero from '@/components/PageHero'
 
 const page = () => {
@@ -25,6 +26,7 @@ const page = () => {
           ]}
         />
         <AboutMe2 />
+        <MyExpertise />
         <MyCreativeProcess
           eyebrowText="My Approach"
           heading="Every Detail Has a Purpose."
