@@ -70,7 +70,7 @@ export default function AboutTheProject({
           </div>
 
           <aside className="rounded-[18px] border border-[#E5E5E5] bg-[#FBFBFB] px-5 py-4 sm:px-6 sm:py-5 lg:rounded-[1.55vw] lg:px-[2.05vw] lg:py-[1.7vw]">
-            <h3 className="urbanist mb-2 text-[14px] font-medium leading-[1.4] text-[#D9B061] lg:mb-[0.8vw] lg:text-[clamp(13px,1.17vw,17px)]">
+            <h3 className="clash-display mb-2 text-[14px] font-medium leading-[1.4] text-[#D9B061] lg:mb-[0.8vw] lg:text-[clamp(13px,1.17vw,17px)]">
               Project Details:
             </h3>
             <dl className="space-y-1.5 lg:space-y-[0.55vw]">
@@ -79,7 +79,7 @@ export default function AboutTheProject({
                   key={detail.label}
                   className="urbanist flex flex-wrap gap-x-1 text-[12px] leading-[1.5] text-[#777777] lg:text-[clamp(11px,0.98vw,14px)]"
                 >
-                  <dt className="font-semibold text-[#555555]">
+                  <dt className="font-semibold text-[#777777]">
                     {detail.label}:
                   </dt>
                   <dd>{detail.value}</dd>
