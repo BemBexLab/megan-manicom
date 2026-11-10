@@ -34,7 +34,7 @@ export default function ServicesSection() {
         <div className="grid grid-cols-1 items-start gap-10 sm:gap-12 lg:grid-cols-[minmax(0,1.21fr)_minmax(0,1fr)] lg:gap-x-[9.6%] lg:gap-y-0">
           <div className="flex min-w-0 flex-col">
             <div className="flex items-center gap-2.5">
-              <span aria-hidden="true" className="h-2.5 w-2.5 shrink-0 rounded-full border-2 border-[#D4A373] lg:h-[0.94cqw] lg:w-[0.94cqw]" />
+              <span aria-hidden="true" className="h-4 w-4 shrink-0 rounded-full border-3 border-[#D4A373]" />
               <span className="urbanist text-sm leading-[1.5] text-[#777777] lg:text-[clamp(12px,1.13cqw,16px)]">My Services</span>
             </div>
 
