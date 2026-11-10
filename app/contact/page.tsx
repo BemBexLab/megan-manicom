@@ -11,7 +11,7 @@ const page = () => {
           buttonLabel="Contact Me"
           buttonHref="mailto:hello@meganmanicom.com"
           rating="4.8/5"
-          clientLabel="500+ Happy Clients Worldwide"
+          clientLabel={"500+ Happy\nClient Worldwide"}
           clientAvatars={["/home/Ellipse 5.webp", "/home/Ellipse 6.webp", "/home/Ellipse 7.webp", "/home/Ellipse 8.webp"]}
           partnersHeading="Our Trusted Partners"
           partnerLogos={[

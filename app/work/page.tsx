@@ -14,7 +14,7 @@ const page = () => {
         buttonLabel="Start a Project"
         buttonHref="/contact"
         rating="4.8/5"
-        clientLabel="500+ Happy Clients Worldwide"
+        clientLabel={"500+ Happy\nClient Worldwide"}
         clientAvatars={[
           "/home/Ellipse 5.webp",
           "/home/Ellipse 6.webp",

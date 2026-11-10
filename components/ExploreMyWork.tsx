@@ -61,28 +61,26 @@ export default function ExploreMyWork() {
           <div className="flex items-center gap-2">
             <span
               aria-hidden="true"
-              className="h-[9px] w-[9px] rounded-full border-[1.5px] border-[#282828] bg-[#D9B061] min-[850px]:h-[0.95cqw] min-[850px]:w-[0.95cqw]"
+              className="h-[9px] w-[9px] rounded-full border-3 border-[#282828] bg-[#D9B061] min-[850px]:h-[0.95cqw] min-[850px]:w-[0.95cqw]"
             />
-            <span className="urbanist text-[12px] leading-[1.3] text-[#777777] min-[850px]:text-[clamp(9px,0.98cqw,14px)]">
+            <span className="urbanist text-sm font-light tracking-wide text-[#777777] sm:text-base lg:text-[clamp(14px,1.16cqw,17px)] lg:font-normal lg:tracking-normal">
               Explore My Work
             </span>
           </div>
 
           <h2
             id="explore-work-title"
-            className="clash-display mt-3 text-balance text-[26px] font-medium leading-[1.2] text-[#282828] sm:text-[30px] min-[850px]:mt-[1.1cqw] min-[850px]:text-[clamp(24px,3.4cqw,48px)]"
+            className="clash-display mt-2 mb-0 max-w-full break-words text-balance text-[2rem] font-medium leading-tight text-[#282828] sm:text-[clamp(2.25rem,4.2vw,3.5rem)]"
           >
             A Glimpse Into My Creative World.
           </h2>
 
-          <p className="urbanist mt-2.5 max-w-[650px] text-[13px] leading-[1.65] text-[#777777] sm:text-sm min-[850px]:mt-[0.9cqw] min-[850px]:max-w-[62cqw] min-[850px]:text-[clamp(10px,1.08cqw,15px)] min-[850px]:leading-[1.6]">
-            Every project tells a different story. From memorable book covers to
-            engaging digital campaigns, here&apos;s a selection of work that brings
-            creativity, purpose, and attention to detail together.
+          <p className="urbanist mx-auto mt-0 max-w-[700px] text-[16px] leading-[1.6] text-[#777777] min-[850px]:text-[clamp(12px,1.17cqw,16px)]">
+            Every project tells a different story. From memorable book covers to engaging digital campaigns, here's a selection of work that brings creativity, purpose, and attention to detail together.
           </p>
         </header>
 
-        <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 min-[850px]:mt-[3.15cqw] min-[850px]:grid-cols-3 min-[850px]:gap-[1.2cqw]">
+        <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 min-[850px]:mt-[2.2cqw] min-[850px]:gap-[1.2cqw]">
           {projects.map((project) => (
             <article
               key={project.title}
@@ -99,21 +97,21 @@ export default function ExploreMyWork() {
                 />
               </div>
 
-              <p className="urbanist mt-3 text-[10px] leading-[1.3] text-[#D9B061] min-[850px]:mt-[1.45cqw] min-[850px]:text-[clamp(8px,0.98cqw,14px)]">
+              <p className="urbanist mt-3 text-[14px] leading-[1.4] text-[#D9B061] min-[850px]:mt-[1.05cqw] min-[850px]:text-[clamp(10px,1.17cqw,16px)]">
                 {project.category}
               </p>
-              <h3 className="clash-display mt-1 text-[16px] font-medium leading-[1.3] text-[#282828] min-[850px]:mt-[0.42cqw] min-[850px]:text-[clamp(12px,1.45cqw,21px)]">
+              <h3 className="clash-display mt-1 text-[20px] font-medium leading-tight text-[#282828] min-[850px]:mt-[0.42cqw] min-[850px]:text-[clamp(14px,1.45cqw,20px)]">
                 {project.title}
               </h3>
-              <p className="urbanist mt-1.5 text-[12px] leading-[1.55] text-[#777777] min-[850px]:mt-[0.58cqw] min-[850px]:text-[clamp(9px,1.08cqw,15px)] min-[850px]:leading-[1.5]">
+              <p className="urbanist mt-2 line-clamp-2 text-[14px] leading-[1.55] text-[#777777] min-[850px]:mt-[0.58cqw] min-[850px]:text-[clamp(11px,1.17cqw,16px)] min-[850px]:leading-[1.5]">
                 {projectDescription}
               </p>
               <Link
                 href="/work"
-                className="urbanist mt-2 inline-flex w-fit items-center gap-2 text-[12px] leading-[1.3] text-[#D9B061] transition-colors hover:text-[#bd8957] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a36e3d] min-[850px]:mt-[0.82cqw] min-[850px]:gap-[0.62cqw] min-[850px]:text-[clamp(9px,1.08cqw,15px)]"
+                className="urbanist mt-3 inline-flex w-fit items-center gap-3 text-[14px] leading-[1.4] text-[#D9B061] transition-colors hover:text-[#bd8957] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a36e3d] min-[850px]:mt-[0.82cqw] min-[850px]:gap-[0.62cqw] min-[850px]:text-[clamp(11px,1.17cqw,16px)]"
               >
                 Explore My Work
-                <FiArrowRight aria-hidden="true" className="h-3 w-3 min-[850px]:h-[1.12cqw] min-[850px]:w-[1.12cqw]" />
+                <FiArrowRight aria-hidden="true" className="text-[19px] min-[850px]:text-[1.45cqw]" />
               </Link>
             </article>
           ))}

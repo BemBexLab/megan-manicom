@@ -90,7 +90,7 @@ export default function PageHero({
                 </span>
               )}
               {clientLabel && (
-                <p className="urbanist text-[12px] leading-[1.5] text-[#282828] min-[900px]:text-[clamp(12px,1.27cqw,18px)]">
+                <p className="urbanist whitespace-pre-line text-[12px] leading-[1.5] text-[#282828] min-[900px]:text-[clamp(12px,1.27cqw,18px)]">
                   {clientLabel}
                 </p>
               )}
