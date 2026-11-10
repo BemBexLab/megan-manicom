@@ -79,7 +79,7 @@ export default function AboutSection() {
             </div>
 
             {/* Heading */}
-            <h2 className={`${clashDisplay.className} clash-display font-clash mt-4 max-w-[700px] text-[clamp(2.25rem,4.2vw,3.5rem)] font-medium leading-[1.15] tracking-tight text-[#2b2b2b]`}>
+            <h2 className={`clash-display font-clash mt-4 max-w-[700px] text-[clamp(2.25rem,4.2vw,3.5rem)] font-medium leading-[1.15] tracking-tight text-[#2b2b2b]`}>
               The Mind Behind The Creativity
             </h2>
 
