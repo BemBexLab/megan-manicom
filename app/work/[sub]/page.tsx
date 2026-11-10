@@ -1,9 +1,16 @@
+import type { Metadata } from "next";
 import AboutTheProject from "@/components/AboutTheProject";
 import ContactUs from "@/components/ContactUs";
 import CustomerTestimonials from "@/components/CustomerTestimonials";
 import PageHero from "@/components/PageHero";
 import WhatChallanges from "@/components/WhatChallanges";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Bloom & Co. Social Media Case Study",
+  description:
+    "See how Megan Manicom developed a cohesive social media presence for Bloom & Co., pairing wellness-inspired visuals with thoughtful content strategy.",
+};
 
 const page = () => {
   return (

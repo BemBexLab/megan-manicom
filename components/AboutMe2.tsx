@@ -32,7 +32,9 @@ export default function AboutMe2() {
               aria-hidden="true"
               className="h-[9px] w-[9px] shrink-0 rounded-full border-3 border-[#282828] bg-[#D9B061] min-[850px]:h-[0.95cqw] min-[850px]:w-[0.95cqw]"
             />
-            <span className="urbanist text-[12px] leading-[1.4] text-[#777777] lg:text-[clamp(12px,1.17cqw,16px)]">About Me</span>
+            <span className="urbanist text-[12px] leading-[1.4] text-[#777777] lg:text-[clamp(12px,1.17cqw,16px)]">
+              About Me
+            </span>
           </div>
 
           <h2
@@ -48,12 +50,13 @@ export default function AboutMe2() {
               I&apos;ve always believed that every great idea deserves the
               opportunity to shine. Whether it&apos;s a story waiting to be
               published, a brand looking to grow, or a creative concept ready to
-              take shape, I love being part of the journey that brings it to life.
+              take shape, I love being part of the journey that brings it to
+              life.
             </p>
             <p>
-              My work brings together design, storytelling, and digital marketing
-              to help authors, entrepreneurs, and brands communicate their ideas
-              with confidence.
+              My work brings together design, storytelling, and digital
+              marketing to help authors, entrepreneurs, and brands communicate
+              their ideas with confidence.
             </p>
             <p>
               I enjoy the details that make each project unique, from selecting
@@ -62,8 +65,8 @@ export default function AboutMe2() {
             </p>
             <p>
               For me, it&apos;s not just about creating something that looks
-              beautiful. It&apos;s about creating something that feels authentic,
-              serves a purpose, and makes a difference.
+              beautiful. It&apos;s about creating something that feels
+              authentic, serves a purpose, and makes a difference.
             </p>
           </div>
 
@@ -85,7 +88,7 @@ export default function AboutMe2() {
 
           <Link
             href="/work"
-            className="urbanist mt-6 inline-flex items-center gap-2 rounded-full bg-[#D9B061] py-1.5 pl-3 pr-1.5 text-[13px] font-normal text-[#282828] shadow-[0_7px_14px_rgba(0,0,0,0.18)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#cba151] hover:shadow-[0_10px_18px_rgba(0,0,0,0.2)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] active:translate-y-0 lg:text-[clamp(12px,1.17cqw,16px)]"
+            className="urbanist mt-6 inline-flex items-center gap-2 rounded-full bg-[#D9B061] py-1.5 pl-3 pr-1.5 text-[13px] font-normal text-[#282828] shadow-[0_7px_14px_rgba(0,0,0,0.18)] transition-all duration-200 hover:bg-accent-hover hover:shadow-[0_10px_18px_rgba(0,0,0,0.2)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] lg:text-[clamp(12px,1.17cqw,16px)]"
           >
             Explore My Work
             <span className="flex h-[26px] w-[26px] shrink-0 items-center justify-center rounded-full bg-[#282828] text-[#D9B061]">

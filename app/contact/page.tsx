@@ -1,6 +1,13 @@
+import type { Metadata } from 'next'
 import ContactUs from '@/components/ContactUs'
 import PageHero from '@/components/PageHero'
 import React from 'react'
+
+export const metadata: Metadata = {
+  title: 'Contact',
+  description:
+    'Have a brand, book launch, or creative project in mind? Contact Megan Manicom to discuss social media marketing, content, and design services.',
+}
 
 const page = () => {
   return (

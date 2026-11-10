@@ -66,7 +66,7 @@ export default function MyCreativeValues() {
 
           <Link
             href="/contact"
-            className="urbanist mt-8 inline-flex items-center gap-2 rounded-full bg-[#D9B061] py-1.5 pl-4 pr-1.5 text-[16px] font-medium text-[#282828] shadow-[0_7px_14px_rgba(0,0,0,0.18)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#cba151] hover:shadow-[0_10px_18px_rgba(0,0,0,0.2)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] active:translate-y-0 lg:mt-[36px]"
+            className="urbanist mt-8 inline-flex items-center gap-2 rounded-full bg-[#D9B061] py-1.5 pl-4 pr-1.5 text-[16px] font-medium text-[#282828] shadow-[0_7px_14px_rgba(0,0,0,0.18)] transition-all duration-200 hover:bg-accent-hover hover:shadow-[0_10px_18px_rgba(0,0,0,0.2)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] lg:mt-[36px]"
           >
             Let&apos;s Create Together
             <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#282828] text-[#D9B061]">
@@ -94,16 +94,16 @@ export default function MyCreativeValues() {
                   className="group relative z-10 flex min-w-0 flex-col items-center text-center focus-visible:rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a36e3d]"
                 >
                   <span
-                    className={`flex h-10 w-10 items-center justify-center rounded-full border text-[15px] transition-all duration-200 group-hover:scale-105 ${
+                    className={`flex h-10 w-10 items-center justify-center rounded-full border text-[15px] transition-all duration-200 ${
                       isActive
-                        ? "border-[#D9B061] bg-[#D9B061] text-[#FFFFFF] shadow-[0_4px_8px_rgba(0,0,0,0.12)]"
-                        : "border-[#E7E7E7] bg-[#FCFCFC] text-[#282828]"
+                        ? "border-[#D9B061] bg-[#D9B061] text-[#FFFFFF] shadow-[0_4px_8px_rgba(0,0,0,0.12)] group-hover:bg-accent-hover"
+                        : "border-[#E7E7E7] bg-[#FCFCFC] text-[#282828] group-hover:border-[#D9B061] group-hover:bg-[#FBF3E1]"
                     }`}
                   >
                     {value.step}
                   </span>
                   <span
-                    className={`urbanist mt-3 max-w-[100px] text-[13px] leading-[1.35] ${
+                    className={`urbanist mt-3 max-w-[100px] text-[13px] leading-[1.35] transition-colors duration-200 group-hover:text-[#A87932] ${
                       isActive ? "text-[#282828]" : "text-[#B8B8B8]"
                     }`}
                   >
@@ -129,21 +129,25 @@ export default function MyCreativeValues() {
           <div className="mt-5 flex items-center gap-2.5 lg:mt-4">
             <button
               type="button"
-              onClick={() => setActiveIndex((current) => Math.max(0, current - 1))}
+              onClick={() =>
+                setActiveIndex((current) => Math.max(0, current - 1))
+              }
               disabled={activeIndex === 0}
               aria-label="Previous value"
-              className="flex h-[34px] w-[34px] items-center justify-center rounded-full bg-[#D9B061] text-[#FFFFFF] transition-all duration-200 hover:scale-105 hover:bg-[#cba151] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#282828] disabled:cursor-not-allowed disabled:hover:scale-100 disabled:bg-[#E6C5A2]"
+              className="flex h-[34px] w-[34px] items-center justify-center rounded-full bg-[#D9B061] text-[#FFFFFF] transition-all duration-200 hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#282828] disabled:cursor-not-allowed disabled:bg-[#E6C5A2]"
             >
               <FiArrowLeft aria-hidden="true" size={18} />
             </button>
             <button
               type="button"
               onClick={() =>
-                setActiveIndex((current) => Math.min(values.length - 1, current + 1))
+                setActiveIndex((current) =>
+                  Math.min(values.length - 1, current + 1),
+                )
               }
               disabled={activeIndex === values.length - 1}
               aria-label="Next value"
-              className="flex h-[34px] w-[34px] items-center justify-center rounded-full bg-[#D9B061] text-[#FFFFFF] transition-all duration-200 hover:scale-105 hover:bg-[#cba151] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#282828] disabled:cursor-not-allowed disabled:hover:scale-100 disabled:bg-[#E6C5A2]"
+              className="flex h-[34px] w-[34px] items-center justify-center rounded-full bg-[#D9B061] text-[#FFFFFF] transition-all duration-200 hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#282828] disabled:cursor-not-allowed disabled:bg-[#E6C5A2]"
             >
               <FiArrowRight aria-hidden="true" size={18} />
             </button>

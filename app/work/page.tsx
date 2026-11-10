@@ -1,9 +1,16 @@
+import type { Metadata } from "next";
 import ContactUs from "@/components/ContactUs";
 import ExploreMyWork from "@/components/ExploreMyWork";
 import FAQs from "@/components/FAQs";
 import MyCreativeProcess from "@/components/MyCreativeProcess";
 import PageHero from "@/components/PageHero";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Creative Portfolio & Case Studies",
+  description:
+    "Explore Megan Manicom's social media campaigns, brand identities, content strategy, and book design projects built to connect with audiences.",
+};
 
 const page = () => {
   return (

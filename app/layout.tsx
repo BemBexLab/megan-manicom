@@ -26,8 +26,12 @@ const archivo = Archivo({
 });
 
 export const metadata: Metadata = {
-  title: "Megan Manicom | Marketing Specialist",
-  description: "Megan Manicom | Marketing Specialist",
+  title: {
+    default: "Megan Manicom | Social Media Marketing & Creative Strategy",
+    template: "%s | Megan Manicom",
+  },
+  description:
+    "Megan Manicom helps authors, coaches, creators, and growing brands build visibility through social media marketing, content, and thoughtful strategy.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

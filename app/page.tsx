@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import AboutSection from "@/components/AboutMe";
 import HeroSection from "@/components/Hero";
 import MyCreativeProcess from "@/components/MyCreativeProcess";
@@ -7,6 +8,12 @@ import CustomerTestimonials from "@/components/CustomerTestimonials";
 import FAQs from "@/components/FAQs";
 import ContactUs from "@/components/ContactUs";
 import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+  title: "Social Media Marketing & Content Strategy",
+  description:
+    "Build a stronger online presence with Megan Manicom's social media marketing, content creation, launch planning, and audience-focused strategy.",
+};
 
 export default function Home() {
   return (

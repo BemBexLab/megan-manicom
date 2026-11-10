@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import AboutMe2 from '@/components/AboutMe2'
 import ContactUs from '@/components/ContactUs'
 import FAQs from '@/components/FAQs'
@@ -5,6 +6,12 @@ import MyCreativeProcess from '@/components/MyCreativeProcess'
 import MyCreativeValues from '@/components/MyCreativeValues'
 import MyExpertise from '@/components/MyExpertise'
 import PageHero from '@/components/PageHero'
+
+export const metadata: Metadata = {
+  title: 'About',
+  description:
+    'Meet Megan Manicom, a creative marketing specialist helping authors, coaches, and growing brands shape their stories and build meaningful connections.',
+}
 
 const page = () => {
   return (

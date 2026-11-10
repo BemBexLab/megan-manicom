@@ -14,7 +14,11 @@ export default function Footer() {
     <footer className="w-full bg-[#FBFBFB] px-4 pt-14 pb-2 sm:px-6 sm:pt-16 sm:pb-3 lg:px-8 lg:pt-[60px] lg:pb-4 2xl:px-6">
       <div className="mx-auto w-full max-w-[1420px]">
         <div className="flex flex-col items-center pb-7 sm:pb-8">
-          <Link href="/" className="flex items-center gap-3 transition-opacity hover:opacity-80 focus-visible:rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828]" aria-label="Megan Manicom home">
+          <Link
+            href="/"
+            className="flex items-center gap-3 transition-opacity hover:opacity-80 focus-visible:rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828]"
+            aria-label="Megan Manicom home"
+          >
             <span className="relative h-[68px] w-[68px] shrink-0 overflow-hidden rounded-full border border-[#282828] sm:h-[84px] sm:w-[84px]">
               <Image
                 src="/3d10acc26a868a5485f246941722d40e2d5993dc.webp"
@@ -51,7 +55,7 @@ export default function Footer() {
               target="_blank"
               rel="noreferrer"
               aria-label="Facebook"
-              className="flex h-8 w-8 items-center justify-center rounded-full bg-[#D9B061] text-[#282828] transition-all duration-200 hover:scale-110 hover:bg-[#c69260] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#282828]"
+              className="flex h-8 w-8 items-center justify-center rounded-full bg-[#D9B061] text-[#282828] transition-all duration-200 hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#282828]"
             >
               <FaFacebookF aria-hidden="true" size={15} />
             </a>
@@ -60,7 +64,7 @@ export default function Footer() {
               target="_blank"
               rel="noreferrer"
               aria-label="Instagram"
-              className="flex h-8 w-8 items-center justify-center rounded-full bg-[#D9B061] text-[#282828] transition-all duration-200 hover:scale-110 hover:bg-[#c69260] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#282828]"
+              className="flex h-8 w-8 items-center justify-center rounded-full bg-[#D9B061] text-[#282828] transition-all duration-200 hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#282828]"
             >
               <FaInstagram aria-hidden="true" size={15} />
             </a>
@@ -93,5 +97,3 @@ export default function Footer() {
     </footer>
   );
 }
-
-

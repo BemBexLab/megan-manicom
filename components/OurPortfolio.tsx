@@ -5,38 +5,30 @@ const projects = [
   {
     category: "Social Media Design",
     title: "Social Media Campaigns",
-    image:
-      "/f0c1a7f23b5187dbe6344c6429eadc4002ba0640.webp",
+    image: "/f0c1a7f23b5187dbe6344c6429eadc4002ba0640.webp",
     alt: "Portrait for a social media campaign",
   },
   {
     category: "Brand Identity",
     title: "Building Brand Identities",
-    image:
-      "/197b5ddca3219911529632c3c6086ed6bb832514.webp",
+    image: "/197b5ddca3219911529632c3c6086ed6bb832514.webp",
     alt: "Minimal branded product packaging",
   },
   {
     category: "Content Strategy",
     title: "Strategic Content",
-    image:
-      "/0c2c7797fabb6552fe2de813d20747ddd623d7db.webp",
+    image: "/0c2c7797fabb6552fe2de813d20747ddd623d7db.webp",
     alt: "Laptop displaying a digital workspace",
   },
   {
     category: "Ebook Design",
     title: "Stories Brought To Life",
-    image:
-      "/af27d33222924e864c4b2a41a607007e90735646.webp",
+    image: "/af27d33222924e864c4b2a41a607007e90735646.webp",
     alt: "Books arranged as an editorial design collection",
   },
 ];
 
-function ProjectCard({
-  project,
-}: {
-  project: (typeof projects)[number];
-}) {
+function ProjectCard({ project }: { project: (typeof projects)[number] }) {
   return (
     <article className="min-w-0 rounded-[22px] border border-[#E5E5E5] bg-[#FBFBFB] p-2 sm:p-[9px]">
       <div className="relative aspect-[1.52] overflow-hidden rounded-[19px] shadow-[0_8px_13px_rgba(0,0,0,0.18)]">
@@ -65,7 +57,7 @@ function ProjectCard({
         className="urbanist group mt-3 inline-flex items-center gap-3 pb-1 text-[14px] text-[#D9B061] transition-colors hover:text-[#bd8957] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a36e3d]"
       >
         Explore My Work
-        <FiArrowRight aria-hidden="true" className="text-[19px] transition-transform duration-200 group-hover:translate-x-1" />
+        <FiArrowRight aria-hidden="true" className="text-[19px]" />
       </a>
     </article>
   );
@@ -89,9 +81,9 @@ export default function OurPortfolio() {
             Creative Work That Speaks Volumes
           </h2>
           <p className="urbanist mx-auto mt-3 max-w-7xl text-[16px] leading-[1.6] text-[#777777]">
-            A collection of social media campaigns, creative visuals, and content
-            designed to make brands stand out. Explore how I turn fresh ideas
-            into engaging digital experiences.
+            A collection of social media campaigns, creative visuals, and
+            content designed to make brands stand out. Explore how I turn fresh
+            ideas into engaging digital experiences.
           </p>
         </header>
 
@@ -104,7 +96,7 @@ export default function OurPortfolio() {
         <div className="mt-6 flex justify-center">
           <a
             href="/portfolio"
-            className="urbanist inline-flex items-center gap-2 rounded-full bg-[#D9B061] py-1.5 pl-4 pr-1.5 text-[16px] font-medium text-[#282828] shadow-[0_8px_16px_rgba(0,0,0,0.2)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#c69260] hover:shadow-[0_11px_20px_rgba(0,0,0,0.22)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] active:translate-y-0"
+            className="urbanist inline-flex items-center gap-2 rounded-full bg-[#D9B061] py-1.5 pl-4 pr-1.5 text-[16px] font-medium text-[#282828] shadow-[0_8px_16px_rgba(0,0,0,0.2)] transition-all duration-200 hover:bg-accent-hover hover:shadow-[0_11px_20px_rgba(0,0,0,0.22)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] "
           >
             View All Projects
             <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#282828] text-lg leading-none text-[#D9B061]">
@@ -116,4 +108,3 @@ export default function OurPortfolio() {
     </section>
   );
 }
-

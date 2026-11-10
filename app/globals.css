@@ -2,7 +2,8 @@
 
 @font-face {
   font-family: "Clash Display";
-  src: url("/fonts/clash-display-font/ClashDisplay-Extralight.otf") format("opentype");
+  src: url("/fonts/clash-display-font/ClashDisplay-Extralight.otf")
+    format("opentype");
   font-weight: 200;
   font-style: normal;
   font-display: swap;
@@ -10,7 +11,8 @@
 
 @font-face {
   font-family: "Clash Display";
-  src: url("/fonts/clash-display-font/ClashDisplay-Light.otf") format("opentype");
+  src: url("/fonts/clash-display-font/ClashDisplay-Light.otf")
+    format("opentype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -18,7 +20,8 @@
 
 @font-face {
   font-family: "Clash Display";
-  src: url("/fonts/clash-display-font/ClashDisplay-Regular.otf") format("opentype");
+  src: url("/fonts/clash-display-font/ClashDisplay-Regular.otf")
+    format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -26,7 +29,8 @@
 
 @font-face {
   font-family: "Clash Display";
-  src: url("/fonts/clash-display-font/ClashDisplay-Medium.otf") format("opentype");
+  src: url("/fonts/clash-display-font/ClashDisplay-Medium.otf")
+    format("opentype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -34,7 +38,8 @@
 
 @font-face {
   font-family: "Clash Display";
-  src: url("/fonts/clash-display-font/ClashDisplay-Semibold.otf") format("opentype");
+  src: url("/fonts/clash-display-font/ClashDisplay-Semibold.otf")
+    format("opentype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -91,6 +96,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-clash: var(--font-clash-display), "Clash Display", sans-serif;
+  --color-accent-hover: #C69260;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -115,9 +121,26 @@ body {
 
 .clash-display,
 .font-clash {
-  font-family: var(--font-clash-display), "Clash Display", sans-serif !important;
+  font-family:
+    var(--font-clash-display), "Clash Display", sans-serif !important;
 }
 
 .archivo {
   font-family: var(--font-archivo), sans-serif;
+}
+
+button:not(:disabled),
+a[class*="rounded-full"],
+a[class*="inline-flex"] {
+  transition-property: background-color, color, border-color, box-shadow;
+  transition-duration: 180ms;
+  transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button:not(:disabled),
+  a[class*="rounded-full"],
+  a[class*="inline-flex"] {
+    transition-duration: 0.01ms;
+  }
 }

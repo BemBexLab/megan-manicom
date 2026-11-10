@@ -1,6 +1,12 @@
 ﻿"use client";
 
-import { useEffect, useRef, useState, type FormEvent, type KeyboardEvent } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  type FormEvent,
+  type KeyboardEvent,
+} from "react";
 import { FiArrowUpRight, FiChevronDown } from "react-icons/fi";
 import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 
@@ -32,7 +38,8 @@ export default function ContactUs() {
     };
 
     document.addEventListener("pointerdown", closeOnOutsideClick);
-    return () => document.removeEventListener("pointerdown", closeOnOutsideClick);
+    return () =>
+      document.removeEventListener("pointerdown", closeOnOutsideClick);
   }, [isServiceOpen]);
 
   const chooseService = (index: number) => {
@@ -63,10 +70,14 @@ export default function ContactUs() {
         const selectedIndex = services.findIndex(
           (service) => service.value === selectedService,
         );
-        setActiveServiceIndex(selectedIndex >= 0 ? selectedIndex : services.length - 1);
+        setActiveServiceIndex(
+          selectedIndex >= 0 ? selectedIndex : services.length - 1,
+        );
         setIsServiceOpen(true);
       } else {
-        setActiveServiceIndex((index) => (index - 1 + services.length) % services.length);
+        setActiveServiceIndex(
+          (index) => (index - 1 + services.length) % services.length,
+        );
       }
     } else if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
@@ -112,7 +123,9 @@ export default function ContactUs() {
               aria-hidden="true"
               className="h-[9px] w-[9px] rounded-full border-3 border-[#282828] bg-[#D9B061] min-[850px]:h-[0.95cqw] min-[850px]:w-[0.95cqw]"
             />
-            <span className="urbanist text-[16px] text-[#777777]">Contact Us</span>
+            <span className="urbanist text-[16px] text-[#777777]">
+              Contact Us
+            </span>
           </div>
 
           <h2 className="clash-display my-2 max-w-[600px] text-[2rem] sm:text-[clamp(2.25rem,4.2vw,3.5rem)] font-medium leading-[1.05] text-[#282828]">
@@ -120,9 +133,9 @@ export default function ContactUs() {
           </h2>
 
           <p className="urbanist mt-3 max-w-[600px] text-[16px] leading-[1.7] text-[#777777]">
-            Whether you&apos;re launching something new or refreshing your social
-            media presence, I&apos;d love to hear about it. Let&apos;s create
-            something worth sharing.
+            Whether you&apos;re launching something new or refreshing your
+            social media presence, I&apos;d love to hear about it. Let&apos;s
+            create something worth sharing.
           </p>
 
           <div className="mt-10 flex flex-col gap-3">
@@ -130,7 +143,7 @@ export default function ContactUs() {
               href="tel:+01234567890"
               className="group flex w-fit items-center gap-4 rounded-full text-[#777777] transition-colors hover:text-[#D9B061] focus-visible:rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a36e3d]"
             >
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#D9B061] text-[#282828] transition-transform duration-200 group-hover:scale-105">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#D9B061] text-[#282828] transition-colors group-hover:bg-accent-hover">
                 <FaPhoneAlt aria-hidden="true" size={14} />
               </span>
               <span className="urbanist text-[16px]">(0) 123 456 789 0</span>
@@ -139,10 +152,12 @@ export default function ContactUs() {
               href="mailto:info@meganmanicom.com"
               className="group flex w-fit items-center gap-4 rounded-full text-[#777777] transition-colors hover:text-[#D9B061] focus-visible:rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a36e3d]"
             >
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#D9B061] text-[#282828] transition-transform duration-200 group-hover:scale-105">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#D9B061] text-[#282828] transition-colors group-hover:bg-accent-hover">
                 <FaEnvelope aria-hidden="true" size={14} />
               </span>
-              <span className="urbanist text-[16px]">info@meganmanicom.com</span>
+              <span className="urbanist text-[16px]">
+                info@meganmanicom.com
+              </span>
             </a>
           </div>
         </div>
@@ -152,7 +167,10 @@ export default function ContactUs() {
             Fill This Form To Get Faster Response
           </h3>
 
-          <form onSubmit={handleSubmit} className="mt-5 flex flex-col gap-[10px]">
+          <form
+            onSubmit={handleSubmit}
+            className="mt-5 flex flex-col gap-[10px]"
+          >
             <div className="grid grid-cols-1 gap-[10px] sm:grid-cols-2">
               <input
                 className={fieldClassName}
@@ -208,19 +226,23 @@ export default function ContactUs() {
                 }
                 aria-required="true"
                 aria-invalid={serviceError}
-                aria-describedby={serviceError ? "contact-service-error" : undefined}
+                aria-describedby={
+                  serviceError ? "contact-service-error" : undefined
+                }
                 onClick={() => {
                   if (!isServiceOpen) {
                     const selectedIndex = services.findIndex(
                       (service) => service.value === selectedService,
                     );
-                    setActiveServiceIndex(selectedIndex >= 0 ? selectedIndex : 0);
+                    setActiveServiceIndex(
+                      selectedIndex >= 0 ? selectedIndex : 0,
+                    );
                   }
                   setIsServiceOpen((open) => !open);
                 }}
                 onKeyDown={handleServiceKeyDown}
                 style={{ color: selectedService ? "#333333" : "#C6C6C6" }}
-                className={`flex ${fieldClassName} items-center justify-between text-left transition-colors hover:border-[#D9B061] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a36e3d] ${
+                className={`flex ${fieldClassName} items-center justify-between text-left transition-[background-color,border-color,box-shadow] hover:border-[#D9B061] hover:bg-[#FFFCF7] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a36e3d] ${
                   isServiceOpen || serviceError
                     ? "border-[#D9B061] ring-1 ring-[#D9B061]/30"
                     : ""
@@ -294,13 +316,26 @@ export default function ContactUs() {
                 className="h-4 w-4 shrink-0 rounded-[3px] accent-[#D9B061]"
               />
               <span className="urbanist">
-                Submitting You Agree With <a href="/privacy-policy" className="transition-colors hover:text-[#A87932] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[#a36e3d]">Privacy Policy</a> And <a href="/terms-of-service" className="transition-colors hover:text-[#A87932] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[#a36e3d]">Terms Of Service.</a>
+                Submitting You Agree With{" "}
+                <a
+                  href="/privacy-policy"
+                  className="transition-colors hover:text-[#A87932] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[#a36e3d]"
+                >
+                  Privacy Policy
+                </a>{" "}
+                And{" "}
+                <a
+                  href="/terms-of-service"
+                  className="transition-colors hover:text-[#A87932] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[#a36e3d]"
+                >
+                  Terms Of Service.
+                </a>
               </span>
             </label>
 
             <button
               type="submit"
-              className="urbanist mt-3 inline-flex w-fit items-center gap-2 rounded-full bg-[#D9B061] py-1.5 pl-4 pr-1.5 text-[16px] font-medium text-[#282828] shadow-[0_8px_18px_rgba(0,0,0,0.18)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#c69260] hover:shadow-[0_11px_20px_rgba(0,0,0,0.2)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] active:translate-y-0"
+              className="urbanist mt-3 inline-flex w-fit items-center gap-2 rounded-full bg-[#D9B061] py-1.5 pl-4 pr-1.5 text-[16px] font-medium text-[#282828] shadow-[0_8px_18px_rgba(0,0,0,0.18)] transition-all duration-200 hover:bg-accent-hover hover:shadow-[0_11px_20px_rgba(0,0,0,0.2)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] "
             >
               Let&apos;s Get Connected
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#282828] text-lg leading-none text-[#D9B061]">

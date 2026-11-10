@@ -43,9 +43,10 @@ export default function HeroSection() {
           <p>
             I&apos;m Megan Manicom, a social media marketing specialist helping
             authors, coaches, creators, and growing brands build visibility
-            through clear content, launch planning, and audience-focused strategy.
+            through clear content, launch planning, and audience-focused
+            strategy.
           </p>
-          <Link href="/work-with-me" className="hero-cta">
+          <Link href="/work-with-me" className="hero-cta group">
             Work With Me
             <span className="hero-cta-icon">
               <FiArrowUpRight aria-hidden="true" size={18} />
@@ -70,13 +71,17 @@ export default function HeroSection() {
           <div className="hero-rating-details">
             <span className="hero-score text-[#282828]">4.8/5</span>
             <p className="hero-rating-caption text-[#282828]">
-              500+ Happy<br />Client Worldwide
+              500+ Happy
+              <br />
+              Client Worldwide
             </p>
           </div>
         </div>
 
         <div className="hero-partners urbanist">
-          <p className="hero-partners-heading text-[#282828]">Our Trusted Partners</p>
+          <p className="hero-partners-heading text-[#282828]">
+            Our Trusted Partners
+          </p>
           <div className="hero-partner-logos">
             {partnerLogos.map((logo) => (
               <Image

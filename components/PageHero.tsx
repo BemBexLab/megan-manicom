@@ -53,10 +53,10 @@ export default function PageHero({
           </p>
           <Link
             href={buttonHref}
-            className="urbanist group mx-auto mt-5 inline-flex h-9 items-center justify-start gap-2 whitespace-nowrap rounded-full bg-[#282828] py-1 pl-3 pr-1 text-[12px] font-normal text-[#D9B061] shadow-[0_6px_12px_rgba(0,0,0,0.2)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#F8F2EC] hover:shadow-[0_9px_18px_rgba(0,0,0,0.2)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a36e3d] active:translate-y-0 min-[900px]:mt-[1.8cqw] min-[900px]:h-auto min-[900px]:w-fit min-[900px]:gap-[0.45cqw] min-[900px]:py-[0.48cqw] min-[900px]:pl-[0.8cqw] min-[900px]:pr-[0.4cqw] min-[900px]:text-[clamp(10px,0.98cqw,14px)]"
+            className="urbanist group mx-auto mt-5 inline-flex h-9 items-center justify-start gap-2 whitespace-nowrap rounded-full bg-[#282828] py-1 pl-3 pr-1 text-[12px] font-normal text-[#D9B061] shadow-[0_6px_12px_rgba(0,0,0,0.2)] transition-all duration-200 hover:bg-[#D9B061] hover:text-[#282828] hover:shadow-[0_9px_18px_rgba(0,0,0,0.2)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a36e3d] min-[900px]:mt-[1.8cqw] min-[900px]:h-auto min-[900px]:w-fit min-[900px]:gap-[0.45cqw] min-[900px]:py-[0.48cqw] min-[900px]:pl-[0.8cqw] min-[900px]:pr-[0.4cqw] min-[900px]:text-[clamp(10px,0.98cqw,14px)]"
           >
             {buttonLabel}
-            <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[#D9B061] text-[#282828] transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 min-[900px]:h-[1.5cqw] min-[900px]:w-[1.5cqw]">
+            <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[#D9B061] text-[#282828] transition-colors duration-200 group-hover:bg-[#282828] group-hover:text-[#D9B061] min-[900px]:h-[1.5cqw] min-[900px]:w-[1.5cqw]">
               <FiArrowUpRight
                 aria-hidden="true"
                 size={12}
@@ -100,26 +100,32 @@ export default function PageHero({
         )}
 
         {partnersHeading && partnerLogos.length > 0 && (
-        <div className="relative z-10 mt-10 w-full max-w-[360px] min-[900px]:absolute min-[900px]:bottom-[5.3%] min-[900px]:right-[5.2%] min-[900px]:mt-0 min-[900px]:w-[29%] min-[900px]:max-w-none">
-          <p className="urbanist flex items-center justify-center gap-2 text-[13px] leading-[1.4] text-[#282828] min-[900px]:gap-[0.65cqw] min-[900px]:text-[clamp(12px,1.15cqw,16px)]">
-            <span aria-hidden="true" className="h-px flex-1 bg-gradient-to-r from-transparent to-[#AFAFAF]" />
-            {partnersHeading}
-            <span aria-hidden="true" className="h-px flex-1 bg-gradient-to-l from-transparent to-[#AFAFAF]" />
-          </p>
-          <div className="mt-4 flex items-center justify-center gap-4 sm:gap-5 min-[900px]:mt-[1.5cqw] min-[900px]:gap-[1.55cqw]">
-            {partnerLogos.map((logo) => (
-              <Image
-                key={logo.name}
-                src={logo.src}
-                alt={logo.name}
-                width={logo.width}
-                height={logo.height}
-                quality={100}
-                className="h-[14px] w-auto object-contain min-[900px]:h-[1.37cqw]"
+          <div className="relative z-10 mt-10 w-full max-w-[360px] min-[900px]:absolute min-[900px]:bottom-[5.3%] min-[900px]:right-[5.2%] min-[900px]:mt-0 min-[900px]:w-[29%] min-[900px]:max-w-none">
+            <p className="urbanist flex items-center justify-center gap-2 text-[13px] leading-[1.4] text-[#282828] min-[900px]:gap-[0.65cqw] min-[900px]:text-[clamp(12px,1.15cqw,16px)]">
+              <span
+                aria-hidden="true"
+                className="h-px flex-1 bg-gradient-to-r from-transparent to-[#AFAFAF]"
               />
-            ))}
+              {partnersHeading}
+              <span
+                aria-hidden="true"
+                className="h-px flex-1 bg-gradient-to-l from-transparent to-[#AFAFAF]"
+              />
+            </p>
+            <div className="mt-4 flex items-center justify-center gap-4 sm:gap-5 min-[900px]:mt-[1.5cqw] min-[900px]:gap-[1.55cqw]">
+              {partnerLogos.map((logo) => (
+                <Image
+                  key={logo.name}
+                  src={logo.src}
+                  alt={logo.name}
+                  width={logo.width}
+                  height={logo.height}
+                  quality={100}
+                  className="h-[14px] w-auto object-contain min-[900px]:h-[1.37cqw]"
+                />
+              ))}
+            </div>
           </div>
-        </div>
         )}
       </div>
     </section>
