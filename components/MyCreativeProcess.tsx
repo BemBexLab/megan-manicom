@@ -60,7 +60,7 @@ function StepCard({ step, index }: { step: ProcessStep; index: number }) {
   return (
     <article
       data-process-card
-      className={`relative z-10 flex min-h-[140px] w-full min-w-0 flex-col justify-center rounded-[24px] border border-[#E5E5E5] bg-[#FBFBFB] px-4 py-5 shadow-[0_2px_3px_rgba(0,0,0,0.10)] lg:absolute lg:h-[27.027%] lg:min-h-0 lg:w-[24.663%] lg:rounded-[1.93cqw] lg:p-[1.16cqw] ${stepPositions[index] ?? ""}`}
+      className={`relative z-10 flex min-h-[140px] w-[min(84vw,360px)] min-w-0 shrink-0 snap-center flex-col justify-center rounded-[24px] border border-[#E5E5E5] bg-[#FBFBFB] px-4 py-5 shadow-[0_2px_3px_rgba(0,0,0,0.10)] sm:w-[min(66vw,420px)] lg:absolute lg:h-[27.027%] lg:min-h-0 lg:w-[24.663%] lg:rounded-[1.93cqw] lg:p-[1.16cqw] ${stepPositions[index] ?? ""}`}
     >
       {step.number !== undefined && (
         <span className="clash-display mb-3 text-sm font-semibold leading-none text-[#282828] lg:mb-[0.9cqw] lg:text-[clamp(12px,1.05cqw,15px)]">
@@ -191,7 +191,7 @@ export default function MyCreativeProcess({
           </p>
         </header>
 
-        <div className="relative mx-auto mt-6 grid w-full min-w-0 max-w-md grid-cols-1 gap-5 sm:max-w-[960px] sm:grid-cols-2 sm:gap-6 lg:mt-[0.1cqw] lg:block lg:aspect-[1038/370] lg:max-w-none">
+        <div className="relative mx-auto mt-6 w-full min-w-0 max-w-[1420px] lg:mt-[0.1cqw] lg:aspect-[1038/370]">
           {connectors.map((connector) => (
             <Image
               key={connector.src}
@@ -205,11 +205,18 @@ export default function MyCreativeProcess({
             />
           ))}
 
-          {steps.slice(0, 2).map((step, index) => (
-            <StepCard key={step.title} step={step} index={index} />
-          ))}
+          <div
+            role="region"
+            aria-label="Creative process steps"
+            tabIndex={0}
+            className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain px-4 pb-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D9B061] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:-mx-6 sm:gap-5 sm:px-6 lg:contents"
+          >
+            {steps.map((step, index) => (
+              <StepCard key={step.title} step={step} index={index} />
+            ))}
+          </div>
 
-          <div className="relative z-20 order-last flex justify-center py-3 sm:col-span-2 lg:absolute lg:left-1/2 lg:top-[50.811%] lg:order-none lg:-translate-x-1/2 lg:-translate-y-1/2 lg:py-0">
+          <div className="relative z-20 flex justify-center py-3 lg:absolute lg:left-1/2 lg:top-[50.811%] lg:-translate-x-1/2 lg:-translate-y-1/2 lg:py-0">
             <a
               data-process-cta
               href={buttonHref}
@@ -225,10 +232,6 @@ export default function MyCreativeProcess({
               </span>
             </a>
           </div>
-
-          {steps.slice(2).map((step, index) => (
-            <StepCard key={step.title} step={step} index={index + 2} />
-          ))}
         </div>
       </div>
     </section>

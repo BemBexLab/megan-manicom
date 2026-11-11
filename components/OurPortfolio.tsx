@@ -35,14 +35,14 @@ const projects = [
 
 function ProjectCard({ project }: { project: (typeof projects)[number] }) {
   return (
-    <article data-portfolio-card className="min-w-0 rounded-[22px] border border-[#E5E5E5] bg-[#FBFBFB] p-2 sm:p-[9px]">
+    <article data-portfolio-card className="min-w-0 w-[84vw] shrink-0 snap-center rounded-[22px] border border-[#E5E5E5] bg-[#FBFBFB] p-2 sm:w-[44vw] sm:p-[9px] lg:w-auto">
       <div className="relative aspect-[1.52] overflow-hidden rounded-[19px] shadow-[0_8px_13px_rgba(0,0,0,0.18)]">
         <Image
           src={project.image}
           alt={project.alt}
           width={900}
           height={592}
-          sizes="(min-width: 1420px) 355px, (max-width: 639px) calc(100vw - 32px), (max-width: 1023px) calc(50vw - 24px), 25vw"
+          sizes="(min-width: 1420px) 346px, (min-width: 1024px) calc((100vw - 68px) / 4), (min-width: 640px) 44vw, 84vw"
           data-portfolio-image
           className="h-full w-full object-cover"
         />
@@ -172,7 +172,12 @@ export default function OurPortfolio() {
           </p>
         </header>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-3">
+        <div
+          role="region"
+          aria-label="Portfolio projects"
+          tabIndex={0}
+          className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain px-4 pb-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D9B061] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:-mx-6 sm:gap-5 sm:px-6 lg:mx-0 lg:grid lg:grid-cols-4 lg:gap-3 lg:overflow-visible lg:p-0"
+        >
           {projects.map((project) => (
             <ProjectCard key={project.title} project={project} />
           ))}
