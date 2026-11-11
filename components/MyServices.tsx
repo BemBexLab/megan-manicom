@@ -184,7 +184,7 @@ export default function ServicesSection() {
               return (
                 <div
                   key={service.title}
-                  className="border-b border-[#D2D2D2] last:border-b-0"
+                  className="border-b border-[#D2D2D2] pb-5 last:border-b-0 lg:pb-[2.16cqw]"
                 >
                   <h3>
                     <button
@@ -193,9 +193,9 @@ export default function ServicesSection() {
                       onClick={() => setActive(isActive ? null : i)}
                       aria-expanded={isActive}
                       aria-controls={panelId}
-                      className={`clash-display grid w-full grid-cols-[24px_minmax(0,1fr)] items-start gap-x-3 text-left text-[17px] font-medium leading-[1.4] transition-[color,padding] duration-500 ease-in-out motion-reduce:transition-none focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a36e3d] lg:grid-cols-[1.89cqw_minmax(0,1fr)] lg:text-[clamp(16px,1.51cqw,22px)] ${
+                      className={`clash-display grid w-full grid-cols-[24px_minmax(0,1fr)] items-start gap-x-3 text-left text-[17px] font-medium leading-[1.4] transition-colors duration-300 motion-reduce:transition-none focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a36e3d] lg:grid-cols-[1.89cqw_minmax(0,1fr)] lg:text-[clamp(16px,1.51cqw,22px)] ${
                         i === 0 ? "pt-0" : "pt-5 lg:pt-[2.16cqw]"
-                      } ${isActive ? "pb-0 lg:gap-x-[1.42cqw]" : "pb-5 lg:pb-[2.16cqw] lg:gap-x-[1.89cqw]"} ${
+                      } ${isActive ? "lg:gap-x-[1.42cqw]" : "lg:gap-x-[1.89cqw]"} ${
                         isActive
                           ? "text-[#D9B061]"
                           : "text-[#282828] hover:text-[#D9B061]"
