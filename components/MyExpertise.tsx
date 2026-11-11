@@ -1,3 +1,8 @@
+"use client";
+
+import { useLayoutEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 
@@ -25,10 +30,48 @@ const expertise = [
 ];
 
 export default function MyExpertise() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useLayoutEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    gsap.registerPlugin(ScrollTrigger);
+    const media = gsap.matchMedia();
+
+    media.add("(prefers-reduced-motion: no-preference)", () => {
+      const context = gsap.context(() => {
+        section.querySelectorAll<HTMLElement>("[data-expertise-card]").forEach((card) => {
+          gsap.fromTo(
+            card,
+            { x: 48, autoAlpha: 0 },
+            {
+              x: 0,
+              autoAlpha: 1,
+              duration: 0.7,
+              ease: "power3.out",
+              clearProps: "transform,opacity,visibility",
+              scrollTrigger: {
+                trigger: card,
+                start: "top 85%",
+                once: true,
+              },
+            },
+          );
+        });
+      }, section);
+
+      return () => context.revert();
+    });
+
+    return () => media.revert();
+  }, []);
+
   return (
     <section
+      ref={sectionRef}
       aria-labelledby="expertise-title"
-      className="section-spacing w-full bg-[#F5F5F5] px-5 sm:px-8 lg:px-[5%]"
+      className="section-spacing w-full overflow-x-clip bg-[#F5F5F5] px-5 sm:px-8 lg:px-[5%]"
     >
       <div className="mx-auto w-full max-w-[1420px] lg:[container-type:inline-size]">
         <div className="grid grid-cols-1 items-start gap-10 sm:gap-12 lg:grid-cols-2 lg:gap-x-[1.2%] lg:gap-y-0">
@@ -78,6 +121,7 @@ export default function MyExpertise() {
             {expertise.map((item, index) => (
               <li
                 key={item.number}
+                data-expertise-card
                 className="relative min-h-[210px] bg-[length:100%_100%] bg-no-repeat px-5 pb-12 pt-4 [&:not(:first-child)]:-mt-6 sm:min-h-[220px] sm:px-7 lg:min-h-[15.96cqw] lg:px-[2.04cqw] lg:pb-[3.75cqw] lg:pt-[1.16cqw] lg:[&:not(:first-child)]:-mt-[3cqw]"
                 style={{
                   backgroundImage: `url("${index % 2 === 0 ? "/Union.webp" : "/Union%20(1).webp"}")`,

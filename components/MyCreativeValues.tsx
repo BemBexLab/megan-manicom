@@ -1,6 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useLayoutEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 import { FiArrowLeft, FiArrowRight, FiArrowUpRight } from "react-icons/fi";
 
@@ -37,12 +39,48 @@ const values = [
 
 export default function MyCreativeValues() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const activeValue = values[activeIndex];
+  const sectionRef = useRef<HTMLElement>(null);
+  const panelId = useId();
+
+  useLayoutEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    gsap.registerPlugin(ScrollTrigger);
+    const media = gsap.matchMedia();
+
+    media.add("(prefers-reduced-motion: no-preference)", () => {
+      const context = gsap.context(() => {
+        section.querySelectorAll<HTMLElement>("[data-values-reveal]").forEach((element) => {
+          gsap.fromTo(
+            element,
+            { y: 20, autoAlpha: 0 },
+            {
+              y: 0,
+              autoAlpha: 1,
+              duration: 0.65,
+              ease: "power2.out",
+              clearProps: "transform,opacity,visibility",
+              scrollTrigger: {
+                trigger: element,
+                start: "top 85%",
+                once: true,
+              },
+            },
+          );
+        });
+      }, section);
+
+      return () => context.revert();
+    });
+
+    return () => media.revert();
+  }, []);
 
   return (
-    <section className="section-spacing w-full bg-[#F5F5F5] px-4 sm:px-6 lg:flex lg:min-h-[492px] lg:items-center lg:px-8 2xl:px-6">
+    <section ref={sectionRef} className="section-spacing w-full bg-[#F5F5F5] px-4 sm:px-6 lg:flex lg:min-h-[492px] lg:items-center lg:px-8 2xl:px-6">
       <div className="mx-auto grid w-full max-w-[1420px] grid-cols-1 items-center gap-9 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
-        <div>
+        <div data-values-reveal>
           <div className="flex items-center gap-2">
             <span
               aria-hidden="true"
@@ -75,14 +113,21 @@ export default function MyCreativeValues() {
           </Link>
         </div>
 
-        <div className="w-full">
+        <div data-values-reveal className="w-full min-w-0">
           <div className="relative grid grid-cols-4 lg:-left-[3.86%] lg:w-[92.73%]">
             <span
               aria-hidden="true"
               className="absolute left-[12.5%] right-[12.5%] top-5 h-[2px] bg-[#DDDDDD]"
-            />
+            >
+              <span
+                data-values-progress
+                className="block h-full w-full origin-left bg-[#D9B061] transition-transform duration-500 ease-in-out motion-reduce:transition-none"
+                style={{ transform: `scaleX(${activeIndex / (values.length - 1)})` }}
+              />
+            </span>
             {values.map((value, index) => {
               const isActive = index === activeIndex;
+              const isComplete = index < activeIndex;
 
               return (
                 <button
@@ -91,12 +136,16 @@ export default function MyCreativeValues() {
                   onClick={() => setActiveIndex(index)}
                   aria-label={`Show ${value.label}`}
                   aria-pressed={isActive}
+                  aria-current={isActive ? "step" : undefined}
+                  aria-controls={`${panelId}-${index}`}
                   className="group relative z-10 flex min-w-0 flex-col items-center text-center focus-visible:rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a36e3d]"
                 >
                   <span
-                    className={`flex h-10 w-10 items-center justify-center rounded-full border text-[15px] transition-all duration-200 ${
+                    className={`flex h-10 w-10 items-center justify-center rounded-full border text-[15px] transition-[background-color,border-color,color,box-shadow] duration-300 motion-reduce:transition-none ${
                       isActive
                         ? "border-[#D9B061] bg-[#D9B061] text-[#FFFFFF] shadow-[0_4px_8px_rgba(0,0,0,0.12)] group-hover:bg-accent-hover"
+                        : isComplete
+                          ? "border-[#D9B061] bg-[#FBF3E1] text-[#8F633D] group-hover:bg-[#F5E6C8]"
                         : "border-[#E7E7E7] bg-[#FCFCFC] text-[#282828] group-hover:border-[#D9B061] group-hover:bg-[#FBF3E1]"
                     }`}
                   >
@@ -104,7 +153,7 @@ export default function MyCreativeValues() {
                   </span>
                   <span
                     className={`urbanist mt-3 max-w-[100px] text-[13px] leading-[1.35] transition-colors duration-200 group-hover:text-[#A87932] ${
-                      isActive ? "text-[#282828]" : "text-[#B8B8B8]"
+                      isActive ? "text-[#282828]" : isComplete ? "text-[#8F633D]" : "text-[#B8B8B8]"
                     }`}
                   >
                     {value.label}
@@ -116,14 +165,31 @@ export default function MyCreativeValues() {
 
           <div
             aria-live="polite"
-            className="mt-7 min-h-[100px] rounded-[20px] border border-[#E1E1E1] bg-white/70 px-5 py-4 sm:px-[18px] lg:mt-[31px]"
+            aria-atomic="true"
+            className="mt-7 grid min-h-[100px] rounded-[20px] border border-[#E1E1E1] bg-white/70 px-5 py-4 sm:px-[18px] lg:mt-[31px]"
           >
-            <h3 className="clash-display text-[18px] font-medium leading-[1.35] text-[#282828] 2xl:text-[20px]">
-              {activeValue.title}
-            </h3>
-            <p className="urbanist mt-2 text-[13px] leading-[1.55] text-[#777777] 2xl:text-[16px]">
-              {activeValue.description}
-            </p>
+            {values.map((value, index) => (
+              <div
+                key={value.step}
+                id={`${panelId}-${index}`}
+                role="region"
+                aria-label={value.title}
+                aria-hidden={index !== activeIndex}
+                inert={index !== activeIndex}
+                className={`min-w-0 [grid-area:1/1] transition-[opacity,transform] ease-out motion-reduce:transition-none ${
+                  index === activeIndex
+                    ? "z-10 translate-y-0 opacity-100 duration-300 delay-100"
+                    : "pointer-events-none translate-y-2 opacity-0 duration-150"
+                }`}
+              >
+                <h3 className="clash-display text-[18px] font-medium leading-[1.35] text-[#282828] 2xl:text-[20px]">
+                  {value.title}
+                </h3>
+                <p className="urbanist mt-2 text-[13px] leading-[1.55] text-[#777777] 2xl:text-[16px]">
+                  {value.description}
+                </p>
+              </div>
+            ))}
           </div>
 
           <div className="mt-5 flex items-center gap-2.5 lg:mt-4">
@@ -151,6 +217,9 @@ export default function MyCreativeValues() {
             >
               <FiArrowRight aria-hidden="true" size={18} />
             </button>
+            <p className="urbanist ml-auto text-[13px] tabular-nums text-[#777777]">
+              Step <span className="font-medium text-[#282828]">{activeIndex + 1}</span> of {values.length}
+            </p>
           </div>
         </div>
       </div>

@@ -1,4 +1,9 @@
 // components/AboutSection.tsx
+"use client";
+
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 
 const stats = [
@@ -55,12 +60,68 @@ const features = [
 ];
 
 export default function AboutSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const media = gsap.matchMedia();
+    media.add("(prefers-reduced-motion: no-preference)", () => {
+      const context = gsap.context(() => {
+        const timeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: section,
+            start: "top 78%",
+            once: true,
+          },
+        });
+
+        timeline
+          .from("[data-about-image]", {
+            x: -28,
+            autoAlpha: 0,
+            duration: 0.7,
+            ease: "power2.out",
+          })
+          .from(
+            "[data-about-copy] > *",
+            {
+              y: 18,
+              autoAlpha: 0,
+              duration: 0.55,
+              stagger: 0.1,
+              ease: "power2.out",
+            },
+            "-=0.4",
+          )
+          .from(
+            "[data-about-feature]",
+            {
+              y: 18,
+              autoAlpha: 0,
+              duration: 0.5,
+              stagger: 0.12,
+              ease: "power2.out",
+            },
+            "-=0.25",
+          );
+      }, section);
+
+      return () => context.revert();
+    });
+
+    return () => media.revert();
+  }, []);
+
   return (
-    <section className="section-spacing bg-[#F7F7F7]">
+    <section ref={sectionRef} className="section-spacing bg-[#F7F7F7]">
       <div className="mx-auto max-w-[1500px] px-6 lg:px-10">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-5">
           {/* LEFT — Image card with stats overlay */}
-          <div className="relative mx-auto w-full max-w-[650px] lg:mx-0">
+          <div data-about-image className="relative mx-auto w-full max-w-[650px] lg:mx-0">
             <div className="relative aspect-[370/318] w-full overflow-hidden rounded-3xl bg-gradient-to-b from-white to-[#E9E9E9]">
               <Image
                 src="/3d10acc26a868a5485f246941722d40e2d5993dc.webp"
@@ -95,7 +156,7 @@ export default function AboutSection() {
           </div>
 
           {/* RIGHT — Content */}
-          <div className="flex flex-col">
+          <div data-about-copy className="flex flex-col">
             {/* Label */}
             <div className="flex items-center gap-1.5">
               <span
@@ -126,6 +187,7 @@ export default function AboutSection() {
               {features.map((feature) => (
                 <div
                   key={feature.title}
+                  data-about-feature
                   className="rounded-3xl border border-gray-200 bg-white/60 p-6"
                 >
                   <div className="text-[#D9A066]">{feature.icon}</div>

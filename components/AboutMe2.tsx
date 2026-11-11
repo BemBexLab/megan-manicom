@@ -1,3 +1,8 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
@@ -9,13 +14,69 @@ const stats = [
 ];
 
 export default function AboutMe2() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const media = gsap.matchMedia();
+    media.add("(prefers-reduced-motion: no-preference)", () => {
+      const context = gsap.context(() => {
+        const timeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: section,
+            start: "top 78%",
+            once: true,
+          },
+        });
+
+        timeline
+          .from("[data-about-portrait]", {
+            x: -22,
+            autoAlpha: 0,
+            duration: 0.7,
+            ease: "power2.out",
+          })
+          .from(
+            "[data-about-content]",
+            {
+              x: 18,
+              autoAlpha: 0,
+              duration: 0.6,
+              ease: "power2.out",
+            },
+            "-=0.4",
+          )
+          .from(
+            "[data-about-stat]",
+            {
+              y: 12,
+              autoAlpha: 0,
+              duration: 0.45,
+              stagger: 0.1,
+              ease: "power2.out",
+            },
+            "-=0.3",
+          );
+      }, section);
+
+      return () => context.revert();
+    });
+
+    return () => media.revert();
+  }, []);
+
   return (
     <section
+      ref={sectionRef}
       aria-labelledby="about-me-title"
       className="section-spacing w-full bg-[#F7F7F7] px-4 sm:px-6 lg:px-[5%]"
     >
       <div className="mx-auto grid w-full max-w-[1420px] grid-cols-1 items-start gap-9 [container-type:inline-size] lg:grid-cols-[0.83fr_1fr] lg:gap-[9.5%]">
-        <div className="relative mx-auto aspect-[442/496] w-full max-w-[520px] overflow-hidden rounded-[20px] bg-white lg:mx-0 lg:max-w-none">
+        <div data-about-portrait className="relative mx-auto aspect-[442/496] w-full max-w-[520px] overflow-hidden rounded-[20px] bg-white lg:mx-0 lg:max-w-none">
           <Image
             src="/3d10acc26a868a5485f246941722d40e2d5993dc.webp"
             alt="Megan Manicom"
@@ -26,7 +87,7 @@ export default function AboutMe2() {
           />
         </div>
 
-        <div className="min-w-0">
+        <div data-about-content className="min-w-0">
           <div className="flex items-center gap-2">
             <span
               aria-hidden="true"
@@ -74,6 +135,7 @@ export default function AboutMe2() {
             {stats.map((stat) => (
               <div
                 key={stat.label}
+                data-about-stat
                 className="flex min-h-[76px] min-w-0 flex-col justify-center rounded-[20px] border border-[#E1E1E1] bg-[#FBFBFB] px-2.5 py-3 sm:px-4 lg:min-h-[clamp(76px,7.4cqw,104px)] lg:px-[2.3cqw]"
               >
                 <span className="clash-display font-clash text-[24px] font-medium leading-none text-[#282828] lg:text-[clamp(24px,2.4cqw,34px)]">

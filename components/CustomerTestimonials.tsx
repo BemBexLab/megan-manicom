@@ -1,5 +1,7 @@
 "use client";
 
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { FiArrowLeft, FiArrowRight, FiStar } from "react-icons/fi";
@@ -57,7 +59,7 @@ function TestimonialCard({
   testimonial: (typeof testimonials)[number];
 }) {
   return (
-    <article className="flex min-h-[308px] w-[var(--testimonial-card-width)] shrink-0 snap-start flex-col rounded-[20px] border border-[#E5E5E5] bg-[#FBFBFB] px-[22px] py-8 shadow-[0_2px_3px_rgba(0,0,0,0.1)]">
+    <article data-testimonial-card className="flex min-h-[308px] w-[var(--testimonial-card-width)] shrink-0 snap-start flex-col rounded-[20px] border border-[#E5E5E5] bg-[#FBFBFB] px-[22px] py-8 shadow-[0_2px_3px_rgba(0,0,0,0.1)]">
       <svg
         aria-hidden="true"
         viewBox="0 0 28 22"
@@ -96,9 +98,74 @@ function TestimonialCard({
 }
 
 export default function CustomerTestimonials() {
+  const sectionRef = useRef<HTMLElement>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
   const [canScrollPrevious, setCanScrollPrevious] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(true);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const media = gsap.matchMedia();
+    media.add("(prefers-reduced-motion: no-preference)", () => {
+      const context = gsap.context(() => {
+        const header = section.querySelector("[data-testimonial-header]");
+        const rating = section.querySelector("[data-testimonial-rating]");
+        const cards = section.querySelectorAll("[data-testimonial-card]");
+
+        const timeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: section,
+            start: "top 78%",
+            once: true,
+          },
+        });
+
+        if (header) {
+          timeline.from(header, {
+            y: 20,
+            autoAlpha: 0,
+            duration: 0.6,
+            ease: "power2.out",
+          });
+        }
+
+        if (rating) {
+          timeline.from(
+            rating,
+            {
+              y: 22,
+              autoAlpha: 0,
+              duration: 0.55,
+              ease: "power2.out",
+            },
+            "-=0.25",
+          );
+        }
+
+        if (cards.length) {
+          timeline.from(
+            cards,
+            {
+              y: 18,
+              autoAlpha: 0,
+              duration: 0.5,
+              stagger: 0.08,
+              ease: "power2.out",
+            },
+            "-=0.2",
+          );
+        }
+      }, section);
+
+      return () => context.revert();
+    });
+
+    return () => media.revert();
+  }, []);
 
   useEffect(() => {
     const carousel = carouselRef.current;
@@ -143,9 +210,9 @@ export default function CustomerTestimonials() {
   };
 
   return (
-    <section className="section-spacing w-full overflow-hidden bg-[#F5F5F5] px-4 sm:px-6 lg:px-[5%]">
+    <section ref={sectionRef} className="section-spacing w-full overflow-hidden bg-[#F5F5F5] px-4 sm:px-6 lg:px-[5%]">
       <div className="mx-auto w-full max-w-[1420px] [--testimonial-card-width:282px] md:[--testimonial-card-width:clamp(250px,21.75vw,344px)]">
-        <header className="grid grid-cols-1 items-end gap-5 lg:grid-cols-2 lg:gap-3.5">
+        <header data-testimonial-header className="grid grid-cols-1 items-end gap-5 lg:grid-cols-2 lg:gap-3.5">
           <div>
             <div className="flex items-center gap-2">
               <span
@@ -170,7 +237,7 @@ export default function CustomerTestimonials() {
         </header>
 
         <div className="mt-10 flex flex-col gap-4 md:flex-row md:items-center md:gap-3.5 lg:mt-14 lg:mr-[calc((min(90vw,1420px)-100vw)/2)]">
-          <aside className="flex min-h-[300px] w-full shrink-0 flex-col items-center rounded-[22px] bg-[#D9B061] px-6 pt-10 pb-5 text-center text-white shadow-[0_2px_4px_rgba(0,0,0,0.12)] md:min-h-[358px] md:w-[var(--testimonial-card-width)] md:pt-[100px]">
+          <aside data-testimonial-rating className="flex min-h-[300px] w-full shrink-0 flex-col items-center rounded-[22px] bg-[#D9B061] px-6 pt-10 pb-5 text-center text-white shadow-[0_2px_4px_rgba(0,0,0,0.12)] md:min-h-[358px] md:w-[var(--testimonial-card-width)] md:pt-[100px]">
             <p className="urbanist text-[60px] font-semibold leading-none">
               4.8
             </p>

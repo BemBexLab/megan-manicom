@@ -1,3 +1,8 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { FiArrowRight, FiArrowUpRight } from "react-icons/fi";
 
@@ -30,7 +35,7 @@ const projects = [
 
 function ProjectCard({ project }: { project: (typeof projects)[number] }) {
   return (
-    <article className="min-w-0 rounded-[22px] border border-[#E5E5E5] bg-[#FBFBFB] p-2 sm:p-[9px]">
+    <article data-portfolio-card className="min-w-0 rounded-[22px] border border-[#E5E5E5] bg-[#FBFBFB] p-2 sm:p-[9px]">
       <div className="relative aspect-[1.52] overflow-hidden rounded-[19px] shadow-[0_8px_13px_rgba(0,0,0,0.18)]">
         <Image
           src={project.image}
@@ -39,6 +44,7 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
           height={592}
           unoptimized
           sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 25vw"
+          data-portfolio-image
           className="h-full w-full object-cover"
         />
       </div>
@@ -64,10 +70,90 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
 }
 
 export default function OurPortfolio() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const media = gsap.matchMedia();
+    media.add("(prefers-reduced-motion: no-preference)", () => {
+      const context = gsap.context(() => {
+        const header = section.querySelector("[data-portfolio-header]");
+        const cards = section.querySelectorAll("[data-portfolio-card]");
+        const images = section.querySelectorAll("[data-portfolio-image]");
+        const button = section.querySelector("[data-portfolio-cta]");
+
+        const timeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: section,
+            start: "top 78%",
+            once: true,
+          },
+        });
+
+        if (header) {
+          timeline.from(header, {
+            y: 20,
+            autoAlpha: 0,
+            duration: 0.6,
+            ease: "power2.out",
+          });
+        }
+
+        if (cards.length) {
+          timeline.from(
+            cards,
+            {
+              y: 26,
+              autoAlpha: 0,
+              duration: 0.55,
+              stagger: 0.12,
+              ease: "power2.out",
+            },
+            "-=0.25",
+          );
+        }
+
+        if (images.length) {
+          timeline.from(
+            images,
+            {
+              scale: 1.05,
+              duration: 0.75,
+              stagger: 0.12,
+              ease: "power2.out",
+            },
+            "-=0.45",
+          );
+        }
+
+        if (button) {
+          timeline.from(
+            button,
+            {
+              y: 10,
+              autoAlpha: 0,
+              duration: 0.4,
+              ease: "power2.out",
+            },
+            "-=0.2",
+          );
+        }
+      }, section);
+
+      return () => context.revert();
+    });
+
+    return () => media.revert();
+  }, []);
+
   return (
-    <section className="section-spacing w-full bg-[#F7F7F7] px-4 sm:px-6 lg:px-4">
+    <section ref={sectionRef} className="section-spacing w-full bg-[#F7F7F7] px-4 sm:px-6 lg:px-4">
       <div className="mx-auto w-full max-w-[1420px]">
-        <header className="mx-auto mb-7 max-w-7xl text-center sm:mb-8">
+        <header data-portfolio-header className="mx-auto mb-7 max-w-7xl text-center sm:mb-8">
           <div className="flex items-center justify-center gap-2">
             <span
               aria-hidden="true"
@@ -96,6 +182,7 @@ export default function OurPortfolio() {
         <div className="mt-6 flex justify-center">
           <a
             href="/portfolio"
+            data-portfolio-cta
             className="urbanist inline-flex items-center gap-2 rounded-full bg-[#D9B061] py-1.5 pl-4 pr-1.5 text-[16px] font-medium text-[#282828] shadow-[0_8px_16px_rgba(0,0,0,0.2)] transition-all duration-200 hover:bg-accent-hover hover:shadow-[0_11px_20px_rgba(0,0,0,0.22)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] "
           >
             View All Projects

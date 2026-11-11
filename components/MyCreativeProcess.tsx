@@ -1,3 +1,8 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { FiArrowUpRight } from "react-icons/fi";
 
@@ -54,6 +59,7 @@ type MyCreativeProcessProps = {
 function StepCard({ step, index }: { step: ProcessStep; index: number }) {
   return (
     <article
+      data-process-card
       className={`relative z-10 flex min-h-[140px] w-full min-w-0 flex-col justify-center rounded-[24px] border border-[#E5E5E5] bg-[#FBFBFB] px-4 py-5 shadow-[0_2px_3px_rgba(0,0,0,0.10)] lg:absolute lg:h-[27.027%] lg:min-h-0 lg:w-[24.663%] lg:rounded-[1.93cqw] lg:p-[1.16cqw] ${stepPositions[index] ?? ""}`}
     >
       {step.number !== undefined && (
@@ -79,10 +85,95 @@ export default function MyCreativeProcess({
   buttonHref,
   steps,
 }: MyCreativeProcessProps) {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const media = gsap.matchMedia();
+    media.add("(prefers-reduced-motion: no-preference)", () => {
+      const context = gsap.context(() => {
+        const header = section.querySelector("[data-process-header]");
+        const connectors = section.querySelectorAll("[data-process-connector]");
+        const cards = section.querySelectorAll("[data-process-card]");
+        const button = section.querySelector("[data-process-cta]");
+
+        const timeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: section,
+            start: "top 78%",
+            once: true,
+          },
+        });
+
+        if (header) {
+          timeline.from(header, {
+            y: 22,
+            autoAlpha: 0,
+            duration: 0.65,
+            ease: "power2.out",
+          });
+        }
+
+        if (connectors.length) {
+          timeline.from(
+            connectors,
+            {
+              autoAlpha: 0,
+              scale: 0.96,
+              duration: 0.7,
+              stagger: 0.1,
+              ease: "power2.out",
+            },
+            "-=0.25",
+          );
+        }
+
+        if (cards.length) {
+          timeline.from(
+            cards,
+            {
+              y: 24,
+              autoAlpha: 0,
+              duration: 0.55,
+              stagger: 0.12,
+              ease: "power2.out",
+            },
+            "-=0.3",
+          );
+        }
+
+        if (button) {
+          timeline.from(
+            button,
+            {
+              y: 10,
+              scale: 0.94,
+              autoAlpha: 0,
+              duration: 0.45,
+              ease: "back.out(1.5)",
+            },
+            "-=0.25",
+          );
+        }
+      }, section);
+
+      return () => context.revert();
+    });
+
+    return () => media.revert();
+  }, []);
+
   return (
-    <section className="section-spacing w-full min-w-0 overflow-hidden bg-[#FBFBFB] px-4 sm:px-6 lg:px-4">
+    <section
+      ref={sectionRef}
+      className="section-spacing w-full min-w-0 overflow-hidden bg-[#FBFBFB] px-4 sm:px-6 lg:px-4"
+    >
       <div className="mx-auto w-full max-w-[1420px] lg:[container-type:inline-size]">
-        <header className="mx-auto mb-9 w-full min-w-0 max-w-5xl text-center lg:max-w-none">
+        <header data-process-header className="mx-auto mb-9 w-full min-w-0 max-w-5xl text-center lg:max-w-none">
           <div className="flex items-center justify-center gap-2">
             <span
               aria-hidden="true"
@@ -104,6 +195,7 @@ export default function MyCreativeProcess({
           {connectors.map((connector) => (
             <Image
               key={connector.src}
+              data-process-connector
               src={connector.src}
               alt=""
               aria-hidden="true"
@@ -119,6 +211,7 @@ export default function MyCreativeProcess({
 
           <div className="relative z-20 order-last flex justify-center py-3 sm:col-span-2 lg:absolute lg:left-1/2 lg:top-[50.811%] lg:order-none lg:-translate-x-1/2 lg:-translate-y-1/2 lg:py-0">
             <a
+              data-process-cta
               href={buttonHref}
               className="urbanist flex w-fit items-center justify-center gap-2 whitespace-nowrap rounded-full bg-[#D9B061] py-1.5 pl-3 pr-1.5 text-base font-medium text-[#282828] shadow-[0_8px_18px_rgba(0,0,0,0.18)] transition-all duration-200 hover:bg-accent-hover hover:shadow-[0_11px_20px_rgba(0,0,0,0.2)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] lg:gap-[0.55cqw] lg:py-[0.58cqw] lg:pl-[1.16cqw] lg:pr-[0.58cqw] lg:text-[clamp(12px,1.16cqw,17px)] lg:font-normal"
             >

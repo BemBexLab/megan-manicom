@@ -1,6 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FiPlus } from "react-icons/fi";
 
 type FAQItem = {
@@ -22,14 +24,66 @@ export default function FAQs({
   questions,
 }: FAQsProps) {
   const [activeQuestion, setActiveQuestion] = useState(0);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const media = gsap.matchMedia();
+    media.add("(prefers-reduced-motion: no-preference)", () => {
+      const context = gsap.context(() => {
+        const header = section.querySelector("[data-faq-header]");
+        const items = section.querySelectorAll("[data-faq-item]");
+
+        const timeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: section,
+            start: "top 78%",
+            once: true,
+          },
+        });
+
+        if (header) {
+          timeline.from(header, {
+            x: -18,
+            autoAlpha: 0,
+            duration: 0.6,
+            ease: "power2.out",
+          });
+        }
+
+        if (items.length) {
+          timeline.from(
+            items,
+            {
+              y: 14,
+              autoAlpha: 0,
+              duration: 0.45,
+              stagger: 0.08,
+              ease: "power2.out",
+            },
+            "-=0.25",
+          );
+        }
+      }, section);
+
+      return () => context.revert();
+    });
+
+    return () => media.revert();
+  }, []);
 
   return (
     <section
+      ref={sectionRef}
       aria-labelledby="faq-heading"
       className="section-spacing w-full bg-[#FAFAFA] px-4 sm:px-6 lg:px-8 2xl:px-6"
     >
       <div className="mx-auto grid w-full max-w-[1420px] grid-cols-1 gap-9 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16">
-        <header className="lg:pt-1">
+        <header data-faq-header className="lg:pt-1">
           <div className="flex items-center gap-2">
             <span
               aria-hidden="true"
@@ -58,6 +112,7 @@ export default function FAQs({
             return (
               <article
                 key={item.question}
+                data-faq-item
                 className={`rounded-[20px] border border-[#E5E5E5] bg-[#FBFBFB] px-3 py-3.5 transition-shadow ${
                   isOpen ? "shadow-[0_2px_3px_rgba(0,0,0,0.1)]" : ""
                 }`}

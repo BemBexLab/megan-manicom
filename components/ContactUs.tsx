@@ -7,6 +7,8 @@ import {
   type FormEvent,
   type KeyboardEvent,
 } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FiArrowUpRight, FiChevronDown } from "react-icons/fi";
 import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 
@@ -21,12 +23,77 @@ const services = [
 ];
 
 export default function ContactUs() {
+  const sectionRef = useRef<HTMLElement>(null);
   const [selectedService, setSelectedService] = useState("");
   const [isServiceOpen, setIsServiceOpen] = useState(false);
   const [activeServiceIndex, setActiveServiceIndex] = useState(0);
   const [serviceError, setServiceError] = useState(false);
   const serviceDropdownRef = useRef<HTMLDivElement>(null);
   const serviceButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const media = gsap.matchMedia();
+    media.add("(prefers-reduced-motion: no-preference)", () => {
+      const context = gsap.context(() => {
+        const details = section.querySelector("[data-contact-details]");
+        const form = section.querySelector("[data-contact-form]");
+        const links = section.querySelectorAll("[data-contact-link]");
+
+        const timeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: section,
+            start: "top 78%",
+            once: true,
+          },
+        });
+
+        if (details) {
+          timeline.from(details, {
+            x: -18,
+            autoAlpha: 0,
+            duration: 0.6,
+            ease: "power2.out",
+          });
+        }
+
+        if (form) {
+          timeline.from(
+            form,
+            {
+              x: 18,
+              autoAlpha: 0,
+              duration: 0.6,
+              ease: "power2.out",
+            },
+            "-=0.4",
+          );
+        }
+
+        if (links.length) {
+          timeline.from(
+            links,
+            {
+              y: 10,
+              autoAlpha: 0,
+              duration: 0.4,
+              stagger: 0.08,
+              ease: "power2.out",
+            },
+            "-=0.3",
+          );
+        }
+      }, section);
+
+      return () => context.revert();
+    });
+
+    return () => media.revert();
+  }, []);
 
   useEffect(() => {
     if (!isServiceOpen) return;
@@ -115,9 +182,9 @@ export default function ContactUs() {
     "Select Service";
 
   return (
-    <section className="section-spacing w-full bg-[#F7F7F7] px-4 sm:px-6 lg:px-8 2xl:px-6">
+    <section ref={sectionRef} className="section-spacing w-full bg-[#F7F7F7] px-4 sm:px-6 lg:px-8 2xl:px-6">
       <div className="mx-auto grid w-full max-w-[1420px] grid-cols-1 gap-10 sm:gap-12 lg:grid-cols-2 lg:gap-16">
-        <div className="flex min-w-0 flex-col">
+        <div data-contact-details className="flex min-w-0 flex-col">
           <div className="flex items-center gap-2">
             <span
               aria-hidden="true"
@@ -140,6 +207,7 @@ export default function ContactUs() {
 
           <div className="mt-10 flex flex-col gap-3">
             <a
+              data-contact-link
               href="tel:+01234567890"
               className="group flex w-fit items-center gap-4 rounded-full text-[#777777] transition-colors hover:text-[#D9B061] focus-visible:rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a36e3d]"
             >
@@ -149,6 +217,7 @@ export default function ContactUs() {
               <span className="urbanist text-[16px]">(0) 123 456 789 0</span>
             </a>
             <a
+              data-contact-link
               href="mailto:info@meganmanicom.com"
               className="group flex w-fit items-center gap-4 rounded-full text-[#777777] transition-colors hover:text-[#D9B061] focus-visible:rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a36e3d]"
             >
@@ -162,7 +231,7 @@ export default function ContactUs() {
           </div>
         </div>
 
-        <div className="min-w-0">
+        <div data-contact-form className="min-w-0">
           <h3 className="clash-display break-words text-[clamp(1.125rem,2vw,1.375rem)] font-medium leading-tight text-[#282828]">
             Fill This Form To Get Faster Response
           </h3>

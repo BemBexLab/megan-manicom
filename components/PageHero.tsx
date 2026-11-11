@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 import Image from "next/image";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
@@ -30,8 +34,66 @@ export default function PageHero({
   partnersHeading,
   partnerLogos = [],
 }: PageHeroProps) {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const media = gsap.matchMedia();
+    media.add("(prefers-reduced-motion: no-preference)", () => {
+      const context = gsap.context(() => {
+        const timeline = gsap.timeline({ delay: 0.08 });
+
+        timeline
+          .from("[data-pagehero-heading]", {
+            y: 22,
+            autoAlpha: 0,
+            duration: 0.65,
+            ease: "power3.out",
+          })
+          .from(
+            "[data-pagehero-copy]",
+            {
+              y: 14,
+              autoAlpha: 0,
+              duration: 0.5,
+              ease: "power2.out",
+            },
+            "-=0.35",
+          )
+          .from(
+            "[data-pagehero-cta]",
+            {
+              y: 10,
+              autoAlpha: 0,
+              duration: 0.45,
+              ease: "power2.out",
+            },
+            "-=0.25",
+          )
+          .from(
+            ["[data-pagehero-rating]", "[data-pagehero-partners]"],
+            {
+              y: 14,
+              autoAlpha: 0,
+              duration: 0.5,
+              stagger: 0.12,
+              ease: "power2.out",
+            },
+            "-=0.2",
+          );
+      }, section);
+
+      return () => context.revert();
+    });
+
+    return () => media.revert();
+  }, []);
+
   return (
     <section
+      ref={sectionRef}
       aria-labelledby="page-hero-title"
       className="relative isolate mt-[72px] min-h-[620px] w-full overflow-hidden bg-white px-5 pb-8 pt-12 sm:px-8 sm:pt-14 md:mt-[90px] min-[900px]:min-h-[clamp(458px,44.8vw,640px)] min-[900px]:!px-0 min-[900px]:!pt-0 min-[900px]:!pb-0"
     >
@@ -44,15 +106,17 @@ export default function PageHero({
         <header className="relative z-10 mx-auto w-full min-[900px]:absolute min-[900px]:left-1/2 min-[900px]:top-[14%] min-[900px]:w-[90%] min-[900px]:-translate-x-1/2">
           <h1
             id="page-hero-title"
+            data-pagehero-heading
             className="clash-display text-balance text-[clamp(2.25rem,8.5vw,3.5rem)] font-medium leading-[1.16] text-[#282828] min-[900px]:text-[clamp(48px,6cqw,85px)] min-[900px]:leading-[1.2]"
           >
             {heading}
           </h1>
-          <p className="urbanist mx-auto mt-4 max-w-[700px] text-[14px] leading-[1.65] text-[#777777] sm:text-[15px] min-[900px]:mt-[1.6cqw] min-[900px]:max-w-[66%] min-[900px]:!text-[clamp(12px,1.22cqw,17px)] min-[900px]:leading-[1.7]">
+          <p data-pagehero-copy className="urbanist mx-auto mt-4 max-w-[700px] text-[14px] leading-[1.65] text-[#777777] sm:text-[15px] min-[900px]:mt-[1.6cqw] min-[900px]:max-w-[66%] min-[900px]:!text-[clamp(12px,1.22cqw,17px)] min-[900px]:leading-[1.7]">
             {text}
           </p>
           <Link
             href={buttonHref}
+            data-pagehero-cta
             className="urbanist group mx-auto mt-5 inline-flex h-9 items-center justify-start gap-2 whitespace-nowrap rounded-full bg-[#282828] py-1 pl-3 pr-1 text-[12px] font-normal text-[#D9B061] shadow-[0_6px_12px_rgba(0,0,0,0.2)] transition-all duration-200 hover:bg-[#D9B061] hover:text-[#282828] hover:shadow-[0_9px_18px_rgba(0,0,0,0.2)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a36e3d] min-[900px]:mt-[1.8cqw] min-[900px]:h-auto min-[900px]:w-fit min-[900px]:gap-[0.45cqw] min-[900px]:py-[0.48cqw] min-[900px]:pl-[0.8cqw] min-[900px]:pr-[0.4cqw] min-[900px]:text-[clamp(10px,0.98cqw,14px)]"
           >
             {buttonLabel}
@@ -67,7 +131,7 @@ export default function PageHero({
         </header>
 
         {(rating || clientLabel || clientAvatars.length > 0) && (
-          <div className="relative z-10 mt-12 self-start text-left min-[900px]:absolute min-[900px]:bottom-[5.3%] min-[900px]:left-[5.2%] min-[900px]:mt-0">
+          <div data-pagehero-rating className="relative z-10 mt-12 self-start text-left min-[900px]:absolute min-[900px]:bottom-[5.3%] min-[900px]:left-[5.2%] min-[900px]:mt-0">
             {clientAvatars.length > 0 && (
               <div className="mb-2 flex" aria-hidden="true">
                 {clientAvatars.map((avatar) => (
@@ -100,7 +164,7 @@ export default function PageHero({
         )}
 
         {partnersHeading && partnerLogos.length > 0 && (
-          <div className="relative z-10 mt-10 w-full max-w-[360px] min-[900px]:absolute min-[900px]:bottom-[5.3%] min-[900px]:right-[5.2%] min-[900px]:mt-0 min-[900px]:w-[29%] min-[900px]:max-w-none">
+          <div data-pagehero-partners className="relative z-10 mt-10 w-full max-w-[360px] min-[900px]:absolute min-[900px]:bottom-[5.3%] min-[900px]:right-[5.2%] min-[900px]:mt-0 min-[900px]:w-[29%] min-[900px]:max-w-none">
             <p className="urbanist flex items-center justify-center gap-2 text-[13px] leading-[1.4] text-[#282828] min-[900px]:gap-[0.65cqw] min-[900px]:text-[clamp(12px,1.15cqw,16px)]">
               <span
                 aria-hidden="true"

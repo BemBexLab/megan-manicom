@@ -1,3 +1,8 @@
+"use client";
+
+import { useLayoutEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import Link from "next/link";
 import { FiArrowRight } from "react-icons/fi";
@@ -45,13 +50,84 @@ const projectDescription =
   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.";
 
 export default function ExploreMyWork() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useLayoutEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    gsap.registerPlugin(ScrollTrigger);
+    const media = gsap.matchMedia();
+
+    media.add("(prefers-reduced-motion: no-preference)", () => {
+      const context = gsap.context(() => {
+        const header = section.querySelector<HTMLElement>("[data-work-header]");
+        if (header) {
+          gsap.fromTo(
+            header,
+            { y: 18, autoAlpha: 0 },
+            {
+              y: 0,
+              autoAlpha: 1,
+              duration: 0.6,
+              ease: "power2.out",
+              clearProps: "transform,opacity,visibility",
+              scrollTrigger: {
+                trigger: header,
+                start: "top 88%",
+                once: true,
+              },
+            },
+          );
+        }
+
+        section.querySelectorAll<HTMLElement>("[data-work-card]").forEach((card) => {
+          const image = card.querySelector("img");
+          const timeline = gsap.timeline({
+            scrollTrigger: {
+              trigger: card,
+              start: "top 88%",
+              once: true,
+            },
+          });
+
+          timeline.fromTo(
+            card,
+            { x: 24, autoAlpha: 0 },
+            {
+              x: 0,
+              autoAlpha: 1,
+              duration: 0.55,
+              ease: "power2.out",
+              clearProps: "transform,opacity,visibility",
+            },
+          );
+
+          if (image) {
+            timeline.fromTo(
+              image,
+              { scale: 1.04 },
+              { scale: 1, duration: 0.75, ease: "power2.out", clearProps: "transform" },
+              0,
+            );
+          }
+        });
+      }, section);
+
+      return () => context.revert();
+    });
+
+    return () => media.revert();
+  }, []);
+
   return (
     <section
+      ref={sectionRef}
       aria-labelledby="explore-work-title"
-      className="section-spacing w-full bg-[#F7F7F7] px-4 sm:px-6 min-[850px]:px-[5%]"
+      className="section-spacing w-full overflow-x-clip bg-[#F7F7F7] px-4 sm:px-6 min-[850px]:px-[5%]"
     >
       <div className="mx-auto w-full max-w-[1420px] min-[850px]:[container-type:inline-size]">
-        <header className="flex flex-col items-center text-center">
+        <header data-work-header className="flex flex-col items-center text-center">
           <div className="flex items-center gap-2">
             <span
               aria-hidden="true"
@@ -80,6 +156,7 @@ export default function ExploreMyWork() {
           {projects.map((project) => (
             <article
               key={project.title}
+              data-work-card
               className="flex h-full min-w-0 flex-col rounded-[18px] border border-[#E1E1E1] bg-[#FBFBFB] p-2.5 min-[850px]:min-h-[35.35cqw] min-[850px]:rounded-[1.55cqw] min-[850px]:p-[0.98cqw]"
             >
               <div className="relative aspect-[3/2] w-full shrink-0 overflow-hidden rounded-[13px] min-[850px]:rounded-[1.28cqw]">
