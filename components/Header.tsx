@@ -17,13 +17,13 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed rounded-b-4xl inset-x-0 top-0 z-50">
-      <div className="relative mx-auto flex h-[72px] w-full max-w-[1500px] items-center justify-between px-5 md:h-[90px] md:px-[5%]">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-[#282828]/10 bg-[#FFFFF3]/95 shadow-[0_5px_20px_rgba(40,40,40,0.04)] backdrop-blur-md md:rounded-b-4xl md:border-0 md:bg-transparent md:shadow-none md:backdrop-blur-none">
+      <div className="relative mx-auto flex h-[72px] w-full max-w-[1500px] items-center justify-between px-4 sm:px-5 md:h-[90px] md:px-[5%]">
         <Link
           href="/"
           className="flex shrink-0 items-center gap-2 transition-opacity hover:opacity-80 focus-visible:rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828]"
         >
-          <span className="relative h-[60px] w-[60px] overflow-hidden rounded-full border border-[#282828]">
+          <span className="relative h-11 w-11 overflow-hidden rounded-full border border-[#282828] md:h-[60px] md:w-[60px]">
             <Image
               src="/3d10acc26a868a5485f246941722d40e2d5993dc.webp"
               alt="Megan"
@@ -32,7 +32,7 @@ export default function Header() {
               sizes="60px"
             />
           </span>
-          <span className="clash-display text-[36px] font-medium leading-none tracking-tight text-[#282828]">
+          <span className="clash-display text-[30px] font-medium leading-none tracking-tight text-[#282828] md:text-[36px]">
             Megan
           </span>
         </Link>
@@ -54,24 +54,19 @@ export default function Header() {
         <button
           type="button"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="flex flex-col items-center justify-center gap-1.5 rounded-lg p-2 text-gray-700 transition-colors hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#282828] md:hidden"
-          aria-label="Toggle menu"
+          className="grid h-11 w-11 place-content-center gap-[6px] text-[#282828] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#282828] md:hidden"
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMenuOpen}
           aria-controls="mobile-navigation"
         >
           <span
-            className={`block h-[2px] w-6 rounded-full bg-gray-700 transition-all duration-300 ${
-              isMenuOpen ? "translate-y-2 rotate-45" : ""
+            className={`block h-px w-6 bg-[#282828] transition-transform duration-300 ${
+              isMenuOpen ? "translate-y-[3.5px] rotate-45" : ""
             }`}
           />
           <span
-            className={`block h-[2px] w-6 rounded-full bg-gray-700 transition-all duration-300 ${
-              isMenuOpen ? "opacity-0" : ""
-            }`}
-          />
-          <span
-            className={`block h-[2px] w-6 rounded-full bg-gray-700 transition-all duration-300 ${
-              isMenuOpen ? "-translate-y-2 -rotate-45" : ""
+            className={`block h-px w-6 bg-[#282828] transition-transform duration-300 ${
+              isMenuOpen ? "-translate-y-[3.5px] -rotate-45" : ""
             }`}
           />
         </button>
@@ -79,7 +74,7 @@ export default function Header() {
 
       {isMenuOpen && (
         <Suspense fallback={<MobileMenuFallback />}>
-          <MobileMenu />
+          <MobileMenu onNavigate={() => setIsMenuOpen(false)} />
         </Suspense>
       )}
     </header>
@@ -141,33 +136,41 @@ function MobileMenuFallback() {
   return (
     <div
       id="mobile-navigation"
-      className="border-t border-gray-100 bg-white px-5 py-4 md:hidden"
+      className="border-t border-[#282828]/10 bg-[#FFFFF3] px-5 pt-1 pb-5 shadow-[0_14px_22px_rgba(40,40,40,0.06)] md:hidden"
     >
-      <nav aria-label="Mobile navigation" className="flex flex-col gap-1">
-        {navLinks.map((link) => (
+      <nav aria-label="Mobile navigation">
+        {navLinks.map((link, index) => (
           <Link
             key={link.name}
             href={link.href}
-            className="rounded-lg px-4 py-3 text-sm font-medium text-[#282828] transition-colors hover:bg-[#D9B061]/20 focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[#282828]"
+            className="flex items-baseline gap-4 border-b border-[#282828]/10 py-3.5 focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[#282828]"
           >
-            {link.name}
+            <span className="urbanist w-6 text-[11px] tabular-nums text-[#A87932]">0{index + 1}</span>
+            <span className="clash-display text-[22px] font-medium text-[#282828]">{link.name}</span>
           </Link>
         ))}
+        <Link
+          href="mailto:info@meganmanicom.com"
+          className="urbanist mt-4 flex items-center justify-between border-y border-[#D9B061]/60 py-3.5 text-[15px] font-medium text-[#282828] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#282828]"
+        >
+          Work With Me
+          <FiArrowUpRight aria-hidden="true" size={20} className="text-[#A87932]" />
+        </Link>
       </nav>
     </div>
   );
 }
 
-function MobileMenu() {
+function MobileMenu({ onNavigate }: { onNavigate: () => void }) {
   const pathname = usePathname();
 
   return (
     <div
       id="mobile-navigation"
-      className="border-t border-gray-100 bg-white px-5 py-4 md:hidden"
+      className="border-t border-[#282828]/10 bg-[#FFFFF3] px-5 pt-1 pb-5 shadow-[0_14px_22px_rgba(40,40,40,0.06)] md:hidden"
     >
-      <nav aria-label="Mobile navigation" className="flex flex-col gap-1">
-        {navLinks.map((link) =>
+      <nav aria-label="Mobile navigation">
+        {navLinks.map((link, index) =>
           (() => {
             const isActive =
               pathname === link.href ||
@@ -178,25 +181,26 @@ function MobileMenu() {
                 key={link.name}
                 href={link.href}
                 aria-current={isActive ? "page" : undefined}
-                className={`rounded-lg px-4 py-3 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[#282828] ${
+                className={`flex items-baseline gap-4 border-b border-[#282828]/10 py-3.5 focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[#282828] ${
                   isActive
-                    ? "bg-[#282828] text-[#D9B061] shadow-sm hover:bg-[#1E1E1E]"
-                    : "text-[#282828] hover:bg-[#D9B061]/20"
+                    ? "text-[#A87932]"
+                    : "text-[#282828]"
                 }`}
+                onClick={onNavigate}
               >
-                {link.name}
+                <span className="urbanist w-6 text-[11px] tabular-nums text-[#A87932]">0{index + 1}</span>
+                <span className="clash-display text-[22px] font-medium">{link.name}</span>
               </Link>
             );
           })(),
         )}
         <Link
           href="mailto:info@meganmanicom.com"
-          className="urbanist mt-3 flex items-center justify-center gap-2 rounded-full bg-[#D9B061] px-6 py-3 text-sm font-medium text-[#282828] shadow-md transition-all duration-200 hover:bg-accent-hover hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] "
+          className="urbanist mt-4 flex items-center justify-between border-y border-[#D9B061]/60 py-3.5 text-[15px] font-medium text-[#282828] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#282828]"
+          onClick={onNavigate}
         >
           Work With Me
-          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#282828] text-[#D9B061]">
-            <FiArrowUpRight aria-hidden="true" size={18} />
-          </span>
+          <FiArrowUpRight aria-hidden="true" size={20} className="text-[#A87932]" />
         </Link>
       </nav>
     </div>

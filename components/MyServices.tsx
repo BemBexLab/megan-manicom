@@ -126,7 +126,7 @@ export default function ServicesSection() {
             <div className="flex items-center gap-2.5">
               <span
                 aria-hidden="true"
-                className="h-[9px] w-[9px] rounded-full border-3 border-[#282828] bg-[#D9B061] min-[850px]:h-[0.95cqw] min-[850px]:w-[0.95cqw]"
+                className="h-4 w-4 rounded-full border-3 border-[#282828] bg-[#D9B061]"
               />
               <span className="urbanist text-sm leading-[1.5] text-[#777777] lg:text-[clamp(12px,1.13cqw,16px)]">
                 My Services
