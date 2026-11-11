@@ -17,7 +17,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed rounded-b-4xl inset-x-0 top-0 z-50 bg-white">
+    <header className="fixed rounded-b-4xl inset-x-0 top-0 z-50">
       <div className="relative mx-auto flex h-[72px] w-full max-w-[1500px] items-center justify-between px-5 md:h-[90px] md:px-[5%]">
         <Link
           href="/"
