@@ -129,6 +129,10 @@ body {
   font-family: var(--font-archivo), sans-serif;
 }
 
+.section-spacing {
+  padding-block: clamp(3rem, 6vw, 5.5rem) !important;
+}
+
 button:not(:disabled),
 a[class*="rounded-full"],
 a[class*="inline-flex"] {

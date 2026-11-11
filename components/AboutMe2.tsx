@@ -12,7 +12,7 @@ export default function AboutMe2() {
   return (
     <section
       aria-labelledby="about-me-title"
-      className="w-full bg-[#F5F5F5] px-4 py-10 sm:px-6 sm:py-12 lg:px-[5%] lg:pt-[clamp(40px,3.5vw,56px)] lg:pb-[clamp(24px,2.1vw,34px)]"
+      className="section-spacing w-full bg-[#F7F7F7] px-4 sm:px-6 lg:px-[5%]"
     >
       <div className="mx-auto grid w-full max-w-[1420px] grid-cols-1 items-start gap-9 [container-type:inline-size] lg:grid-cols-[0.83fr_1fr] lg:gap-[9.5%]">
         <div className="relative mx-auto aspect-[442/496] w-full max-w-[520px] overflow-hidden rounded-[20px] bg-white lg:mx-0 lg:max-w-none">

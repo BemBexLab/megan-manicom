@@ -28,7 +28,7 @@ export default function MyExpertise() {
   return (
     <section
       aria-labelledby="expertise-title"
-      className="w-full bg-[#F5F5F5] px-5 py-12 sm:px-8 sm:py-14 lg:px-[5%] lg:pt-[clamp(48px,4.3vw,68px)] lg:pb-[clamp(40px,3.6vw,57px)]"
+      className="section-spacing w-full bg-[#F5F5F5] px-5 sm:px-8 lg:px-[5%]"
     >
       <div className="mx-auto w-full max-w-[1420px] lg:[container-type:inline-size]">
         <div className="grid grid-cols-1 items-start gap-10 sm:gap-12 lg:grid-cols-2 lg:gap-x-[1.2%] lg:gap-y-0">

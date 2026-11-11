@@ -48,7 +48,7 @@ export default function ExploreMyWork() {
   return (
     <section
       aria-labelledby="explore-work-title"
-      className="w-full bg-[#F5F5F5] px-4 py-10 sm:px-6 sm:py-12 min-[850px]:px-[5%] min-[850px]:pt-[4.1cqw] min-[850px]:pb-[5cqw]"
+      className="section-spacing w-full bg-[#F7F7F7] px-4 sm:px-6 min-[850px]:px-[5%]"
     >
       <div className="mx-auto w-full max-w-[1420px] min-[850px]:[container-type:inline-size]">
         <header className="flex flex-col items-center text-center">

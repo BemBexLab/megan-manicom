@@ -14,9 +14,9 @@
   grid-template-areas: "title" "portrait" "intro" "rating" "partners";
   gap: 28px;
   width: 100%;
-  max-width: 1500px;
+  max-width: 1600px;
   margin-inline: auto;
-  padding: 24px 20px 36px;
+  padding: 24px 20px 0;
 }
 
 .hero-arc {
@@ -217,7 +217,7 @@
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     grid-template-areas: "title portrait" "intro portrait" "rating partners";
     gap: 28px 24px;
-    padding: 36px 32px;
+    padding: 36px 32px 0;
   }
   .hero-title {
     align-self: end;

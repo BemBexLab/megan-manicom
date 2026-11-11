@@ -80,7 +80,7 @@ export default function MyCreativeProcess({
   steps,
 }: MyCreativeProcessProps) {
   return (
-    <section className="w-full min-w-0 overflow-hidden bg-[#FBFBFB] px-4 py-12 sm:px-6 sm:py-14 lg:px-4 lg:py-14">
+    <section className="section-spacing w-full min-w-0 overflow-hidden bg-[#FBFBFB] px-4 sm:px-6 lg:px-4">
       <div className="mx-auto w-full max-w-[1420px] lg:[container-type:inline-size]">
         <header className="mx-auto mb-9 w-full min-w-0 max-w-5xl text-center lg:max-w-none">
           <div className="flex items-center justify-center gap-2">

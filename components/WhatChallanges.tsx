@@ -18,7 +18,7 @@ export default function WhatChallanges({
   challenges,
 }: WhatChallangesProps) {
   return (
-    <section className="w-full bg-[#FCFCFC] px-4 pt-10 pb-12 sm:px-6 sm:pt-12 sm:pb-14 lg:px-[5%] lg:pt-[3.8vw] lg:pb-[5.4vw]">
+    <section className="section-spacing w-full bg-[#FCFCFC] px-4 sm:px-6 lg:px-[5%]">
       <div className="mx-auto grid w-full max-w-[1420px] grid-cols-1 gap-10 lg:grid-cols-[1.15fr_0.9fr] lg:gap-[9%]">
         <div>
           <div className="flex items-center gap-2">

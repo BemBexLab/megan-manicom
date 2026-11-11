@@ -25,7 +25,7 @@ export default function AboutTheProject({
   return (
     <section
       aria-labelledby="about-project-heading"
-      className="w-full bg-[#F5F5F5] px-4 pt-10 pb-12 sm:px-6 sm:pt-12 sm:pb-14 lg:px-[5%] lg:pt-[3.8vw] lg:pb-[5.4vw]"
+      className="section-spacing w-full bg-[#F7F7F7] px-4 sm:px-6 lg:px-[5%]"
     >
       <div className="mx-auto w-full max-w-[1420px]">
         <header className="flex flex-col items-center text-center">

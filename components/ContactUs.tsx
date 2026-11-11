@@ -115,7 +115,7 @@ export default function ContactUs() {
     "Select Service";
 
   return (
-    <section className="w-full bg-[#F5F5F5] px-4 py-12 sm:px-6 sm:py-14 md:py-16 lg:px-8 lg:py-[60px] 2xl:px-6">
+    <section className="section-spacing w-full bg-[#F7F7F7] px-4 sm:px-6 lg:px-8 2xl:px-6">
       <div className="mx-auto grid w-full max-w-[1420px] grid-cols-1 gap-10 sm:gap-12 lg:grid-cols-2 lg:gap-16">
         <div className="flex min-w-0 flex-col">
           <div className="flex items-center gap-2">

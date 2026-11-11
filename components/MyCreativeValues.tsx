@@ -40,7 +40,7 @@ export default function MyCreativeValues() {
   const activeValue = values[activeIndex];
 
   return (
-    <section className="w-full bg-[#F5F5F5] px-4 py-14 sm:px-6 sm:py-16 lg:flex lg:min-h-[492px] lg:items-center lg:px-8 lg:py-[60px] 2xl:px-6">
+    <section className="section-spacing w-full bg-[#F5F5F5] px-4 sm:px-6 lg:flex lg:min-h-[492px] lg:items-center lg:px-8 2xl:px-6">
       <div className="mx-auto grid w-full max-w-[1420px] grid-cols-1 items-center gap-9 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
         <div>
           <div className="flex items-center gap-2">

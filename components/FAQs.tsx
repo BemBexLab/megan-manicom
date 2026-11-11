@@ -26,7 +26,7 @@ export default function FAQs({
   return (
     <section
       aria-labelledby="faq-heading"
-      className="w-full bg-[#FAFAFA] px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-[60px] 2xl:px-6"
+      className="section-spacing w-full bg-[#FAFAFA] px-4 sm:px-6 lg:px-8 2xl:px-6"
     >
       <div className="mx-auto grid w-full max-w-[1420px] grid-cols-1 gap-9 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16">
         <header className="lg:pt-1">

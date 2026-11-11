@@ -31,7 +31,7 @@ export default function ServicesSection() {
   return (
     <section
       aria-labelledby="services-title"
-      className="bg-[#F5F5F5] px-4 py-12 sm:px-6 sm:py-14 lg:px-[5%] lg:pt-14 lg:pb-16"
+      className="section-spacing bg-[#F5F5F5] px-4 sm:px-6 lg:px-[5%]"
     >
       <div className="mx-auto w-full max-w-[1420px] lg:[container-type:inline-size]">
         <div className="grid grid-cols-1 items-start gap-10 sm:gap-12 lg:grid-cols-[minmax(0,1.21fr)_minmax(0,1fr)] lg:gap-x-[9.6%] lg:gap-y-0">

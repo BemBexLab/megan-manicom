@@ -56,7 +56,7 @@ const features = [
 
 export default function AboutSection() {
   return (
-    <section className="bg-[#F5F5F5] py-7 lg:py-14">
+    <section className="section-spacing bg-[#F7F7F7]">
       <div className="mx-auto max-w-[1500px] px-6 lg:px-10">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-5">
           {/* LEFT — Image card with stats overlay */}

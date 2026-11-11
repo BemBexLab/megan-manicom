@@ -143,7 +143,7 @@ export default function CustomerTestimonials() {
   };
 
   return (
-    <section className="w-full overflow-hidden bg-[#F5F5F5] px-4 pt-10 pb-12 sm:px-6 sm:pt-12 sm:pb-14 lg:px-[5%] lg:pt-[3.8vw] lg:pb-[5.4vw]">
+    <section className="section-spacing w-full overflow-hidden bg-[#F5F5F5] px-4 sm:px-6 lg:px-[5%]">
       <div className="mx-auto w-full max-w-[1420px] [--testimonial-card-width:282px] md:[--testimonial-card-width:clamp(250px,21.75vw,344px)]">
         <header className="grid grid-cols-1 items-end gap-5 lg:grid-cols-2 lg:gap-3.5">
           <div>

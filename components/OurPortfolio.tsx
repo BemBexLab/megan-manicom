@@ -65,7 +65,7 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
 
 export default function OurPortfolio() {
   return (
-    <section className="w-full bg-[#F5F5F5] px-4 py-14 sm:px-6 sm:py-16 lg:px-4 lg:py-[60px]">
+    <section className="section-spacing w-full bg-[#F7F7F7] px-4 sm:px-6 lg:px-4">
       <div className="mx-auto w-full max-w-[1420px]">
         <header className="mx-auto mb-7 max-w-7xl text-center sm:mb-8">
           <div className="flex items-center justify-center gap-2">
