@@ -11,47 +11,84 @@ const testimonials = [
     name: "John Doe",
     detail: "Lorem Ipsum",
     avatar: "/844706ea98766b3dcadd59521af580fdf5b9cfb7.webp",
+    testimonial:
+      `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966.`,
   },
   {
     name: "John Doe",
     detail: "Brand Founder",
     avatar: "/09ff1cf10a7376f0a3fad37aafdcf8255a4665ed.webp",
+    testimonial:
+      `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966.`,
   },
   {
     name: "John Doe",
     detail: "Author",
     avatar: "/54845759cbe20ac97afca20129b70d5fb0e351b6.webp",
+    testimonial:
+      `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966.`,
   },
   {
     name: "John Doe",
     detail: "Content Creator",
     avatar: "/38f76d47ebd8842273bdfbb591ae8d51d0b6f9d7.webp",
+    testimonial:
+      `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966.`,
   },
   {
     name: "John Doe",
     detail: "Creative Director",
     avatar:
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=96&q=80",
+    testimonial:
+      `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966.`,
   },
   {
     name: "John Doe",
     detail: "Small Business Owner",
     avatar:
       "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=96&q=80",
+    testimonial:
+      `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966.`,
   },
   {
     name: "John Doe",
     detail: "Coach",
     avatar:
       "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=96&q=80",
+    testimonial:
+      `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966.`,
   },
   {
     name: "Mia Davis",
     detail: "Entrepreneur",
     avatar:
       "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=96&q=80",
+    testimonial:
+      `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966.`,
   },
 ];
+
+const AUTOPLAY_DELAY = 2000;
+const CAROUSEL_SLIDE_DURATION = 3;
+
+function animateCarouselTo(carousel: HTMLDivElement, scrollLeft: number) {
+  gsap.killTweensOf(carousel, "scrollLeft");
+  const previousSnapType = carousel.style.scrollSnapType;
+  carousel.style.scrollSnapType = "none";
+
+  gsap.to(carousel, {
+    scrollLeft,
+    duration: CAROUSEL_SLIDE_DURATION,
+    ease: "power2.inOut",
+    onComplete: () => {
+      carousel.style.scrollSnapType = previousSnapType;
+    },
+    onInterrupt: () => {
+      carousel.style.scrollSnapType = previousSnapType;
+    },
+  });
+}
 
 function TestimonialCard({
   testimonial,
@@ -59,7 +96,10 @@ function TestimonialCard({
   testimonial: (typeof testimonials)[number];
 }) {
   return (
-    <article data-testimonial-card className="flex min-h-[308px] w-[var(--testimonial-card-width)] shrink-0 snap-start flex-col rounded-[20px] border border-[#E5E5E5] bg-[#FBFBFB] px-[22px] py-8 shadow-[0_2px_3px_rgba(0,0,0,0.1)]">
+    <article
+      data-testimonial-card
+      className="flex min-h-[308px] w-[var(--testimonial-card-width)] shrink-0 snap-always snap-start flex-col rounded-[20px] border border-[#E5E5E5] bg-[#FBFBFB] px-[22px] py-8 shadow-[0_2px_3px_rgba(0,0,0,0.1)]"
+    >
       <svg
         aria-hidden="true"
         viewBox="0 0 28 22"
@@ -68,9 +108,7 @@ function TestimonialCard({
         <path d="M10.8 2.2H4.2v7.1c0 4.2 2 7 5.4 9.3l2.2-2.8c-2-1.4-3-2.8-3.2-4.7h3V6.8a4.6 4.6 0 0 0-4.6-4.6Zm12 0h-6.6v7.1c0 4.2 2 7 5.4 9.3l2.2-2.8c-2-1.4-3-2.8-3.2-4.7h3V6.8a4.6 4.6 0 0 0-4.6-4.6Z" />
       </svg>
       <p className="urbanist mt-2.5 text-[13px] leading-[1.8] text-[#333333] lg:text-[clamp(12px,1.08vw,16px)]">
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry&apos;s standard dummy text
-        ever since 1966.
+        {testimonial.testimonial}
       </p>
       <div className="mt-auto flex items-center gap-3.5 pt-8">
         <div className="relative h-8 w-8 shrink-0 overflow-hidden rounded-full">
@@ -188,6 +226,78 @@ export default function CustomerTestimonials() {
     };
   }, []);
 
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    const section = sectionRef.current;
+    if (
+      !carousel ||
+      !section ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      return;
+    }
+
+    let isInView = false;
+    let isPaused = false;
+    let resumeTimer: ReturnType<typeof setTimeout> | undefined;
+
+    const pause = () => {
+      isPaused = true;
+      gsap.killTweensOf(carousel, "scrollLeft");
+      if (resumeTimer) clearTimeout(resumeTimer);
+    };
+
+    const resume = () => {
+      if (resumeTimer) clearTimeout(resumeTimer);
+      resumeTimer = setTimeout(() => {
+        isPaused = false;
+      }, AUTOPLAY_DELAY);
+    };
+
+    const observer = new IntersectionObserver(([entry]) => {
+      isInView = Boolean(entry?.isIntersecting);
+    });
+    observer.observe(section);
+
+    const timer = setInterval(() => {
+      if (!isInView || isPaused || document.hidden) return;
+
+      const firstCard = carousel.firstElementChild as HTMLElement | null;
+      const gap = parseFloat(window.getComputedStyle(carousel).columnGap) || 0;
+      const step = (firstCard?.offsetWidth ?? carousel.clientWidth) + gap;
+      const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
+
+      if (carousel.scrollLeft + step >= maxScrollLeft - 1) {
+        animateCarouselTo(carousel, 0);
+      } else {
+        animateCarouselTo(carousel, carousel.scrollLeft + step);
+      }
+    }, AUTOPLAY_DELAY + CAROUSEL_SLIDE_DURATION * 1000);
+
+    section.addEventListener("pointerenter", pause);
+    section.addEventListener("pointerleave", resume);
+    section.addEventListener("pointerdown", pause);
+    document.addEventListener("pointerup", resume);
+    section.addEventListener("focusin", pause);
+    section.addEventListener("focusout", resume);
+    section.addEventListener("touchstart", pause, { passive: true });
+    section.addEventListener("touchend", resume, { passive: true });
+
+    return () => {
+      clearInterval(timer);
+      if (resumeTimer) clearTimeout(resumeTimer);
+      observer.disconnect();
+      section.removeEventListener("pointerenter", pause);
+      section.removeEventListener("pointerleave", resume);
+      section.removeEventListener("pointerdown", pause);
+      document.removeEventListener("pointerup", resume);
+      section.removeEventListener("focusin", pause);
+      section.removeEventListener("focusout", resume);
+      section.removeEventListener("touchstart", pause);
+      section.removeEventListener("touchend", resume);
+    };
+  }, []);
+
   const slide = (direction: -1 | 1) => {
     const carousel = carouselRef.current;
     if (
@@ -200,19 +310,33 @@ export default function CustomerTestimonials() {
     const firstCard = carousel.firstElementChild as HTMLElement | null;
     const gap = parseFloat(window.getComputedStyle(carousel).columnGap) || 0;
 
-    carousel.scrollBy({
-      left:
-        direction * ((firstCard?.offsetWidth ?? carousel.clientWidth) + gap),
-      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
-        ? "instant"
-        : "smooth",
-    });
+    const nextScrollLeft = Math.max(
+      0,
+      Math.min(
+        carousel.scrollWidth - carousel.clientWidth,
+        carousel.scrollLeft +
+          direction * ((firstCard?.offsetWidth ?? carousel.clientWidth) + gap),
+      ),
+    );
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      carousel.scrollTo({ left: nextScrollLeft, behavior: "instant" });
+      return;
+    }
+
+    animateCarouselTo(carousel, nextScrollLeft);
   };
 
   return (
-    <section ref={sectionRef} className="section-spacing w-full overflow-hidden bg-[#F5F5F5] px-4 sm:px-6 lg:px-[5%]">
+    <section
+      ref={sectionRef}
+      className="section-spacing w-full overflow-hidden bg-[#F5F5F5] px-4 sm:px-6 lg:px-[5%]"
+    >
       <div className="mx-auto w-full max-w-[1420px] [--testimonial-card-width:282px] md:[--testimonial-card-width:clamp(250px,21.75vw,344px)]">
-        <header data-testimonial-header className="grid grid-cols-1 items-end gap-5 lg:grid-cols-2 lg:gap-3.5">
+        <header
+          data-testimonial-header
+          className="grid grid-cols-1 items-end gap-5 lg:grid-cols-2 lg:gap-3.5"
+        >
           <div>
             <div className="flex items-center gap-2">
               <span
@@ -237,7 +361,10 @@ export default function CustomerTestimonials() {
         </header>
 
         <div className="mt-10 flex flex-col gap-4 md:flex-row md:items-center md:gap-3.5 lg:mt-14 lg:mr-[calc((min(90vw,1420px)-100vw)/2)]">
-          <aside data-testimonial-rating className="flex min-h-[300px] w-full shrink-0 flex-col items-center rounded-[22px] bg-[#D9B061] px-6 pt-10 pb-5 text-center text-white shadow-[0_2px_4px_rgba(0,0,0,0.12)] md:min-h-[358px] md:w-[var(--testimonial-card-width)] md:pt-[100px]">
+          <aside
+            data-testimonial-rating
+            className="flex min-h-[300px] w-full shrink-0 flex-col items-center rounded-[22px] bg-[#D9B061] px-6 pt-10 pb-5 text-center text-white shadow-[0_2px_4px_rgba(0,0,0,0.12)] md:min-h-[358px] md:w-[var(--testimonial-card-width)] md:pt-[100px]"
+          >
             <p className="urbanist text-[60px] font-semibold leading-none">
               4.8
             </p>
