@@ -184,7 +184,9 @@ export default function ServicesSection() {
               return (
                 <div
                   key={service.title}
-                  className="border-b border-[#D2D2D2] pb-5 last:border-b-0 lg:pb-[2.16cqw]"
+                  className={`border-b border-[#D2D2D2] last:border-b-0 ${
+                    isActive ? "pb-0" : "pb-5 lg:pb-[2.16cqw]"
+                  }`}
                 >
                   <h3>
                     <button
@@ -217,7 +219,7 @@ export default function ServicesSection() {
                     inert={!isActive}
                     className="overflow-hidden"
                   >
-                    <p className="urbanist pt-1.5 pb-6 pl-9 text-[14px] leading-[1.7] text-[#777777] lg:pt-[0.47cqw] lg:pb-[2.26cqw] lg:pl-[3.31cqw] lg:text-[clamp(12px,1.17cqw,17px)]">
+                    <p className="urbanist pt-1.5 pb-2 pl-9 text-[14px] leading-[1.7] text-[#777777] lg:pt-[0.47cqw] lg:pb-[0.5cqw] lg:pl-[3.31cqw] lg:text-[clamp(12px,1.17cqw,17px)]">
                       {service.text}
                     </p>
                   </div>
