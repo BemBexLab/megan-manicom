@@ -26,6 +26,7 @@ const archivo = Archivo({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://meganmanicom.com"),
   title: {
     default: "Megan Manicom | Social Media Marketing & Creative Strategy",
     template: "%s | Megan Manicom",

@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: 'Contact',
   description:
     'Have a brand, book launch, or creative project in mind? Contact Megan Manicom to discuss social media marketing, content, and design services.',
+  alternates: {
+    canonical: '/contact',
+  },
 }
 
 const page = () => {

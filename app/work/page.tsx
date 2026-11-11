@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "Creative Portfolio & Case Studies",
   description:
     "Explore Megan Manicom's social media campaigns, brand identities, content strategy, and book design projects built to connect with audiences.",
+  alternates: {
+    canonical: "/work",
+  },
 };
 
 const page = () => {

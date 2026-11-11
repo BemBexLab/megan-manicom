@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: "Social Media Marketing & Content Strategy",
   description:
     "Build a stronger online presence with Megan Manicom's social media marketing, content creation, launch planning, and audience-focused strategy.",
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function Home() {

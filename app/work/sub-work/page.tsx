@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "Bloom & Co. Social Media Case Study",
   description:
     "See how Megan Manicom developed a cohesive social media presence for Bloom & Co., pairing wellness-inspired visuals with thoughtful content strategy.",
+  alternates: {
+    canonical: "/work/sub-work",
+  },
 };
 
 const page = () => {

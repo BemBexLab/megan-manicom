@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: 'About',
   description:
     'Meet Megan Manicom, a creative marketing specialist helping authors, coaches, and growing brands shape their stories and build meaningful connections.',
+  alternates: {
+    canonical: '/about',
+  },
 }
 
 const page = () => {
