@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { Archivo, Geist, Geist_Mono, Urbanist } from "next/font/google";
 import { clashDisplay } from "./fonts";
 import "./globals.css";
+import "lenis/dist/lenis.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -44,9 +46,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} ${clashDisplay.variable} ${urbanist.variable} ${archivo.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <Header />
-        {children}
-        <Footer />
+        <SmoothScroll>
+          <Header />
+          {children}
+          <Footer />
+        </SmoothScroll>
       </body>
     </html>
   );
