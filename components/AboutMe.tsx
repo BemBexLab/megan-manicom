@@ -7,9 +7,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 
 const stats = [
-  { value: "100+", label: "Projects Completed" },
-  { value: "500+", label: "Happy Clients" },
-  { value: "10+", label: "Years of Experience" },
+  { value: 100, suffix: "+", label: "Projects Completed" },
+  { value: 500, suffix: "+", label: "Happy Clients" },
+  { value: 10, suffix: "+", label: "Years of Experience" },
 ];
 
 const features = [
@@ -68,6 +68,15 @@ export default function AboutSection() {
 
     gsap.registerPlugin(ScrollTrigger);
 
+    const statValues = gsap.utils.toArray<HTMLElement>("[data-about-stat]", section);
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (reduceMotion) {
+      statValues.forEach((element) => {
+        element.textContent = `${element.dataset.target}${element.dataset.suffix ?? ""}`;
+      });
+    }
+
     const media = gsap.matchMedia();
     media.add("(prefers-reduced-motion: no-preference)", () => {
       const context = gsap.context(() => {
@@ -108,6 +117,25 @@ export default function AboutSection() {
             },
             "-=0.25",
           );
+
+        statValues.forEach((element) => {
+          const target = Number(element.dataset.target);
+          const counter = { value: 0 };
+
+          gsap.to(counter, {
+            value: target,
+            duration: 1.6,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: element,
+              start: "top 90%",
+              once: true,
+            },
+            onUpdate: () => {
+              element.textContent = `${Math.round(counter.value)}${element.dataset.suffix ?? ""}`;
+            },
+          });
+        });
       }, section);
 
       return () => context.revert();
@@ -141,8 +169,13 @@ export default function AboutSection() {
                         i === 0 ? "pr-3 sm:pr-5" : "px-3 sm:px-5"
                       }`}
                     >
-                      <span className="text-2xl font-medium leading-none text-[#282828] sm:text-[28px] clash-display font-clash">
-                        {stat.value}
+                      <span
+                        data-about-stat
+                        data-target={stat.value}
+                        data-suffix={stat.suffix}
+                        className="text-2xl font-medium leading-none text-[#282828] sm:text-[28px] clash-display font-clash"
+                      >
+                        0{stat.suffix}
                       </span>
                       <span className="mt-2 text-[11px] leading-tight text-[#282828] sm:text-[15px] urbanist">
                         {stat.label}
