@@ -42,8 +42,7 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
           alt={project.alt}
           width={900}
           height={592}
-          unoptimized
-          sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 25vw"
+          sizes="(min-width: 1420px) 355px, (max-width: 639px) calc(100vw - 32px), (max-width: 1023px) calc(50vw - 24px), 25vw"
           data-portfolio-image
           className="h-full w-full object-cover"
         />

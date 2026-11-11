@@ -116,7 +116,7 @@ function TestimonialCard({
             src={testimonial.avatar}
             alt=""
             fill
-            unoptimized
+            unoptimized={testimonial.avatar.startsWith("https://")}
             sizes="32px"
             className="object-cover"
           />

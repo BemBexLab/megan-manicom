@@ -81,7 +81,6 @@ export default function AboutMe2() {
             src="/3d10acc26a868a5485f246941722d40e2d5993dc.webp"
             alt="Megan Manicom"
             fill
-            quality={100}
             sizes="(min-width: 1578px) 583px, (min-width: 1024px) 37vw, (min-width: 568px) 520px, calc(100vw - 32px)"
             className="object-cover object-center"
           />

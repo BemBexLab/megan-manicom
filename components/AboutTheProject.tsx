@@ -51,7 +51,6 @@ export default function AboutTheProject({
             src={imageSrc}
             alt={imageAlt}
             fill
-            unoptimized
             sizes="(min-width: 1490px) 1420px, (min-width: 1024px) 90vw, calc(100vw - 32px)"
             className="object-cover"
           />

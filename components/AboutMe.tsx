@@ -127,7 +127,6 @@ export default function AboutSection() {
                 src="/3d10acc26a868a5485f246941722d40e2d5993dc.webp"
                 alt="Megan Manicom"
                 fill
-                quality={100}
                 className="object-cover object-top"
                 sizes="(min-width: 1415px) 650px, (min-width: 1024px) 46vw, calc(100vw - 48px)"
               />

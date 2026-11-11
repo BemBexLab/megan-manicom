@@ -7,7 +7,6 @@ import OurPortfolio from "@/components/OurPortfolio";
 import CustomerTestimonials from "@/components/CustomerTestimonials";
 import FAQs from "@/components/FAQs";
 import ContactUs from "@/components/ContactUs";
-import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Social Media Marketing & Content Strategy",

@@ -24,7 +24,6 @@ export default function Footer() {
                 src="/3d10acc26a868a5485f246941722d40e2d5993dc.webp"
                 alt="Megan Manicom"
                 fill
-                quality={100}
                 sizes="(max-width: 639px) 68px, 84px"
                 className="object-cover"
               />

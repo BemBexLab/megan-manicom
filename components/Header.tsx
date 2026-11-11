@@ -30,7 +30,6 @@ export default function Header() {
               fill
               className="object-cover"
               sizes="60px"
-              priority
             />
           </span>
           <span className="clash-display text-[36px] font-medium leading-none tracking-tight text-[#282828]">
@@ -43,7 +42,7 @@ export default function Header() {
         </Suspense>
 
         <Link
-          href="/contact"
+          href="mailto:info@meganmanicom.com"
           className="urbanist hidden h-12 shrink-0 items-center gap-2 rounded-full bg-[#D9B061] py-1 pl-4 pr-1.5 text-[14px] font-normal text-[#282828] shadow-[0_5px_12px_rgba(0,0,0,0.16)] transition-all duration-200 hover:bg-accent-hover hover:shadow-[0_8px_16px_rgba(0,0,0,0.2)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] md:inline-flex"
         >
           Work With Me
@@ -191,7 +190,7 @@ function MobileMenu() {
           })(),
         )}
         <Link
-          href="/work-with-me"
+          href="mailto:info@meganmanicom.com"
           className="urbanist mt-3 flex items-center justify-center gap-2 rounded-full bg-[#D9B061] px-6 py-3 text-sm font-medium text-[#282828] shadow-md transition-all duration-200 hover:bg-accent-hover hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] "
         >
           Work With Me

@@ -141,7 +141,6 @@ export default function PageHero({
                     alt=""
                     width={40}
                     height={40}
-                    quality={100}
                     sizes="(min-width: 1024px) 3cqw, 32px"
                     className="relative h-8 w-8 rounded-full border border-white object-cover first:z-10 [&:not(:first-child)]:-ml-[7px] min-[900px]:h-[2.75cqw] min-[900px]:w-[2.75cqw] min-[900px]:[&:not(:first-child)]:-ml-[0.65cqw]"
                   />
@@ -184,7 +183,6 @@ export default function PageHero({
                   alt={logo.name}
                   width={logo.width}
                   height={logo.height}
-                  quality={100}
                   className="h-[14px] w-auto object-contain min-[900px]:h-[1.37cqw]"
                 />
               ))}

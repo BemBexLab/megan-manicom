@@ -164,8 +164,7 @@ export default function ExploreMyWork() {
                   src={project.image}
                   alt={project.imageAlt}
                   fill
-                  unoptimized
-                  sizes="(min-width: 850px) 30vw, (min-width: 640px) 45vw, 100vw"
+                  sizes="(min-width: 1578px) 458px, (min-width: 850px) calc(30vw - 16px), (min-width: 640px) 45vw, 100vw"
                   className="object-cover"
                 />
               </div>
