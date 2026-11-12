@@ -54,7 +54,7 @@ export default function ServicesSection() {
   const [active, setActive] = useState<number | null>(0);
   const accordionId = useId();
   const sectionRef = useRef<HTMLElement>(null);
-  const servicesRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
   const pinTriggerRef = useRef<ScrollTrigger | null>(null);
   const panelRefs = useRef<(HTMLDivElement | null)[]>([]);
   const hasInitializedPanels = useRef(false);
@@ -65,15 +65,20 @@ export default function ServicesSection() {
     const media = gsap.matchMedia();
     media.add("(min-width: 1024px)", () => {
       const section = sectionRef.current;
-      const services = servicesRef.current;
-      if (!section || !services) return;
+      const content = contentRef.current;
+      if (!section || !content) return;
 
       pinTriggerRef.current = ScrollTrigger.create({
-        trigger: services,
-        pin: services,
+        trigger: content,
+        pin: content,
         start: "top top+=96",
         endTrigger: section,
-        end: () => `bottom top+=${96 + services.offsetHeight}`,
+        end: () => {
+          const bottomPadding = parseFloat(
+            window.getComputedStyle(section).paddingBottom,
+          );
+          return `bottom top+=${96 + content.offsetHeight + bottomPadding}`;
+        },
         pinSpacing: false,
         anticipatePin: 1,
         invalidateOnRefresh: true,
@@ -107,7 +112,7 @@ export default function ServicesSection() {
     const timeline = gsap.timeline({
       defaults: { duration: reduceMotion ? 0 : 0.45, ease: "power2.inOut" },
       onComplete: () => {
-        if (pinTriggerRef.current && !pinTriggerRef.current.isActive) {
+        if (pinTriggerRef.current) {
           ScrollTrigger.refresh();
         }
       },
@@ -146,7 +151,7 @@ export default function ServicesSection() {
     >
       <div className="mx-auto w-full max-w-[1420px] lg:[container-type:inline-size]">
         <div className="grid grid-cols-1 items-start gap-10 sm:gap-12 lg:grid-cols-[minmax(0,1.21fr)_minmax(0,1fr)] lg:gap-x-[9.6%] lg:gap-y-0">
-          <div className="flex min-w-0 flex-col">
+          <div ref={contentRef} className="flex min-w-0 flex-col">
             <div className="flex items-center gap-2.5">
               <span
                 aria-hidden="true"
@@ -197,7 +202,7 @@ export default function ServicesSection() {
           </div>
 
           <div className="min-w-0">
-            <div ref={servicesRef} className="min-w-0">
+            <div className="min-w-0">
               {services.map((service, i) => {
               const isActive = active === i;
               const triggerId = `${accordionId}-trigger-${i}`;

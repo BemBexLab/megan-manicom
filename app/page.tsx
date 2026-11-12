@@ -55,7 +55,7 @@ export default function Home() {
       />
       <ServicesSection />
       <Books />
-      <VideoTestimonials />
+      {/* <VideoTestimonials /> */}
       <AboutMe2
         eyebrowText="Why Choose"
         heading="Why Choose Megan"
