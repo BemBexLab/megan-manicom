@@ -10,6 +10,7 @@ import ContactUs from "@/components/ContactUs";
 import AboutMe2 from "@/components/AboutMe2";
 import Books from "@/components/Books";
 import VideoTestimonials from "@/components/VideoTestimonials";
+import Projects from "@/components/Projects";
 
 export const metadata: Metadata = {
   title: "Social Media Marketing & Content Strategy",
@@ -25,8 +26,8 @@ export default function Home() {
     <section className="bg-[#FFFFF3]">
       <HeroSection />
       <AboutSection />
-      <OurPortfolio />
-      
+      {/* <OurPortfolio /> */}
+      <Projects />
       <MyCreativeProcess
         eyebrowText="My Creative Process"
         heading="From Ideas To Real Impact"

@@ -159,7 +159,7 @@ export default function OurPortfolio() {
               className="h-4 w-4 rounded-full border-3 border-[#282828] bg-[#D9B061]"
             />
             <span className="urbanist text-[16px] font-light text-[#777777]">
-              Projects
+              Portfolio
             </span>
           </div>
           <h2 className="clash-display my-2 max-w-full break-words text-balance text-[2rem] sm:text-[clamp(2.25rem,4.2vw,3.5rem)] font-medium leading-tight text-[#282828]">
