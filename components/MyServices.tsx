@@ -9,20 +9,44 @@ import { FiArrowUpRight } from "react-icons/fi";
 
 const services = [
   {
-    title: "Social Media Management",
-    text: "Building and managing your social presence with consistent content, meaningful engagement, and a strategy tailored to your brand.",
+    title: "Author Social Media Marketing",
+    text: "Social media strategy and content support for authors who want to stay visible before, during, and after launch.",
   },
   {
-    title: "Content Creation & Design",
-    text: "Scroll-stopping posts, graphics, and visuals designed to reflect your brand and connect with your audience.",
+    title: "Book Launch Visibility",
+    text: "Launch-focused content, messaging, and posting direction to help build awareness around a new or upcoming book.",
   },
   {
-    title: "Social Media Strategy",
-    text: "A clear, goal-driven roadmap covering content planning, launch timing, and audience growth.",
+    title: "Book Positioning",
+    text: "Clear messaging around the book, the author, the reader, and the reason people should care.",
   },
   {
-    title: "Ebook Design & Formatting",
-    text: "Clean, professional ebook layouts and formatting that are ready to publish and easy to read.",
+    title: "Content Planning",
+    text: "Simple content plans for LinkedIn, Instagram, Facebook, and other platforms so you know what to post and why.",
+  },
+  {
+    title: "Publishing Support",
+    text: "Support with KDP, book setup direction, formatting guidance, and the key steps needed to prepare a book for release.",
+  },
+  {
+    title: "Audience Growth",
+    text: "Practical strategies to reach readers, communities, coaches, speakers, parents, schools, or business audiences, depending on the book.",
+  },
+  {
+    title: "EBook Design",
+    text: "Professional eBook layouts crafted for clarity, readability, and visual appeal. I design structured, engaging pages that enhance content and provide a seamless reading experience across all devices.",
+  },
+  {
+    title: "Illustration",
+    text: "Custom illustrations designed to bring ideas to life with creativity and precision. Each piece is tailored to match your concept, style, and audience, ensuring visually compelling results.",
+  },
+  {
+    title: "Cover Design",
+    text: "Striking and memorable covers that capture attention instantly. I create designs that reflect your content’s essence while making a strong first impression.",
+  },
+  {
+    title: "Layout & Formatg",
+    text: "Clean and consistent formatting for eBooks and digital publications. From typography to spacing, every detail is refined for a polished and professional finish.",
   },
 ];
 
@@ -129,7 +153,7 @@ export default function ServicesSection() {
                 className="h-4 w-4 rounded-full border-3 border-[#282828] bg-[#D9B061]"
               />
               <span className="urbanist text-sm leading-[1.5] text-[#777777] lg:text-[clamp(12px,1.13cqw,16px)]">
-                My Services
+                What I Offer
               </span>
             </div>
 
@@ -137,14 +161,12 @@ export default function ServicesSection() {
               id="services-title"
               className="clash-display mt-3.5 text-[2rem] font-medium leading-[1.2] text-[#282828] sm:text-[2.5rem] lg:mt-[0.94cqw] lg:text-[clamp(32px,3.76cqw,54px)]"
             >
-              Creative Solutions For
-              <span className="block">Your Brand</span>
+              Services Built Around
+              <span className="block">Visibility and Growth</span>
             </h2>
 
             <p className="urbanist mt-4 text-[15px] leading-[1.7] text-[#777777] lg:mt-[1.32cqw] lg:max-w-[95%] lg:text-[clamp(12px,1.17cqw,17px)]">
-              From social media strategy to engaging content creation, I offer
-              creative services that help brands connect with their audience and
-              grow their online presence.
+              From book launches to social media content, I help make your message easier to find, understand, and trust.
             </p>
 
             <div className="mt-5 lg:mt-[1.79cqw]">

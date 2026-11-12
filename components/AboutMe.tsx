@@ -152,7 +152,7 @@ export default function AboutSection() {
           <div data-about-image className="relative mx-auto w-full max-w-[650px] lg:mx-0">
             <div className="relative aspect-[370/318] w-full overflow-hidden rounded-3xl bg-gradient-to-b from-white to-[#E9E9E9]">
               <Image
-                src="/3d10acc26a868a5485f246941722d40e2d5993dc.webp"
+                src="/Gemini_Generated_Image_kc0kikc0kikc0kik.png"
                 alt="Megan Manicom"
                 fill
                 className="object-cover object-top"
@@ -173,11 +173,11 @@ export default function AboutSection() {
                         data-about-stat
                         data-target={stat.value}
                         data-suffix={stat.suffix}
-                        className="text-2xl font-medium leading-none text-[#282828] sm:text-[28px] clash-display font-clash"
+                        className="text-2xl font-medium leading-none text-white sm:text-[28px] clash-display font-clash"
                       >
                         0{stat.suffix}
                       </span>
-                      <span className="mt-2 text-[11px] leading-tight text-[#282828] sm:text-[15px] urbanist">
+                      <span className="mt-2 text-[11px] leading-tight text-white sm:text-[15px] urbanist">
                         {stat.label}
                       </span>
                     </div>

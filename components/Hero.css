@@ -52,20 +52,28 @@
   grid-area: portrait;
   position: relative;
   z-index: 2;
-  height: clamp(300px, 90vw, 440px);
+  height: clamp(340px, 100vw, 520px);
   min-width: 0;
   overflow: hidden;
   pointer-events: none;
+  mask-image: linear-gradient(to bottom, #000 88%, transparent 100%);
+}
+
+.hero-portrait-reveal {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .hero-portrait-image {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 50%;
   width: auto;
   max-width: none;
-  height: 100%;
-  transform: translateX(-59%);
+  height: 150%;
+  transform: translateX(-55%);
+  filter: drop-shadow(8px 6px 16px rgb(40 40 40 / 7%));
 }
 
 .hero-intro {
@@ -264,18 +272,16 @@
   }
   .hero-portrait {
     position: absolute;
-    bottom: 0;
-    left: 22.85%;
+    bottom: -4%;
+    left: 27%;
     width: 46%;
-    height: auto;
-    overflow: visible;
+    height: 104%;
+    overflow: hidden;
+    mask-image: none;
   }
   .hero-portrait-image {
-    position: static;
     display: block;
-    width: 100%;
-    height: auto;
-    transform: none;
+    height: 145%;
   }
   .hero-intro {
     position: absolute;

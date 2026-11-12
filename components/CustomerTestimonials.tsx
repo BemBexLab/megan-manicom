@@ -413,9 +413,9 @@ export default function CustomerTestimonials() {
             tabIndex={0}
             className="flex min-w-0 snap-x snap-mandatory gap-3.5 overflow-x-auto py-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D9B061] md:flex-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
-            {testimonials.map((testimonial) => (
+            {testimonials.map((testimonial, index) => (
               <TestimonialCard
-                key={testimonial.name}
+                key={`${testimonial.name}-${testimonial.detail}-${index}`}
                 testimonial={testimonial}
               />
             ))}

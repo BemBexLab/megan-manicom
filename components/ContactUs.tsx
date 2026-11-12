@@ -4,6 +4,7 @@ import {
   useEffect,
   useRef,
   useState,
+  useId,
   type FormEvent,
   type KeyboardEvent,
 } from "react";
@@ -15,14 +16,53 @@ import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 const fieldClassName =
   "h-[42px] w-full rounded-[13px] border border-[#C8C8C8] bg-transparent px-3 text-[13px] text-[#333333] outline-none placeholder:text-[#C6C6C6] focus:border-[#D9B061] focus:ring-1 focus:ring-[#D9B061]/30";
 
-const services = [
+export type ContactService = { value: string; label: string };
+
+export type ContactUsProps = {
+  eyebrow?: string;
+  heading?: string;
+  description?: string;
+  phone?: { href: string; label: string } | null;
+  email?: { href: string; label: string } | null;
+  formHeading?: string;
+  services?: ContactService[];
+  servicePlaceholder?: string;
+  serviceErrorMessage?: string;
+  placeholders?: Partial<Record<"firstName" | "lastName" | "email" | "phone" | "message", string>>;
+  consentLabel?: string;
+  privacyLink?: { href: string; label: string };
+  termsLink?: { href: string; label: string };
+  submitLabel?: string;
+  cta?: { label: string; href: string };
+};
+
+const defaultServices: ContactService[] = [
   { value: "social-media", label: "Social Media Management" },
   { value: "content-creation", label: "Content Creation & Design" },
   { value: "strategy", label: "Social Media Strategy" },
   { value: "ebook", label: "Ebook Design" },
 ];
 
-export default function ContactUs() {
+export default function ContactUs({
+  eyebrow = "Contact Us",
+  heading = "Let's Talk About Your Ideas",
+  description = "Whether you're launching something new or refreshing your social media presence, I'd love to hear about it. Let's create something worth sharing.",
+  phone = { href: "tel:+01234567890", label: "(0) 123 456 789 0" },
+  email = { href: "mailto:info@meganmanicom.com", label: "info@meganmanicom.com" },
+  formHeading = "Fill This Form To Get Faster Response",
+  services = defaultServices,
+  servicePlaceholder = "Select Service",
+  serviceErrorMessage = "Please select a service.",
+  placeholders = {},
+  consentLabel = "Submitting You Agree With",
+  privacyLink = { href: "/privacy-policy", label: "Privacy Policy" },
+  termsLink = { href: "/terms-of-service", label: "Terms Of Service." },
+  submitLabel = "Let's Get Connected",
+  cta,
+}: ContactUsProps) {
+  const id = useId();
+  const serviceOptionsId = `${id}-service-options`;
+  const serviceErrorId = `${id}-service-error`;
   const sectionRef = useRef<HTMLElement>(null);
   const [selectedService, setSelectedService] = useState("");
   const [isServiceOpen, setIsServiceOpen] = useState(false);
@@ -120,6 +160,7 @@ export default function ContactUs() {
   };
 
   const handleServiceKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => {
+    if (!services.length) return;
     if (event.key === "ArrowDown") {
       event.preventDefault();
       if (!isServiceOpen) {
@@ -179,7 +220,7 @@ export default function ContactUs() {
 
   const selectedLabel =
     services.find((service) => service.value === selectedService)?.label ??
-    "Select Service";
+    servicePlaceholder;
 
   return (
     <section ref={sectionRef} className="section-spacing w-full bg-[#F7F7F7] px-4 sm:px-6 lg:px-8 2xl:px-6">
@@ -191,49 +232,48 @@ export default function ContactUs() {
               className="h-4 w-4 rounded-full border-3 border-[#282828] bg-[#D9B061]"
             />
             <span className="urbanist text-[16px] text-[#777777]">
-              Contact Us
+              {eyebrow}
             </span>
           </div>
 
           <h2 className="clash-display my-2 max-w-[600px] text-[2rem] sm:text-[clamp(2.25rem,4.2vw,3.5rem)] font-medium leading-[1.05] text-[#282828]">
-            Let&apos;s Talk About Your Ideas
+            {heading}
           </h2>
 
           <p className="urbanist mt-3 max-w-[600px] text-[16px] leading-[1.7] text-[#777777]">
-            Whether you&apos;re launching something new or refreshing your
-            social media presence, I&apos;d love to hear about it. Let&apos;s
-            create something worth sharing.
+            {description}
           </p>
 
           <div className="mt-10 flex flex-col gap-3">
-            <a
+            {phone && <a
               data-contact-link
-              href="tel:+01234567890"
+              href={phone.href}
               className="group flex w-fit items-center gap-4 rounded-full text-[#777777] transition-colors hover:text-[#D9B061] focus-visible:rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a36e3d]"
             >
               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#D9B061] text-[#282828] transition-colors group-hover:bg-accent-hover">
                 <FaPhoneAlt aria-hidden="true" size={14} />
               </span>
-              <span className="urbanist text-[16px]">(0) 123 456 789 0</span>
-            </a>
-            <a
+              <span className="urbanist text-[16px]">{phone.label}</span>
+            </a>}
+            {email && <a
               data-contact-link
-              href="mailto:info@meganmanicom.com"
+              href={email.href}
               className="group flex w-fit items-center gap-4 rounded-full text-[#777777] transition-colors hover:text-[#D9B061] focus-visible:rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a36e3d]"
             >
               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#D9B061] text-[#282828] transition-colors group-hover:bg-accent-hover">
                 <FaEnvelope aria-hidden="true" size={14} />
               </span>
               <span className="urbanist text-[16px]">
-                info@meganmanicom.com
+                {email.label}
               </span>
-            </a>
+            </a>}
           </div>
+          {cta && <a href={cta.href} className="urbanist mt-7 inline-flex w-fit items-center gap-2 rounded-full bg-[#D9B061] py-1.5 pl-4 pr-1.5 text-[15px] font-medium text-[#282828] shadow-[0_8px_16px_rgba(0,0,0,0.16)] hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828]">{cta.label}<span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#282828] text-[#D9B061]"><FiArrowUpRight aria-hidden="true" size={20} /></span></a>}
         </div>
 
         <div data-contact-form className="min-w-0">
           <h3 className="clash-display break-words text-[clamp(1.125rem,2vw,1.375rem)] font-medium leading-tight text-[#282828]">
-            Fill This Form To Get Faster Response
+            {formHeading}
           </h3>
 
           <form
@@ -245,8 +285,8 @@ export default function ContactUs() {
                 className={fieldClassName}
                 type="text"
                 name="firstName"
-                placeholder="First Name"
-                aria-label="First name"
+                placeholder={placeholders.firstName ?? "First Name"}
+                aria-label={placeholders.firstName ?? "First name"}
                 autoComplete="given-name"
                 required
               />
@@ -254,8 +294,8 @@ export default function ContactUs() {
                 className={fieldClassName}
                 type="text"
                 name="lastName"
-                placeholder="Last Name"
-                aria-label="Last name"
+                placeholder={placeholders.lastName ?? "Last Name"}
+                aria-label={placeholders.lastName ?? "Last name"}
                 autoComplete="family-name"
                 required
               />
@@ -264,8 +304,8 @@ export default function ContactUs() {
               className={fieldClassName}
               type="email"
               name="email"
-              placeholder="Email"
-              aria-label="Email"
+              placeholder={placeholders.email ?? "Email"}
+              aria-label={placeholders.email ?? "Email"}
               autoComplete="email"
               required
             />
@@ -273,8 +313,8 @@ export default function ContactUs() {
               className={fieldClassName}
               type="tel"
               name="phone"
-              placeholder="Phone Number"
-              aria-label="Phone number"
+              placeholder={placeholders.phone ?? "Phone Number"}
+              aria-label={placeholders.phone ?? "Phone number"}
               autoComplete="tel"
             />
 
@@ -284,19 +324,20 @@ export default function ContactUs() {
                 ref={serviceButtonRef}
                 type="button"
                 role="combobox"
-                aria-label="Select service"
+                aria-label={servicePlaceholder}
                 aria-haspopup="listbox"
                 aria-expanded={isServiceOpen}
-                aria-controls="contact-service-options"
+                aria-controls={serviceOptionsId}
                 aria-activedescendant={
                   isServiceOpen
-                    ? `contact-service-option-${activeServiceIndex}`
+                    ? `${id}-service-option-${activeServiceIndex}`
                     : undefined
                 }
                 aria-required="true"
+                disabled={!services.length}
                 aria-invalid={serviceError}
                 aria-describedby={
-                  serviceError ? "contact-service-error" : undefined
+                  serviceError ? serviceErrorId : undefined
                 }
                 onClick={() => {
                   if (!isServiceOpen) {
@@ -329,7 +370,7 @@ export default function ContactUs() {
 
               {isServiceOpen && (
                 <div
-                  id="contact-service-options"
+                  id={serviceOptionsId}
                   role="listbox"
                   aria-label="Available services"
                   className="absolute left-0 right-0 top-[calc(100%+6px)] z-30 max-h-[min(220px,40vh)] max-w-full overflow-y-auto overscroll-contain rounded-[13px] border border-[#E5E5E5] bg-white p-1.5 shadow-[0_8px_20px_rgba(0,0,0,0.12)]"
@@ -340,7 +381,7 @@ export default function ContactUs() {
 
                     return (
                       <div
-                        id={`contact-service-option-${index}`}
+                        id={`${id}-service-option-${index}`}
                         key={service.value}
                         role="option"
                         aria-selected={isSelected}
@@ -361,10 +402,10 @@ export default function ContactUs() {
 
               {serviceError && (
                 <p
-                  id="contact-service-error"
+                  id={serviceErrorId}
                   className="urbanist mt-1 text-[11px] text-red-600"
                 >
-                  Please select a service.
+                  {serviceErrorMessage}
                 </p>
               )}
             </div>
@@ -372,8 +413,8 @@ export default function ContactUs() {
             <textarea
               className="h-[97px] w-full resize-none rounded-[13px] border border-[#C8C8C8] bg-transparent px-3 py-3 text-[13px] text-[#333333] outline-none placeholder:text-[#C6C6C6] focus:border-[#D9B061] focus:ring-1 focus:ring-[#D9B061]/30"
               name="message"
-              placeholder="Message"
-              aria-label="Message"
+              placeholder={placeholders.message ?? "Message"}
+              aria-label={placeholders.message ?? "Message"}
               required
             />
 
@@ -385,19 +426,19 @@ export default function ContactUs() {
                 className="h-4 w-4 shrink-0 rounded-[3px] accent-[#D9B061]"
               />
               <span className="urbanist">
-                Submitting You Agree With{" "}
+                {consentLabel}{" "}
                 <a
-                  href="/privacy-policy"
+                  href={privacyLink.href}
                   className="transition-colors hover:text-[#A87932] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[#a36e3d]"
                 >
-                  Privacy Policy
+                  {privacyLink.label}
                 </a>{" "}
                 And{" "}
                 <a
-                  href="/terms-of-service"
+                  href={termsLink.href}
                   className="transition-colors hover:text-[#A87932] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[#a36e3d]"
                 >
-                  Terms Of Service.
+                  {termsLink.label}
                 </a>
               </span>
             </label>
@@ -406,7 +447,7 @@ export default function ContactUs() {
               type="submit"
               className="urbanist mt-3 inline-flex w-fit items-center gap-2 rounded-full bg-[#D9B061] py-1.5 pl-4 pr-1.5 text-[16px] font-medium text-[#282828] shadow-[0_8px_18px_rgba(0,0,0,0.18)] transition-all duration-200 hover:bg-accent-hover hover:shadow-[0_11px_20px_rgba(0,0,0,0.2)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] "
             >
-              Let&apos;s Get Connected
+              {submitLabel}
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#282828] text-lg leading-none text-[#D9B061]">
                 <FiArrowUpRight aria-hidden="true" />
               </span>

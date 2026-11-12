@@ -150,7 +150,7 @@ export default function OurPortfolio() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="section-spacing w-full bg-[#F7F7F7] px-4 sm:px-6 lg:px-4">
+    <section ref={sectionRef} className="section-spacing w-full bg-[#F2F2F2] px-4 sm:px-6 lg:px-4">
       <div className="mx-auto w-full max-w-[1420px]">
         <header data-portfolio-header className="mx-auto mb-7 max-w-7xl text-center sm:mb-8">
           <div className="flex items-center justify-center gap-2">
@@ -159,7 +159,7 @@ export default function OurPortfolio() {
               className="h-4 w-4 rounded-full border-3 border-[#282828] bg-[#D9B061]"
             />
             <span className="urbanist text-[16px] font-light text-[#777777]">
-              Portfolio
+              Projects
             </span>
           </div>
           <h2 className="clash-display my-2 max-w-full break-words text-balance text-[2rem] sm:text-[clamp(2.25rem,4.2vw,3.5rem)] font-medium leading-tight text-[#282828]">

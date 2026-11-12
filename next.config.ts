@@ -5,6 +5,14 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/webp"],
     qualities: [75],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "m.media-amazon.com",
+        pathname: "/images/**",
+        search: "",
+      },
+    ],
   },
   cacheComponents: true,
   partialPrefetching: true,

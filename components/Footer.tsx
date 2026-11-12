@@ -21,7 +21,7 @@ export default function Footer() {
           >
             <span className="relative h-[68px] w-[68px] shrink-0 overflow-hidden rounded-full border border-[#282828] sm:h-[84px] sm:w-[84px]">
               <Image
-                src="/3d10acc26a868a5485f246941722d40e2d5993dc.webp"
+                src="/image-2-2048x1946.png"
                 alt="Megan Manicom"
                 fill
                 sizes="(max-width: 639px) 68px, 84px"

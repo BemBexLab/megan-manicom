@@ -1,0 +1,12 @@
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slide {
+  animation: reveal 450ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide { animation: none; }
+}

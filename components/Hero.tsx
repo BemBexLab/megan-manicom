@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
+import heroPortrait from "../public/Gemini_Generated_Image_kc0kikc0kikc0kik (1).webp";
 import "./Hero.css";
 
 const partnerLogos = [
@@ -45,7 +46,7 @@ export default function HeroSection() {
             ease: "power3.out",
           })
           .from(
-            "[data-hero-portrait]",
+            "[data-hero-portrait-reveal]",
             {
               y: 24,
               autoAlpha: 0,
@@ -110,15 +111,15 @@ export default function HeroSection() {
         </h1>
 
         <div className="hero-portrait" data-hero-portrait>
-          <Image
-            src="/image 1.png"
-            alt="Megan Manicom"
-            width={882}
-            height={857}
-            sizes="(min-width: 1500px) 690px, (min-width: 1024px) 46vw, (min-width: 640px) 443px, 453px"
-            className="hero-portrait-image"
-            preload
-          />
+          <div className="hero-portrait-reveal" data-hero-portrait-reveal>
+            <Image
+              src={heroPortrait}
+              alt="Megan Manicom"
+              sizes="(min-width: 1600px) 900px, (min-width: 1024px) 56vw, (min-width: 640px) 520px, 115vw"
+              className="hero-portrait-image"
+              preload
+            />
+          </div>
         </div>
 
         <div className="hero-intro urbanist" data-hero-intro>
@@ -137,7 +138,7 @@ export default function HeroSection() {
         </div>
 
         <div className="hero-rating urbanist" data-hero-rating>
-          <div className="hero-avatars" aria-hidden="true">
+          {/* <div className="hero-avatars" aria-hidden="true">
             {clientAvatars.map((avatar) => (
               <Image
                 key={avatar}
@@ -149,7 +150,7 @@ export default function HeroSection() {
                 className="hero-avatar"
               />
             ))}
-          </div>
+          </div> */}
           <div className="hero-rating-details">
             <span className="hero-score text-[#282828]">4.8/5</span>
             <p className="hero-rating-caption text-[#282828]">
@@ -160,7 +161,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className="hero-partners urbanist" data-hero-partners>
+        {/* <div className="hero-partners urbanist" data-hero-partners>
           <p className="hero-partners-heading text-[#282828]">
             Our Trusted Partners
           </p>
@@ -176,7 +177,7 @@ export default function HeroSection() {
               />
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

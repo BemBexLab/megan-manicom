@@ -35,7 +35,27 @@ const page = () => {
             { name: "IPSUM", src: "/home/Logo (3).webp", width: 108, height: 26 },
           ]}
         />
-        <AboutMe2 />
+        <AboutMe2
+          eyebrowText="About Me"
+          heading="Turning Creativity Into Something Meaningful."
+          imageSrc="/image-2-2048x1946.png"
+          imageAlt="Megan Manicom"
+          text={[
+            "Hi, I'm Megan!",
+            "I've always believed that every great idea deserves the opportunity to shine. Whether it's a story waiting to be published, a brand looking to grow, or a creative concept ready to take shape, I love being part of the journey that brings it to life.",
+            "My work brings together design, storytelling, and digital marketing to help authors, entrepreneurs, and brands communicate their ideas with confidence.",
+            "I enjoy the details that make each project unique, from selecting the right visual elements to creating content that truly resonates with an audience.",
+            "For me, it's not just about creating something that looks beautiful. It's about creating something that feels authentic, serves a purpose, and makes a difference.",
+          ]}
+          stats={[
+            { value: 100, suffix: "+", label: "Projects Completed" },
+            { value: 500, suffix: "+", label: "Happy Clients" },
+            { value: 10, suffix: "+", label: "Years of Experience" },
+          ]}
+          buttonLabel="Explore My Work"
+          buttonHref="/work"
+          imageClassName="object-contain object-center"
+        />
         <MyExpertise />
         <MyCreativeProcess
           eyebrowText="My Approach"
