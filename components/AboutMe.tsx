@@ -146,17 +146,17 @@ export default function AboutSection() {
 
   return (
     <section ref={sectionRef} className="section-spacing bg-[#F7F7F7]">
-      <div className="mx-auto max-w-[1500px] px-6 lg:px-10">
+      <div className="mx-auto w-full px-6 lg:px-10">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-5">
           {/* LEFT — Image card with stats overlay */}
-          <div data-about-image className="relative mx-auto w-full max-w-[650px] lg:mx-0">
+          <div data-about-image className="relative mx-auto w-full max-w-[40.625rem] lg:mx-0">
             <div className="relative aspect-[370/318] w-full overflow-hidden rounded-3xl bg-gradient-to-b from-white to-[#E9E9E9]">
               <Image
                 src="/Gemini_Generated_Image_kc0kikc0kikc0kik.png"
                 alt="Megan Manicom"
                 fill
                 className="object-cover object-top"
-                sizes="(min-width: 1415px) 650px, (min-width: 1024px) 46vw, calc(100vw - 48px)"
+                sizes="(min-width: 1024px) 46vw, calc(100vw - 48px)"
               />
 
               {/* Stats overlay */}
@@ -173,11 +173,11 @@ export default function AboutSection() {
                         data-about-stat
                         data-target={stat.value}
                         data-suffix={stat.suffix}
-                        className="text-2xl font-medium leading-none text-white sm:text-[28px] clash-display font-clash"
+                        className="text-2xl font-medium leading-none text-white sm:text-[1.75rem] clash-display font-clash"
                       >
                         0{stat.suffix}
                       </span>
-                      <span className="mt-2 text-[11px] leading-tight text-white sm:text-[15px] urbanist">
+                      <span className="mt-2 text-[0.6875rem] leading-tight text-white sm:text-[0.9375rem] urbanist">
                         {stat.label}
                       </span>
                     </div>
@@ -202,13 +202,13 @@ export default function AboutSection() {
 
             {/* Heading */}
             <h2
-              className={`clash-display font-clash mt-4 max-w-[700px] text-[clamp(2.25rem,4.2vw,3.5rem)] font-medium leading-[1.15] tracking-tight text-[#282828]`}
+              className={`clash-display font-clash mt-4 max-w-[43.75rem] text-[clamp(2.25rem,4.2vw,3.5rem)] font-medium leading-[1.15] tracking-tight text-[#282828]`}
             >
               The Mind Behind The Creativity
             </h2>
 
             {/* Paragraph */}
-            <p className="urbanist mt-6 max-w-[700px] text-[16] leading-relaxed text-[#777777]">
+            <p className="urbanist mt-6 max-w-[43.75rem] text-[16] leading-relaxed text-[#777777]">
               I&apos;m a passionate social media marketer who loves turning
               ideas into content that connects. My focus is helping brands tell
               their stories and build a memorable online presence.
@@ -226,7 +226,7 @@ export default function AboutSection() {
                   <h3 className="mt-6 text-base font-medium text-[#282828] clash-display">
                     {feature.title}
                   </h3>
-                  <p className="urbanist mt-2 text-[14px] leading-relaxed text-[#777777]">
+                  <p className="urbanist mt-2 text-[0.875rem] leading-relaxed text-[#777777]">
                     {feature.text}
                   </p>
                 </div>

@@ -67,21 +67,21 @@ export default function Books({ books = bookCovers }: { books?: Book[] }) {
       aria-label="Book design portfolio"
       className="section-spacing w-full bg-[#FBFBFB] px-4 sm:px-6 lg:px-[5%]"
     >
-      <div className="mx-auto w-full max-w-[1420px]">
-        <header className="mx-auto max-w-[820px] text-center">
+      <div className="mx-auto w-full">
+        <header className="mx-auto max-w-[51.25rem] text-center">
           <div className="flex items-center justify-center gap-2">
             <span
               aria-hidden="true"
               className="h-4 w-4 rounded-full border-3 border-[#282828] bg-[#D9B061]"
             />
-            <span className="urbanist text-[16px] leading-[1.4] text-[#777777]">
+            <span className="urbanist text-[1rem] leading-[1.4] text-[#777777]">
               Books &amp; Creative Projects
             </span>
           </div>
           <h2 className="clash-display mt-3 text-balance text-[2rem] font-medium leading-[1.15] tracking-tight text-[#282828] sm:text-[clamp(2.25rem,4.2vw,3.5rem)]">
             Every Cover Tells A Story.
           </h2>
-          <p className="urbanist mx-auto mt-4 max-w-[720px] text-[15px] leading-[1.7] text-[#777777] sm:text-[16px]">
+          <p className="urbanist mx-auto mt-4 max-w-[45rem] text-[0.9375rem] leading-[1.7] text-[#777777] sm:text-[1rem]">
             A selection of book covers, eBooks, and illustrations, thoughtfully
             designed to bring each author&apos;s story to life. Explore the
             details that make every project its own.
@@ -94,13 +94,13 @@ export default function Books({ books = bookCovers }: { books?: Book[] }) {
         >
           {books.map((book, index) => {
             const cover = (
-              <div className="relative aspect-[2/3] overflow-hidden rounded-[6px] bg-[#F2F0EB] shadow-[0_4px_12px_rgba(40,40,40,0.08)]">
+              <div className="relative aspect-[2/3] overflow-hidden rounded-[0.375rem] bg-[#F2F0EB] shadow-[0_0.25rem_0.75rem_rgba(40,40,40,0.08)]">
                 {book.src.trim() ? (
                   <Image
                     src={book.src}
                     alt={book.alt}
                     fill
-                    sizes="(min-width: 1578px) 337px, (min-width: 1024px) 23vw, (min-width: 768px) 32vw, 50vw"
+                    sizes="(min-width: 1024px) 23vw, (min-width: 768px) 32vw, 50vw"
                     className="object-cover"
                   />
                 ) : (
@@ -113,7 +113,7 @@ export default function Books({ books = bookCovers }: { books?: Book[] }) {
                       aria-hidden="true"
                       className="flex h-full flex-col p-4 sm:p-6"
                     >
-                      <span className="urbanist text-[11px] tracking-widest text-[#946A24] sm:text-xs">
+                      <span className="urbanist text-[0.6875rem] tracking-widest text-[#946A24] sm:text-xs">
                         {String(index + 1).padStart(2, "0")}
                       </span>
                       <div className="flex flex-1 flex-col items-center justify-center gap-3">
@@ -131,7 +131,7 @@ export default function Books({ books = bookCovers }: { books?: Book[] }) {
                 )}
                 <span
                   aria-hidden="true"
-                  className="pointer-events-none absolute inset-y-0 left-0 w-[5px] bg-linear-to-r from-black/10 to-transparent"
+                  className="pointer-events-none absolute inset-y-0 left-0 w-[0.3125rem] bg-linear-to-r from-black/10 to-transparent"
                 />
               </div>
             );
@@ -142,7 +142,7 @@ export default function Books({ books = bookCovers }: { books?: Book[] }) {
                   <Link
                     href={book.href}
                     aria-label={`View ${book.alt}`}
-                    className="block rounded-[6px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A87932]"
+                    className="block rounded-[0.375rem] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A87932]"
                   >
                     {cover}
                   </Link>
@@ -157,11 +157,11 @@ export default function Books({ books = bookCovers }: { books?: Book[] }) {
         <div className="mt-8 flex justify-center sm:mt-10">
           <Link
             href="/contact"
-            className="urbanist inline-flex items-center gap-2 rounded-full bg-[#D9B061] py-1.5 pl-4 pr-1.5 text-[15px] font-medium text-[#282828] shadow-[0_8px_16px_rgba(0,0,0,0.16)] hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828]"
+            className="urbanist inline-flex items-center gap-2 rounded-full bg-[#D9B061] py-1.5 pl-4 pr-1.5 text-[0.9375rem] font-medium text-[#282828] shadow-[0_0.5rem_1rem_rgba(0,0,0,0.16)] hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828]"
           >
             Let&apos;s Create Together
             <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#282828] text-[#D9B061]">
-              <FiArrowUpRight aria-hidden="true" size={20} />
+              <FiArrowUpRight aria-hidden="true" size="1.25rem" />
             </span>
           </Link>
         </div>

@@ -82,14 +82,14 @@ export default function FAQs({
       aria-labelledby="faq-heading"
       className="section-spacing w-full bg-[#FAFAFA] px-4 sm:px-6 lg:px-8 2xl:px-6"
     >
-      <div className="mx-auto grid w-full max-w-[1420px] grid-cols-1 gap-9 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16">
+      <div className="mx-auto grid w-full grid-cols-1 gap-9 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16">
         <header data-faq-header className="lg:pt-1">
           <div className="flex items-center gap-2">
             <span
               aria-hidden="true"
               className="h-4 w-4 rounded-full border-3 border-[#282828] bg-[#D9B061]"
             />
-            <span className="urbanist text-[16px] text-[#777777]">
+            <span className="urbanist text-[1rem] text-[#777777]">
               {eyebrowText}
             </span>
           </div>
@@ -99,12 +99,12 @@ export default function FAQs({
           >
             {heading}
           </h2>
-          <p className="urbanist mt-3 max-w-[470px] text-[16px] leading-[1.7] text-[#777777]">
+          <p className="urbanist mt-3 max-w-[29.375rem] text-[1rem] leading-[1.7] text-[#777777]">
             {description}
           </p>
         </header>
 
-        <div className="flex flex-col gap-[9px]">
+        <div className="flex flex-col gap-[0.5625rem]">
           {questions.map((item, index) => {
             const isOpen = activeQuestion === index;
             const answerId = `faq-answer-${index + 1}`;
@@ -113,8 +113,8 @@ export default function FAQs({
               <article
                 key={item.question}
                 data-faq-item
-                className={`rounded-[20px] border border-[#E5E5E5] bg-[#FBFBFB] px-3 py-3.5 transition-shadow ${
-                  isOpen ? "shadow-[0_2px_3px_rgba(0,0,0,0.1)]" : ""
+                className={`rounded-[1.25rem] border border-[#E5E5E5] bg-[#FBFBFB] px-3 py-3.5 transition-shadow ${
+                  isOpen ? "shadow-[0_0.125rem_0.1875rem_rgba(0,0,0,0.1)]" : ""
                 }`}
               >
                 <button
@@ -124,16 +124,16 @@ export default function FAQs({
                   onClick={() => setActiveQuestion(isOpen ? -1 : index)}
                   className="group flex w-full min-w-0 items-center gap-4 text-left focus-visible:rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a36e3d]"
                 >
-                  <span className="clash-display w-5 shrink-0 text-[16px] font-medium leading-none text-[#282828]">
+                  <span className="clash-display w-5 shrink-0 text-[1rem] font-medium leading-none text-[#282828]">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <span className="clash-display min-w-0 flex-1 text-[18px] font-medium leading-[1.35] text-[#282828] transition-colors duration-200 group-hover:text-[#A87932] 2xl:text-[20px]">
+                  <span className="clash-display min-w-0 flex-1 text-[1.125rem] font-medium leading-[1.35] text-[#282828] transition-colors duration-200 group-hover:text-[#A87932] 2xl:text-[1.25rem]">
                     {item.question}
                   </span>
                   <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#D9B061] text-white transition-colors duration-200 group-hover:bg-accent-hover">
                     <FiPlus
                       aria-hidden="true"
-                      size={14}
+                      size="0.875rem"
                       className={`transition-transform duration-200 ${isOpen ? "rotate-45" : ""}`}
                     />
                   </span>
@@ -148,7 +148,7 @@ export default function FAQs({
                   }`}
                 >
                   <div className="min-h-0 overflow-hidden">
-                    <p className="urbanist ml-9 mt-2 max-w-[500px] text-[13px] leading-[1.55] text-[#777777] 2xl:text-[16px] sm:ml-9">
+                    <p className="urbanist ml-9 mt-2 max-w-[31.25rem] text-[0.8125rem] leading-[1.55] text-[#777777] 2xl:text-[1rem] sm:ml-9">
                       {item.answer}
                     </p>
                   </div>

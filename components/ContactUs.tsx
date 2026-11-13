@@ -14,7 +14,7 @@ import { FiArrowUpRight, FiChevronDown } from "react-icons/fi";
 import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 
 const fieldClassName =
-  "h-[42px] w-full rounded-[13px] border border-[#C8C8C8] bg-transparent px-3 text-[13px] text-[#333333] outline-none placeholder:text-[#C6C6C6] focus:border-[#D9B061] focus:ring-1 focus:ring-[#D9B061]/30";
+  "h-[2.625rem] w-full rounded-[0.8125rem] border border-[#C8C8C8] bg-transparent px-3 text-[0.8125rem] text-[#333333] outline-none placeholder:text-[#C6C6C6] focus:border-[#D9B061] focus:ring-1 focus:ring-[#D9B061]/30";
 
 export type ContactService = { value: string; label: string };
 
@@ -224,23 +224,23 @@ export default function ContactUs({
 
   return (
     <section ref={sectionRef} className="section-spacing w-full bg-[#F7F7F7] px-4 sm:px-6 lg:px-8 2xl:px-6">
-      <div className="mx-auto grid w-full max-w-[1420px] grid-cols-1 gap-10 sm:gap-12 lg:grid-cols-2 lg:gap-16">
+      <div className="mx-auto grid w-full grid-cols-1 gap-10 sm:gap-12 lg:grid-cols-2 lg:gap-16">
         <div data-contact-details className="flex min-w-0 flex-col">
           <div className="flex items-center gap-2">
             <span
               aria-hidden="true"
               className="h-4 w-4 rounded-full border-3 border-[#282828] bg-[#D9B061]"
             />
-            <span className="urbanist text-[16px] text-[#777777]">
+            <span className="urbanist text-[1rem] text-[#777777]">
               {eyebrow}
             </span>
           </div>
 
-          <h2 className="clash-display my-2 max-w-[600px] text-[2rem] sm:text-[clamp(2.25rem,4.2vw,3.5rem)] font-medium leading-[1.05] text-[#282828]">
+          <h2 className="clash-display my-2 max-w-[37.5rem] text-[2rem] sm:text-[clamp(2.25rem,4.2vw,3.5rem)] font-medium leading-[1.05] text-[#282828]">
             {heading}
           </h2>
 
-          <p className="urbanist mt-3 max-w-[600px] text-[16px] leading-[1.7] text-[#777777]">
+          <p className="urbanist mt-3 max-w-[37.5rem] text-[1rem] leading-[1.7] text-[#777777]">
             {description}
           </p>
 
@@ -251,9 +251,9 @@ export default function ContactUs({
               className="group flex w-fit items-center gap-4 rounded-full text-[#777777] transition-colors hover:text-[#D9B061] focus-visible:rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a36e3d]"
             >
               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#D9B061] text-[#282828] transition-colors group-hover:bg-accent-hover">
-                <FaPhoneAlt aria-hidden="true" size={14} />
+                <FaPhoneAlt aria-hidden="true" size="0.875rem" />
               </span>
-              <span className="urbanist text-[16px]">{phone.label}</span>
+              <span className="urbanist text-[1rem]">{phone.label}</span>
             </a>}
             {email && <a
               data-contact-link
@@ -261,14 +261,14 @@ export default function ContactUs({
               className="group flex w-fit items-center gap-4 rounded-full text-[#777777] transition-colors hover:text-[#D9B061] focus-visible:rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a36e3d]"
             >
               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#D9B061] text-[#282828] transition-colors group-hover:bg-accent-hover">
-                <FaEnvelope aria-hidden="true" size={14} />
+                <FaEnvelope aria-hidden="true" size="0.875rem" />
               </span>
-              <span className="urbanist text-[16px]">
+              <span className="urbanist text-[1rem]">
                 {email.label}
               </span>
             </a>}
           </div>
-          {cta && <a href={cta.href} className="urbanist mt-7 inline-flex w-fit items-center gap-2 rounded-full bg-[#D9B061] py-1.5 pl-4 pr-1.5 text-[15px] font-medium text-[#282828] shadow-[0_8px_16px_rgba(0,0,0,0.16)] hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828]">{cta.label}<span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#282828] text-[#D9B061]"><FiArrowUpRight aria-hidden="true" size={20} /></span></a>}
+          {cta && <a href={cta.href} className="urbanist mt-7 inline-flex w-fit items-center gap-2 rounded-full bg-[#D9B061] py-1.5 pl-4 pr-1.5 text-[0.9375rem] font-medium text-[#282828] shadow-[0_0.5rem_1rem_rgba(0,0,0,0.16)] hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828]">{cta.label}<span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#282828] text-[#D9B061]"><FiArrowUpRight aria-hidden="true" size="1.25rem" /></span></a>}
         </div>
 
         <div data-contact-form className="min-w-0">
@@ -278,9 +278,9 @@ export default function ContactUs({
 
           <form
             onSubmit={handleSubmit}
-            className="mt-5 flex flex-col gap-[10px]"
+            className="mt-5 flex flex-col gap-[0.625rem]"
           >
-            <div className="grid grid-cols-1 gap-[10px] sm:grid-cols-2">
+            <div className="grid grid-cols-1 gap-[0.625rem] sm:grid-cols-2">
               <input
                 className={fieldClassName}
                 type="text"
@@ -361,7 +361,7 @@ export default function ContactUs({
                 <span>{selectedLabel}</span>
                 <FiChevronDown
                   aria-hidden="true"
-                  size={14}
+                  size="0.875rem"
                   className={`shrink-0 text-[#C6C6C6] transition-transform duration-200 ${
                     isServiceOpen ? "rotate-180" : ""
                   }`}
@@ -373,7 +373,7 @@ export default function ContactUs({
                   id={serviceOptionsId}
                   role="listbox"
                   aria-label="Available services"
-                  className="absolute left-0 right-0 top-[calc(100%+6px)] z-30 max-h-[min(220px,40vh)] max-w-full overflow-y-auto overscroll-contain rounded-[13px] border border-[#E5E5E5] bg-white p-1.5 shadow-[0_8px_20px_rgba(0,0,0,0.12)]"
+                  className="absolute left-0 right-0 top-[calc(100%+0.375rem)] z-30 max-h-[min(13.75rem,40vh)] max-w-full overflow-y-auto overscroll-contain rounded-[0.8125rem] border border-[#E5E5E5] bg-white p-1.5 shadow-[0_0.5rem_1.25rem_rgba(0,0,0,0.12)]"
                 >
                   {services.map((service, index) => {
                     const isSelected = selectedService === service.value;
@@ -387,7 +387,7 @@ export default function ContactUs({
                         aria-selected={isSelected}
                         onMouseEnter={() => setActiveServiceIndex(index)}
                         onClick={() => chooseService(index)}
-                        className={`urbanist cursor-pointer rounded-[9px] px-3 py-2.5 text-[13px] transition-colors ${
+                        className={`urbanist cursor-pointer rounded-[0.5625rem] px-3 py-2.5 text-[0.8125rem] transition-colors ${
                           isActive || isSelected
                             ? "bg-[#F8F2EC] text-[#8F633D]"
                             : "text-[#444444] hover:bg-[#FAF7F3]"
@@ -403,7 +403,7 @@ export default function ContactUs({
               {serviceError && (
                 <p
                   id={serviceErrorId}
-                  className="urbanist mt-1 text-[11px] text-red-600"
+                  className="urbanist mt-1 text-[0.6875rem] text-red-600"
                 >
                   {serviceErrorMessage}
                 </p>
@@ -411,19 +411,19 @@ export default function ContactUs({
             </div>
 
             <textarea
-              className="h-[97px] w-full resize-none rounded-[13px] border border-[#C8C8C8] bg-transparent px-3 py-3 text-[13px] text-[#333333] outline-none placeholder:text-[#C6C6C6] focus:border-[#D9B061] focus:ring-1 focus:ring-[#D9B061]/30"
+              className="h-[6.0625rem] w-full resize-none rounded-[0.8125rem] border border-[#C8C8C8] bg-transparent px-3 py-3 text-[0.8125rem] text-[#333333] outline-none placeholder:text-[#C6C6C6] focus:border-[#D9B061] focus:ring-1 focus:ring-[#D9B061]/30"
               name="message"
               placeholder={placeholders.message ?? "Message"}
               aria-label={placeholders.message ?? "Message"}
               required
             />
 
-            <label className="mt-1 flex items-center gap-2 text-[13px] leading-[1.5] text-[#444444]">
+            <label className="mt-1 flex items-center gap-2 text-[0.8125rem] leading-[1.5] text-[#444444]">
               <input
                 type="checkbox"
                 name="agreeToTerms"
                 required
-                className="h-4 w-4 shrink-0 rounded-[3px] accent-[#D9B061]"
+                className="h-4 w-4 shrink-0 rounded-[0.1875rem] accent-[#D9B061]"
               />
               <span className="urbanist">
                 {consentLabel}{" "}
@@ -445,7 +445,7 @@ export default function ContactUs({
 
             <button
               type="submit"
-              className="urbanist mt-3 inline-flex w-fit items-center gap-2 rounded-full bg-[#D9B061] py-1.5 pl-4 pr-1.5 text-[16px] font-medium text-[#282828] shadow-[0_8px_18px_rgba(0,0,0,0.18)] transition-all duration-200 hover:bg-accent-hover hover:shadow-[0_11px_20px_rgba(0,0,0,0.2)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] "
+              className="urbanist mt-3 inline-flex w-fit items-center gap-2 rounded-full bg-[#D9B061] py-1.5 pl-4 pr-1.5 text-[1rem] font-medium text-[#282828] shadow-[0_0.5rem_1.125rem_rgba(0,0,0,0.18)] transition-all duration-200 hover:bg-accent-hover hover:shadow-[0_0.6875rem_1.25rem_rgba(0,0,0,0.2)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] "
             >
               {submitLabel}
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#282828] text-lg leading-none text-[#D9B061]">

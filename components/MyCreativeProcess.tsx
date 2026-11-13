@@ -31,7 +31,7 @@ const connectors = [
     width: 411,
     height: 180,
     className:
-      "lg:left-[21.098%] lg:top-[48.649%] lg:w-[24.470%] lg:drop-shadow-[0_8px_10px_rgba(212,163,115,0.20)]",
+      "lg:left-[21.098%] lg:top-[48.649%] lg:w-[24.470%] lg:drop-shadow-[0_0.5rem_0.625rem_rgba(212,163,115,0.20)]",
   },
   {
     src: "/bottom-right.webp",
@@ -60,17 +60,17 @@ function StepCard({ step, index }: { step: ProcessStep; index: number }) {
   return (
     <article
       data-process-card
-      className={`relative z-10 flex min-h-[140px] w-[min(84vw,360px)] min-w-0 shrink-0 snap-center flex-col justify-center rounded-[24px] border border-[#E5E5E5] bg-[#FBFBFB] px-4 py-5 shadow-[0_2px_3px_rgba(0,0,0,0.10)] sm:w-[min(66vw,420px)] lg:absolute lg:h-[27.027%] lg:min-h-0 lg:w-[24.663%] lg:rounded-[1.93cqw] lg:p-[1.16cqw] ${stepPositions[index] ?? ""}`}
+      className={`relative z-10 flex min-h-[8.75rem] w-[min(84vw,22.5rem)] min-w-0 shrink-0 snap-center flex-col justify-center rounded-[1.5rem] border border-[#E5E5E5] bg-[#FBFBFB] px-4 py-5 shadow-[0_0.125rem_0.1875rem_rgba(0,0,0,0.10)] sm:w-[min(66vw,26.25rem)] lg:absolute lg:h-[27.027%] lg:min-h-0 lg:w-[24.663%] lg:rounded-[1.93cqw] lg:p-[1.16cqw] ${stepPositions[index] ?? ""}`}
     >
       {step.number !== undefined && (
-        <span className="clash-display mb-3 text-sm font-semibold leading-none text-[#282828] lg:mb-[0.9cqw] lg:text-[clamp(12px,1.05cqw,15px)]">
+        <span className="clash-display mb-3 text-sm font-semibold leading-none text-[#282828] lg:mb-[0.9cqw] lg:text-[clamp(0.75rem,1.05cqw,0.9375rem)]">
           {step.number}
         </span>
       )}
-      <h3 className="clash-display text-lg font-medium leading-tight text-[#282828] lg:text-[clamp(15px,1.45cqw,21px)]">
+      <h3 className="clash-display text-lg font-medium leading-tight text-[#282828] lg:text-[clamp(0.9375rem,1.45cqw,1.3125rem)]">
         {step.title}
       </h3>
-      <p className="urbanist mt-2 text-[15px] leading-[1.6] text-[#777777] lg:mt-[0.39cqw] lg:text-[clamp(12px,1.16cqw,17px)] lg:leading-[1.5]">
+      <p className="urbanist mt-2 text-[0.9375rem] leading-[1.6] text-[#777777] lg:mt-[0.39cqw] lg:text-[clamp(0.75rem,1.16cqw,1.0625rem)] lg:leading-[1.5]">
         {step.text}
       </p>
     </article>
@@ -172,26 +172,26 @@ export default function MyCreativeProcess({
       ref={sectionRef}
       className="section-spacing w-full min-w-0 overflow-hidden bg-[#FBFBFB] px-4 sm:px-6 lg:px-4"
     >
-      <div className="mx-auto w-full max-w-[1420px] lg:[container-type:inline-size]">
+      <div className="mx-auto w-full lg:[container-type:inline-size]">
         <header data-process-header className="mx-auto mb-9 w-full min-w-0 max-w-5xl text-center lg:max-w-none">
           <div className="flex items-center justify-center gap-2">
             <span
               aria-hidden="true"
               className="h-4 w-4 rounded-full border-3 border-[#282828] bg-[#D9B061]"
             />
-            <span className="urbanist text-sm font-light tracking-wide text-[#777777] sm:text-base lg:text-[clamp(14px,1.16cqw,17px)] lg:font-normal lg:tracking-normal">
+            <span className="urbanist text-sm font-light tracking-wide text-[#777777] sm:text-base lg:text-[clamp(0.875rem,1.16cqw,1.0625rem)] lg:font-normal lg:tracking-normal">
               {eyebrowText}
             </span>
           </div>
           <h2 className="clash-display my-2 max-w-full break-words text-balance text-[2rem] font-medium leading-tight text-[#282828] sm:text-[clamp(2.25rem,4.2vw,3.5rem)] lg:mt-[1.25cqw] lg:mb-[1.06cqw] lg:text-[clamp(2.25rem,3.82cqw,3.5rem)]">
             {heading}
           </h2>
-          <p className="urbanist mx-auto mb-10 w-full max-w-5xl px-2 text-[16px] leading-[1.6] text-[#777777] lg:mb-0 lg:max-w-[54.25cqw] lg:text-[clamp(12px,1.16cqw,17px)] lg:leading-[1.7]">
+          <p className="urbanist mx-auto mb-10 w-full max-w-5xl px-2 text-[1rem] leading-[1.6] text-[#777777] lg:mb-0 lg:max-w-[54.25cqw] lg:text-[clamp(0.75rem,1.16cqw,1.0625rem)] lg:leading-[1.7]">
             {text}
           </p>
         </header>
 
-        <div className="relative mx-auto mt-6 w-full min-w-0 max-w-[1420px] lg:mt-[0.1cqw] lg:aspect-[1038/370]">
+        <div className="relative mx-auto mt-6 w-full min-w-0 lg:mt-[0.1cqw] lg:aspect-[1038/370]">
           {connectors.map((connector) => (
             <Image
               key={connector.src}
@@ -220,13 +220,13 @@ export default function MyCreativeProcess({
             <a
               data-process-cta
               href={buttonHref}
-              className="urbanist flex w-fit items-center justify-center gap-2 whitespace-nowrap rounded-full bg-[#D9B061] py-1.5 pl-3 pr-1.5 text-base font-medium text-[#282828] shadow-[0_8px_18px_rgba(0,0,0,0.18)] transition-all duration-200 hover:bg-accent-hover hover:shadow-[0_11px_20px_rgba(0,0,0,0.2)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] lg:gap-[0.55cqw] lg:py-[0.58cqw] lg:pl-[1.16cqw] lg:pr-[0.58cqw] lg:text-[clamp(12px,1.16cqw,17px)] lg:font-normal"
+              className="urbanist flex w-fit items-center justify-center gap-2 whitespace-nowrap rounded-full bg-[#D9B061] py-1.5 pl-3 pr-1.5 text-base font-medium text-[#282828] shadow-[0_0.5rem_1.125rem_rgba(0,0,0,0.18)] transition-all duration-200 hover:bg-accent-hover hover:shadow-[0_0.6875rem_1.25rem_rgba(0,0,0,0.2)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] lg:gap-[0.55cqw] lg:py-[0.58cqw] lg:pl-[1.16cqw] lg:pr-[0.58cqw] lg:text-[clamp(0.75rem,1.16cqw,1.0625rem)] lg:font-normal"
             >
               {buttonLabel}
               <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#282828] text-lg leading-none text-[#D9B061] lg:h-[2.7cqw] lg:w-[2.7cqw]">
                 <FiArrowUpRight
                   aria-hidden="true"
-                  size={18}
+                  size="1.125rem"
                   className="lg:h-[1.74cqw] lg:w-[1.74cqw]"
                 />
               </span>

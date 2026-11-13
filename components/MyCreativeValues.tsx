@@ -78,15 +78,15 @@ export default function MyCreativeValues() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="section-spacing w-full bg-[#F5F5F5] px-4 sm:px-6 lg:flex lg:min-h-[492px] lg:items-center lg:px-8 2xl:px-6">
-      <div className="mx-auto grid w-full max-w-[1420px] grid-cols-1 items-center gap-9 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+    <section ref={sectionRef} className="section-spacing w-full bg-[#F5F5F5] px-4 sm:px-6 lg:flex lg:min-h-[30.75rem] lg:items-center lg:px-8 2xl:px-6">
+      <div className="mx-auto grid w-full grid-cols-1 items-center gap-9 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
         <div data-values-reveal>
           <div className="flex items-center gap-2">
             <span
               aria-hidden="true"
               className="h-4 w-4 rounded-full border-3 border-[#282828] bg-[#D9B061]"
             />
-            <span className="urbanist text-[16px] text-[#777777]">
+            <span className="urbanist text-[1rem] text-[#777777]">
               My Creative Values
             </span>
           </div>
@@ -95,7 +95,7 @@ export default function MyCreativeValues() {
             The Values Behind My Work.
           </h2>
 
-          <p className="urbanist mt-3 max-w-[630px] text-[16px] leading-[1.7] text-[#777777]">
+          <p className="urbanist mt-3 max-w-[39.375rem] text-[1rem] leading-[1.7] text-[#777777]">
             My work is guided by creativity, authenticity, and a passion for
             meaningful connections. I believe in thoughtful design, open
             collaboration, and delivering quality work that reflects each
@@ -104,11 +104,11 @@ export default function MyCreativeValues() {
 
           <Link
             href="/contact"
-            className="urbanist mt-8 inline-flex items-center gap-2 rounded-full bg-[#D9B061] py-1.5 pl-4 pr-1.5 text-[16px] font-medium text-[#282828] shadow-[0_7px_14px_rgba(0,0,0,0.18)] transition-all duration-200 hover:bg-accent-hover hover:shadow-[0_10px_18px_rgba(0,0,0,0.2)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] lg:mt-[36px]"
+            className="urbanist mt-8 inline-flex items-center gap-2 rounded-full bg-[#D9B061] py-1.5 pl-4 pr-1.5 text-[1rem] font-medium text-[#282828] shadow-[0_0.4375rem_0.875rem_rgba(0,0,0,0.18)] transition-all duration-200 hover:bg-accent-hover hover:shadow-[0_0.625rem_1.125rem_rgba(0,0,0,0.2)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] lg:mt-[2.25rem]"
           >
             Let&apos;s Create Together
             <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#282828] text-[#D9B061]">
-              <FiArrowUpRight aria-hidden="true" size={16} />
+              <FiArrowUpRight aria-hidden="true" size="1rem" />
             </span>
           </Link>
         </div>
@@ -117,7 +117,7 @@ export default function MyCreativeValues() {
           <div className="relative grid grid-cols-4 lg:-left-[3.86%] lg:w-[92.73%]">
             <span
               aria-hidden="true"
-              className="absolute left-[12.5%] right-[12.5%] top-5 h-[2px] bg-[#DDDDDD]"
+              className="absolute left-[12.5%] right-[12.5%] top-5 h-[0.125rem] bg-[#DDDDDD]"
             >
               <span
                 data-values-progress
@@ -141,9 +141,9 @@ export default function MyCreativeValues() {
                   className="group relative z-10 flex min-w-0 flex-col items-center text-center focus-visible:rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a36e3d]"
                 >
                   <span
-                    className={`flex h-10 w-10 items-center justify-center rounded-full border text-[15px] transition-[background-color,border-color,color,box-shadow] duration-300 motion-reduce:transition-none ${
+                    className={`flex h-10 w-10 items-center justify-center rounded-full border text-[0.9375rem] transition-[background-color,border-color,color,box-shadow] duration-300 motion-reduce:transition-none ${
                       isActive
-                        ? "border-[#D9B061] bg-[#D9B061] text-[#FFFFFF] shadow-[0_4px_8px_rgba(0,0,0,0.12)] group-hover:bg-accent-hover"
+                        ? "border-[#D9B061] bg-[#D9B061] text-[#FFFFFF] shadow-[0_0.25rem_0.5rem_rgba(0,0,0,0.12)] group-hover:bg-accent-hover"
                         : isComplete
                           ? "border-[#D9B061] bg-[#FBF3E1] text-[#8F633D] group-hover:bg-[#F5E6C8]"
                         : "border-[#E7E7E7] bg-[#FCFCFC] text-[#282828] group-hover:border-[#D9B061] group-hover:bg-[#FBF3E1]"
@@ -152,7 +152,7 @@ export default function MyCreativeValues() {
                     {value.step}
                   </span>
                   <span
-                    className={`urbanist mt-3 max-w-[100px] text-[13px] leading-[1.35] transition-colors duration-200 group-hover:text-[#A87932] ${
+                    className={`urbanist mt-3 max-w-[6.25rem] text-[0.8125rem] leading-[1.35] transition-colors duration-200 group-hover:text-[#A87932] ${
                       isActive ? "text-[#282828]" : isComplete ? "text-[#8F633D]" : "text-[#B8B8B8]"
                     }`}
                   >
@@ -166,7 +166,7 @@ export default function MyCreativeValues() {
           <div
             aria-live="polite"
             aria-atomic="true"
-            className="mt-7 grid min-h-[100px] rounded-[20px] border border-[#E1E1E1] bg-white/70 px-5 py-4 sm:px-[18px] lg:mt-[31px]"
+            className="mt-7 grid min-h-[6.25rem] rounded-[1.25rem] border border-[#E1E1E1] bg-white/70 px-5 py-4 sm:px-[1.125rem] lg:mt-[1.9375rem]"
           >
             {values.map((value, index) => (
               <div
@@ -182,10 +182,10 @@ export default function MyCreativeValues() {
                     : "pointer-events-none translate-y-2 opacity-0 duration-150"
                 }`}
               >
-                <h3 className="clash-display text-[18px] font-medium leading-[1.35] text-[#282828] 2xl:text-[20px]">
+                <h3 className="clash-display text-[1.125rem] font-medium leading-[1.35] text-[#282828] 2xl:text-[1.25rem]">
                   {value.title}
                 </h3>
-                <p className="urbanist mt-2 text-[13px] leading-[1.55] text-[#777777] 2xl:text-[16px]">
+                <p className="urbanist mt-2 text-[0.8125rem] leading-[1.55] text-[#777777] 2xl:text-[1rem]">
                   {value.description}
                 </p>
               </div>
@@ -200,9 +200,9 @@ export default function MyCreativeValues() {
               }
               disabled={activeIndex === 0}
               aria-label="Previous value"
-              className="flex h-[34px] w-[34px] items-center justify-center rounded-full bg-[#D9B061] text-[#FFFFFF] transition-all duration-200 hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#282828] disabled:cursor-not-allowed disabled:bg-[#E6C5A2]"
+              className="flex h-[2.125rem] w-[2.125rem] items-center justify-center rounded-full bg-[#D9B061] text-[#FFFFFF] transition-all duration-200 hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#282828] disabled:cursor-not-allowed disabled:bg-[#E6C5A2]"
             >
-              <FiArrowLeft aria-hidden="true" size={18} />
+              <FiArrowLeft aria-hidden="true" size="1.125rem" />
             </button>
             <button
               type="button"
@@ -213,11 +213,11 @@ export default function MyCreativeValues() {
               }
               disabled={activeIndex === values.length - 1}
               aria-label="Next value"
-              className="flex h-[34px] w-[34px] items-center justify-center rounded-full bg-[#D9B061] text-[#FFFFFF] transition-all duration-200 hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#282828] disabled:cursor-not-allowed disabled:bg-[#E6C5A2]"
+              className="flex h-[2.125rem] w-[2.125rem] items-center justify-center rounded-full bg-[#D9B061] text-[#FFFFFF] transition-all duration-200 hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#282828] disabled:cursor-not-allowed disabled:bg-[#E6C5A2]"
             >
-              <FiArrowRight aria-hidden="true" size={18} />
+              <FiArrowRight aria-hidden="true" size="1.125rem" />
             </button>
-            <p className="urbanist ml-auto text-[13px] tabular-nums text-[#777777]">
+            <p className="urbanist ml-auto text-[0.8125rem] tabular-nums text-[#777777]">
               Step <span className="font-medium text-[#282828]">{activeIndex + 1}</span> of {values.length}
             </p>
           </div>

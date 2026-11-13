@@ -90,6 +90,13 @@
   --foreground: #171717;
 }
 
+/* The former 1420px content area filled 90% of a 1578px viewport.
+   Beyond that width, scale rem-based type, spacing, and controls together.
+   Smaller screens retain their existing sizing and responsive breakpoints. */
+html {
+  font-size: max(100%, calc(100vw * 16 / 1578));
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

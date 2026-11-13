@@ -56,7 +56,7 @@ function FeaturedVideo({ testimonial }: { testimonial: VideoTestimonial }) {
   const [failed, setFailed] = useState(false);
 
   return (
-    <div className="relative isolate aspect-[5/4] overflow-hidden rounded-[16px] bg-[#282828] lg:aspect-[9/10]">
+    <div className="relative isolate aspect-[5/4] overflow-hidden rounded-[1rem] bg-[#282828] lg:aspect-[9/10]">
       {playing ? (
         <video
           className="absolute inset-0 h-full w-full object-contain"
@@ -89,7 +89,7 @@ function FeaturedVideo({ testimonial }: { testimonial: VideoTestimonial }) {
               src={testimonial.posterSrc}
               alt={`Video portrait of ${testimonial.name}`}
               fill
-              sizes="(min-width: 1024px) 414px, (min-width: 688px) 640px, calc(100vw - 32px)"
+              sizes="(min-width: 1024px) 27vw, (min-width: 688px) 640px, calc(100vw - 32px)"
               className="object-cover"
             />
           ) : (
@@ -97,7 +97,7 @@ function FeaturedVideo({ testimonial }: { testimonial: VideoTestimonial }) {
               aria-hidden="true"
               className="absolute inset-0 bg-[#282828]"
             >
-              <span className="absolute left-5 top-12 font-serif text-[110px] leading-none text-[#D9B061]/60">
+              <span className="absolute left-5 top-12 font-serif text-[6.875rem] leading-none text-[#D9B061]/60">
                 “
               </span>
             </div>
@@ -108,7 +108,7 @@ function FeaturedVideo({ testimonial }: { testimonial: VideoTestimonial }) {
               className="pointer-events-none absolute inset-0 bg-linear-to-t from-[#282828]/80 via-transparent to-transparent"
             />
           )}
-          <span className="urbanist absolute left-5 top-5 text-[10px] font-medium tracking-[0.16em] text-white/80">
+          <span className="urbanist absolute left-5 top-5 text-[0.625rem] font-medium tracking-[0.16em] text-white/80">
             IN THEIR OWN WORDS
           </span>
           {testimonial.videoSrc.trim() && !failed ? (
@@ -167,7 +167,7 @@ export default function VideoTestimonials({
       aria-labelledby={headingId}
       className="section-spacing w-full overflow-hidden bg-[#F7F7F7] px-4 text-[#282828] sm:px-6 lg:px-[5%]"
     >
-      <div className="mx-auto grid w-full max-w-[1420px] gap-8 lg:grid-cols-[minmax(0,1fr)_min(52%,700px)] lg:items-center lg:gap-12">
+      <div className="mx-auto grid w-full gap-8 lg:grid-cols-[minmax(0,1fr)_min(52%,43.75rem)] lg:items-center lg:gap-12">
         <header className="w-full min-w-0">
           <div className="flex items-center gap-2">
             <span
@@ -184,17 +184,17 @@ export default function VideoTestimonials({
           >
             The People Behind The Projects.
           </h2>
-          <p className="urbanist mt-5 max-w-[32rem] text-[15px] leading-[1.8] text-[#777777] sm:text-base">
+          <p className="urbanist mt-5 max-w-[32rem] text-[0.9375rem] leading-[1.8] text-[#777777] sm:text-base">
             Every project is a collaboration. Get to know the authors, creators,
             and brands I work with, and hear their stories in their own words.
           </p>
           <Link
             href="/contact"
-            className="urbanist mt-7 inline-flex items-center gap-3 rounded-full bg-[#D9B061] py-1.5 pl-5 pr-1.5 text-[15px] font-medium shadow-[0_6px_14px_rgba(40,40,40,0.12)] hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828]"
+            className="urbanist mt-7 inline-flex items-center gap-3 rounded-full bg-[#D9B061] py-1.5 pl-5 pr-1.5 text-[0.9375rem] font-medium shadow-[0_0.375rem_0.875rem_rgba(40,40,40,0.12)] hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828]"
           >
             Let’s Create Together
             <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#282828] text-[#D9B061]">
-              <FiArrowUpRight aria-hidden="true" size={21} />
+              <FiArrowUpRight aria-hidden="true" size="1.3125rem" />
             </span>
           </Link>
         </header>
@@ -203,7 +203,7 @@ export default function VideoTestimonials({
           role="region"
           aria-roledescription="carousel"
           aria-label="Video testimonials"
-          className="w-full min-w-0 max-w-[640px] justify-self-center lg:max-w-[700px] lg:justify-self-end"
+          className="w-full min-w-0 max-w-[40rem] justify-self-center lg:max-w-[43.75rem] lg:justify-self-end"
         >
           <div
             id={slideId}
@@ -211,10 +211,10 @@ export default function VideoTestimonials({
             className={`${styles.slide} grid min-w-0 items-center lg:grid-cols-[1.3fr_0.9fr]`}
           >
             <FeaturedVideo testimonial={active} />
-            <figure className="relative z-10 -mt-4 mx-3 flex flex-col rounded-[12px] bg-[#D9B061] p-5 sm:mx-5 lg:-ml-8 lg:mr-0 lg:mt-8 lg:min-h-[250px] lg:p-6">
+            <figure className="relative z-10 -mt-4 mx-3 flex flex-col rounded-[0.75rem] bg-[#D9B061] p-5 sm:mx-5 lg:-ml-8 lg:mr-0 lg:mt-8 lg:min-h-[15.625rem] lg:p-6">
               <span
                 aria-hidden="true"
-                className="h-8 font-serif text-[56px] leading-none text-[#282828]/60"
+                className="h-8 font-serif text-[3.5rem] leading-none text-[#282828]/60"
               >
                 “
               </span>
@@ -251,7 +251,7 @@ export default function VideoTestimonials({
                   onClick={() => changeSlide(-1)}
                   className="flex h-11 w-11 items-center justify-center rounded-full border border-[#282828]/25 hover:bg-[#D9B061] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828]"
                 >
-                  <FiArrowLeft aria-hidden="true" size={20} />
+                  <FiArrowLeft aria-hidden="true" size="1.25rem" />
                 </button>
                 <button
                   type="button"
@@ -260,7 +260,7 @@ export default function VideoTestimonials({
                   onClick={() => changeSlide(1)}
                   className="flex h-11 w-11 items-center justify-center rounded-full bg-[#282828] text-[#D9B061] hover:bg-[#333333] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828]"
                 >
-                  <FiArrowRight aria-hidden="true" size={20} />
+                  <FiArrowRight aria-hidden="true" size="1.25rem" />
                 </button>
               </div>
             </div>

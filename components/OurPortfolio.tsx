@@ -35,34 +35,34 @@ const projects = [
 
 function ProjectCard({ project }: { project: (typeof projects)[number] }) {
   return (
-    <article data-portfolio-card className="min-w-0 w-[84vw] shrink-0 snap-center rounded-[22px] border border-[#E5E5E5] bg-[#FBFBFB] p-2 sm:w-[44vw] sm:p-[9px] lg:w-auto">
-      <div className="relative aspect-[1.52] overflow-hidden rounded-[19px] shadow-[0_8px_13px_rgba(0,0,0,0.18)]">
+    <article data-portfolio-card className="min-w-0 w-[84vw] shrink-0 snap-center rounded-[1.375rem] border border-[#E5E5E5] bg-[#FBFBFB] p-2 sm:w-[44vw] sm:p-[0.5625rem] lg:w-auto">
+      <div className="relative aspect-[1.52] overflow-hidden rounded-[1.1875rem] shadow-[0_0.5rem_0.8125rem_rgba(0,0,0,0.18)]">
         <Image
           src={project.image}
           alt={project.alt}
           width={900}
           height={592}
-          sizes="(min-width: 1420px) 346px, (min-width: 1024px) calc((100vw - 68px) / 4), (min-width: 640px) 44vw, 84vw"
+          sizes="(min-width: 1024px) calc((100vw - 68px) / 4), (min-width: 640px) 44vw, 84vw"
           data-portfolio-image
           className="h-full w-full object-cover"
         />
       </div>
-      <p className="urbanist mt-3 text-[14px] leading-[1.4] text-[#D9B061]">
+      <p className="urbanist mt-3 text-[0.875rem] leading-[1.4] text-[#D9B061]">
         {project.category}
       </p>
-      <h3 className="clash-display mt-1 text-[20px] font-medium leading-tight text-[#282828]">
+      <h3 className="clash-display mt-1 text-[1.25rem] font-medium leading-tight text-[#282828]">
         {project.title}
       </h3>
-      <p className="urbanist mt-2 text-[14px] leading-[1.55] text-[#777777]">
+      <p className="urbanist mt-2 text-[0.875rem] leading-[1.55] text-[#777777]">
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry.
       </p>
       <a
         href="/contact"
-        className="urbanist group mt-3 inline-flex items-center gap-3 pb-1 text-[14px] text-[#D9B061] transition-colors hover:text-[#bd8957] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a36e3d]"
+        className="urbanist group mt-3 inline-flex items-center gap-3 pb-1 text-[0.875rem] text-[#D9B061] transition-colors hover:text-[#bd8957] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a36e3d]"
       >
         Explore My Work
-        <FiArrowRight aria-hidden="true" className="text-[19px]" />
+        <FiArrowRight aria-hidden="true" className="text-[1.1875rem]" />
       </a>
     </article>
   );
@@ -151,21 +151,21 @@ export default function OurPortfolio() {
 
   return (
     <section ref={sectionRef} className="section-spacing w-full bg-[#F2F2F2] px-4 sm:px-6 lg:px-4">
-      <div className="mx-auto w-full max-w-[1420px]">
+      <div className="mx-auto w-full">
         <header data-portfolio-header className="mx-auto mb-7 max-w-7xl text-center sm:mb-8">
           <div className="flex items-center justify-center gap-2">
             <span
               aria-hidden="true"
               className="h-4 w-4 rounded-full border-3 border-[#282828] bg-[#D9B061]"
             />
-            <span className="urbanist text-[16px] font-light text-[#777777]">
+            <span className="urbanist text-[1rem] font-light text-[#777777]">
               Portfolio
             </span>
           </div>
           <h2 className="clash-display my-2 max-w-full break-words text-balance text-[2rem] sm:text-[clamp(2.25rem,4.2vw,3.5rem)] font-medium leading-tight text-[#282828]">
             Creative Work That Speaks Volumes
           </h2>
-          <p className="urbanist mx-auto mt-3 max-w-7xl text-[16px] leading-[1.6] text-[#777777]">
+          <p className="urbanist mx-auto mt-3 max-w-7xl text-[1rem] leading-[1.6] text-[#777777]">
             A collection of social media campaigns, creative visuals, and
             content designed to make brands stand out. Explore how I turn fresh
             ideas into engaging digital experiences.
@@ -187,7 +187,7 @@ export default function OurPortfolio() {
           <a
             href="/portfolio"
             data-portfolio-cta
-            className="urbanist inline-flex items-center gap-2 rounded-full bg-[#D9B061] py-1.5 pl-4 pr-1.5 text-[16px] font-medium text-[#282828] shadow-[0_8px_16px_rgba(0,0,0,0.2)] transition-all duration-200 hover:bg-accent-hover hover:shadow-[0_11px_20px_rgba(0,0,0,0.22)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] "
+            className="urbanist inline-flex items-center gap-2 rounded-full bg-[#D9B061] py-1.5 pl-4 pr-1.5 text-[1rem] font-medium text-[#282828] shadow-[0_0.5rem_1rem_rgba(0,0,0,0.2)] transition-all duration-200 hover:bg-accent-hover hover:shadow-[0_0.6875rem_1.25rem_rgba(0,0,0,0.22)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] "
           >
             View All Projects
             <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#282828] text-lg leading-none text-[#D9B061]">

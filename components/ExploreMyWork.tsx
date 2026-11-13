@@ -126,14 +126,14 @@ export default function ExploreMyWork() {
       aria-labelledby="explore-work-title"
       className="section-spacing w-full overflow-x-clip bg-[#F7F7F7] px-4 sm:px-6 min-[850px]:px-[5%]"
     >
-      <div className="mx-auto w-full max-w-[1420px] min-[850px]:[container-type:inline-size]">
+      <div className="mx-auto w-full min-[850px]:[container-type:inline-size]">
         <header data-work-header className="flex flex-col items-center text-center">
           <div className="flex items-center gap-2">
             <span
               aria-hidden="true"
               className="h-4 w-4 rounded-full border-3 border-[#282828] bg-[#D9B061]"
             />
-            <span className="urbanist text-sm font-light tracking-wide text-[#777777] sm:text-base lg:text-[clamp(14px,1.16cqw,17px)] lg:font-normal lg:tracking-normal">
+            <span className="urbanist text-sm font-light tracking-wide text-[#777777] sm:text-base lg:text-[clamp(0.875rem,1.16cqw,1.0625rem)] lg:font-normal lg:tracking-normal">
               Explore My Work
             </span>
           </div>
@@ -145,7 +145,7 @@ export default function ExploreMyWork() {
             A Glimpse Into My Creative World.
           </h2>
 
-          <p className="urbanist mx-auto mt-0 max-w-[700px] text-[16px] leading-[1.6] text-[#777777] min-[850px]:text-[clamp(12px,1.17cqw,16px)]">
+          <p className="urbanist mx-auto mt-0 max-w-[43.75rem] text-[1rem] leading-[1.6] text-[#777777] min-[850px]:text-[clamp(0.75rem,1.17cqw,1rem)]">
             Every project tells a different story. From memorable book covers to
             engaging digital campaigns, here&apos;s a selection of work that
             brings creativity, purpose, and attention to detail together.
@@ -157,35 +157,35 @@ export default function ExploreMyWork() {
             <article
               key={project.title}
               data-work-card
-              className="flex h-full min-w-0 flex-col rounded-[18px] border border-[#E1E1E1] bg-[#FBFBFB] p-2.5 min-[850px]:min-h-[35.35cqw] min-[850px]:rounded-[1.55cqw] min-[850px]:p-[0.98cqw]"
+              className="flex h-full min-w-0 flex-col rounded-[1.125rem] border border-[#E1E1E1] bg-[#FBFBFB] p-2.5 min-[850px]:min-h-[35.35cqw] min-[850px]:rounded-[1.55cqw] min-[850px]:p-[0.98cqw]"
             >
-              <div className="relative aspect-[3/2] w-full shrink-0 overflow-hidden rounded-[13px] min-[850px]:rounded-[1.28cqw]">
+              <div className="relative aspect-[3/2] w-full shrink-0 overflow-hidden rounded-[0.8125rem] min-[850px]:rounded-[1.28cqw]">
                 <Image
                   src={project.image}
                   alt={project.imageAlt}
                   fill
-                  sizes="(min-width: 1578px) 458px, (min-width: 850px) calc(30vw - 16px), (min-width: 640px) 45vw, 100vw"
+                  sizes="(min-width: 850px) calc(30vw - 16px), (min-width: 640px) 45vw, 100vw"
                   className="object-cover"
                 />
               </div>
 
-              <p className="urbanist mt-3 text-[14px] leading-[1.4] text-[#D9B061] min-[850px]:mt-[1.05cqw] min-[850px]:text-[clamp(10px,1.17cqw,16px)]">
+              <p className="urbanist mt-3 text-[0.875rem] leading-[1.4] text-[#D9B061] min-[850px]:mt-[1.05cqw] min-[850px]:text-[clamp(0.625rem,1.17cqw,1rem)]">
                 {project.category}
               </p>
-              <h3 className="clash-display mt-1 text-[20px] font-medium leading-tight text-[#282828] min-[850px]:mt-[0.42cqw] min-[850px]:text-[clamp(14px,1.45cqw,20px)]">
+              <h3 className="clash-display mt-1 text-[1.25rem] font-medium leading-tight text-[#282828] min-[850px]:mt-[0.42cqw] min-[850px]:text-[clamp(0.875rem,1.45cqw,1.25rem)]">
                 {project.title}
               </h3>
-              <p className="urbanist mt-2 line-clamp-2 text-[14px] leading-[1.55] text-[#777777] min-[850px]:mt-[0.58cqw] min-[850px]:text-[clamp(11px,1.17cqw,16px)] min-[850px]:leading-[1.5]">
+              <p className="urbanist mt-2 line-clamp-2 text-[0.875rem] leading-[1.55] text-[#777777] min-[850px]:mt-[0.58cqw] min-[850px]:text-[clamp(0.6875rem,1.17cqw,1rem)] min-[850px]:leading-[1.5]">
                 {projectDescription}
               </p>
               <Link
                 href="/work/sub-work"
-                className="urbanist group mt-3 inline-flex w-fit items-center gap-3 text-[14px] leading-[1.4] text-[#D9B061] transition-colors hover:text-[#bd8957] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a36e3d] min-[850px]:mt-[0.82cqw] min-[850px]:gap-[0.62cqw] min-[850px]:text-[clamp(11px,1.17cqw,16px)]"
+                className="urbanist group mt-3 inline-flex w-fit items-center gap-3 text-[0.875rem] leading-[1.4] text-[#D9B061] transition-colors hover:text-[#bd8957] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a36e3d] min-[850px]:mt-[0.82cqw] min-[850px]:gap-[0.62cqw] min-[850px]:text-[clamp(0.6875rem,1.17cqw,1rem)]"
               >
                 Explore My Work
                 <FiArrowRight
                   aria-hidden="true"
-                  className="text-[19px] min-[850px]:text-[1.45cqw]"
+                  className="text-[1.1875rem] min-[850px]:text-[1.45cqw]"
                 />
               </Link>
             </article>

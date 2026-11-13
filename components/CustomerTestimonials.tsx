@@ -98,16 +98,16 @@ function TestimonialCard({
   return (
     <article
       data-testimonial-card
-      className="flex min-h-[308px] w-[var(--testimonial-card-width)] shrink-0 snap-always snap-start flex-col rounded-[20px] border border-[#E5E5E5] bg-[#FBFBFB] px-[22px] py-8 shadow-[0_2px_3px_rgba(0,0,0,0.1)]"
+      className="flex min-h-[19.25rem] w-[var(--testimonial-card-width)] shrink-0 snap-always snap-start flex-col rounded-[1.25rem] border border-[#E5E5E5] bg-[#FBFBFB] px-[1.375rem] py-8 shadow-[0_0.125rem_0.1875rem_rgba(0,0,0,0.1)]"
     >
       <svg
         aria-hidden="true"
         viewBox="0 0 28 22"
-        className="h-[22px] w-[26px] shrink-0 fill-none stroke-[#BDBDBD] stroke-[0.7]"
+        className="h-[1.375rem] w-[1.625rem] shrink-0 fill-none stroke-[#BDBDBD] stroke-[0.7]"
       >
         <path d="M10.8 2.2H4.2v7.1c0 4.2 2 7 5.4 9.3l2.2-2.8c-2-1.4-3-2.8-3.2-4.7h3V6.8a4.6 4.6 0 0 0-4.6-4.6Zm12 0h-6.6v7.1c0 4.2 2 7 5.4 9.3l2.2-2.8c-2-1.4-3-2.8-3.2-4.7h3V6.8a4.6 4.6 0 0 0-4.6-4.6Z" />
       </svg>
-      <p className="urbanist mt-2.5 text-[13px] leading-[1.8] text-[#333333] lg:text-[clamp(12px,1.08vw,16px)]">
+      <p className="urbanist mt-2.5 text-[0.8125rem] leading-[1.8] text-[#333333] lg:text-[clamp(0.75rem,1.08vw,1rem)]">
         {testimonial.testimonial}
       </p>
       <div className="mt-auto flex items-center gap-3.5 pt-8">
@@ -117,16 +117,16 @@ function TestimonialCard({
             alt=""
             fill
             unoptimized={testimonial.avatar.startsWith("https://")}
-            sizes="32px"
+            sizes="(min-width: 1578px) 2.03vw, 32px"
             className="object-cover"
           />
         </div>
         <span aria-hidden="true" className="h-8 w-px bg-[#B5B5B5]" />
         <div className="min-w-0">
-          <p className="clash-display font-clash truncate text-[14px] font-medium leading-[1.4] text-[#D9B061] lg:text-[clamp(13px,1.17vw,17px)]">
+          <p className="clash-display font-clash truncate text-[0.875rem] font-medium leading-[1.4] text-[#D9B061] lg:text-[clamp(0.8125rem,1.17vw,1.0625rem)]">
             {testimonial.name}
           </p>
-          <p className="urbanist truncate text-[12px] leading-[1.5] text-[#999999] lg:text-[clamp(11px,0.98vw,14px)]">
+          <p className="urbanist truncate text-[0.75rem] leading-[1.5] text-[#999999] lg:text-[clamp(0.6875rem,0.98vw,0.875rem)]">
             {testimonial.detail}
           </p>
         </div>
@@ -332,7 +332,7 @@ export default function CustomerTestimonials() {
       ref={sectionRef}
       className="section-spacing w-full overflow-hidden bg-[#F5F5F5] px-4 sm:px-6 lg:px-[5%]"
     >
-      <div className="mx-auto w-full max-w-[1420px] [--testimonial-card-width:282px] md:[--testimonial-card-width:clamp(250px,21.75vw,344px)]">
+      <div className="mx-auto w-full [--testimonial-card-width:17.625rem] md:[--testimonial-card-width:clamp(15.625rem,21.75vw,21.5rem)]">
         <header
           data-testimonial-header
           className="grid grid-cols-1 items-end gap-5 lg:grid-cols-2 lg:gap-3.5"
@@ -343,44 +343,44 @@ export default function CustomerTestimonials() {
                 aria-hidden="true"
                 className="h-4 w-4 rounded-full border-3 border-[#282828] bg-[#D9B061]"
               />
-              <span className="urbanist text-[16px] leading-[1.4] text-[#777777]">
+              <span className="urbanist text-[1rem] leading-[1.4] text-[#777777]">
                 Customer Testimonials
               </span>
             </div>
-            <h2 className="clash-display font-clash mt-4 max-w-[540px] text-[clamp(2.25rem,4.2vw,3.5rem)] font-medium leading-[1.15] tracking-tight text-[#282828]">
+            <h2 className="clash-display font-clash mt-4 max-w-[33.75rem] text-[clamp(2.25rem,4.2vw,3.5rem)] font-medium leading-[1.15] tracking-tight text-[#282828]">
               Kind Words From
               <br />
               Happy Clients
             </h2>
           </div>
-          <p className="urbanist mt-2 max-w-[620px] text-[13px] leading-[1.8] text-[#777777] lg:text-[clamp(12px,1.08vw,16px)] lg:justify-self-start">
+          <p className="urbanist mt-2 max-w-[38.75rem] text-[0.8125rem] leading-[1.8] text-[#777777] lg:text-[clamp(0.75rem,1.08vw,1rem)] lg:justify-self-start">
             Great collaborations lead to meaningful results and lasting
             relationships. Here&apos;s what clients have to say about working
             with me.
           </p>
         </header>
 
-        <div className="mt-10 flex flex-col gap-4 md:flex-row md:items-center md:gap-3.5 lg:mt-14 lg:mr-[calc((min(90vw,1420px)-100vw)/2)]">
+        <div className="mt-10 flex flex-col gap-4 md:flex-row md:items-center md:gap-3.5 lg:mt-14 lg:mr-[-5vw]">
           <aside
             data-testimonial-rating
-            className="flex min-h-[300px] w-full shrink-0 flex-col items-center rounded-[22px] bg-[#D9B061] px-6 pt-10 pb-5 text-center text-white shadow-[0_2px_4px_rgba(0,0,0,0.12)] md:min-h-[358px] md:w-[var(--testimonial-card-width)] md:pt-[100px]"
+            className="flex min-h-[18.75rem] w-full shrink-0 flex-col items-center rounded-[1.375rem] bg-[#D9B061] px-6 pt-10 pb-5 text-center text-white shadow-[0_0.125rem_0.25rem_rgba(0,0,0,0.12)] md:min-h-[22.375rem] md:w-[var(--testimonial-card-width)] md:pt-[6.25rem]"
           >
-            <p className="urbanist text-[60px] font-semibold leading-none">
+            <p className="urbanist text-[3.75rem] font-semibold leading-none">
               4.8
             </p>
             <div
               role="img"
               aria-label="5 stars"
-              className="flex justify-center gap-px text-[14px] leading-none text-[#FFE600]"
+              className="flex justify-center gap-px text-[0.875rem] leading-none text-[#FFE600]"
             >
               {Array.from({ length: 5 }, (_, index) => (
                 <FiStar key={index} aria-hidden="true" fill="currentColor" />
               ))}
             </div>
-            <p className="urbanist mt-1 text-[12px] leading-[1.5] lg:text-[clamp(11px,0.98vw,14px)]">
+            <p className="urbanist mt-1 text-[0.75rem] leading-[1.5] lg:text-[clamp(0.6875rem,0.98vw,0.875rem)]">
               500+ Review
             </p>
-            <p className="urbanist mt-4 max-w-[220px] text-[12px] leading-[1.5] lg:text-[clamp(11px,0.98vw,14px)]">
+            <p className="urbanist mt-4 max-w-[13.75rem] text-[0.75rem] leading-[1.5] lg:text-[clamp(0.6875rem,0.98vw,0.875rem)]">
               Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting
               Industry.
             </p>
@@ -392,7 +392,7 @@ export default function CustomerTestimonials() {
                 disabled={!canScrollPrevious}
                 className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#D9B061] transition-all duration-200 hover:bg-[#FCF7EE] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] disabled:cursor-not-allowed disabled:bg-white disabled:opacity-60"
               >
-                <FiArrowLeft aria-hidden="true" size={24} strokeWidth={1} />
+                <FiArrowLeft aria-hidden="true" size="1.5rem" strokeWidth={1} />
               </button>
               <button
                 type="button"
@@ -401,7 +401,7 @@ export default function CustomerTestimonials() {
                 disabled={!canScrollNext}
                 className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#D9B061] transition-all duration-200 hover:bg-[#FCF7EE] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] disabled:cursor-not-allowed disabled:bg-white disabled:opacity-60"
               >
-                <FiArrowRight aria-hidden="true" size={24} strokeWidth={1} />
+                <FiArrowRight aria-hidden="true" size="1.5rem" strokeWidth={1} />
               </button>
             </div>
           </aside>

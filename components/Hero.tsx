@@ -102,7 +102,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="hero-section" aria-labelledby="hero-title">
+    <section ref={sectionRef} className="hero-section pb-12 md:pb-16" aria-labelledby="hero-title">
       <div className="hero-frame">
         <div className="hero-arc" aria-hidden="true" />
         <h1 id="hero-title" data-hero-title className="hero-title text-[#282828] clash-display">
@@ -115,7 +115,7 @@ export default function HeroSection() {
             <Image
               src={heroPortrait}
               alt="Megan Manicom"
-              sizes="(min-width: 1600px) 900px, (min-width: 1024px) 56vw, (min-width: 640px) 520px, 115vw"
+              sizes="(min-width: 1024px) 56vw, (min-width: 640px) 520px, 115vw"
               className="hero-portrait-image"
               preload
             />
@@ -132,7 +132,7 @@ export default function HeroSection() {
           <Link href="/work-with-me" className="hero-cta group">
             Work With Me
             <span className="hero-cta-icon">
-              <FiArrowUpRight aria-hidden="true" size={18} />
+              <FiArrowUpRight aria-hidden="true" size="1.125rem" />
             </span>
           </Link>
         </div>
@@ -146,7 +146,7 @@ export default function HeroSection() {
                 alt=""
                 width={40}
                 height={40}
-                sizes="(min-width: 1500px) 42px, (min-width: 1024px) 2.8vw, 36px"
+                sizes="(min-width: 1024px) 2.8vw, 36px"
                 className="hero-avatar"
               />
             ))}
