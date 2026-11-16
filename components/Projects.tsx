@@ -70,7 +70,7 @@ function ProjectCard({
         className="urbanist group mt-auto inline-flex w-fit items-center gap-3 pt-4 text-[0.8125rem] font-medium text-[#282828] transition-colors hover:text-[#8A6A35] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a36e3d]"
       >
         Discuss a similar project
-        <FiArrowRight aria-hidden="true" className="text-[1rem] text-[#A87932] motion-safe:transition-transform motion-safe:duration-200 motion-safe:group-hover:translate-x-1" />
+        <FiArrowRight data-button-arrow="right" aria-hidden="true" className="text-[1rem] text-[#A87932]" />
       </a>
     </article>
   );
@@ -187,7 +187,7 @@ export default function Projects() {
           >
             Start a Project
             <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#282828] text-lg leading-none text-[#D9B061]">
-              <FiArrowUpRight aria-hidden="true" />
+              <FiArrowUpRight data-button-arrow="up-right" aria-hidden="true" />
             </span>
           </a>
         </div>

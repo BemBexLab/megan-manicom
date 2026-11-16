@@ -121,7 +121,7 @@ export default function PageHero({
           >
             {buttonLabel}
             <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[#D9B061] text-[#282828] transition-colors duration-200 group-hover:bg-[#282828] group-hover:text-[#D9B061] min-[900px]:h-[1.5cqw] min-[900px]:w-[1.5cqw]">
-              <FiArrowUpRight
+              <FiArrowUpRight data-button-arrow="up-right"
                 aria-hidden="true"
                 size="0.75rem"
                 className="min-[900px]:h-[0.9cqw] min-[900px]:w-[0.9cqw]"

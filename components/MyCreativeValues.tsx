@@ -108,7 +108,7 @@ export default function MyCreativeValues() {
           >
             Let&apos;s Create Together
             <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#282828] text-[#D9B061]">
-              <FiArrowUpRight aria-hidden="true" size="1rem" />
+              <FiArrowUpRight data-button-arrow="up-right" aria-hidden="true" size="1rem" />
             </span>
           </Link>
         </div>
@@ -141,7 +141,7 @@ export default function MyCreativeValues() {
                   className="group relative z-10 flex min-w-0 flex-col items-center text-center focus-visible:rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a36e3d]"
                 >
                   <span
-                    className={`flex h-10 w-10 items-center justify-center rounded-full border text-[0.9375rem] transition-[background-color,border-color,color,box-shadow] duration-300 motion-reduce:transition-none ${
+                    className={`flex h-10 w-10 items-center justify-center rounded-full border text-[0.9375rem] transition-[background-color,border-color,color,box-shadow] duration-300 motion-reduce:transition-none cursor-pointer ${
                       isActive
                         ? "border-[#D9B061] bg-[#D9B061] text-[#FFFFFF] shadow-[0_0.25rem_0.5rem_rgba(0,0,0,0.12)] group-hover:bg-accent-hover"
                         : isComplete
@@ -152,7 +152,7 @@ export default function MyCreativeValues() {
                     {value.step}
                   </span>
                   <span
-                    className={`urbanist mt-3 max-w-[6.25rem] text-[0.8125rem] leading-[1.35] transition-colors duration-200 group-hover:text-[#A87932] ${
+                    className={`urbanist mt-3 max-w-[6.25rem] text-[0.8125rem] leading-[1.35] transition-colors duration-200 group-hover:text-[#A87932] cursor-pointer ${
                       isActive ? "text-[#282828]" : isComplete ? "text-[#8F633D]" : "text-[#B8B8B8]"
                     }`}
                   >
@@ -200,9 +200,9 @@ export default function MyCreativeValues() {
               }
               disabled={activeIndex === 0}
               aria-label="Previous value"
-              className="flex h-[2.125rem] w-[2.125rem] items-center justify-center rounded-full bg-[#D9B061] text-[#FFFFFF] transition-all duration-200 hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#282828] disabled:cursor-not-allowed disabled:bg-[#E6C5A2]"
+              className="flex h-[2.125rem] w-[2.125rem] items-center justify-center rounded-full bg-[#D9B061] text-[#FFFFFF] transition-all duration-200 hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#282828] disabled:cursor-not-allowed disabled:bg-[#E6C5A2] cursor-pointer"
             >
-              <FiArrowLeft aria-hidden="true" size="1.125rem" />
+              <FiArrowLeft data-button-arrow="left" aria-hidden="true" size="1.125rem" />
             </button>
             <button
               type="button"
@@ -213,9 +213,9 @@ export default function MyCreativeValues() {
               }
               disabled={activeIndex === values.length - 1}
               aria-label="Next value"
-              className="flex h-[2.125rem] w-[2.125rem] items-center justify-center rounded-full bg-[#D9B061] text-[#FFFFFF] transition-all duration-200 hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#282828] disabled:cursor-not-allowed disabled:bg-[#E6C5A2]"
+              className="flex h-[2.125rem] w-[2.125rem] items-center justify-center rounded-full bg-[#D9B061] text-[#FFFFFF] transition-all duration-200 hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#282828] disabled:cursor-not-allowed disabled:bg-[#E6C5A2] cursor-pointer"
             >
-              <FiArrowRight aria-hidden="true" size="1.125rem" />
+              <FiArrowRight data-button-arrow="right" aria-hidden="true" size="1.125rem" />
             </button>
             <p className="urbanist ml-auto text-[0.8125rem] tabular-nums text-[#777777]">
               Step <span className="font-medium text-[#282828]">{activeIndex + 1}</span> of {values.length}

@@ -183,7 +183,7 @@ export default function ExploreMyWork() {
                 className="urbanist group mt-3 inline-flex w-fit items-center gap-3 text-[0.875rem] leading-[1.4] text-[#D9B061] transition-colors hover:text-[#bd8957] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a36e3d] min-[850px]:mt-[0.82cqw] min-[850px]:gap-[0.62cqw] min-[850px]:text-[clamp(0.6875rem,1.17cqw,1rem)]"
               >
                 Explore My Work
-                <FiArrowRight
+                <FiArrowRight data-button-arrow="right"
                   aria-hidden="true"
                   className="text-[1.1875rem] min-[850px]:text-[1.45cqw]"
                 />

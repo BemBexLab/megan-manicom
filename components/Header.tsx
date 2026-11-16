@@ -47,7 +47,7 @@ export default function Header() {
         >
           Work With Me
           <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#282828] text-[#D9B061]">
-            <FiArrowUpRight aria-hidden="true" size="1.375rem" />
+            <FiArrowUpRight data-button-arrow="up-right" aria-hidden="true" size="1.375rem" />
           </span>
         </Link>
 
@@ -154,7 +154,7 @@ function MobileMenuFallback() {
           className="urbanist mt-4 flex items-center justify-between border-y border-[#D9B061]/60 py-3.5 text-[0.9375rem] font-medium text-[#282828] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#282828]"
         >
           Work With Me
-          <FiArrowUpRight aria-hidden="true" size="1.25rem" className="text-[#A87932]" />
+          <FiArrowUpRight data-button-arrow="up-right" aria-hidden="true" size="1.25rem" className="text-[#A87932]" />
         </Link>
       </nav>
     </div>
@@ -200,7 +200,7 @@ function MobileMenu({ onNavigate }: { onNavigate: () => void }) {
           onClick={onNavigate}
         >
           Work With Me
-          <FiArrowUpRight aria-hidden="true" size="1.25rem" className="text-[#A87932]" />
+          <FiArrowUpRight data-button-arrow="up-right" aria-hidden="true" size="1.25rem" className="text-[#A87932]" />
         </Link>
       </nav>
     </div>

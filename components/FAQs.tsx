@@ -127,10 +127,10 @@ export default function FAQs({
                   <span className="clash-display w-5 shrink-0 text-[1rem] font-medium leading-none text-[#282828]">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <span className="clash-display min-w-0 flex-1 text-[1.125rem] font-medium leading-[1.35] text-[#282828] transition-colors duration-200 group-hover:text-[#A87932] 2xl:text-[1.25rem]">
+                  <span className="clash-display cursor-pointer min-w-0 flex-1 text-[1.125rem] font-medium leading-[1.35] text-[#282828] transition-colors duration-200 group-hover:text-[#A87932] 2xl:text-[1.25rem]">
                     {item.question}
                   </span>
-                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#D9B061] text-white transition-colors duration-200 group-hover:bg-accent-hover">
+                  <span className="flex cursor-pointer h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#D9B061] text-white transition-colors duration-200 group-hover:bg-accent-hover">
                     <FiPlus
                       aria-hidden="true"
                       size="0.875rem"

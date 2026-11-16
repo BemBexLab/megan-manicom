@@ -62,7 +62,7 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
         className="urbanist group mt-3 inline-flex items-center gap-3 pb-1 text-[0.875rem] text-[#D9B061] transition-colors hover:text-[#bd8957] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a36e3d]"
       >
         Explore My Work
-        <FiArrowRight aria-hidden="true" className="text-[1.1875rem]" />
+        <FiArrowRight data-button-arrow="right" aria-hidden="true" className="text-[1.1875rem]" />
       </a>
     </article>
   );
@@ -191,7 +191,7 @@ export default function OurPortfolio() {
           >
             View All Projects
             <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#282828] text-lg leading-none text-[#D9B061]">
-              <FiArrowUpRight aria-hidden="true" />
+              <FiArrowUpRight data-button-arrow="up-right" aria-hidden="true" />
             </span>
           </a>
         </div>

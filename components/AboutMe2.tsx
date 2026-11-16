@@ -199,7 +199,7 @@ export default function AboutMe2({
           >
             {buttonLabel}
             <span className="flex h-[1.625rem] w-[1.625rem] shrink-0 items-center justify-center rounded-full bg-[#282828] text-[#D9B061]">
-              <FiArrowUpRight aria-hidden="true" size="1rem" />
+              <FiArrowUpRight data-button-arrow="up-right" aria-hidden="true" size="1rem" />
             </span>
           </Link>
         </div>

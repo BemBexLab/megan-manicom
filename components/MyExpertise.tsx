@@ -111,7 +111,7 @@ export default function MyExpertise() {
             >
               Discover My Services
               <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#282828] text-[#D9B061] min-[75rem]:h-[2.63cqw] min-[75rem]:w-[2.63cqw]">
-                <FiArrowUpRight
+                <FiArrowUpRight data-button-arrow="up-right"
                   aria-hidden="true"
                   size="1.125rem"
                   className="min-[75rem]:h-[1.69cqw] min-[75rem]:w-[1.69cqw]"

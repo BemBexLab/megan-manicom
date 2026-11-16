@@ -194,7 +194,7 @@ export default function VideoTestimonials({
           >
             Let’s Create Together
             <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#282828] text-[#D9B061]">
-              <FiArrowUpRight aria-hidden="true" size="1.3125rem" />
+              <FiArrowUpRight data-button-arrow="up-right" aria-hidden="true" size="1.3125rem" />
             </span>
           </Link>
         </header>
@@ -251,7 +251,7 @@ export default function VideoTestimonials({
                   onClick={() => changeSlide(-1)}
                   className="flex h-11 w-11 items-center justify-center rounded-full border border-[#282828]/25 hover:bg-[#D9B061] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828]"
                 >
-                  <FiArrowLeft aria-hidden="true" size="1.25rem" />
+                  <FiArrowLeft data-button-arrow="left" aria-hidden="true" size="1.25rem" />
                 </button>
                 <button
                   type="button"
@@ -260,7 +260,7 @@ export default function VideoTestimonials({
                   onClick={() => changeSlide(1)}
                   className="flex h-11 w-11 items-center justify-center rounded-full bg-[#282828] text-[#D9B061] hover:bg-[#333333] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828]"
                 >
-                  <FiArrowRight aria-hidden="true" size="1.25rem" />
+                  <FiArrowRight data-button-arrow="right" aria-hidden="true" size="1.25rem" />
                 </button>
               </div>
             </div>

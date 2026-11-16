@@ -161,7 +161,7 @@ export default function Books({ books = bookCovers }: { books?: Book[] }) {
           >
             Let&apos;s Create Together
             <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#282828] text-[#D9B061]">
-              <FiArrowUpRight aria-hidden="true" size="1.25rem" />
+              <FiArrowUpRight data-button-arrow="up-right" aria-hidden="true" size="1.25rem" />
             </span>
           </Link>
         </div>

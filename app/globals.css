@@ -102,7 +102,7 @@ html {
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-clash: var(--font-clash-display), "Clash Display", sans-serif;
-  --color-accent-hover: #C69260;
+  --color-accent-hover: #CFA657;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -145,6 +145,34 @@ a[class*="inline-flex"] {
   transition-property: background-color, color, border-color, box-shadow;
   transition-duration: 180ms;
   transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Keep arrow motion consistent across CTA links and carousel controls. */
+@media (prefers-reduced-motion: no-preference) {
+  [data-button-arrow] {
+    --arrow-x: 0.15rem;
+    --arrow-y: 0rem;
+    translate: 0 0;
+    transition: translate 200ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  [data-button-arrow="up-right"] {
+    --arrow-y: -0.15rem;
+  }
+
+  [data-button-arrow="left"] {
+    --arrow-x: -0.15rem;
+  }
+
+  :is(a[href], button):not(:disabled):not([aria-disabled="true"]):focus-visible [data-button-arrow] {
+    translate: var(--arrow-x) var(--arrow-y);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    :is(a[href], button):not(:disabled):not([aria-disabled="true"]):hover [data-button-arrow] {
+      translate: var(--arrow-x) var(--arrow-y);
+    }
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

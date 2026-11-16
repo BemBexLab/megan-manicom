@@ -181,7 +181,7 @@ export default function ServicesSection() {
               >
                 Let&apos;s Talk
                 <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#282828] text-[#D9B061] lg:h-[2.25cqw] lg:w-[2.25cqw]">
-                  <FiArrowUpRight
+                  <FiArrowUpRight data-button-arrow="up-right"
                     aria-hidden="true"
                     size="1rem"
                     className="lg:h-[1.45cqw] lg:w-[1.45cqw]"
@@ -222,7 +222,7 @@ export default function ServicesSection() {
                       onClick={() => setActive(isActive ? null : i)}
                       aria-expanded={isActive}
                       aria-controls={panelId}
-                      className={`clash-display grid w-full grid-cols-[1.5rem_minmax(0,1fr)] items-start gap-x-3 text-left text-[1.0625rem] font-medium leading-[1.4] transition-colors duration-300 motion-reduce:transition-none focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a36e3d] lg:grid-cols-[1.89cqw_minmax(0,1fr)] lg:text-[clamp(1rem,1.51cqw,1.375rem)] ${
+                      className={`clash-display grid w-full grid-cols-[1.5rem_minmax(0,1fr)] items-start gap-x-3 text-left text-[1.0625rem] font-medium leading-[1.4] transition-colors duration-300 motion-reduce:transition-none focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a36e3d] lg:grid-cols-[1.89cqw_minmax(0,1fr)] lg:text-[clamp(1rem,1.51cqw,1.375rem)] cursor-pointer ${
                         i === 0 ? "pt-0" : "pt-5 lg:pt-[2.16cqw]"
                       } ${isActive ? "lg:gap-x-[1.42cqw]" : "lg:gap-x-[1.89cqw]"} ${
                         isActive

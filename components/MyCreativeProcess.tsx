@@ -224,7 +224,7 @@ export default function MyCreativeProcess({
             >
               {buttonLabel}
               <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#282828] text-lg leading-none text-[#D9B061] lg:h-[2.7cqw] lg:w-[2.7cqw]">
-                <FiArrowUpRight
+                <FiArrowUpRight data-button-arrow="up-right"
                   aria-hidden="true"
                   size="1.125rem"
                   className="lg:h-[1.74cqw] lg:w-[1.74cqw]"

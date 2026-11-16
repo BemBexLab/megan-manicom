@@ -268,7 +268,7 @@ export default function ContactUs({
               </span>
             </a>}
           </div>
-          {cta && <a href={cta.href} className="urbanist mt-7 inline-flex w-fit items-center gap-2 rounded-full bg-[#D9B061] py-1.5 pl-4 pr-1.5 text-[0.9375rem] font-medium text-[#282828] shadow-[0_0.5rem_1rem_rgba(0,0,0,0.16)] hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828]">{cta.label}<span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#282828] text-[#D9B061]"><FiArrowUpRight aria-hidden="true" size="1.25rem" /></span></a>}
+          {cta && <a href={cta.href} className="urbanist mt-7 inline-flex w-fit items-center gap-2 rounded-full bg-[#D9B061] py-1.5 pl-4 pr-1.5 text-[0.9375rem] font-medium text-[#282828] shadow-[0_0.5rem_1rem_rgba(0,0,0,0.16)] hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828]">{cta.label}<span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#282828] text-[#D9B061]"><FiArrowUpRight data-button-arrow="up-right" aria-hidden="true" size="1.25rem" /></span></a>}
         </div>
 
         <div data-contact-form className="min-w-0">
@@ -445,11 +445,11 @@ export default function ContactUs({
 
             <button
               type="submit"
-              className="urbanist mt-3 inline-flex w-fit items-center gap-2 rounded-full bg-[#D9B061] py-1.5 pl-4 pr-1.5 text-[1rem] font-medium text-[#282828] shadow-[0_0.5rem_1.125rem_rgba(0,0,0,0.18)] transition-all duration-200 hover:bg-accent-hover hover:shadow-[0_0.6875rem_1.25rem_rgba(0,0,0,0.2)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] "
+              className="urbanist mt-3 inline-flex w-fit items-center gap-2 rounded-full bg-[#D9B061] py-1.5 pl-4 pr-1.5 text-[1rem] font-medium text-[#282828] shadow-[0_0.5rem_1.125rem_rgba(0,0,0,0.18)] transition-all duration-200 hover:bg-accent-hover hover:shadow-[0_0.6875rem_1.25rem_rgba(0,0,0,0.2)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#282828] cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
             >
               {submitLabel}
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#282828] text-lg leading-none text-[#D9B061]">
-                <FiArrowUpRight aria-hidden="true" />
+                <FiArrowUpRight data-button-arrow="up-right" aria-hidden="true" />
               </span>
             </button>
           </form>

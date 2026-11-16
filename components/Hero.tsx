@@ -132,7 +132,7 @@ export default function HeroSection() {
           <Link href="/work-with-me" className="hero-cta group">
             Work With Me
             <span className="hero-cta-icon">
-              <FiArrowUpRight aria-hidden="true" size="1.125rem" />
+              <FiArrowUpRight data-button-arrow="up-right" aria-hidden="true" size="1.125rem" />
             </span>
           </Link>
         </div>
