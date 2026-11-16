@@ -137,7 +137,7 @@ export default function HeroSection() {
           </Link>
         </div>
 
-        {/* <div className="hero-rating urbanist" data-hero-rating>
+        <div className="hero-rating urbanist" data-hero-rating>
           <div className="hero-avatars" aria-hidden="true">
             {clientAvatars.map((avatar) => (
               <Image
@@ -159,9 +159,9 @@ export default function HeroSection() {
               Client Worldwide
             </p>
           </div>
-        </div> */}
+        </div>
 
-        {/* <div className="hero-partners urbanist" data-hero-partners>
+        <div className="hero-partners urbanist" data-hero-partners>
           <p className="hero-partners-heading text-[#282828]">
             Our Trusted Partners
           </p>
@@ -177,7 +177,7 @@ export default function HeroSection() {
               />
             ))}
           </div>
-        </div> */}
+        </div>
       </div>
     </section>
   );
