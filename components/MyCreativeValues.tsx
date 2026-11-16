@@ -78,7 +78,7 @@ export default function MyCreativeValues() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="section-spacing w-full bg-[#F5F5F5] px-4 sm:px-6 lg:flex lg:min-h-[30.75rem] lg:items-center lg:px-8 2xl:px-6">
+    <section ref={sectionRef} className="section-spacing w-full bg-[#F5F5F5] px-5 sm:px-[5.1%] lg:flex lg:min-h-[30.75rem] lg:items-center">
       <div className="mx-auto grid w-full grid-cols-1 items-center gap-9 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
         <div data-values-reveal>
           <div className="flex items-center gap-2">
@@ -95,7 +95,7 @@ export default function MyCreativeValues() {
             The Values Behind My Work.
           </h2>
 
-          <p className="urbanist mt-3 max-w-[39.375rem] text-[1rem] leading-[1.7] text-[#777777]">
+          <p className="urbanist mt-3 max-w-2xl text-base leading-[1.7] text-[#777777]">
             My work is guided by creativity, authenticity, and a passion for
             meaningful connections. I believe in thoughtful design, open
             collaboration, and delivering quality work that reflects each
@@ -185,7 +185,7 @@ export default function MyCreativeValues() {
                 <h3 className="clash-display text-[1.125rem] font-medium leading-[1.35] text-[#282828] 2xl:text-[1.25rem]">
                   {value.title}
                 </h3>
-                <p className="urbanist mt-2 text-[0.8125rem] leading-[1.55] text-[#777777] 2xl:text-[1rem]">
+                <p className="urbanist mt-2 text-sm leading-[1.5] text-[#777777]">
                   {value.description}
                 </p>
               </div>
@@ -217,7 +217,7 @@ export default function MyCreativeValues() {
             >
               <FiArrowRight data-button-arrow="right" aria-hidden="true" size="1.125rem" />
             </button>
-            <p className="urbanist ml-auto text-[0.8125rem] tabular-nums text-[#777777]">
+            <p className="urbanist ml-auto text-base tabular-nums text-[#777777]">
               Step <span className="font-medium text-[#282828]">{activeIndex + 1}</span> of {values.length}
             </p>
           </div>

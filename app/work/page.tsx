@@ -19,7 +19,7 @@ const page = () => {
   return (
     <section className="bg-white">
       <PageHero
-        heading="Creative Work, Meaningful Impact."
+        heading={`Creative Work,\nMeaningful Impact.`}
         text="Explore a collection of creative projects where thoughtful design, storytelling, and strategy come together. Each piece reflects my passion for transforming ideas into engaging experiences that connect, inspire, and leave a lasting impression."
         buttonLabel="Work With Me"
         buttonHref="/contact"

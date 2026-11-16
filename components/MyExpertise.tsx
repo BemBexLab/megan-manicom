@@ -81,7 +81,7 @@ export default function MyExpertise() {
     >
       <div className="mx-auto w-full min-[75rem]:[container-type:inline-size]">
         <div className="grid grid-cols-1 items-start gap-10 sm:gap-12 min-[75rem]:grid-cols-2 min-[75rem]:gap-x-[1.2%] min-[75rem]:gap-y-0">
-          <div className="min-w-0 max-w-[42rem] min-[75rem]:max-w-none">
+          <div className="min-w-0 max-w-2xl min-[75rem]:max-w-none">
             <div className="flex items-center gap-2 min-[75rem]:gap-[0.85cqw]">
               <span
                 aria-hidden="true"
@@ -99,7 +99,7 @@ export default function MyExpertise() {
               Helping Great Ideas Find Their Place.
             </h2>
 
-            <p className="urbanist mt-4 text-[0.9375rem] leading-[1.7] text-[#777777] min-[75rem]:mt-[1.32cqw] min-[75rem]:text-[clamp(0.75rem,1.17cqw,1.0625rem)]">
+            <p className="urbanist mt-4 text-base leading-[1.7] text-[#777777] min-[75rem]:mt-[1.32cqw]">
               I bring together creativity, design, and marketing to help
               individuals and businesses turn their visions into engaging
               experiences.
@@ -142,7 +142,7 @@ export default function MyExpertise() {
                 <h3 className="clash-display mt-4 break-words text-xl font-medium leading-[1.3] text-[#282828] min-[75rem]:mt-[1.32cqw] min-[75rem]:text-[clamp(1rem,1.76cqw,1.5625rem)]">
                   {item.title}
                 </h3>
-                <p className="urbanist mt-3 break-words text-[0.9375rem] leading-[1.7] text-[#555555] min-[75rem]:mt-[0.94cqw] min-[75rem]:text-[clamp(0.75rem,1.17cqw,1.0625rem)] min-[75rem]:text-[#333333]">
+                <p className="urbanist mt-3 break-words text-sm leading-[1.5] text-[#555555] min-[75rem]:mt-[0.94cqw] min-[75rem]:text-[#333333]">
                   {item.text}
                 </p>
               </li>

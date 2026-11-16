@@ -61,7 +61,7 @@ export default function AboutTheProject({
             {description.map((paragraph, index) => (
               <p
                 key={`${index}-${paragraph.slice(0, 20)}`}
-                className="urbanist text-[0.8125rem] leading-[1.8] text-[#777777] lg:text-[clamp(0.75rem,1.08vw,1rem)]"
+                className="urbanist text-base leading-[1.7] text-[#777777]"
               >
                 {paragraph}
               </p>

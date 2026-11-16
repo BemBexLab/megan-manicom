@@ -133,10 +133,10 @@ function FeaturedVideo({ testimonial }: { testimonial: VideoTestimonial }) {
             </div>
           )}
           <div className="absolute inset-x-5 bottom-5 text-white">
-            <p className="urbanist text-xs text-white/65">
+            <p className="urbanist text-sm leading-[1.5] text-white/65">
               A creative collaboration
             </p>
-            <p className="clash-display mt-1 text-base font-medium sm:text-lg">
+            <p className="clash-display mt-1 text-sm font-medium">
               {testimonial.detail}
             </p>
           </div>
@@ -180,11 +180,11 @@ export default function VideoTestimonials({
           </div>
           <h2
             id={headingId}
-            className="clash-display mt-4 max-w-[42rem] text-balance text-[2rem] font-medium leading-[1.12] tracking-tight sm:text-[clamp(2.25rem,4.2vw,3.5rem)]"
+            className="clash-display mt-4 max-w-2xl text-balance text-[2rem] font-medium leading-[1.12] tracking-tight sm:text-[clamp(2.25rem,4.2vw,3.5rem)]"
           >
             The People Behind The Projects.
           </h2>
-          <p className="urbanist mt-5 max-w-[32rem] text-[0.9375rem] leading-[1.8] text-[#777777] sm:text-base">
+          <p className="urbanist mt-5 max-w-2xl text-base leading-[1.7] text-[#777777]">
             Every project is a collaboration. Get to know the authors, creators,
             and brands I work with, and hear their stories in their own words.
           </p>
@@ -203,7 +203,7 @@ export default function VideoTestimonials({
           role="region"
           aria-roledescription="carousel"
           aria-label="Video testimonials"
-          className="w-full min-w-0 max-w-[40rem] justify-self-center lg:max-w-[43.75rem] lg:justify-self-end"
+          className="w-full min-w-0 max-w-2xl justify-self-center lg:justify-self-end"
         >
           <div
             id={slideId}
@@ -225,7 +225,7 @@ export default function VideoTestimonials({
                 <p className="clash-display text-sm font-medium">
                   {active.name}
                 </p>
-                <p className="urbanist mt-1 text-xs leading-relaxed text-[#282828]/75">
+                <p className="urbanist mt-1 text-sm leading-[1.5] text-[#282828]/75">
                   {active.detail}
                 </p>
               </figcaption>

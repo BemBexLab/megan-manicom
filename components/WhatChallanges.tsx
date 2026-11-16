@@ -31,11 +31,11 @@ export default function WhatChallanges({
             </span>
           </div>
 
-          <h2 className="clash-display font-clash mt-4 max-w-[33.75rem] text-[clamp(2.25rem,4.2vw,3.5rem)] font-medium leading-[1.15] tracking-tight text-[#2b2b2b]">
+          <h2 className="clash-display font-clash mt-4 max-w-2xl text-[clamp(2.25rem,4.2vw,3.5rem)] font-medium leading-[1.15] tracking-tight text-[#2b2b2b]">
             {heading}
           </h2>
 
-          <p className="urbanist mt-2 max-w-[38.75rem] text-[0.8125rem] leading-[1.8] text-[#777777] lg:text-[clamp(0.75rem,1.08vw,1rem)]">
+          <p className="urbanist mt-2 max-w-2xl text-base leading-[1.7] text-[#777777]">
             {description}
           </p>
         </div>
@@ -53,7 +53,7 @@ export default function WhatChallanges({
                 <h3 className="clash-display font-clash text-[0.875rem] font-medium leading-[1.4] text-[#D9A441] lg:text-[clamp(0.8125rem,1.17vw,1.0625rem)]">
                   {challenge.title}
                 </h3>
-                <p className="urbanist mt-1 text-[0.75rem] leading-[1.5] text-[#777777] lg:text-[clamp(0.6875rem,0.98vw,0.875rem)]">
+                <p className="urbanist mt-1 text-sm leading-[1.5] text-[#777777]">
                   {challenge.description}
                 </p>
               </div>

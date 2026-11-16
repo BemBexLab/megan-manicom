@@ -223,7 +223,7 @@ export default function ContactUs({
     servicePlaceholder;
 
   return (
-    <section ref={sectionRef} className="section-spacing w-full bg-[#F7F7F7] px-4 sm:px-6 lg:px-8 2xl:px-6">
+    <section ref={sectionRef} className="section-spacing w-full bg-[#F7F7F7] px-5 sm:px-[5.1%]">
       <div className="mx-auto grid w-full grid-cols-1 gap-10 sm:gap-12 lg:grid-cols-2 lg:gap-16">
         <div data-contact-details className="flex min-w-0 flex-col">
           <div className="flex items-center gap-2">
@@ -236,11 +236,11 @@ export default function ContactUs({
             </span>
           </div>
 
-          <h2 className="clash-display my-2 max-w-[37.5rem] text-[2rem] sm:text-[clamp(2.25rem,4.2vw,3.5rem)] font-medium leading-[1.05] text-[#282828]">
+          <h2 className="clash-display my-2 max-w-2xl text-[2rem] sm:text-[clamp(2.25rem,4.2vw,3.5rem)] font-medium leading-[1.05] text-[#282828]">
             {heading}
           </h2>
 
-          <p className="urbanist mt-3 max-w-[37.5rem] text-[1rem] leading-[1.7] text-[#777777]">
+          <p className="urbanist mt-3 max-w-2xl text-base leading-[1.7] text-[#777777]">
             {description}
           </p>
 
@@ -403,7 +403,7 @@ export default function ContactUs({
               {serviceError && (
                 <p
                   id={serviceErrorId}
-                  className="urbanist mt-1 text-[0.6875rem] text-red-600"
+                  className="urbanist mt-1 text-base text-red-600"
                 >
                   {serviceErrorMessage}
                 </p>

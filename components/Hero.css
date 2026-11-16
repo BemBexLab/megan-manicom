@@ -66,12 +66,12 @@
 
 .hero-portrait-image {
   position: absolute;
-  top: 0;
+  top: -6%;
   left: 50%;
   width: auto;
   max-width: none;
-  height: 150%;
-  transform: translateX(-55%);
+  height: 120%;
+  transform: translateX(-50%);
   filter: drop-shadow(0.5rem 0.375rem 1rem rgb(40 40 40 / 7%));
 }
 
@@ -246,6 +246,12 @@
 
 /* Scale the desktop composition as one canvas, keeping its overlaps aligned. */
 @media (min-width: 1024px) {
+  .hero-section {
+    /* The reference is a 1298 × 692 canvas, including the header. */
+    padding-top: calc(100vw * 87 / 1298);
+    padding-bottom: 0;
+    background: radial-gradient(ellipse at 50% 42%, #f4f4f4, #fff 68%);
+  }
   .hero-frame {
     display: block;
     aspect-ratio: 1298 / 605;
@@ -259,7 +265,7 @@
   }
   .hero-title {
     position: absolute;
-    top: 25.8%;
+    top: 25.6%;
     left: 5.15%;
     font-size: 7.4cqw;
     line-height: 1.08;
@@ -271,16 +277,17 @@
   }
   .hero-portrait {
     position: absolute;
-    bottom: -4%;
-    left: 27%;
-    width: 46%;
-    height: 104%;
+    top: -4.6%;
+    left: 28%;
+    width: 44%;
+    height: 104.6%;
     overflow: hidden;
     mask-image: none;
   }
   .hero-portrait-image {
     display: block;
-    height: 145%;
+    top: 0;
+    height: 115.1%;
   }
   .hero-intro {
     position: absolute;
@@ -288,9 +295,24 @@
     right: 5%;
     left: 62.65%;
     max-width: none;
-    font-size: clamp(0.875rem, 1.25cqw, 1.171875rem);
+    font-size: 1rem;
     line-height: 1.72;
     text-align: left;
+  }
+  .hero-cta {
+    min-height: max(2.75rem, 3.3cqw);
+    gap: 0.6cqw;
+    margin-top: 1.4cqw;
+    padding: 0.5cqw 0.55cqw 0.5cqw 1.05cqw;
+    font-size: max(0.8125rem, 1.04cqw);
+  }
+  .hero-cta-icon {
+    width: max(1.875rem, 2.3cqw);
+    height: max(1.875rem, 2.3cqw);
+  }
+  .hero-cta-icon svg {
+    width: 65%;
+    height: 65%;
   }
   .hero-rating {
     position: absolute;
@@ -299,8 +321,8 @@
     margin: 0;
   }
   .hero-avatar {
-    width: 2.8cqw;
-    height: 2.8cqw;
+    width: 2.65cqw;
+    height: 2.65cqw;
   }
   .hero-avatar + .hero-avatar {
     margin-left: -1.05cqw;
@@ -315,17 +337,17 @@
     font-size: 4.62cqw;
   }
   .hero-rating-caption {
-    font-size: 1.25cqw;
+    font-size: 1rem;
   }
   .hero-partners {
     position: absolute;
-    right: 5%;
+    right: 5.4%;
     bottom: 7.3%;
     width: 29%;
     max-width: none;
   }
   .hero-partners-heading {
-    font-size: 1.25cqw;
+    font-size: 1rem;
   }
   .hero-partner-logos {
     gap: 1.8cqw;

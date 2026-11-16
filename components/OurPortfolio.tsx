@@ -47,13 +47,13 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
           className="h-full w-full object-cover"
         />
       </div>
-      <p className="urbanist mt-3 text-[0.875rem] leading-[1.4] text-[#D9B061]">
+      <p className="urbanist mt-3 text-sm leading-[1.4] text-[#D9B061]">
         {project.category}
       </p>
       <h3 className="clash-display mt-1 text-[1.25rem] font-medium leading-tight text-[#282828]">
         {project.title}
       </h3>
-      <p className="urbanist mt-2 text-[0.875rem] leading-[1.55] text-[#777777]">
+      <p className="urbanist mt-2 text-sm leading-[1.5] text-[#777777]">
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry.
       </p>
@@ -152,7 +152,7 @@ export default function OurPortfolio() {
   return (
     <section ref={sectionRef} className="section-spacing w-full bg-[#F2F2F2] px-4 sm:px-6 lg:px-4">
       <div className="mx-auto w-full">
-        <header data-portfolio-header className="mx-auto mb-7 max-w-7xl text-center sm:mb-8">
+        <header data-portfolio-header className="mx-auto mb-7 max-w-5xl text-center sm:mb-8">
           <div className="flex items-center justify-center gap-2">
             <span
               aria-hidden="true"
@@ -165,7 +165,7 @@ export default function OurPortfolio() {
           <h2 className="clash-display my-2 max-w-full break-words text-balance text-[2rem] sm:text-[clamp(2.25rem,4.2vw,3.5rem)] font-medium leading-tight text-[#282828]">
             Creative Work That Speaks Volumes
           </h2>
-          <p className="urbanist mx-auto mt-3 max-w-7xl text-[1rem] leading-[1.6] text-[#777777]">
+          <p className="urbanist mx-auto mt-3 max-w-5xl text-base leading-[1.7] text-[#777777]">
             A collection of social media campaigns, creative visuals, and
             content designed to make brands stand out. Explore how I turn fresh
             ideas into engaging digital experiences.

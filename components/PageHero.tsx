@@ -95,23 +95,23 @@ export default function PageHero({
     <section
       ref={sectionRef}
       aria-labelledby="page-hero-title"
-      className="relative isolate mt-[4.5rem] min-h-[38.75rem] w-full overflow-hidden bg-white px-5 pb-8 pt-12 sm:px-8 sm:pt-14 md:mt-[5.625rem] min-[900px]:min-h-[clamp(28.625rem,44.8vw,40rem)] min-[900px]:!px-0 min-[900px]:!pt-0 min-[900px]:!pb-0"
+      className="relative isolate mt-[4.5rem] min-h-[24rem] w-full overflow-hidden bg-white px-5 py-8 sm:px-8 md:mt-[5.625rem] min-[900px]:min-h-[clamp(24rem,32vw,28rem)] min-[900px]:!px-0 min-[900px]:!py-0"
     >
       <div
         aria-hidden="true"
         className="pointer-events-none absolute left-1/2 top-[58%] z-0 h-[280%] w-[140%] -translate-x-1/2 rounded-[50%] bg-[#F8F8F8]"
       />
 
-      <div className="relative mx-auto flex w-full flex-col items-center text-center min-[900px]:[container-type:inline-size] min-[900px]:block min-[900px]:min-h-[clamp(28.625rem,44.8vw,40rem)]">
+      <div className="relative mx-auto flex w-full flex-col items-center text-center min-[900px]:[container-type:inline-size] min-[900px]:block min-[900px]:min-h-[clamp(24rem,32vw,28rem)]">
         <header className="relative z-10 mx-auto w-full min-[900px]:absolute min-[900px]:left-1/2 min-[900px]:top-[14%] min-[900px]:w-[90%] min-[900px]:-translate-x-1/2">
           <h1
             id="page-hero-title"
             data-pagehero-heading
-            className="clash-display text-balance text-[clamp(2.25rem,8.5vw,3.5rem)] font-medium leading-[1.16] text-[#282828] min-[900px]:text-[clamp(3rem,6cqw,5.3125rem)] min-[900px]:leading-[1.2]"
+            className="clash-display whitespace-pre-line text-balance text-[clamp(2.25rem,8.5vw,3.5rem)] font-medium leading-[1.16] text-[#282828] min-[900px]:text-[clamp(3rem,6cqw,5.3125rem)] min-[900px]:leading-[1.2]"
           >
             {heading}
           </h1>
-          <p data-pagehero-copy className="urbanist mx-auto mt-4 max-w-[43.75rem] text-[0.875rem] leading-[1.65] text-[#777777] sm:text-[0.9375rem] min-[900px]:mt-[1.6cqw] min-[900px]:max-w-[66%] min-[900px]:!text-[clamp(0.75rem,1.22cqw,1.0625rem)] min-[900px]:leading-[1.7]">
+          <p data-pagehero-copy className="urbanist mx-auto mt-4 max-w-2xl text-base leading-[1.7] text-[#777777] min-[900px]:mt-[1.6cqw] min-[900px]:max-w-[66%]">
             {text}
           </p>
           <Link
@@ -147,24 +147,24 @@ export default function PageHero({
                 ))}
               </div>
             )} */}
-            <div className="flex items-center gap-3 min-[900px]:gap-[1.1cqw]">
+            {/* <div className="flex items-center gap-3 min-[900px]:gap-[1.1cqw]">
               {rating && (
                 <span className="urbanist text-[2.75rem] font-semibold leading-none tracking-[-0.04em] text-[#282828] min-[900px]:text-[4.7cqw]">
                   {rating}
                 </span>
               )}
               {clientLabel && (
-                <p className="urbanist whitespace-pre-line text-[0.75rem] leading-[1.5] text-[#282828] min-[900px]:text-[clamp(0.75rem,1.27cqw,1.125rem)]">
+                <p className="urbanist whitespace-pre-line text-base leading-[1.5] text-[#282828]">
                   {clientLabel}
                 </p>
               )}
-            </div>
+            </div> */}
           </div>
         )}
 
         {/* {partnersHeading && partnerLogos.length > 0 && (
           <div data-pagehero-partners className="relative z-10 mt-10 w-full max-w-[22.5rem] min-[900px]:absolute min-[900px]:bottom-[5.3%] min-[900px]:right-[5.2%] min-[900px]:mt-0 min-[900px]:w-[29%] min-[900px]:max-w-none">
-            <p className="urbanist flex items-center justify-center gap-2 text-[0.8125rem] leading-[1.4] text-[#282828] min-[900px]:gap-[0.65cqw] min-[900px]:text-[clamp(0.75rem,1.15cqw,1rem)]">
+            <p className="urbanist flex items-center justify-center gap-2 text-base leading-[1.4] text-[#282828] min-[900px]:gap-[0.65cqw]">
               <span
                 aria-hidden="true"
                 className="h-px flex-1 bg-gradient-to-r from-transparent to-[#AFAFAF]"

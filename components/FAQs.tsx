@@ -73,17 +73,19 @@ export default function FAQs({
       return () => context.revert();
     });
 
-    return () => media.revert();
+    return () => {
+      media.revert();
+    };
   }, []);
 
   return (
     <section
       ref={sectionRef}
       aria-labelledby="faq-heading"
-      className="section-spacing w-full bg-[#FAFAFA] px-4 sm:px-6 lg:px-8 2xl:px-6"
+      className="section-spacing w-full bg-[#FAFAFA] px-5 sm:px-[5.1%]"
     >
       <div className="mx-auto grid w-full grid-cols-1 gap-9 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16">
-        <header data-faq-header className="lg:pt-1">
+        <header data-faq-header className="lg:sticky lg:top-24 lg:self-start lg:pt-1">
           <div className="flex items-center gap-2">
             <span
               aria-hidden="true"
@@ -99,7 +101,7 @@ export default function FAQs({
           >
             {heading}
           </h2>
-          <p className="urbanist mt-3 max-w-[29.375rem] text-[1rem] leading-[1.7] text-[#777777]">
+          <p className="urbanist mt-3 max-w-2xl text-base leading-[1.7] text-[#777777]">
             {description}
           </p>
         </header>
@@ -141,6 +143,11 @@ export default function FAQs({
                 <div
                   id={answerId}
                   aria-hidden={!isOpen}
+                  onTransitionEnd={(event) => {
+                    if (event.propertyName === "grid-template-rows") {
+                      ScrollTrigger.refresh();
+                    }
+                  }}
                   className={`grid transition-[grid-template-rows,opacity] duration-300 ease-in-out ${
                     isOpen
                       ? "grid-rows-[1fr] opacity-100"
@@ -148,7 +155,7 @@ export default function FAQs({
                   }`}
                 >
                   <div className="min-h-0 overflow-hidden">
-                    <p className="urbanist ml-9 mt-2 max-w-[31.25rem] text-[0.8125rem] leading-[1.55] text-[#777777] 2xl:text-[1rem] sm:ml-9">
+                    <p className="urbanist ml-9 mt-2 max-w-2xl text-sm leading-[1.5] text-[#777777] sm:ml-9">
                       {item.answer}
                     </p>
                   </div>

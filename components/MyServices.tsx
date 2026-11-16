@@ -170,7 +170,7 @@ export default function ServicesSection() {
               <span className="block">Visibility and Growth</span>
             </h2>
 
-            <p className="urbanist mt-4 text-[0.9375rem] leading-[1.7] text-[#777777] lg:mt-[1.32cqw] lg:max-w-[95%] lg:text-[clamp(0.75rem,1.17cqw,1.0625rem)]">
+            <p className="urbanist mt-4 text-base leading-[1.7] text-[#777777] lg:mt-[1.32cqw] lg:max-w-[95%]">
               From book launches to social media content, I help make your message easier to find, understand, and trust.
             </p>
 
@@ -246,7 +246,7 @@ export default function ServicesSection() {
                     inert={!isActive}
                     className="overflow-hidden"
                   >
-                    <p className="urbanist pt-1.5 pb-2 pl-9 text-[0.875rem] leading-[1.7] text-[#777777] lg:pt-[0.47cqw] lg:pb-[0.5cqw] lg:pl-[3.31cqw] lg:text-[clamp(0.75rem,1.17cqw,1.0625rem)]">
+                    <p className="urbanist pt-1.5 pb-2 pl-9 text-sm leading-[1.5] text-[#777777] lg:pt-[0.47cqw] lg:pb-[0.5cqw] lg:pl-[3.31cqw]">
                       {service.text}
                     </p>
                   </div>

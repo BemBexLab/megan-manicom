@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
-import heroPortrait from "../public/Gemini_Generated_Image_kc0kikc0kikc0kik (1).webp";
+import heroPortrait from "../public/9415e7633ca7fb19f274a37c18a548db84e9b88d.webp";
 import "./Hero.css";
 
 const partnerLogos = [
@@ -115,7 +115,7 @@ export default function HeroSection() {
             <Image
               src={heroPortrait}
               alt="Megan Manicom"
-              sizes="(min-width: 1024px) 56vw, (min-width: 640px) 520px, 115vw"
+              sizes="(min-width: 1024px) 46vw, (min-width: 640px) 50vw, 100vw"
               className="hero-portrait-image"
               preload
             />
@@ -123,7 +123,7 @@ export default function HeroSection() {
         </div>
 
         <div className="hero-intro urbanist" data-hero-intro>
-          <p>
+          <p className="text-base">
             I&apos;m Megan Manicom, a social media marketing specialist helping
             authors, coaches, creators, and growing brands build visibility
             through clear content, launch planning, and audience-focused
@@ -137,8 +137,8 @@ export default function HeroSection() {
           </Link>
         </div>
 
-        <div className="hero-rating urbanist" data-hero-rating>
-          {/* <div className="hero-avatars" aria-hidden="true">
+        {/* <div className="hero-rating urbanist" data-hero-rating>
+          <div className="hero-avatars" aria-hidden="true">
             {clientAvatars.map((avatar) => (
               <Image
                 key={avatar}
@@ -150,7 +150,7 @@ export default function HeroSection() {
                 className="hero-avatar"
               />
             ))}
-          </div> */}
+          </div>
           <div className="hero-rating-details">
             <span className="hero-score text-[#282828]">4.8/5</span>
             <p className="hero-rating-caption text-[#282828]">
@@ -159,7 +159,7 @@ export default function HeroSection() {
               Client Worldwide
             </p>
           </div>
-        </div>
+        </div> */}
 
         {/* <div className="hero-partners urbanist" data-hero-partners>
           <p className="hero-partners-heading text-[#282828]">

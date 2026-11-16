@@ -38,7 +38,7 @@ const page = () => {
         <AboutMe2
           eyebrowText="About Me"
           heading="Turning Creativity Into Something Meaningful."
-          imageSrc="/image-2-2048x1946.png"
+          imageSrc="/3d10acc26a868a5485f246941722d40e2d5993dc.webp"
           imageAlt="Megan Manicom"
           text={[
             "Hi, I'm Megan!",
@@ -54,7 +54,6 @@ const page = () => {
           ]}
           buttonLabel="Explore My Work"
           buttonHref="/work"
-          imageClassName="object-contain object-center"
         />
         <MyExpertise />
         <MyCreativeProcess

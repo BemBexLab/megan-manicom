@@ -68,7 +68,7 @@ export default function Books({ books = bookCovers }: { books?: Book[] }) {
       className="section-spacing w-full bg-[#FBFBFB] px-4 sm:px-6 lg:px-[5%]"
     >
       <div className="mx-auto w-full">
-        <header className="mx-auto max-w-[51.25rem] text-center">
+        <header className="mx-auto max-w-5xl text-center">
           <div className="flex items-center justify-center gap-2">
             <span
               aria-hidden="true"
@@ -81,7 +81,7 @@ export default function Books({ books = bookCovers }: { books?: Book[] }) {
           <h2 className="clash-display mt-3 text-balance text-[2rem] font-medium leading-[1.15] tracking-tight text-[#282828] sm:text-[clamp(2.25rem,4.2vw,3.5rem)]">
             Every Cover Tells A Story.
           </h2>
-          <p className="urbanist mx-auto mt-4 max-w-[45rem] text-[0.9375rem] leading-[1.7] text-[#777777] sm:text-[1rem]">
+          <p className="urbanist mx-auto mt-4 max-w-2xl text-base leading-[1.7] text-[#777777]">
             A selection of book covers, eBooks, and illustrations, thoughtfully
             designed to bring each author&apos;s story to life. Explore the
             details that make every project its own.

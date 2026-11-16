@@ -59,8 +59,9 @@ export default function Home() {
       <AboutMe2
         eyebrowText="Why Choose"
         heading="Why Choose Megan"
-        imageSrc="/Gemini_Generated_Image_kc0kikc0kikc0kik.png"
+        imageSrc="/3d10acc26a868a5485f246941722d40e2d5993dc.webp"
         imageAlt="Megan Manicom"
+        imageClassName=""
         text={[
           "Hi, I'm Megan!",
           "I've always believed that every great idea deserves the opportunity to shine. Whether it's a story waiting to be published, a brand looking to grow, or a creative concept ready to take shape, I love being part of the journey that brings it to life.",

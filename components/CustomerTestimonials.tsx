@@ -107,7 +107,7 @@ function TestimonialCard({
       >
         <path d="M10.8 2.2H4.2v7.1c0 4.2 2 7 5.4 9.3l2.2-2.8c-2-1.4-3-2.8-3.2-4.7h3V6.8a4.6 4.6 0 0 0-4.6-4.6Zm12 0h-6.6v7.1c0 4.2 2 7 5.4 9.3l2.2-2.8c-2-1.4-3-2.8-3.2-4.7h3V6.8a4.6 4.6 0 0 0-4.6-4.6Z" />
       </svg>
-      <p className="urbanist mt-2.5 text-[0.8125rem] leading-[1.8] text-[#333333] lg:text-[clamp(0.75rem,1.08vw,1rem)]">
+      <p className="urbanist mt-2.5 text-sm leading-[1.5] text-[#333333]">
         {testimonial.testimonial}
       </p>
       <div className="mt-auto flex items-center gap-3.5 pt-8">
@@ -123,10 +123,10 @@ function TestimonialCard({
         </div>
         <span aria-hidden="true" className="h-8 w-px bg-[#B5B5B5]" />
         <div className="min-w-0">
-          <p className="clash-display font-clash truncate text-[0.875rem] font-medium leading-[1.4] text-[#D9B061] lg:text-[clamp(0.8125rem,1.17vw,1.0625rem)]">
+          <p className="clash-display font-clash truncate text-sm font-medium leading-[1.4] text-[#D9B061]">
             {testimonial.name}
           </p>
-          <p className="urbanist truncate text-[0.75rem] leading-[1.5] text-[#999999] lg:text-[clamp(0.6875rem,0.98vw,0.875rem)]">
+          <p className="urbanist truncate text-sm leading-[1.5] text-[#999999]">
             {testimonial.detail}
           </p>
         </div>
@@ -353,7 +353,7 @@ export default function CustomerTestimonials() {
               Happy Clients
             </h2>
           </div>
-          <p className="urbanist mt-2 max-w-[38.75rem] text-[0.8125rem] leading-[1.8] text-[#777777] lg:text-[clamp(0.75rem,1.08vw,1rem)] lg:justify-self-start">
+          <p className="urbanist mt-2 max-w-[38.75rem] text-base leading-[1.7] text-[#777777] lg:justify-self-start">
             Great collaborations lead to meaningful results and lasting
             relationships. Here&apos;s what clients have to say about working
             with me.
@@ -365,9 +365,9 @@ export default function CustomerTestimonials() {
             data-testimonial-rating
             className="flex min-h-[18.75rem] w-full shrink-0 flex-col items-center rounded-[1.375rem] bg-[#D9B061] px-6 pt-10 pb-5 text-center text-white shadow-[0_0.125rem_0.25rem_rgba(0,0,0,0.12)] md:min-h-[22.375rem] md:w-[var(--testimonial-card-width)] md:pt-[6.25rem]"
           >
-            <p className="urbanist text-[3.75rem] font-semibold leading-none">
+            <span className="urbanist block text-[3.75rem] font-semibold leading-none">
               4.8
-            </p>
+            </span>
             <div
               role="img"
               aria-label="5 stars"
@@ -377,10 +377,10 @@ export default function CustomerTestimonials() {
                 <FiStar key={index} aria-hidden="true" fill="currentColor" />
               ))}
             </div>
-            <p className="urbanist mt-1 text-[0.75rem] leading-[1.5] lg:text-[clamp(0.6875rem,0.98vw,0.875rem)]">
+            <p className="urbanist mt-1 text-sm leading-[1.5]">
               500+ Review
             </p>
-            <p className="urbanist mt-4 max-w-[13.75rem] text-[0.75rem] leading-[1.5] lg:text-[clamp(0.6875rem,0.98vw,0.875rem)]">
+            <p className="urbanist mt-4 max-w-[13.75rem] text-sm leading-[1.5]">
               Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting
               Industry.
             </p>

@@ -11,7 +11,7 @@ const navigation = [
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#FBFBFB] px-4 pt-14 pb-2 sm:px-6 sm:pt-16 sm:pb-3 lg:px-8 lg:pt-[3.75rem] lg:pb-4 2xl:px-6">
+    <footer className="w-full bg-[#FBFBFB] px-5 pt-14 pb-2 sm:px-[5.1%] sm:pt-16 sm:pb-3 lg:pt-[3.75rem] lg:pb-4">
       <div className="mx-auto w-full">
         <div className="flex flex-col items-center pb-7 sm:pb-8">
           <Link
@@ -21,7 +21,7 @@ export default function Footer() {
           >
             <span className="relative h-[4.25rem] w-[4.25rem] shrink-0 overflow-hidden rounded-full border border-[#282828] sm:h-[5.25rem] sm:w-[5.25rem]">
               <Image
-                src="/image-2-2048x1946.png"
+                src="/3d10acc26a868a5485f246941722d40e2d5993dc.webp"
                 alt="Megan Manicom"
                 fill
                 sizes="(min-width: 1578px) 5.33vw, (max-width: 639px) 68px, 84px"
@@ -71,7 +71,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col items-center justify-between gap-3 border-t border-[#DADADA] py-5 text-center sm:flex-row sm:text-left">
-          <p className="archivo text-[1rem] text-[#777777]">
+          <p className="archivo text-base text-[#777777]">
             © 2026 · Megan Manicom · All Rights Reserved
           </p>
           <nav aria-label="Legal links" className="flex items-center gap-3">

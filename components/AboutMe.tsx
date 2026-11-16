@@ -1,4 +1,3 @@
-// components/AboutSection.tsx
 "use client";
 
 import { useEffect, useRef } from "react";
@@ -18,7 +17,7 @@ const features = [
     text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     icon: (
       <svg
-        className="h-12 w-12"
+        className="size-full"
         viewBox="0 0 54 54"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +44,7 @@ const features = [
     text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     icon: (
       <svg
-        className="h-12 w-12"
+        className="size-full"
         viewBox="0 0 51 51"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -145,93 +144,70 @@ export default function AboutSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="section-spacing bg-[#F7F7F7]">
-      <div className="mx-auto w-full px-6 lg:px-10">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-5">
-          {/* LEFT — Image card with stats overlay */}
-          <div data-about-image className="relative mx-auto w-full max-w-[40.625rem] lg:mx-0">
-            <div className="relative aspect-[370/318] w-full overflow-hidden rounded-3xl bg-gradient-to-b from-white to-[#E9E9E9]">
-              <Image
-                src="/Gemini_Generated_Image_kc0kikc0kikc0kik.png"
-                alt="Megan Manicom"
-                fill
-                className="object-cover object-top"
-                sizes="(min-width: 1024px) 46vw, calc(100vw - 48px)"
-              />
-
-              {/* Stats overlay */}
-              <div className="absolute bottom-4 left-4 right-4 rounded-2xl bg-white/50 px-5 py-4 backdrop-blur-md sm:px-6">
-                <div className="grid grid-cols-3 divide-x divide-black">
-                  {stats.map((stat, i) => (
-                    <div
-                      key={stat.label}
-                      className={`flex flex-col ${
-                        i === 0 ? "pr-3 sm:pr-5" : "px-3 sm:px-5"
-                      }`}
-                    >
-                      <span
-                        data-about-stat
-                        data-target={stat.value}
-                        data-suffix={stat.suffix}
-                        className="text-2xl font-medium leading-none text-white sm:text-[1.75rem] clash-display font-clash"
-                      >
-                        0{stat.suffix}
-                      </span>
-                      <span className="mt-2 text-[0.6875rem] leading-tight text-white sm:text-[0.9375rem] urbanist">
-                        {stat.label}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* RIGHT — Content */}
-          <div data-about-copy className="flex flex-col">
-            {/* Label */}
-            <div className="flex items-center gap-1.5">
-              <span
-                aria-hidden="true"
-                className="h-4 w-4 rounded-full border-3 border-[#282828] bg-[#D9B061]"
-              />
-              <span className="urbanist text-[16] text-[#777777] urbanist">
-                About Me
-              </span>
-            </div>
-
-            {/* Heading */}
-            <h2
-              className={`clash-display font-clash mt-4 max-w-[43.75rem] text-[clamp(2.25rem,4.2vw,3.5rem)] font-medium leading-[1.15] tracking-tight text-[#282828]`}
-            >
-              The Mind Behind The Creativity
-            </h2>
-
-            {/* Paragraph */}
-            <p className="urbanist mt-6 max-w-[43.75rem] text-[16] leading-relaxed text-[#777777]">
-              I&apos;m a passionate social media marketer who loves turning
-              ideas into content that connects. My focus is helping brands tell
-              their stories and build a memorable online presence.
-            </p>
-
-            {/* Feature cards */}
-            <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
-              {features.map((feature) => (
-                <div
-                  key={feature.title}
-                  data-about-feature
-                  className="rounded-3xl border border-gray-200 bg-white/60 p-6"
+    <section
+      ref={sectionRef}
+      aria-labelledby="about-me-heading"
+      className="section-spacing bg-[#F5F5F5] px-5 text-[#282828] sm:px-[5.1%]"
+    >
+      <div className="mx-auto grid items-center gap-10 lg:grid-cols-[41%_49.4%] lg:justify-between lg:gap-0">
+        <div data-about-image className="relative mx-auto aspect-[705/605] w-full max-w-2xl overflow-hidden rounded-3xl bg-[#EEEEEE] lg:aspect-auto lg:max-w-none lg:self-stretch lg:rounded-[1.67vw]">
+          <Image
+            src="/3d10acc26a868a5485f246941722d40e2d5993dc.webp"
+            alt="Megan Manicom"
+            fill
+            className="object-cover object-top"
+            sizes="(min-width: 1024px) 37vw, (min-width: 640px) 650px, calc(100vw - 40px)"
+          />
+          <div className="absolute inset-x-3 bottom-3 grid grid-cols-[1.12fr_1fr_1.12fr] rounded-[1.25rem] bg-white/50 px-3 py-4 backdrop-blur-[16px] sm:inset-x-[1.125rem] sm:bottom-[1.125rem] sm:p-6 lg:inset-x-[1.15vw] lg:bottom-[1.3vw] lg:rounded-[1.57vw] lg:px-[1.88vw] lg:py-[1.5vw]">
+            {stats.map((stat) => (
+              <div key={stat.label} className="flex min-w-0 flex-col px-2 first:pl-0 last:pr-0 sm:px-4 lg:px-[1.5vw] [&+div]:border-l [&+div]:border-[#282828]/55">
+                <span
+                  data-about-stat
+                  data-target={stat.value}
+                  data-suffix={stat.suffix}
+                  className="font-clash text-[clamp(1.5rem,5vw,2.25rem)] leading-[1.2] font-medium lg:text-[clamp(1.5rem,2.09vw,3rem)]"
                 >
-                  <div className="text-[#D9A066]">{feature.icon}</div>
-                  <h3 className="mt-6 text-base font-medium text-[#282828] clash-display">
-                    {feature.title}
-                  </h3>
-                  <p className="urbanist mt-2 text-[0.875rem] leading-relaxed text-[#777777]">
-                    {feature.text}
-                  </p>
+                  {stat.value}{stat.suffix}
+                </span>
+                <p className="mt-2 font-[family-name:var(--font-urbanist)] text-sm leading-[1.4] lg:mt-[0.62vw]">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div data-about-copy className="min-w-0">
+          <div className="flex items-center gap-3 font-[family-name:var(--font-urbanist)] text-base leading-[1.4] text-[#777777] lg:gap-[0.83vw] lg:text-[clamp(1rem,1.04vw,1.5rem)]">
+            <span aria-hidden="true" className="size-3.5 shrink-0 rounded-full border-3 border-[#282828] bg-[#D9B061] lg:size-[max(0.75rem,0.875vw)]" />
+            <span>About Me</span>
+          </div>
+          <h2 id="about-me-heading" className="mt-4 font-clash text-[clamp(2rem,5vw,3rem)] leading-[1.2] font-medium tracking-normal text-balance lg:mt-[0.83vw] lg:text-[clamp(2rem,3.34vw,5rem)] lg:leading-[1.22] lg:text-wrap">
+            The Mind Behind The Creativity
+          </h2>
+          <p className="mt-5 font-[family-name:var(--font-urbanist)] text-base leading-[1.7] text-[#777777] lg:mt-[0.94vw]">
+            I&apos;m a passionate social media marketer who loves turning
+            ideas into content that connects. My focus is helping brands tell
+            their stories and build a memorable online presence.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:mt-[3.34vw] lg:gap-[1.04vw]">
+            {features.map((feature) => (
+              <div
+                key={feature.title}
+                data-about-feature
+                className="min-w-0 rounded-3xl border border-[#DDDDDD] bg-white/60 px-5 py-6 lg:rounded-[1.67vw] lg:px-[1.04vw] lg:py-[1.6vw]"
+              >
+                <div aria-hidden="true" className="size-11 lg:size-[2.66vw]">
+                  {feature.icon}
                 </div>
-              ))}
-            </div>
+                <h3 className="mt-7 font-clash text-xl leading-[1.3] font-medium tracking-normal lg:mt-[2.6vw] lg:text-[clamp(1.125rem,1.36vw,2rem)]">
+                  {feature.title}
+                </h3>
+                <p className="mt-2.5 font-[family-name:var(--font-urbanist)] text-sm leading-[1.6] text-[#777777] lg:mt-[0.62vw]">
+                  {feature.text}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

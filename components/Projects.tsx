@@ -147,7 +147,7 @@ export default function Projects() {
     <section ref={sectionRef} className="section-spacing w-full bg-[#F7F7F7] px-4 sm:px-6 lg:px-[5%]">
       <div className="mx-auto w-full">
         <header data-portfolio-header className="mb-8 flex flex-col gap-5 border-b border-[#D9D9D5] pb-7 sm:mb-10 sm:pb-8 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-[47.5rem]">
+          <div className="max-w-5xl">
           <div className="flex items-center gap-2">
             <span
               aria-hidden="true"
@@ -160,11 +160,11 @@ export default function Projects() {
           <h2 className="clash-display mt-3 max-w-full break-words text-balance text-[2rem] font-medium leading-[1.1] text-[#282828] sm:text-[clamp(2.25rem,4.2vw,3.5rem)]">
             Stories, thoughtfully covered.
           </h2>
-          <p className="urbanist mt-3 max-w-[42.5rem] text-[0.9375rem] leading-[1.7] text-[#777777] sm:text-base">
+          <p className="urbanist mt-3 max-w-2xl text-base leading-[1.7] text-[#777777]">
             A selection of book covers designed to give each story its own clear and memorable first impression.
           </p>
           </div>
-          <p className="urbanist shrink-0 text-sm tracking-wide text-[#777777]">BOOK DESIGN <span className="mx-2 text-[#D9B061]">/</span> 01—06</p>
+          <p className="urbanist shrink-0 text-base tracking-wide text-[#777777]">BOOK DESIGN <span className="mx-2 text-[#D9B061]">/</span> 01—06</p>
         </header>
 
         <div
@@ -179,7 +179,7 @@ export default function Projects() {
         </div>
 
         <div className="mt-9 flex flex-col items-center justify-between gap-5 border-t border-[#D9D9D5] pt-7 text-center sm:mt-10 sm:flex-row sm:text-left">
-          <p className="clash-display text-xl font-medium text-[#282828]">Have a story ready for its cover?</p>
+          <p className="clash-display text-base font-medium text-[#282828]">Have a story ready for its cover?</p>
           <a
             href="/contact"
             data-portfolio-cta

@@ -124,7 +124,7 @@ export default function ExploreMyWork() {
     <section
       ref={sectionRef}
       aria-labelledby="explore-work-title"
-      className="section-spacing w-full overflow-x-clip bg-[#F7F7F7] px-4 sm:px-6 min-[850px]:px-[5%]"
+      className="section-spacing w-full overflow-x-clip bg-[#F7F7F7] px-5 sm:px-[5.1%]"
     >
       <div className="mx-auto w-full min-[850px]:[container-type:inline-size]">
         <header data-work-header className="flex flex-col items-center text-center">
@@ -145,7 +145,7 @@ export default function ExploreMyWork() {
             A Glimpse Into My Creative World.
           </h2>
 
-          <p className="urbanist mx-auto mt-0 max-w-[43.75rem] text-[1rem] leading-[1.6] text-[#777777] min-[850px]:text-[clamp(0.75rem,1.17cqw,1rem)]">
+          <p className="urbanist mx-auto mt-0 max-w-2xl text-base leading-[1.7] text-[#777777]">
             Every project tells a different story. From memorable book covers to
             engaging digital campaigns, here&apos;s a selection of work that
             brings creativity, purpose, and attention to detail together.
@@ -169,13 +169,13 @@ export default function ExploreMyWork() {
                 />
               </div>
 
-              <p className="urbanist mt-3 text-[0.875rem] leading-[1.4] text-[#D9B061] min-[850px]:mt-[1.05cqw] min-[850px]:text-[clamp(0.625rem,1.17cqw,1rem)]">
+              <p className="urbanist mt-3 text-sm leading-[1.4] text-[#D9B061] min-[850px]:mt-[1.05cqw]">
                 {project.category}
               </p>
               <h3 className="clash-display mt-1 text-[1.25rem] font-medium leading-tight text-[#282828] min-[850px]:mt-[0.42cqw] min-[850px]:text-[clamp(0.875rem,1.45cqw,1.25rem)]">
                 {project.title}
               </h3>
-              <p className="urbanist mt-2 line-clamp-2 text-[0.875rem] leading-[1.55] text-[#777777] min-[850px]:mt-[0.58cqw] min-[850px]:text-[clamp(0.6875rem,1.17cqw,1rem)] min-[850px]:leading-[1.5]">
+              <p className="urbanist mt-2 line-clamp-2 text-sm leading-[1.5] text-[#777777] min-[850px]:mt-[0.58cqw]">
                 {projectDescription}
               </p>
               <Link

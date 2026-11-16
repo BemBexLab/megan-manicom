@@ -3,7 +3,6 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from "next/image";
 import { FiArrowUpRight } from "react-icons/fi";
 
 const stepPositions = [
@@ -14,32 +13,43 @@ const stepPositions = [
 ];
 
 const connectors = [
-  {
-    src: "/top-left.webp",
-    width: 491,
-    height: 261,
-    className: "lg:left-[18.593%] lg:top-[14.865%] lg:w-[29.287%]",
-  },
-  {
-    src: "/top-right.webp",
-    width: 491,
-    height: 261,
-    className: "lg:right-[18.593%] lg:top-[14.865%] lg:w-[29.287%]",
-  },
-  {
-    src: "/bottom-left.webp",
-    width: 411,
-    height: 180,
-    className:
-      "lg:left-[21.098%] lg:top-[48.649%] lg:w-[24.470%] lg:drop-shadow-[0_0.5rem_0.625rem_rgba(212,163,115,0.20)]",
-  },
-  {
-    src: "/bottom-right.webp",
-    width: 491,
-    height: 260,
-    className: "lg:right-[18.593%] lg:top-[41.892%] lg:w-[29.287%]",
-  },
+  "left-[20.8%] top-[22.5%]",
+  "right-[20.8%] top-[22.5%] -scale-x-100",
+  "bottom-[21.5%] left-[20.8%] -scale-y-100",
+  "right-[20.8%] bottom-[21.5%] rotate-180",
 ];
+
+// Preserve the GIF's 434 × 182 canvas and tapered curve as scalable vectors.
+const connectorOutline =
+  "M 0 0 C 2 29 23 51 52 51 L 280 50 C 353 50 407 105 412 168 C 405 105 352 55 280 55 L 52 54 C 22 54 0 30 0 0 Z";
+const connectorCenterline =
+  "M 0 0 C 1 29 23 52.5 52 52.5 H 280 C 352.5 52.5 406 105 412 168";
+
+function ProcessConnector({ position }: { position: string }) {
+  return (
+    <svg
+      data-process-connector
+      aria-hidden="true"
+      focusable="false"
+      viewBox="0 0 434 182"
+      width={434}
+      height={182}
+      className={`pointer-events-none absolute z-0 hidden h-auto w-[25.77%] select-none lg:block ${position}`}
+    >
+      <path d={connectorOutline} fill="#808080" />
+      <g fill="none" stroke="#D9B061" strokeLinecap="round">
+        <path
+          data-process-pulse
+          d={connectorCenterline}
+          pathLength={100}
+          strokeWidth={5}
+          strokeDasharray="12 88"
+          strokeDashoffset={-22}
+        />
+      </g>
+    </svg>
+  );
+}
 
 type ProcessStep = {
   number?: string | number;
@@ -60,7 +70,7 @@ function StepCard({ step, index }: { step: ProcessStep; index: number }) {
   return (
     <article
       data-process-card
-      className={`relative z-10 flex min-h-[8.75rem] w-[min(84vw,22.5rem)] min-w-0 shrink-0 snap-center flex-col justify-center rounded-[1.5rem] border border-[#E5E5E5] bg-[#FBFBFB] px-4 py-5 shadow-[0_0.125rem_0.1875rem_rgba(0,0,0,0.10)] sm:w-[min(66vw,26.25rem)] lg:absolute lg:h-[27.027%] lg:min-h-0 lg:w-[24.663%] lg:rounded-[1.93cqw] lg:p-[1.16cqw] ${stepPositions[index] ?? ""}`}
+      className={`relative z-10 flex min-h-[8.75rem] w-[min(84vw,22.5rem)] min-w-0 shrink-0 snap-center flex-col justify-center rounded-[1.5rem] border border-[#DDDDDD] bg-[#FBFBFB] px-4 py-5 shadow-[0_0.125rem_0.1875rem_rgba(0,0,0,0.10)] sm:w-[min(66vw,26.25rem)] lg:absolute lg:h-[27.027%] lg:min-h-0 lg:w-[24.663%] lg:rounded-[1.93cqw] lg:p-[1.2cqw] ${stepPositions[index] ?? ""}`}
     >
       {step.number !== undefined && (
         <span className="clash-display mb-3 text-sm font-semibold leading-none text-[#282828] lg:mb-[0.9cqw] lg:text-[clamp(0.75rem,1.05cqw,0.9375rem)]">
@@ -70,7 +80,7 @@ function StepCard({ step, index }: { step: ProcessStep; index: number }) {
       <h3 className="clash-display text-lg font-medium leading-tight text-[#282828] lg:text-[clamp(0.9375rem,1.45cqw,1.3125rem)]">
         {step.title}
       </h3>
-      <p className="urbanist mt-2 text-[0.9375rem] leading-[1.6] text-[#777777] lg:mt-[0.39cqw] lg:text-[clamp(0.75rem,1.16cqw,1.0625rem)] lg:leading-[1.5]">
+      <p className="urbanist mt-2 text-sm leading-[1.5] text-[#777777] lg:mt-[0.39cqw]">
         {step.text}
       </p>
     </article>
@@ -96,6 +106,17 @@ export default function MyCreativeProcess({
     const media = gsap.matchMedia();
     media.add("(prefers-reduced-motion: no-preference)", () => {
       const context = gsap.context(() => {
+        gsap.fromTo(
+          "[data-process-pulse]",
+          { attr: { "stroke-dashoffset": -22 } },
+          {
+            attr: { "stroke-dashoffset": -122 },
+            duration: 1.96,
+            repeat: -1,
+            ease: "none",
+          },
+        );
+
         const header = section.querySelector("[data-process-header]");
         const connectors = section.querySelectorAll("[data-process-connector]");
         const cards = section.querySelectorAll("[data-process-card]");
@@ -170,38 +191,32 @@ export default function MyCreativeProcess({
   return (
     <section
       ref={sectionRef}
-      className="section-spacing w-full min-w-0 overflow-hidden bg-[#FBFBFB] px-4 sm:px-6 lg:px-4"
+      className="section-spacing w-full min-w-0 overflow-hidden bg-[#FBFBFB] px-4 sm:px-6 lg:px-[6.05%]"
     >
       <div className="mx-auto w-full lg:[container-type:inline-size]">
-        <header data-process-header className="mx-auto mb-9 w-full min-w-0 max-w-5xl text-center lg:max-w-none">
+        <header data-process-header className="mx-auto mb-9 w-full min-w-0 max-w-5xl text-center lg:mb-0 lg:max-w-none">
           <div className="flex items-center justify-center gap-2">
             <span
               aria-hidden="true"
-              className="h-4 w-4 rounded-full border-3 border-[#282828] bg-[#D9B061]"
+              className="h-4 w-4 rounded-full border-3 border-[#282828] bg-[#D9B061] lg:size-[1cqw]"
             />
             <span className="urbanist text-sm font-light tracking-wide text-[#777777] sm:text-base lg:text-[clamp(0.875rem,1.16cqw,1.0625rem)] lg:font-normal lg:tracking-normal">
               {eyebrowText}
             </span>
           </div>
-          <h2 className="clash-display my-2 max-w-full break-words text-balance text-[2rem] font-medium leading-tight text-[#282828] sm:text-[clamp(2.25rem,4.2vw,3.5rem)] lg:mt-[1.25cqw] lg:mb-[1.06cqw] lg:text-[clamp(2.25rem,3.82cqw,3.5rem)]">
+          <h2 className="clash-display my-2 max-w-full break-words text-balance text-[2rem] font-medium leading-tight text-[#282828] sm:text-[clamp(2.25rem,4.2vw,3.5rem)] lg:mt-[1.25cqw] lg:mb-[0.8cqw] lg:text-[clamp(2.25rem,3.82cqw,3.5rem)]">
             {heading}
           </h2>
-          <p className="urbanist mx-auto mb-10 w-full max-w-5xl px-2 text-[1rem] leading-[1.6] text-[#777777] lg:mb-0 lg:max-w-[54.25cqw] lg:text-[clamp(0.75rem,1.16cqw,1.0625rem)] lg:leading-[1.7]">
+          <p className="urbanist mx-auto mb-10 w-full max-w-5xl px-2 text-base leading-[1.7] text-[#777777] lg:mb-0 lg:max-w-[48cqw]">
             {text}
           </p>
         </header>
 
         <div className="relative mx-auto mt-6 w-full min-w-0 lg:mt-[0.1cqw] lg:aspect-[1038/370]">
-          {connectors.map((connector) => (
-            <Image
-              key={connector.src}
-              data-process-connector
-              src={connector.src}
-              alt=""
-              aria-hidden="true"
-              width={connector.width}
-              height={connector.height}
-              className={`pointer-events-none absolute z-0 hidden h-auto lg:block ${connector.className}`}
+          {connectors.map((position) => (
+            <ProcessConnector
+              key={position}
+              position={position}
             />
           ))}
 
