@@ -7,13 +7,24 @@ import Lenis from "lenis";
 
 export default function SmoothScroll({ children }: { children: ReactNode }) {
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    const supportsFinePointer = window.matchMedia(
+      "(hover: hover) and (pointer: fine)",
+    ).matches;
+
+    // Keep touch scrolling native so it stays immediate and doesn't compete
+    // with the browser's own touch momentum.
+    if (prefersReducedMotion || !supportsFinePointer) return;
 
     gsap.registerPlugin(ScrollTrigger);
 
     const lenis = new Lenis({
       anchors: true,
-      lerp: 0.1,
+      // A slightly higher lerp follows wheel input more quickly, reducing the
+      // delayed, floaty feel while retaining smooth desktop scrolling.
+      lerp: 0.16,
       smoothWheel: true,
     });
 

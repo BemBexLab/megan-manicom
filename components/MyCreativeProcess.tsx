@@ -114,6 +114,12 @@ export default function MyCreativeProcess({
             duration: 1.96,
             repeat: -1,
             ease: "none",
+            scrollTrigger: {
+              trigger: section,
+              start: "top bottom",
+              end: "bottom top",
+              toggleActions: "play pause resume pause",
+            },
           },
         );
 

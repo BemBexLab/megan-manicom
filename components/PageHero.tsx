@@ -130,7 +130,7 @@ export default function PageHero({
           </Link>
         </header>
 
-        {(rating || clientLabel || clientAvatars.length > 0) && (
+        {/* {(rating || clientLabel || clientAvatars.length > 0) && (
           <div data-pagehero-rating className="relative z-10 mt-12 self-start text-left min-[900px]:absolute min-[900px]:bottom-[5.3%] min-[900px]:left-[5.2%] min-[900px]:mt-0">
             {clientAvatars.length > 0 && (
               <div className="mb-2 flex" aria-hidden="true">
@@ -160,9 +160,9 @@ export default function PageHero({
               )}
             </div>
           </div>
-        )}
+        )} */}
 
-        {partnersHeading && partnerLogos.length > 0 && (
+        {/* {partnersHeading && partnerLogos.length > 0 && (
           <div data-pagehero-partners className="relative z-10 mt-10 w-full max-w-[22.5rem] min-[900px]:absolute min-[900px]:bottom-[5.3%] min-[900px]:right-[5.2%] min-[900px]:mt-0 min-[900px]:w-[29%] min-[900px]:max-w-none">
             <p className="urbanist flex items-center justify-center gap-2 text-base leading-[1.4] text-[#282828] min-[900px]:gap-[0.65cqw]">
               <span
@@ -188,7 +188,7 @@ export default function PageHero({
               ))}
             </div>
           </div>
-        )}
+        )} */}
       </div>
     </section>
   );

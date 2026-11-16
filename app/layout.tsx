@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Archivo, Geist, Urbanist } from "next/font/google";
+import { Urbanist } from "next/font/google";
 import { clashDisplay } from "./fonts";
 import "./globals.css";
 import "lenis/dist/lenis.css";
@@ -7,18 +7,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
 const urbanist = Urbanist({
   variable: "--font-urbanist",
-  subsets: ["latin"],
-});
-
-const archivo = Archivo({
-  variable: "--font-archivo",
   subsets: ["latin"],
 });
 
@@ -38,7 +28,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${clashDisplay.variable} ${urbanist.variable} ${archivo.variable} h-full antialiased`}
+      className={`${clashDisplay.variable} ${urbanist.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <SmoothScroll>
